@@ -3,23 +3,15 @@
 
 #include <QString>
 #include <QDate>
-#include <QTextStream>
-#include <QFile>
-#include <QTextCodec>
-#include <QtXml>
-#include <QMessageBox>
 #include <vector>
-#include <QtDebug>
-#include <Classe/calendarException.h>
+#include <calendarException.h>
 
 /*
  * La classe Tache est abstraite. vector demande une classe non abstraite. Précédence sera implémenter dans les classes filles.
  * La fonction afficher servira de méthode virtuelle pure à défaut d'en trouver une autre.
  *
 */
-
 class Tache {
-
     std::vector<Tache*> precedence;
     QString identificateur;
     QString titre;
