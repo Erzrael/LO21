@@ -10,21 +10,21 @@ void Projet::ajouterTache(Tache * t)
    taches.push_back(t);
 }
 
-QDate projet::getEcheance() const
+QDate Projet::getEcheance() const
 {
    return echeance;
 }
 
-void projet::setEcheance(const QDate & value)
+void Projet::setEcheance(const QDate & value)
 {
    echeance = value;
 }
-QDate projet::getDateDispo() const
+QDate Projet::getDateDispo() const
 {
    return dateDispo;
 }
 
-void projet::setDateDispo(const QDate & value)
+void Projet::setDateDispo(const QDate & value)
 {
    dateDispo = value;
 }

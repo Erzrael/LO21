@@ -1,17 +1,17 @@
 #ifndef PROJET_H
 #define PROJET_H
 #include "tache.h"
-#include <QDate>
+//#include <QDate>
 #include <vector>
 
 class Projet
 {
 private:
-   vector<*Tache> taches;
+   std::vector<Tache *> taches;
    QDate dateDispo;
    QDate echeance;
 public:
-   projet():dateDispo(0),echeance(0){}
+//   Projet():dateDispo(0),echeance(QDate(0,0,0)){}
 
    // influence de l'ajout sur dateDispo ?
    void ajouterTache(Tache * t);
@@ -27,23 +27,22 @@ public:
    class DisponibiliteFilterIterator {
    private:
        friend class Projet;
-       vector<*Tache> listeTaches;
-       vector<Tache>::iterator tacheIterator;
+       std::vector<Tache *> listeTaches;
+       std::vector<Tache *>::iterator tacheIterator;
        QDate dispo;
-       DisponibiliteFilterIterator(vector<*Tache> u, const QDate& d):listeTaches(u),tacheIterator(u.begin()),dispo(d){
-           while(tacheIterator != listeTache.end() && dispo<(*tacheIterator)->getDisponibilite()){
+       DisponibiliteFilterIterator(vector<Tache *> u, const QDate& d):listeTaches(u),tacheIterator(u.begin()),dispo(d){
+           while(tacheIterator != listeTaches.end() && dispo<(*tacheIterator)->getDisponibilite()){
                tacheIterator ++ ;
            }
        }
    public:
-       DisponibiliteFilterIterator():nbRemain(0),currentTache(0){}
-       bool isDone() const { return tacheIterator == listeTache.end(); }
+       bool isDone() const { return tacheIterator == listeTaches.end(); }
        void next() {
            if (isDone())
                throw CalendarException("error, next on an iterator which is done");
            do {
                tacheIterator ++;
-           }while(tacheIterator != listeTache.end() && dispo<(*tacheIterator)->getDisponibilite());
+           }while(tacheIterator != listeTaches.end() && dispo<(*tacheIterator)->getDisponibilite());
        }
        Tache& current() const {
            if (isDone())

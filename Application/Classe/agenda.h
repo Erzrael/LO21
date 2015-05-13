@@ -6,10 +6,13 @@
 class Agenda
 {
 private:
-   vector <Programmation*> programmations ;
+   vector<Programmation*> programmations ;
 public:
    void ajouterProgrammation(const Tache& t, const QDate& d, const QTime& h);
    Programmation* trouverProgrammation(const Tache& t)const;
+
+   std::vector<Programmation *> &getProgrammation();
+   const std::vector<Programmation *> &getProgrammation() const;
 
 };
 

@@ -1,9 +1,21 @@
 #include "agenda.h"
 
 Programmation* Agenda::trouverProgrammation(const Tache& t)const{
-    for(vector<*Tache>::iterator it = programmations.begin(); it!=v.end(); ++it)
-        if (&t==*it->getTache()) return *it;
+   std::vector<Programmation *>::const_iterator it ;
+    for(it = programmations.begin(); it != programmations.end() ; ++it)
+        if (&t==(*it)->getTache())
+           return *it;
     return 0;
+}
+
+std::vector<Programmation *> &Agenda::getProgrammation()
+{
+   return programmations;
+}
+
+const std::vector<Programmation *> &Agenda::getProgrammation() const
+{
+   return programmations;
 }
 
 void Agenda::ajouterProgrammation(const Tache& t, const QDate& d, const QTime& h){
