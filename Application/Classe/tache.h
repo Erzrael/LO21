@@ -4,7 +4,7 @@
 #include <QString>
 #include <QDate>
 #include <vector>
-#include <calendarException.h>
+#include <Classe/calendarException.h>
 
 /*
  * La classe Tache est abstraite. vector demande une classe non abstraite. Précédence sera implémenter dans les classes filles.
