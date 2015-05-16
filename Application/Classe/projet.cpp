@@ -1,5 +1,5 @@
 #include "projet.h"
-
+/* Pourquoi repousser l'échéance ? Faut pas le faire nan ? */
 void Projet::ajouterTache(Tache * t)
 {
    // l'échéance du projet est repoussée si nécessaire
