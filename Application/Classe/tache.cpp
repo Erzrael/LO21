@@ -102,18 +102,15 @@ const std::vector<Tache*>& Tache::getPrecedence() const
     return precedence;
 }
 
-void Tache::ajouterPrecedence(Tache *t)
+void Tache::ajouterPrecedence(Tache &t)
 {
-    if(t->getEcheance() < this->getEcheance()){
-        this->getPrecedence().reserve(5);
-        this->getPrecedence().push_back(t);
+    if(t.getEcheance() <= this->getEcheance()){
+        if(this->getPrecedence().size() == this->getPrecedence().capacity())
+            this->getPrecedence().reserve(this->getPrecedence().capacity()+5);
+        this->getPrecedence().push_back(&t);
         qDebug()<<"Ajout précédence réussi \n";
     }else{
         qDebug()<<"Ajout précédence failed \n";
     }
-}
-
-void Tache::afficher() const{
-
 }
 

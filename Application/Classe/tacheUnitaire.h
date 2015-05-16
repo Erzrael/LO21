@@ -17,7 +17,6 @@ public:
     ~TacheUnitaire();
 
     /* Les Getters et Setters */
-
     const bool& getPreempte() const;
     bool& getPreempte();
     void setPreempte(bool value);
@@ -26,10 +25,8 @@ public:
     Duree& getDuree();
     void setDuree(const Duree &value);
 
-    /* Autres Fonctions */
-
-    void afficher() const;
-
+    /* Patron Factory Methode */
+    virtual TacheUnitaire* clone() const;
 };
 
 #endif // TACHEUNITAIRE_H

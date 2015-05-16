@@ -36,17 +36,19 @@ const std::vector<Tache *> &TacheComposite::getComposition() const
     return composition;
 }
 
-void TacheComposite::ajouterComposition(Tache *t)
+TacheComposite *TacheComposite::clone() const
 {
-    if(t->getEcheance() < this->getEcheance()){
-        this->getPrecedence().reserve(5);
-        this->getPrecedence().push_back(t);
-        qDebug()<<"Ajout précédence réussi \n";
-    }else{
-        qDebug()<<"Ajout précédence failed \n";
-    }
+    return new TacheComposite(*this);
 }
 
-void TacheComposite::afficher() const {
-
+void TacheComposite::ajouterComposition(Tache& t)
+{
+    if(t.getEcheance() <= this->getEcheance()){
+        if(this->getComposition().size() == this->getComposition().capacity())
+            this->getComposition().reserve(this->getComposition().capacity()+5);
+        this->getComposition().push_back(&t);
+        qDebug()<<"Ajout composition réussi \n";
+    }else{
+        qDebug()<<"Ajout composition failed \n";
+    }
 }

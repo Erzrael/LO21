@@ -58,6 +58,7 @@ void TacheUnitaire::setDuree(const Duree &value)
     duree = value;
 }
 
-void TacheUnitaire::afficher() const {
-
+TacheUnitaire *TacheUnitaire::clone() const
+{
+    return new TacheUnitaire(*this);
 }

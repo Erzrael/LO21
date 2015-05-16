@@ -15,15 +15,14 @@ public:
     ~TacheComposite();
 
     /* Les Getters et Setters */
-
     std::vector<Tache *> &getComposition();
     const std::vector<Tache *> &getComposition() const;
 
+    /* Patron Factory Methode */
+    virtual TacheComposite* clone() const;
+
     /* Autres Fonctions */
-
-    void ajouterComposition(Tache *t);
-    void afficher() const;
-
+    void ajouterComposition(Tache &t);
 };
 
 #endif // TACHECOMPOSITE_H

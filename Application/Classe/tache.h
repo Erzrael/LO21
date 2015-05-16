@@ -47,16 +47,14 @@ public:
     std::vector<Tache *> &getPrecedence();
     const std::vector<Tache *> &getPrecedence() const;
 
+    /* Patron Factory Methode */
+    virtual Tache* clone() const = 0;
+
     /* Autres Fonctions */
     /*
      * Ajoute une tache t dans le vector si sa date d'échéance est inférieur à la tache this.
     */
-    void ajouterPrecedence(Tache *t);
-
-    /*
-     * La fonction est vide car je ne sais pas quoi mettre dedans.
-    */
-    virtual void afficher() const = 0;
+    void ajouterPrecedence(Tache& t);
 };
 
 #endif // TACHE_H
