@@ -22,9 +22,11 @@ int main(void){
     qDebug()<<T1->getDuree().getDureeEnHeures()<<"\n";
 
     T1->ajouterPrecedence(*T2);
-
+    T2->ajouterPrecedence(*T4);
+    T1->verifierPrecedence(*T4);
+    //T1->verifierPrecedence(*T2);
     TacheUnitaire* T3 = new TacheUnitaire((*T1));
-
+    /*
     T2->ajouterComposition(*T4);
 
     std::vector<Tache*>::iterator it = T1->getPrecedence().begin();
@@ -76,6 +78,6 @@ int main(void){
         TacheUnitaire* item2 = dynamic_cast<TacheUnitaire*>(*(item->getComposition().begin()));
         qDebug()<<item2->getDuree().getHeure()<<"\n";
     }
-
+    */
     return 0;
 }

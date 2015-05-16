@@ -8,7 +8,40 @@ Calendar and Project Management Project
 
 ## A Faire
 	Pour héritage des tâches :
-		 - Revoir l'algorithme des précédences pour ne pas avoir de boucles ou en éviter le plus possible. Idem pour l'ajout de composition. 
-		 - Puisque composition entre les différentes instances de la partie projet, rajouter dans le destructeur la destruction du vector. 
+		* Revoir l'algorithme des précédences pour ne pas avoir de boucles ou en éviter le plus possible. Idem pour l'ajout de composition. 
+		En attente de la fin des classes projet et projetManager.
+		```c++
+		/*
+		 * Cette fonction nécessite de faire appel au projet manager pour récupérer le tableau de taches du projet correspondant.
+		 * Une fois ce tableau récupéré, on recherche la branche correspondante à la tache où l'on veut ajouter une précédence.
+		 * Puis on applique l'algorithme ci-dessous à partir de la première tache de la branche correspondante
+		*/
+		bool Tache::verifierPrecedence(const Tache &t) const
+		{
+		    if(this->getPrecedence().empty())
+		    {
+		        qDebug()<<"Je retourne vrai";
+		        return true;
+		    }
+		    else{
+		        for(std::vector<Tache*>::const_iterator it = this->getPrecedence().begin(); it != this->getPrecedence().end(); ++it)
+		        {
+		            if(*it == &t)
+		            {
+		                qDebug()<<"Je retourne faux";
+		                return false;
+		            }
+		            else
+		            {
+		                qDebug()<<"Je vérifie pour chacune des précédences";
+		                (*it)->verifierPrecedence(t);
+		            }
+		        }
+		    }
+		    return true;
+		}
+		```
+
+		* Puisque composition entre les différentes instances de la partie projet, rajouter dans le destructeur la destruction du vector. 
 
 ## Questions

@@ -113,4 +113,32 @@ void Tache::ajouterPrecedence(Tache &t)
         qDebug()<<"Ajout précédence failed \n";
     }
 }
-
+/*
+ * Cette fonction nécessite de faire appel au projet manager pour récupérer le tableau de taches du projet correspondant.
+ * Une fois ce tableau récupéré, on recherche la branche correspondante à la tache où l'on veut ajouter une précédence.
+ * Puis on applique l'algorithme ci-dessous à partir de la première tache de la branche correspondante
+*/
+bool Tache::verifierPrecedence(const Tache &t) const
+{
+    if(this->getPrecedence().empty())
+    {
+        qDebug()<<"Je retourne vrai";
+        return true;
+    }
+    else{
+        for(std::vector<Tache*>::const_iterator it = this->getPrecedence().begin(); it != this->getPrecedence().end(); ++it)
+        {
+            if(*it == &t)
+            {
+                qDebug()<<"Je retourne faux";
+                return false;
+            }
+            else
+            {
+                qDebug()<<"Je vérifie pour chacune des précédences";
+                (*it)->verifierPrecedence(t);
+            }
+        }
+    }
+    return true;
+}
