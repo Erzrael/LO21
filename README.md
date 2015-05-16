@@ -7,10 +7,10 @@ Calendar and Project Management Project
 	- Lors de l'usage d'un vector, les constructeurs, destructeurs et opérateurs de recopie doivent être public. 
 
 ## A Faire
-	Pour héritage des tâches :
+	* Pour héritage des tâches :
 		* Revoir l'algorithme des précédences pour ne pas avoir de boucles ou en éviter le plus possible. Idem pour l'ajout de composition. 
 		En attente de la fin des classes projet et projetManager.
-		```c++
+		```C++
 		/*
 		 * Cette fonction nécessite de faire appel au projet manager pour récupérer le tableau de taches du projet correspondant.
 		 * Une fois ce tableau récupéré, on recherche la branche correspondante à la tache où l'on veut ajouter une précédence.
@@ -42,6 +42,7 @@ Calendar and Project Management Project
 		}
 		```
 
+		* Pour la fonction ajouterTache de la classe Projet, vérifier que la tâche ne fait pas partie du projet à l'aide d'un algorithme similaire au précédent. 
 		* Puisque composition entre les différentes instances de la partie projet, rajouter dans le destructeur la destruction du vector. 
 
 ## Questions

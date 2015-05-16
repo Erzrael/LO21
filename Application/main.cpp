@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 #include "Classe/tache.h"
 #include "Classe/tacheUnitaire.h"
 #include "Classe/tacheComposite.h"
+#include "Classe/projet.h"
 
 int main(void){
 
@@ -26,6 +27,18 @@ int main(void){
     T1->verifierPrecedence(*T4);
     //T1->verifierPrecedence(*T2);
     TacheUnitaire* T3 = new TacheUnitaire((*T1));
+    Projet* P1 = new Projet(QDate(2014,5,6), QDate(2015,1,3));
+
+    qDebug()<<P1->getEcheance();
+
+    P1->ajouterTache(*T3);
+    P1->ajouterTache(*T2);
+
+    std::vector<Tache *>::iterator it = P1->getTaches().begin();
+
+    qDebug()<<P1->getEcheance();
+    qDebug()<<(*it)->getDisponibilite();
+
     /*
     T2->ajouterComposition(*T4);
 

@@ -11,16 +11,26 @@ private:
    QDate dateDispo;
    QDate echeance;
 public:
-//   Projet():dateDispo(0),echeance(QDate(0,0,0)){}
+
+   Projet(const QDate& dispo, const QDate& deadline);
+   Projet(const Projet& p);
+   Projet& operator=(const Projet& obj);
+   ~Projet();
 
    // influence de l'ajout sur dateDispo ?
-   void ajouterTache(Tache * t);
+   void ajouterTache(Tache &t);
 
    //Getters and setters
-   QDate getDateDispo() const;
-   void setDateDispo(const QDate & value);
-   QDate getEcheance() const;
-   void setEcheance(const QDate & value);
+   QDate& getDisponibilite();
+   const QDate& getDisponibilite() const;
+   void setDisponibilite(const QDate &value);
+
+   QDate& getEcheance();
+   const QDate& getEcheance() const;
+   void setEcheance(const QDate &value);
+
+   std::vector<Tache *> &getTaches();
+   const std::vector<Tache *> &getTaches() const;
 
 
    //pas besoin d'itérateur basique vu qu'on a déjà l'itérateur intégré dans vector

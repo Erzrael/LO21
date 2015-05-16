@@ -1,30 +1,81 @@
 #include "projet.h"
 
-void Projet::ajouterTache(Tache * t)
-{
-   // l'échéance du projet est repoussée si nécessaire
-   if(t->getEcheance() > this->getDateDispo()){
-      dateDispo = t->getEcheance();
-   }
-   //la tache est ajoutée au projet
-   taches.push_back(t);
+Projet::Projet(const QDate &dispo, const QDate &deadline):
+    dateDispo(dispo), echeance(deadline) {
+    qDebug()<<"Création d'un objet Tache \n";
 }
 
-QDate Projet::getEcheance() const
+Projet::Projet(const Projet &p)
+{
+    if(this != &p) {
+        this->setDisponibilite(p.getDisponibilite());
+        this->setEcheance(p.getEcheance());
+        this->taches = getTaches();
+    }
+}
+
+Projet &Projet::operator=(const Projet &obj)
+{
+    if(this != &obj)
+    {
+        this->setDisponibilite(obj.getDisponibilite());
+        this->setEcheance(obj.getEcheance());
+        this->taches = obj.getTaches();
+    }
+    return *this;
+}
+
+Projet::~Projet()
+{
+    qDebug()<<"Destruction d'un objet Projet";
+}
+
+void Projet::ajouterTache(Tache &t)
+{
+   // l'échéance du projet est repoussée si nécessaire
+   if(t.getEcheance() > this->getEcheance()){
+      echeance = t.getEcheance();
+   }
+   //la tache est ajoutée au projet
+   taches.push_back(&t);
+}
+
+QDate& Projet::getEcheance()
 {
    return echeance;
 }
 
-void Projet::setEcheance(const QDate & value)
+const QDate& Projet::getEcheance() const
+{
+   return echeance;
+}
+
+void Projet::setEcheance(const QDate &value)
 {
    echeance = value;
 }
-QDate Projet::getDateDispo() const
+
+QDate& Projet::getDisponibilite()
 {
    return dateDispo;
 }
 
-void Projet::setDateDispo(const QDate & value)
+const QDate& Projet::getDisponibilite() const
+{
+   return dateDispo;
+}
+
+void Projet::setDisponibilite(const QDate &value)
 {
    dateDispo = value;
+}
+
+std::vector<Tache *> &Projet::getTaches()
+{
+    return taches;
+}
+
+const std::vector<Tache *> &Projet::getTaches() const
+{
+    return taches;
 }
