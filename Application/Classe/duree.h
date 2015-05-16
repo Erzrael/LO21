@@ -13,18 +13,18 @@ using namespace std;
 
 /*! \class Duree
         \brief Classe permettant de manipuler des durees
-        L'utilisation de cette classe n?cessite des dates valides au sens commun du terme.
+        L'utilisation de cette classe nécessite des durées valides au sens commun du terme.
         D?clenchement d'exception dans le cas contraire
 */
 class Duree{
 public:
-    //! Constructeur ? partir de heure et minute
+    //! Constructeur à partir de heure et minute
     /*! \param h heure avec h>=0
         \param m minute avec 0<=m<=59
         */
     Duree(unsigned int h, unsigned int m):nb_minutes(h*60+m) {
         if (m>59) throw CalendarException("erreur: initialisation duree invalide");}
-    //! Constructeur ? partir de minute
+    //! Constructeur à partir de minute
     /*! \param m minute avec m>=0
         */
     Duree(unsigned int m=0):nb_minutes(m) {}
@@ -35,7 +35,10 @@ public:
     unsigned int getMinute() const { return nb_minutes%60; }
     unsigned int getHeure() const { return nb_minutes/60; }
     void afficher(QTextStream& f) const; //<!Affiche la duree sous le format hhHmm
+    bool operator<(Duree const& b);
+
 private:
+
     unsigned int nb_minutes;
 };
 

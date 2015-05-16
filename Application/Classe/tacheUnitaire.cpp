@@ -2,6 +2,9 @@
 
 TacheUnitaire::TacheUnitaire(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline, const Duree &dur, const bool &pre):
     Tache(id, t, dispo, deadline), preempte(pre), duree(dur){
+    if(!pre)
+        if(Duree(12,0) < dur)
+            throw CalendarException("Erreur - TacheUnitaire - Durée > 12h et préempté");
     qDebug()<<"Création d'un objet Tache Unitaire\n";
 }
 
@@ -55,6 +58,9 @@ Duree& TacheUnitaire::getDuree()
 
 void TacheUnitaire::setDuree(const Duree &value)
 {
+    if(!this->getPreempte())
+        if(Duree(12,0) < value)
+            throw CalendarException("Erreur - Tache Unitaire - setDuree > 12h et préempté");
     duree = value;
 }
 

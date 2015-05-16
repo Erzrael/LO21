@@ -30,3 +30,11 @@ QTextStream& operator>>(QTextStream& flot, Duree& duree){
      f.setFieldWidth(0);
      f.setPadChar(' ');
  }
+
+ bool Duree::operator<(const Duree &b)
+ {
+     if(this->getDureeEnMinutes() < b.getDureeEnMinutes())
+         return true;
+     else
+         return false;
+ }
