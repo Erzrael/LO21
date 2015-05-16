@@ -15,7 +15,8 @@ SOURCES += main.cpp \
     Classe/duree.cpp \
     Classe/calendarException.cpp \
     Classe/agenda.cpp \
-    Classe/projet.cpp
+    Classe/projet.cpp \
+    Classe/tacheComposite.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -24,4 +25,5 @@ HEADERS += \
     Classe/calendarException.h \
     Classe/agenda.h \
     Classe/programmation.h \
-    Classe/projet.h
+    Classe/projet.h \
+    Classe/tacheComposite.h
