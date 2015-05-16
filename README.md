@@ -8,7 +8,9 @@ Note : On n'utilise pas de conteneurs map car nous aurions dupliquer les donnée
 Note : Lors de l'usage d'un vector, les constructeurs, destructeurs et opérateurs de recopie doivent être public. 
 
 A faire :
-	Revoir l'algorithme des précédences pour ne pas avoir de boucles ou en éviter le plus possible. Idem pour l'ajout de composition. 
+	Pour héritage des tâches :
+		Revoir l'algorithme des précédences pour ne pas avoir de boucles ou en éviter le plus possible. Idem pour l'ajout de composition. 
+		Rajouter les contrôles sur TacheUnitaire pour la durée (si préempté ou non).
 
 Questions :
 	Dans la fonction ajouterTache de la classe projet, pourquoi reporter l'échéance du projet ? L'échéance est définie en début de projet et ne se reporte pas en fonction des taches qu'on lui ajoute nan ?

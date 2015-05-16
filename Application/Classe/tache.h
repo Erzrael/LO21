@@ -51,9 +51,6 @@ public:
     virtual Tache* clone() const = 0;
 
     /* Autres Fonctions */
-    /*
-     * Ajoute une tache t dans le vector si sa date d'échéance est inférieur à la tache this.
-    */
     void ajouterPrecedence(Tache& t);
 };
 
