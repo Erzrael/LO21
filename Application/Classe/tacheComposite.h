@@ -4,15 +4,17 @@
 #include "tache.h"
 
 class TacheComposite : public Tache {
+    friend class Projet;
 
     std::vector<Tache*> composition;
-
-public:
 
     TacheComposite(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline);
     TacheComposite(const TacheComposite& t);
     TacheComposite& operator=(const TacheComposite& obj);
     ~TacheComposite();
+
+public:
+
 
     /* Les Getters et Setters */
     std::vector<Tache *> &getComposition();

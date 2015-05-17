@@ -1,6 +1,8 @@
 #ifndef PROJET_H
 #define PROJET_H
 #include "tache.h"
+#include "tacheComposite.h"
+#include "tacheUnitaire.h"
 //#include <QDate>
 #include <vector>
 
@@ -10,15 +12,18 @@ private:
    std::vector<Tache *> taches;
    QDate dateDispo;
    QDate echeance;
-public:
-
    Projet(const QDate& dispo, const QDate& deadline);
    Projet(const Projet& p);
    Projet& operator=(const Projet& obj);
    ~Projet();
 
+   friend class ProjetManager;
+public:
+
    // influence de l'ajout sur dateDispo ?
-   void ajouterTache(Tache &t);
+   //void ajouterTache(Tache &t);
+   TacheComposite * ajouterTache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline);
+   TacheUnitaire * ajouterTache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Duree& dur, const bool& pre = false);
 
    //Getters and setters
    QDate& getDisponibilite();

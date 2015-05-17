@@ -12,21 +12,23 @@
  *
 */
 class Tache {
+protected:
     std::vector<Tache*> precedence;
     QString identificateur;
     QString titre;
     QDate disponibilite;
     QDate echeance;
-
-
-public:
-    bool verifierPrecedence(const Tache& t) const;
     /*
      * Pour utiliser le template vector, il faut que le constructeur soit public, sinon il met une erreur.
     */
     Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline);
     Tache(const Tache& t);
     Tache& operator=(const Tache& obj);
+
+    friend class Projet;
+public:
+    bool verifierPrecedence(const Tache& t) const;
+
     virtual ~Tache();
 
     /* Les Setter et Getter */
