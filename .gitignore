@@ -1,5 +1,5 @@
 #Solo application.pro
-Application/Application.pro.user.*
+Application/Application.pro.user*
 #Debugage Qt
 build-Application-Desktop-Debug/
 

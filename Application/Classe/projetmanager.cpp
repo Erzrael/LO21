@@ -1,12 +1,11 @@
 #include "projetmanager.h"
+#include <QDebug>
 
-ProjetManager::TacheIterator& ProjetManager::TacheIterator::operator++(){
-//    if (*this == this->end() ){
-//        throw CalendarException("++ on a ending TacheIterator");
-//    }
-    if(tacheIterator != (*projetIterator)->getTaches().end()){
-        ++tacheIterator;
-    } else {
+ProjetManager::TacheIterator& ProjetManager::TacheIterator::operator++(int){
+  // qDebug()<<"operator++\n";
+   ++tacheIterator;
+   if(tacheIterator == ((*projetIterator)->getTaches()).end()){
+       //qDebug()<<"++projetIterator\n";
         ++projetIterator;
         tacheIterator = (*projetIterator)->getTaches().begin();
     }
@@ -67,7 +66,8 @@ ProjetManager::TacheIterator::TacheIterator(vector<Projet *>::iterator it_p, vec
 
 }
 
-ProjetManager::TacheIterator::TacheIterator(vector<Projet *> p):
+ProjetManager::TacheIterator::TacheIterator(vector<Projet *> & p):
     projetIterator(p.begin()),
     tacheIterator((*projetIterator)->getTaches().begin()){
+   //qDebug()<<"TacheIterator"<<*projetIterator<<","<<*tacheIterator<<"\n";
 }

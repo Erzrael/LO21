@@ -25,7 +25,7 @@ public:
         vector<Tache *>::iterator tacheIterator;
 
         //Le tacheIterator est initialisé avec l'itérator du premier projet de ProjetManager
-        TacheIterator(vector<Projet *> p);
+        TacheIterator(vector<Projet *> & p);
         TacheIterator(vector<Projet *>::iterator it_p, vector<Tache *>::iterator it_t);
         //TacheIterator(const TacheIterator&);
 //        ~TacheIterator();
@@ -35,7 +35,7 @@ public:
 //        TacheIterator& operator=(const TacheIterator&);
 //        bool operator==(const TacheIterator&);
 //        bool operator!=(const TacheIterator&);
-        TacheIterator& operator++();
+        TacheIterator& operator++(int);
         bool operator==(const TacheIterator &other) const;
         bool operator!=(const TacheIterator &other) const;
         Tache* operator*() const;
