@@ -17,10 +17,12 @@ class CalendarException{
 
 public:
 
-    CalendarException(const QString& message):info(message){}
+    CalendarException(const QString& message):info(message){
+       qDebug()<<"CalendarException :"<<message;
+    }
 
     QString getInfo() const {
-        return info;
-    }
+       return info;
+   }
 };
 #endif // CALENDAREXCEPTION_H
