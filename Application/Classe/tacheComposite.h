@@ -4,7 +4,7 @@
 #include "tache.h"
 
 class TacheComposite : public Tache {
-    friend class Projet;
+    friend class ProjetManager;
 
     std::vector<Tache*> composition;
 

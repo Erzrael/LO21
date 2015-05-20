@@ -9,21 +9,22 @@
 class Projet
 {
 private:
+   QString id;
    std::vector<Tache *> taches;
    QDate dateDispo;
    QDate echeance;
-   Projet(const QDate& dispo, const QDate& deadline);
+   Projet(const QString id_p, const QDate& dispo, const QDate& deadline);
    Projet(const Projet& p);
    Projet& operator=(const Projet& obj);
    ~Projet();
 
+   // influence de l'ajout sur dateDispo ?
+   void ajouterTache(Tache &t);
+
    friend class ProjetManager;
 public:
 
-   // influence de l'ajout sur dateDispo ?
-   //void ajouterTache(Tache &t);
-   TacheComposite * ajouterTache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline);
-   TacheUnitaire * ajouterTache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Duree& dur, const bool& pre = false);
+
 
    //Getters and setters
    QDate& getDisponibilite();
@@ -37,9 +38,13 @@ public:
    std::vector<Tache *> &getTaches();
    const std::vector<Tache *> &getTaches() const;
 
+   QString getId() const;
+   void setId(const QString & value);
+
 
    //pas besoin d'itérateur basique vu qu'on a déjà l'itérateur intégré dans vector
    class DisponibiliteFilterIterator {
+      //A modifier selon l'Itérator STL (seulement si on a besoin de la classe, car je pense pas, finalement)
    private:
        friend class Projet;
        std::vector<Tache *> listeTaches;

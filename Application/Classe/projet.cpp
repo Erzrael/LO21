@@ -1,7 +1,17 @@
 #include "projet.h"
 
-Projet::Projet(const QDate &dispo, const QDate &deadline):
-    dateDispo(dispo), echeance(deadline) {
+
+QString Projet::getId() const
+{
+    return id;
+}
+
+void Projet::setId(const QString & value)
+{
+    id = value;
+}
+Projet::Projet(const QString id_p, const QDate &dispo, const QDate &deadline):
+    id(id_p), dateDispo(dispo), echeance(deadline) {
     qDebug()<<"Création d'un objet Projet \n";
 }
 
@@ -30,7 +40,7 @@ Projet::~Projet()
     qDebug()<<"Destruction d'un objet Projet";
 }
 
-/*void Projet::ajouterTache(Tache &t)
+void Projet::ajouterTache(Tache &t)
 {
    // l'échéance du projet est repoussée si nécessaire
    if(t.getEcheance() > this->getEcheance()){
@@ -38,33 +48,6 @@ Projet::~Projet()
    }
    //la tache est ajoutée au projet
    taches.push_back(&t);
-}*/
-
-TacheComposite * Projet::ajouterTache(const QString& id, const QString& titre, const QDate& dispo, const QDate& deadline){
-    // l'échéance du projet est repoussée si nécessaire
-    if(deadline > this->echeance){
-        qDebug()<<"Echéance du projet repoussée";
-        this->echeance = deadline;
-    }
-    //la tache est ajoutée au projet
-    qDebug()<<"Création + ajout Tache au projet";
-    TacheComposite * t = new TacheComposite(id,titre,dispo,deadline);
-    taches.push_back(t);
-    return t;
-}
-
-TacheUnitaire *Projet::ajouterTache(const QString &id, const QString &titre, const QDate &dispo, const QDate &deadline, const Duree &dur, const bool &pre)
-{
-    // l'échéance du projet est repoussée si nécessaire
-    if(deadline > this->echeance){
-        qDebug()<<"Echéance du projet repoussée";
-        this->echeance = deadline;
-    }
-    //la tache est ajoutée au projet
-    qDebug()<<"Création + ajout Tache au projet";
-    TacheUnitaire * t = new TacheUnitaire(id,titre,dispo,deadline,dur,pre);
-    taches.push_back(t);
-    return t;
 }
 
 QDate& Projet::getEcheance()

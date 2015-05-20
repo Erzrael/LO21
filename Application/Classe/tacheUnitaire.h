@@ -5,7 +5,7 @@
 #include "duree.h"
 
 class TacheUnitaire : public Tache {
-    friend class Projet;
+    friend class ProjetManager;
 
     bool preempte;
     Duree duree;
