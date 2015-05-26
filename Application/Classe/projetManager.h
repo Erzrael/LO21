@@ -16,9 +16,6 @@ private:
     ProjetManager(const ProjetManager & foo);
     ProjetManager & operator=(const ProjetManager & foo);
 public:
-    static ProjetManager &getInstance();
-
-    Projet * ajouterProjet(const QDate& dispo, const QDate& deadline);
     class TacheIterator{
     private:
         vector<Projet *>::iterator projetIterator;
@@ -31,17 +28,23 @@ public:
 //        ~TacheIterator();
         friend class ProjetManager;
     public:
-        TacheIterator& end();
+        //TacheIterator& end();
 //        TacheIterator& operator=(const TacheIterator&);
 //        bool operator==(const TacheIterator&);
 //        bool operator!=(const TacheIterator&);
-        TacheIterator& operator++();
+        TacheIterator& operator++(int);
         bool operator==(const TacheIterator &other) const;
         bool operator!=(const TacheIterator &other) const;
         Tache* operator*() const;
     };
+    static ProjetManager &getInstance();
+
+    Projet * ajouterProjet(const QString &identificateur, const QString &ti, const QDate& dispo, const QDate& deadline);
     TacheIterator tache_begin();
     TacheIterator tache_end();
+
+    /* Autres fonctions */
+    const unsigned int nbProjets() const;
 };
 
 #endif // PROJETMANAGER_H

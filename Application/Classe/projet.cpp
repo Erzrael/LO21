@@ -1,7 +1,7 @@
 #include "projet.h"
 
-Projet::Projet(const QDate &dispo, const QDate &deadline):
-    dateDispo(dispo), echeance(deadline) {
+Projet::Projet(const QString &identificateur, const QString &ti, const QDate &dispo, const QDate &deadline):
+    dateDispo(dispo), echeance(deadline), id(identificateur), titre(ti) {
     qDebug()<<"Création d'un objet Projet \n";
 }
 
@@ -105,4 +105,33 @@ std::vector<Tache *> &Projet::getTaches()
 const std::vector<Tache *> &Projet::getTaches() const
 {
     return taches;
+}
+
+const unsigned int Projet::nbTaches() const
+{
+    return taches.size();
+}
+
+QString& Projet::getID(){
+    return id;
+}
+
+const QString& Projet::getID() const{
+    return id;
+}
+
+void Projet::setID(const QString &value){
+    id = value;
+}
+
+QString& Projet::getTitre(){
+    return id;
+}
+
+const QString& Projet::getTitre() const{
+    return id;
+}
+
+void Projet::setTitre(const QString &value){
+    id = value;
 }

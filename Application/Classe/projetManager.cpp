@@ -1,6 +1,6 @@
-#include "projetmanager.h"
+#include "projetManager.h"
 
-ProjetManager::TacheIterator& ProjetManager::TacheIterator::operator++(){
+ProjetManager::TacheIterator& ProjetManager::TacheIterator::operator++(int){
 //    if (*this == this->end() ){
 //        throw CalendarException("++ on a ending TacheIterator");
 //    }
@@ -42,9 +42,9 @@ ProjetManager &ProjetManager::getInstance()
     return instanceUnique;
 }
 
-Projet *ProjetManager::ajouterProjet(const QDate &dispo, const QDate &deadline)
+Projet *ProjetManager::ajouterProjet(const QString& identificateur, const QString& ti, const QDate &dispo, const QDate &deadline)
 {
-    Projet *p = new Projet(dispo,deadline);
+    Projet *p = new Projet(identificateur, ti, dispo, deadline);
     projets.push_back(p);
     return p;
 }
@@ -59,6 +59,11 @@ ProjetManager::TacheIterator ProjetManager::tache_end()
     vector<Projet *>::iterator it = projets.end();
     --it;
     return ProjetManager::TacheIterator(it, (*it)->getTaches().end());
+}
+
+const unsigned int ProjetManager::nbProjets() const
+{
+    return projets.size();
 }
 
 ProjetManager::TacheIterator::TacheIterator(vector<Projet *>::iterator it_p, vector<Tache *>::iterator it_t):

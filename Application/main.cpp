@@ -12,9 +12,10 @@ int main(int argc, char *argv[])
 #include "Classe/tacheUnitaire.h"
 #include "Classe/tacheComposite.h"
 #include "Classe/projet.h"
-#include "Classe/projetmanager.h"
+#include "Classe/projetManager.h"
 
 int main(void){
+    /*
     ProjetManager &projetManager = ProjetManager::getInstance();
     Projet * P1 = projetManager.ajouterProjet(QDate(2014,5,6), QDate(2015,1,3));
     Projet * P2 = projetManager.ajouterProjet(QDate(2015,3,27),QDate(2015,4,16));
@@ -27,7 +28,7 @@ int main(void){
         qDebug()<<(*it)->getTitre()<<"\n";
         it++;
     }
-
+    */
     /*TacheUnitaire* T1 = new TacheUnitaire("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
     TacheComposite* T2 = new TacheComposite("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
     TacheUnitaire* T4 = new TacheUnitaire("T4", "Essaie2", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));

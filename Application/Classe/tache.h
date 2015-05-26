@@ -6,11 +6,6 @@
 #include <vector>
 #include <Classe/calendarException.h>
 
-/*
- * La classe Tache est abstraite. vector demande une classe non abstraite. Précédence sera implémenter dans les classes filles.
- * La fonction afficher servira de méthode virtuelle pure à défaut d'en trouver une autre.
- *
-*/
 class Tache {
 protected:
     std::vector<Tache*> precedence;
@@ -18,17 +13,13 @@ protected:
     QString titre;
     QDate disponibilite;
     QDate echeance;
-    /*
-     * Pour utiliser le template vector, il faut que le constructeur soit public, sinon il met une erreur.
-    */
+
     Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline);
     Tache(const Tache& t);
     Tache& operator=(const Tache& obj);
 
     friend class Projet;
 public:
-    bool verifierPrecedence(const Tache& t) const;
-
     virtual ~Tache();
 
     /* Les Setter et Getter */
@@ -56,6 +47,8 @@ public:
 
     /* Autres Fonctions */
     void ajouterPrecedence(Tache& t);
+    bool verifierPrecedence(const Tache &t) const;
+    const unsigned int nbPrerequis() const;
 };
 
 #endif // TACHE_H

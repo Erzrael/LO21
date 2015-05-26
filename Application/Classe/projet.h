@@ -10,9 +10,11 @@ class Projet
 {
 private:
    std::vector<Tache *> taches;
+   QString id;
+   QString titre;
    QDate dateDispo;
    QDate echeance;
-   Projet(const QDate& dispo, const QDate& deadline);
+   Projet(const QString& identificateur, const QString& ti, const QDate& dispo, const QDate& deadline);
    Projet(const Projet& p);
    Projet& operator=(const Projet& obj);
    ~Projet();
@@ -34,9 +36,19 @@ public:
    const QDate& getEcheance() const;
    void setEcheance(const QDate &value);
 
+   QString& getID();
+   const QString& getID() const;
+   void setID(const QString &value);
+
+   QString& getTitre();
+   const QString& getTitre() const;
+   void setTitre(const QString &value);
+
    std::vector<Tache *> &getTaches();
    const std::vector<Tache *> &getTaches() const;
 
+    /* Autres fonctions */
+   const unsigned int nbTaches() const;
 
    //pas besoin d'itérateur basique vu qu'on a déjà l'itérateur intégré dans vector
    class DisponibiliteFilterIterator {
