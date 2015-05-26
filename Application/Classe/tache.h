@@ -6,6 +6,8 @@
 #include <vector>
 #include <Classe/calendarException.h>
 
+class Projet;
+
 class Tache {
 protected:
     std::vector<Tache*> precedence;
@@ -13,8 +15,11 @@ protected:
     QString titre;
     QDate disponibilite;
     QDate echeance;
+    /*const Projet* projet;
+    const Tache* pere;*/
 
     Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline);
+    //Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Projet* p, const Tache* pe = 0);
     Tache(const Tache& t);
     Tache& operator=(const Tache& obj);
 

@@ -1,10 +1,12 @@
 #ifndef PROJET_H
 #define PROJET_H
-#include "tache.h"
-#include "tacheComposite.h"
-#include "tacheUnitaire.h"
-//#include <QDate>
+#include <QDate>
 #include <vector>
+#include "duree.h"
+
+class Tache;
+class TacheUnitaire;
+class TacheComposite;
 
 class Projet
 {
@@ -17,6 +19,7 @@ private:
    Projet(const QString& identificateur, const QString& ti, const QDate& dispo, const QDate& deadline);
    Projet(const Projet& p);
    Projet& operator=(const Projet& obj);
+   /* On ajoute des tâches créées de façon dynamique donc on doit supprimer chaque tâche dans un boucle pour ce destructeur */
    ~Projet();
 
    friend class ProjetManager;
@@ -57,20 +60,10 @@ public:
        std::vector<Tache *> listeTaches;
        std::vector<Tache *>::iterator tacheIterator;
        QDate dispo;
-       DisponibiliteFilterIterator(vector<Tache *> u, const QDate& d):listeTaches(u),tacheIterator(u.begin()),dispo(d){
-           while(tacheIterator != listeTaches.end() && dispo<(*tacheIterator)->getDisponibilite()){
-               tacheIterator ++ ;
-           }
-       }
+       DisponibiliteFilterIterator(vector<Tache *> u, const QDate& d);
    public:
        bool isDone() const { return tacheIterator == listeTaches.end(); }
-       void next() {
-           if (isDone())
-               throw CalendarException("error, next on an iterator which is done");
-           do {
-               tacheIterator ++;
-           }while(tacheIterator != listeTaches.end() && dispo<(*tacheIterator)->getDisponibilite());
-       }
+       void next();
        Tache& current() const {
            if (isDone())
                throw CalendarException("error, indirection on an iterator which is done");

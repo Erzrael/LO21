@@ -1,7 +1,7 @@
 #ifndef TACHECOMPOSITE_H
 #define TACHECOMPOSITE_H
 
-#include "tache.h"
+class Tache;
 
 class TacheComposite : public Tache {
     friend class Projet;

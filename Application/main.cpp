@@ -16,12 +16,11 @@ int main(int argc, char *argv[])
 
 int main(void){
     /*
-    ProjetManager &projetManager = ProjetManager::getInstance();
-    Projet * P1 = projetManager.ajouterProjet(QDate(2014,5,6), QDate(2015,1,3));
+
     Projet * P2 = projetManager.ajouterProjet(QDate(2015,3,27),QDate(2015,4,16));
     P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
     P1->ajouterTache("T2","Essai2",QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
-    P2->ajouterTache("T4", "Essaie2", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+    P2->ajouterTache("T3", "Essaie2", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
 
     ProjetManager::TacheIterator it = projetManager.tache_begin();
     while(it != projetManager.tache_end()){
@@ -29,31 +28,26 @@ int main(void){
         it++;
     }
     */
-    /*TacheUnitaire* T1 = new TacheUnitaire("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
-    TacheComposite* T2 = new TacheComposite("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
-    TacheUnitaire* T4 = new TacheUnitaire("T4", "Essaie2", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
-
-
-    qDebug()<<T1->getDisponibilite().day()<<"\n";
-    qDebug()<<T1->getDuree().getDureeEnHeures()<<"\n";
-
-    T1->ajouterPrecedence(*T2);
-    T2->ajouterPrecedence(*T4);
-    T1->verifierPrecedence(*T4);
-    //T1->verifierPrecedence(*T2);
-    TacheUnitaire* T3 = new TacheUnitaire((*T1));
-    Projet* P1 = new Projet(QDate(2014,5,6), QDate(2015,1,3));
+    ProjetManager &projetManager = ProjetManager::getInstance();
+    Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
 
     qDebug()<<P1->getEcheance();
 
-    P1->ajouterTache(*T3);
-    P1->ajouterTache(*T2);
+    TacheUnitaire* T1 = P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
+    TacheComposite* T2 = P1->ajouterTache("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
+    TacheUnitaire* T3 = P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
 
     std::vector<Tache *>::iterator it = P1->getTaches().begin();
 
+    T1->ajouterPrecedence(*T2);
+    T2->ajouterPrecedence(*T3);
+    T1->verifierPrecedence(*T3);
+    //T1->verifierPrecedence(*T2);
+
+    qDebug()<<T1->getDisponibilite().day()<<"\n";
+    qDebug()<<T1->getDuree().getDureeEnMinutes()<<"\n";
     qDebug()<<P1->getEcheance();
-    qDebug()<<(*it)->getDisponibilite();
-    */
+    qDebug()<<P1->nbTaches()<<"\n";
 
     /*
     T2->ajouterComposition(*T4);

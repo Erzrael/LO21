@@ -1,3 +1,6 @@
+#include "tache.h"
+#include "tacheComposite.h"
+#include "tacheUnitaire.h"
 #include "projet.h"
 
 Projet::Projet(const QString &identificateur, const QString &ti, const QDate &dispo, const QDate &deadline):
@@ -8,6 +11,8 @@ Projet::Projet(const QString &identificateur, const QString &ti, const QDate &di
 Projet::Projet(const Projet &p)
 {
     if(this != &p) {
+        this->setID(p.getID());
+        this->setTitre(p.getTitre());
         this->setDisponibilite(p.getDisponibilite());
         this->setEcheance(p.getEcheance());
         this->taches = getTaches();
@@ -18,6 +23,8 @@ Projet &Projet::operator=(const Projet &obj)
 {
     if(this != &obj)
     {
+        this->setID(obj.getID());
+        this->setTitre(obj.getTitre());
         this->setDisponibilite(obj.getDisponibilite());
         this->setEcheance(obj.getEcheance());
         this->taches = obj.getTaches();
@@ -41,6 +48,16 @@ Projet::~Projet()
 }*/
 
 TacheComposite * Projet::ajouterTache(const QString& id, const QString& titre, const QDate& dispo, const QDate& deadline){
+    // Si la tâche fait déjà partie du projet
+    std::vector<Tache *>::const_iterator it = taches.begin();
+
+    while(it != taches.end()){
+        if((*it)->getIdentificateur() == id){
+            qDebug()<<"La tâche existe déjà";
+            return 0;
+        }
+        it++;
+    }
     // l'échéance du projet est repoussée si nécessaire
     if(deadline > this->echeance){
         qDebug()<<"Echéance du projet repoussée";
@@ -55,6 +72,16 @@ TacheComposite * Projet::ajouterTache(const QString& id, const QString& titre, c
 
 TacheUnitaire *Projet::ajouterTache(const QString &id, const QString &titre, const QDate &dispo, const QDate &deadline, const Duree &dur, const bool &pre)
 {
+    // Si la tâche fait déjà partie du projet
+    std::vector<Tache *>::const_iterator it = taches.begin();
+
+    while(it != taches.end()){
+        if((*it)->getIdentificateur() == id){
+            qDebug()<<"La tâche existe déjà";
+            return 0;
+        }
+        it++;
+    }
     // l'échéance du projet est repoussée si nécessaire
     if(deadline > this->echeance){
         qDebug()<<"Echéance du projet repoussée";
@@ -134,4 +161,20 @@ const QString& Projet::getTitre() const{
 
 void Projet::setTitre(const QString &value){
     id = value;
+}
+
+Projet::DisponibiliteFilterIterator::DisponibiliteFilterIterator(vector<Tache *> u, const QDate &d)
+    :listeTaches(u),tacheIterator(u.begin()),dispo(d){
+    while(tacheIterator != listeTaches.end() && dispo < (*tacheIterator)->getDisponibilite()){
+       tacheIterator ++ ;
+    }
+}
+
+void Projet::DisponibiliteFilterIterator::next()
+{
+    if (isDone())
+        throw CalendarException("error, next on an iterator which is done");
+    do {
+        tacheIterator ++;
+    }while(tacheIterator != listeTaches.end() && dispo<(*tacheIterator)->getDisponibilite());
 }

@@ -1,8 +1,9 @@
 #ifndef TACHEUNITAIRE_H
 #define TACHEUNITAIRE_H
 
-#include "tache.h"
 #include "duree.h"
+
+class Tache;
 
 class TacheUnitaire : public Tache {
     friend class Projet;
@@ -14,8 +15,8 @@ class TacheUnitaire : public Tache {
     TacheUnitaire(const TacheUnitaire& t);
     TacheUnitaire& operator=(const TacheUnitaire& obj);
     ~TacheUnitaire();
-public:
 
+public:
 
     /* Les Getters et Setters */
     const bool& getPreempte() const;

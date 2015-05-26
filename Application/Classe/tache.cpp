@@ -1,6 +1,12 @@
 #include "tache.h"
-
-Tache::Tache(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline):
+#include <Classe/projet.h>
+/*
+Tache::Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Projet* p, const Tache* pe):
+    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline),projet(p),pere(pe){
+    qDebug()<<"Création d'un objet Tache \n";
+}
+*/
+Tache::Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline):
     identificateur(id),titre(t),disponibilite(dispo),echeance(deadline){
     qDebug()<<"Création d'un objet Tache \n";
 }
@@ -14,7 +20,6 @@ Tache::Tache(const Tache& t){
         this->precedence = t.getPrecedence();
     }
 }
-
 
 Tache& Tache::operator=(const Tache& obj){
     if(this != &obj)

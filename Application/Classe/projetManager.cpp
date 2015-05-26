@@ -44,6 +44,17 @@ ProjetManager &ProjetManager::getInstance()
 
 Projet *ProjetManager::ajouterProjet(const QString& identificateur, const QString& ti, const QDate &dispo, const QDate &deadline)
 {
+    // Si le projet existe déjà
+
+    std::vector<Projet *>::const_iterator it = projets.begin();
+
+    while(it != projets.end()){
+        if((*it)->getID() == identificateur){
+            qDebug()<<"La tâche existe déjà";
+            return 0;
+        }
+        it++;
+    }
     Projet *p = new Projet(identificateur, ti, dispo, deadline);
     projets.push_back(p);
     return p;
