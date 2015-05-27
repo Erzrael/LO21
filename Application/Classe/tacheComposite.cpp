@@ -2,12 +2,13 @@
 #include "tacheComposite.h"
 
 TacheComposite::TacheComposite(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline):
-    Tache(id, t, dispo, deadline){
+    Tache(id, t, dispo, deadline), mere_compo(0){
     qDebug()<<"Création d'un objet Tache Composite";
 }
 
 TacheComposite::TacheComposite(const TacheComposite& t):Tache(t){
     this->composition = t.getComposition();
+    this->setMere_Compo(t.getMere_Compo());
 }
 
 
@@ -18,21 +19,37 @@ TacheComposite& TacheComposite::operator=(const TacheComposite& obj){
         this->setEcheance(obj.getEcheance());
         this->setIdentificateur(obj.getIdentificateur());
         this->setTitre(obj.getTitre());
+        this->precedence = obj.getPrecedence();
+        this->setMere(obj.getMere());
         this->composition = obj.getComposition();
+        this->setMere_Compo(obj.getMere_Compo());
     }
     return *this;
 }
 
+/*
+ * Si on est dans le cas suivant, cela plante :
+ *  On a trois tâches : T1, T2 et T3
+ *  T1 est composé de T2, elle-même composé de T3
+ *  Alors, lors de la destruction lors de la fermeture de l'application :
+ *  T3 est détruit, puis T2. Comme T2 est composé d'une tâche, le destructeur de cette tâche est appelée.
+ *  Hors cette tâche est T3 et est déjà détruite. => Segmentation Fault
+ *
+ * Pour résoudre le problème, il faut que j'ai un moyen de supprimer tous les vecteurs pointant vers un objet en cours de destruction
+ * Deuxième solution : savoir quand une case du vector est vide ou non
+ * Troisième solution : concaténer le vector avant la destruction (en supposant que les cases vides de vector soient enlevés
+*/
+
 TacheComposite::~TacheComposite(){
     qDebug()<<"Destruction d'un objet Tache Composite\n";
 
-    if(!composition.empty()){
-        for(std::vector<Tache *>::iterator it = composition.begin(); it != composition.end(); ++it){
-             delete (*it);
-             it = composition.erase(it);
-        }
-        composition.clear();
-    }
+    while(!composition.empty()){
+        /* C'est moche, mais je ne sais pas comment faire autrement... */
+        Tache* t = composition.back();
+        if(t->getIdentificateur() != "")
+            delete composition.back();
+        composition.pop_back();
+     }
 }
 
 std::vector<Tache *> &TacheComposite::getComposition()
@@ -45,18 +62,58 @@ const std::vector<Tache *> &TacheComposite::getComposition() const
     return composition;
 }
 
+TacheComposite *TacheComposite::getMere_Compo() const
+{
+    return mere_compo;
+}
+
+void TacheComposite::setMere_Compo(TacheComposite *value)
+{
+    mere_compo = value;
+}
+
 TacheComposite *TacheComposite::clone() const
 {
     return new TacheComposite(*this);
 }
 
-void TacheComposite::ajouterComposition(Tache& t)
+void TacheComposite::ajouterComposition(Tache* t)
 {
-    if(t.getEcheance() <= this->getEcheance()){
-        this->getComposition().push_back(&t);
+    TacheComposite* composite = dynamic_cast<TacheComposite*>(t);
+    if(composite != 0){
+        if(this->verifierComposition(composite)){
+            this->getComposition().push_back(composite);
+            composite->setMere_Compo(this);
+            qDebug()<<"Ajout composition réussi \n";
+        }else{
+            qDebug()<<"Ajout composition failed \n";
+            throw CalendarException("Une tache ne peut pas avoir une tache parente en composition");
+        }
+    } else if(t->getEcheance() <= this->getEcheance()) { // On est dans le cas d'une tâche unitaire
+        this->getComposition().push_back(t);
         qDebug()<<"Ajout composition réussi \n";
-    }else{
-        qDebug()<<"Ajout composition failed \n";
+    } else
+        throw CalendarException("Une tâche composition ne peut avoir de tâches se finissant après elle");
+}
+
+bool TacheComposite::verifierComposition(const TacheComposite *t) const
+{
+    if(this == t){
+        qDebug()<<"Je retourne faux";
+        return false;
+    } else if(t->getEcheance() > this->getEcheance()){
+        qDebug()<<"Je retourne faux";
+        return false;
+    } else {
+        TacheComposite* tache_mere = this->getMere_Compo();
+            while(tache_mere != 0)
+            {
+                if(tache_mere == t)
+                    return false;
+
+                tache_mere = tache_mere->getMere_Compo();
+            }
+            return true;
     }
 }
 

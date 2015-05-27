@@ -2,14 +2,18 @@
 #include <Classe/projet.h>
 #include <Classe/projetManager.h>
 
-/*
-Tache::Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Projet* p, const Tache* pe):
-    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline),projet(p),pere(pe){
-    qDebug()<<"Création d'un objet Tache \n";
+Tache *Tache::getMere() const
+{
+    return mere;
 }
-*/
+
+void Tache::setMere(Tache *value)
+{
+    mere = value;
+}
+
 Tache::Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline):
-    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline){
+    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline), mere(0){
     qDebug()<<"Création d'un objet Tache \n";
 }
 
@@ -20,6 +24,7 @@ Tache::Tache(const Tache& t){
         this->setIdentificateur(t.getIdentificateur());
         this->setTitre(t.getTitre());
         this->precedence = t.getPrecedence();
+        this->setMere(t.getMere());
     }
 }
 
@@ -31,6 +36,7 @@ Tache& Tache::operator=(const Tache& obj){
         this->setIdentificateur(obj.getIdentificateur());
         this->setTitre(obj.getTitre());
         this->precedence = obj.getPrecedence();
+        this->setMere(obj.getMere());
     }
     return *this;
 }
@@ -113,43 +119,35 @@ const std::vector<Tache*>& Tache::getPrecedence() const
 
 void Tache::ajouterPrecedence(Tache &t)
 {
-    if(t.getEcheance() <= this->getEcheance()){
+    if(this->verifierPrecedence(t)){
         this->getPrecedence().push_back(&t);
+        t.setMere(this);
         qDebug()<<"Ajout précédence réussi \n";
     }else{
         qDebug()<<"Ajout précédence failed \n";
+        throw CalendarException("Une tache ne peut pas avoir une tache parente en prérequis");
     }
 }
 
-/*
- * Cette fonction nécessite de faire appel au projet manager pour récupérer le tableau de taches du projet correspondant.
- * Une fois ce tableau récupéré, on recherche la branche correspondante à la tache où l'on veut ajouter une précédence.
- * Puis on applique l'algorithme ci-dessous à partir de la première tache de la branche correspondante
-*/
-
 bool Tache::verifierPrecedence(const Tache &t) const
 {
-    if(this->getPrecedence().empty())
-    {
-        qDebug()<<"Je retourne vrai";
-        return true;
-    }
-    else{
-        for(std::vector<Tache*>::const_iterator it = this->getPrecedence().begin(); it != this->getPrecedence().end(); ++it)
-        {
-            if(*it == &t)
+    if(this == &t){
+        qDebug()<<"Je retourne faux";
+        return false;
+    } else if(t.getEcheance() > this->getEcheance()){
+        qDebug()<<"Je retourne faux";
+        return false;
+    } else {
+        Tache* tache_mere = this->getMere();
+            while(tache_mere != 0)
             {
-                qDebug()<<"Je retourne faux";
-                return false;
+                if(tache_mere == &t)
+                    return false;
+
+                tache_mere = tache_mere->getMere();
             }
-            else
-            {
-                qDebug()<<"Je vérifie pour chacune des précédences";
-                (*it)->verifierPrecedence(t);
-            }
-        }
+            return true;
     }
-    return true;
 }
 
 unsigned int Tache::nbPrerequis() const

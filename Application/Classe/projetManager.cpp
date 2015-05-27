@@ -41,13 +41,10 @@ ProjetManager::ProjetManager() {}
 ProjetManager::~ProjetManager(){
     qDebug()<<"Destruction de ProjetManager";
 
-    if(!projets.empty()){
-        for(std::vector<Projet *>::iterator it = projets.begin(); it != projets.end(); ++it){
-             delete (*it);
-             it = projets.erase(it);
-        }
-        projets.clear();
-    }
+    while(!projets.empty()){
+        delete projets.back();
+        projets.pop_back();
+     }
 }
 
 ProjetManager &ProjetManager::getInstance()

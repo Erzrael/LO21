@@ -15,6 +15,7 @@ protected:
     QString titre;
     QDate disponibilite;
     QDate echeance;
+    Tache* mere;
     /*const Projet* projet;
     const Tache* pere;*/
 
@@ -48,6 +49,8 @@ public:
     std::vector<Tache *> &getPrecedence();
     const std::vector<Tache *> &getPrecedence() const;
 
+    Tache *getMere() const;
+    void setMere(Tache *value);
     /* Patron Factory Methode */
     virtual Tache* clone() const = 0;
 
@@ -55,6 +58,7 @@ public:
     void ajouterPrecedence(Tache& t);
     bool verifierPrecedence(const Tache &t) const;
     unsigned int nbPrerequis() const;
+
 };
 
 #endif // TACHE_H

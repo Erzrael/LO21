@@ -22,6 +22,8 @@ TacheUnitaire& TacheUnitaire::operator=(const TacheUnitaire& obj){
         this->setEcheance(obj.getEcheance());
         this->setIdentificateur(obj.getIdentificateur());
         this->setTitre(obj.getTitre());
+        this->precedence = obj.getPrecedence();
+        this->setMere(obj.getMere());
         this->setDuree(obj.getDuree());
         this->setPreempte(obj.getPreempte());
     }

@@ -1,6 +1,7 @@
 #A Faire
 * Lucas : 
 	** Finir la partie projet
-	** Finir l'algorithme des compositions et des précédences pour éviter les cycles
+	** Revoir la partie ajout de tâches avec cette histoire de projets ?
+	** Revoir la partie gestion de la mémoire lors de la destruction. Demander aide à Marie ?
 	
 * Marie :

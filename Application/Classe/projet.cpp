@@ -45,13 +45,14 @@ Projet &Projet::operator=(const Projet &obj)
 
 Projet::~Projet() {
    qDebug()<<"Destruction d'un objet Projet";
-   if(!taches.empty()){
-       for(std::vector<Tache *>::iterator it = taches.begin(); it != taches.end(); ++it){
-            delete (*it);
-            it = taches.erase(it);
-       }
-       taches.clear();
-   }
+
+   while(!taches.empty()){
+       /* C'est moche, mais je ne sais pas comment faire autrement... */
+       Tache* t = taches.back();
+       if(t->getIdentificateur() != "")
+           delete taches.back();
+       taches.pop_back();
+    }
 }
 
 Tache *Projet::ajouterTache(const QString & id, const QString & titre, const QDate & dispo, const QDate & deadline, const Duree & dur, const bool & pre)

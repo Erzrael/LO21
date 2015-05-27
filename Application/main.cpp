@@ -48,7 +48,7 @@ int main(void){
     Projet* P1 = new Projet(QDate(2014,5,6), QDate(2015,1,3));
     */
 
-
+    /*
     ProjetManager &projetManager = ProjetManager::getInstance();
     Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
     qDebug()<<P1->getEcheance();
@@ -64,7 +64,32 @@ int main(void){
 
     projetManager.supprimerTache("T2");
 
-    //projetManager.supprimerProjet("P1");
+    projetManager.supprimerProjet("P1");
+    */
+
+    ProjetManager &projetManager = ProjetManager::getInstance();
+    Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
+    qDebug()<<P1->getEcheance();
+
+    Tache* T1 = P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
+    Tache* T2 = P1->ajouterTache("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
+    Tache* T3 = P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+
+    T1->ajouterPrecedence(*T2);
+    T2->ajouterPrecedence(*T3);
+    //T3->ajouterPrecedence(*T1);
+
+    Tache* T4 = P1->ajouterTache("T4", "Essaie4", QDate(2015,2,15), QDate(2015,2,12));
+    Tache* T5 = P1->ajouterTache("T5", "Essaie5", QDate(2015,1,15), QDate(2015,2,7));
+
+    TacheComposite* composite1 = dynamic_cast<TacheComposite*>(T2);
+    TacheComposite* composite2 = dynamic_cast<TacheComposite*>(T4);
+    TacheComposite* composite3 = dynamic_cast<TacheComposite*>(T5);
+
+    composite1->ajouterComposition(T4);
+    composite2->ajouterComposition(composite3);
+    composite3->verifierComposition(composite1);
+    composite1->ajouterComposition(T3);
 
     /*
     std::vector<Tache *>::iterator it = P1->getTaches().begin();
