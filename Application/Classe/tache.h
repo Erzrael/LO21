@@ -25,6 +25,7 @@ protected:
 
     friend class Projet;
 public:
+
     virtual ~Tache();
 
     /* Les Setter et Getter */

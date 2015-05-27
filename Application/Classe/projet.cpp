@@ -1,3 +1,4 @@
+#include <Classe/projetManager.h>
 #include "tache.h"
 #include "tacheComposite.h"
 #include "tacheUnitaire.h"
@@ -35,6 +36,9 @@ Projet &Projet::operator=(const Projet &obj)
 Projet::~Projet()
 {
     qDebug()<<"Destruction d'un objet Projet";
+    for(std::vector<Tache *>::iterator it = taches.begin(); it != taches.end(); ++it)
+        delete (*it);
+    taches.clear();
 }
 
 /*void Projet::ajouterTache(Tache &t)
@@ -48,16 +52,11 @@ Projet::~Projet()
 }*/
 
 TacheComposite * Projet::ajouterTache(const QString& id, const QString& titre, const QDate& dispo, const QDate& deadline){
-    // Si la tâche fait déjà partie du projet
-    std::vector<Tache *>::const_iterator it = taches.begin();
-
-    while(it != taches.end()){
-        if((*it)->getIdentificateur() == id){
-            qDebug()<<"La tâche existe déjà";
-            return 0;
-        }
-        it++;
-    }
+    /* Si la tâche fait déjà partie du projet
+    if (ProjetManager::getInstance().isTacheExistante(id)){
+        throw CalendarException("erreur ProjetManager : tache id déjà existant");
+        return 0;
+    } */
     // l'échéance du projet est repoussée si nécessaire
     if(deadline > this->echeance){
         qDebug()<<"Echéance du projet repoussée";
@@ -72,16 +71,11 @@ TacheComposite * Projet::ajouterTache(const QString& id, const QString& titre, c
 
 TacheUnitaire *Projet::ajouterTache(const QString &id, const QString &titre, const QDate &dispo, const QDate &deadline, const Duree &dur, const bool &pre)
 {
-    // Si la tâche fait déjà partie du projet
-    std::vector<Tache *>::const_iterator it = taches.begin();
-
-    while(it != taches.end()){
-        if((*it)->getIdentificateur() == id){
-            qDebug()<<"La tâche existe déjà";
-            return 0;
-        }
-        it++;
-    }
+    /* Si la tâche fait déjà partie du projet
+    if (ProjetManager::getInstance().isTacheExistante(id)){
+        throw CalendarException("erreur ProjetManager : tache id déjà existante");
+        return 0;
+    } */
     // l'échéance du projet est repoussée si nécessaire
     if(deadline > this->echeance){
         qDebug()<<"Echéance du projet repoussée";
@@ -148,6 +142,8 @@ const QString& Projet::getID() const{
 }
 
 void Projet::setID(const QString &value){
+    /*if (ProjetManager::getInstance().isProjetExistant(value))
+        throw CalendarException("erreur ProjetManager : projet id déjà existante");*/
     id = value;
 }
 

@@ -15,19 +15,21 @@ int main(int argc, char *argv[])
 #include "Classe/projetManager.h"
 
 int main(void){
-    /*
 
-    Projet * P2 = projetManager.ajouterProjet(QDate(2015,3,27),QDate(2015,4,16));
+    ProjetManager &projetManager = ProjetManager::getInstance();
+    Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
+    Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2015,3,27),QDate(2015,4,16));
     P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
     P1->ajouterTache("T2","Essai2",QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
-    P2->ajouterTache("T3", "Essaie2", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+    P2->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
 
     ProjetManager::TacheIterator it = projetManager.tache_begin();
     while(it != projetManager.tache_end()){
         qDebug()<<(*it)->getTitre()<<"\n";
         it++;
     }
-    */
+
+    /*
     ProjetManager &projetManager = ProjetManager::getInstance();
     Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
 
@@ -37,6 +39,11 @@ int main(void){
     TacheComposite* T2 = P1->ajouterTache("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
     TacheUnitaire* T3 = P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
 
+    qDebug()<<"Destruction";
+
+    projetManager.supprimerProjet("P1");
+    */
+    /*
     std::vector<Tache *>::iterator it = P1->getTaches().begin();
 
     T1->ajouterPrecedence(*T2);
@@ -48,7 +55,7 @@ int main(void){
     qDebug()<<T1->getDuree().getDureeEnMinutes()<<"\n";
     qDebug()<<P1->getEcheance();
     qDebug()<<P1->nbTaches()<<"\n";
-
+    */
     /*
     T2->ajouterComposition(*T4);
 

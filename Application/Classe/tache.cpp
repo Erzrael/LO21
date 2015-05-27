@@ -1,5 +1,7 @@
 #include "tache.h"
 #include <Classe/projet.h>
+#include <Classe/projetManager.h>
+
 /*
 Tache::Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Projet* p, const Tache* pe):
     identificateur(id),titre(t),disponibilite(dispo),echeance(deadline),projet(p),pere(pe){
@@ -49,6 +51,8 @@ const QString &Tache::getIdentificateur() const
 
 void Tache::setIdentificateur(const QString &value)
 {
+    /*if (ProjetManager::getInstance().isTacheExistante(value))
+        throw CalendarException("erreur ProjetManager : tache id déjà existante");*/
     identificateur = value;
 }
 

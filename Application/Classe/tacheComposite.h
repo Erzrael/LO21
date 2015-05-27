@@ -25,6 +25,7 @@ public:
 
     /* Autres Fonctions */
     void ajouterComposition(Tache &t);
+    const unsigned int nbComposition() const;
 };
 
 #endif // TACHECOMPOSITE_H

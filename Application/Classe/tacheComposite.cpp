@@ -25,6 +25,9 @@ TacheComposite& TacheComposite::operator=(const TacheComposite& obj){
 
 TacheComposite::~TacheComposite(){
     qDebug()<<"Destruction d'un objet Tache Composite\n";
+    for(std::vector<Tache *>::iterator it = composition.begin(); it != composition.end(); ++it)
+        delete (*it);
+    composition.clear();
 }
 
 std::vector<Tache *> &TacheComposite::getComposition()
@@ -50,4 +53,9 @@ void TacheComposite::ajouterComposition(Tache& t)
     }else{
         qDebug()<<"Ajout composition failed \n";
     }
+}
+
+const unsigned int TacheComposite::nbComposition() const
+{
+    return composition.size();
 }
