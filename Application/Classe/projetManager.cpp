@@ -74,11 +74,11 @@ Tache *ProjetManager::ajouterTache(const QString & id_projet, const QString & id
       throw CalendarException("Erreur AjouterTache : l'id de la tache existe déjà");
    }
    Projet * p = this->trouverProjet(id_projet);
-   if ( p == NULL ) {
+   if ( p == 0 ) {
       throw CalendarException("Erreur AjouterTache : l'id_projet n'existe pas");
    }
 
-   Tache * t = NULL;
+   Tache * t = 0;
    if(dur.getDureeEnMinutes() != 0 ) { // si une durée est fixée, la tâche est unitaire
       t = new TacheUnitaire(id,titre,dispo,deadline,dur,pre);
    } else {
@@ -98,27 +98,27 @@ bool ProjetManager::isProjetExistant(const QString &id) const
     return trouverProjet(id)!=0;
 }
 
-Tache &ProjetManager::getTache(const QString &id)
+Tache* ProjetManager::getTache(const QString &id)
 {
     Tache* t = trouverTache(id);
     if (!t)
         throw CalendarException("erreur, ProjetManager, tache inexistante");
-    return *t;
+    return t;
 }
 
-const Tache& ProjetManager::getTache(const QString& id) const{
+const Tache* ProjetManager::getTache(const QString& id) const{
     return const_cast<ProjetManager*>(this)->getTache(id);
 }
 
-Projet &ProjetManager::getProjet(const QString &id)
+Projet *ProjetManager::getProjet(const QString &id)
 {
     Projet* p = trouverProjet(id);
     if (!p)
         throw CalendarException("erreur, ProjetManager, projet inexistant");
-    return *p;
+    return p;
 }
 
-const Projet &ProjetManager::getProjet(const QString &id) const
+const Projet *ProjetManager::getProjet(const QString &id) const
 {
     return const_cast<ProjetManager*>(this)->getProjet(id);
 }
@@ -126,14 +126,14 @@ const Projet &ProjetManager::getProjet(const QString &id) const
 
 void ProjetManager::supprimerTache(const QString &id)
 {
-    Tache& t = ProjetManager::getInstance().getTache(id);
-    delete &t;
+    Tache* t = ProjetManager::getInstance().getTache(id);
+    delete t;
 }
 
 void ProjetManager::supprimerProjet(const QString &id)
 {
-    Projet& p = ProjetManager::getInstance().getProjet(id);
-    delete &p;
+    Projet* p = ProjetManager::getInstance().getProjet(id);
+    delete p;
 }
 
 bool ProjetManager::empty() const

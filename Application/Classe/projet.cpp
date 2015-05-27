@@ -57,7 +57,7 @@ Projet::~Projet() {
 Tache *Projet::ajouterTache(const QString & id, const QString & titre, const QDate & dispo, const QDate & deadline, const Duree & dur, const bool & pre)
 {
    ProjetManager & pm = ProjetManager::getInstance();
-   pm.ajouterTache(this->getId(), id, titre, dispo, deadline, dur, pre);
+   return pm.ajouterTache(this->getId(), id, titre, dispo, deadline, dur, pre);
 }
 
 void Projet::ajouterTache(Tache &t)

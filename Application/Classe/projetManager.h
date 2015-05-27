@@ -46,10 +46,10 @@ public:
 
     bool isTacheExistante(const QString& id) const;
     bool isProjetExistant(const QString& id) const;
-    Tache& getTache(const QString& id);
-    const Tache& getTache(const QString& id) const;
-    Projet& getProjet(const QString& id);
-    const Projet& getProjet(const QString& id) const;
+    Tache *getTache(const QString& id); // Nécessetira des dynamics_cast
+    const Tache *getTache(const QString& id) const;
+    Projet *getProjet(const QString& id);
+    const Projet *getProjet(const QString& id) const;
     void supprimerTache(const QString& id);
     void supprimerProjet(const QString &id);
     bool empty() const;

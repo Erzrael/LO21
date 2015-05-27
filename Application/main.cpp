@@ -53,9 +53,12 @@ int main(void){
     Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
     qDebug()<<P1->getEcheance();
 
-    Tache* T1 = P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
-    Tache* T2 = P1->ajouterTache("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
-    Tache* T3 = P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+    P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
+    P1->ajouterTache("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
+    P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+
+    Tache* T1 = projetManager.getTache("T1");
+    qDebug()<<T1->getDisponibilite();
 
     qDebug()<<"Destruction";
 

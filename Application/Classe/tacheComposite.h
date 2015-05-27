@@ -11,10 +11,10 @@ class TacheComposite : public Tache {
     TacheComposite(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline);
     TacheComposite(const TacheComposite& t);
     TacheComposite& operator=(const TacheComposite& obj);
-    ~TacheComposite();
 
 public:
 
+    ~TacheComposite();
 
     /* Les Getters et Setters */
     std::vector<Tache *> &getComposition();

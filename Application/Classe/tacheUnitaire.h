@@ -14,9 +14,10 @@ class TacheUnitaire : public Tache {
     TacheUnitaire(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Duree& dur, const bool& pre = false);
     TacheUnitaire(const TacheUnitaire& t);
     TacheUnitaire& operator=(const TacheUnitaire& obj);
-    ~TacheUnitaire();
 
 public:
+
+    ~TacheUnitaire();
 
     /* Les Getters et Setters */
     const bool& getPreempte() const;
