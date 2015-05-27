@@ -11,8 +11,9 @@ ProjetManager::TacheIterator& ProjetManager::TacheIterator::operator++(int){
          ++projetIterator;
          --nb_projets;
       } while (nb_projets > 1 && (*projetIterator)->getTaches().empty());
-
-      tacheIterator = (*projetIterator)->getTaches().begin();
+      if (nb_projets ) {
+         tacheIterator = (*projetIterator)->getTaches().begin();
+      }
    }
    return *this;
 }
