@@ -51,8 +51,8 @@ const QString &Tache::getIdentificateur() const
 
 void Tache::setIdentificateur(const QString &value)
 {
-    /*if (ProjetManager::getInstance().isTacheExistante(value))
-        throw CalendarException("erreur ProjetManager : tache id déjà existante");*/
+    if (ProjetManager::getInstance().isTacheExistante(value))
+        throw CalendarException("erreur ProjetManager : tache id déjà existante");
     identificateur = value;
 }
 

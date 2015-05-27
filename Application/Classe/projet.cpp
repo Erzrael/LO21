@@ -2,15 +2,22 @@
 #include "projetManager.h"
 
 
-QString Projet::getId() const
+QString &Projet::getId(){
+    return id;
+}
+
+const QString &Projet::getId() const
 {
     return id;
 }
 
 void Projet::setId(const QString & value)
 {
+    if (ProjetManager::getInstance().isProjetExistant(value))
+        throw CalendarException("erreur ProjetManager : projet id déjà existante");
     id = value;
 }
+
 Projet::Projet(const QString id_p, const QString ti, const QDate &dispo, const QDate &deadline):
     id(id_p), titre(ti), dateDispo(dispo), echeance(deadline) {
     qDebug()<<"Création d'un objet Projet \n";

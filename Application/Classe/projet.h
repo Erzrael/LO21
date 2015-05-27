@@ -39,7 +39,8 @@ public:
    std::vector<Tache *> &getTaches();
    const std::vector<Tache *> &getTaches() const;
 
-   QString getId() const;
+   QString& getId();
+   const QString& getId() const;
    void setId(const QString & value);
 
 
