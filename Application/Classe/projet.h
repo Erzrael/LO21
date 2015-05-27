@@ -27,7 +27,6 @@ public:
 
    Tache * ajouterTache(const QString& id, const QString& titre, const QDate& dispo, const QDate& deadline, const Duree &dur = Duree(0), const bool &pre = false);
 
-
    //Getters and setters
    QDate& getDisponibilite();
    const QDate& getDisponibilite() const;

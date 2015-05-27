@@ -51,11 +51,11 @@ ProjetManager &ProjetManager::getInstance()
 
 Projet *ProjetManager::ajouterProjet(const QString& identificateur, const QString& ti, const QDate &dispo, const QDate &deadline)
 {
-    /*Si le projet existe déjà
+    //Si le projet existe déjà
     if (ProjetManager::getInstance().isProjetExistant(identificateur)){
         throw CalendarException("erreur ProjetManager : projet id déjà existant");
         return 0;
-    }*/
+    }
     Projet *p = new Projet(identificateur, ti, dispo, deadline);
     projets.push_back(p);
     return p;

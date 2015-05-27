@@ -21,7 +21,7 @@ int main(void){
     projetManager.ajouterProjet("Ptest", "arg", QDate(2015,3,27),QDate(2015,4,16));
     Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2015,3,27),QDate(2015,4,16));
     P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
-    P1->ajouterTache("T2","Essai2",QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+    P1->ajouterTache("T2","Essaie2",QDate(2015,1,15), QDate(2015,2,15));
     P2->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
 
     ProjetManager::TacheIterator it = projetManager.tache_begin();
@@ -46,18 +46,17 @@ int main(void){
     //T1->verifierPrecedence(*T2);
     TacheUnitaire* T3 = new TacheUnitaire((*T1));
     Projet* P1 = new Projet(QDate(2014,5,6), QDate(2015,1,3));
-=======
+    */
 
     /*
     ProjetManager &projetManager = ProjetManager::getInstance();
     Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
->>>>>>> 43dded9dedb6582d38171370cacff0aba56735ef
 
     qDebug()<<P1->getEcheance();
 
-    TacheUnitaire* T1 = P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
-    TacheComposite* T2 = P1->ajouterTache("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
-    TacheUnitaire* T3 = P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+    Tache* T1 = P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
+    Tache* T2 = P1->ajouterTache("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
+    Tache* T3 = P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
 
     qDebug()<<"Destruction";
 
