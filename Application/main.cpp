@@ -59,6 +59,8 @@ int main(void){
 
     qDebug()<<"Destruction";
 
+    projetManager.supprimerTache("T2");
+
     //projetManager.supprimerProjet("P1");
 
     /*
