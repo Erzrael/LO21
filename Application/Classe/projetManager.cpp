@@ -39,9 +39,13 @@ Tache* ProjetManager::TacheIterator::operator*() const{
 ProjetManager::ProjetManager() {}
 
 ProjetManager::~ProjetManager(){
-    for(std::vector<Projet *>::iterator it = projets.begin(); it != projets.end(); ++it)
-        delete (*it);
-    projets.clear();
+    qDebug()<<"Destruction de ProjetManager";
+
+    if(!empty()){
+        for(std::vector<Projet *>::iterator it = projets.begin(); it != projets.end(); ++it)
+            delete (*it);
+        projets.clear();
+    }
 }
 
 ProjetManager &ProjetManager::getInstance()
