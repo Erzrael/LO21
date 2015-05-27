@@ -1,7 +1,7 @@
 #ifndef TACHECOMPOSITE_H
 #define TACHECOMPOSITE_H
 
-#include "tache.h"
+class Tache;
 
 class TacheComposite : public Tache {
     friend class ProjetManager;
@@ -25,6 +25,7 @@ public:
 
     /* Autres Fonctions */
     void ajouterComposition(Tache &t);
+    const unsigned int nbComposition() const;
 };
 
 #endif // TACHECOMPOSITE_H

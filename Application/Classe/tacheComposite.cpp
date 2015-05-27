@@ -1,3 +1,4 @@
+#include "tache.h"
 #include "tacheComposite.h"
 
 TacheComposite::TacheComposite(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline):
@@ -23,7 +24,10 @@ TacheComposite& TacheComposite::operator=(const TacheComposite& obj){
 }
 
 TacheComposite::~TacheComposite(){
-    qDebug()<<"Destruction d'un objet Tache Unitaire\n";
+    qDebug()<<"Destruction d'un objet Tache Composite\n";
+    for(std::vector<Tache *>::iterator it = composition.begin(); it != composition.end(); ++it)
+        delete (*it);
+    composition.clear();
 }
 
 std::vector<Tache *> &TacheComposite::getComposition()
@@ -44,11 +48,14 @@ TacheComposite *TacheComposite::clone() const
 void TacheComposite::ajouterComposition(Tache& t)
 {
     if(t.getEcheance() <= this->getEcheance()){
-        if(this->getComposition().size() == this->getComposition().capacity())
-            this->getComposition().reserve(this->getComposition().capacity()+5);
         this->getComposition().push_back(&t);
         qDebug()<<"Ajout composition réussi \n";
     }else{
         qDebug()<<"Ajout composition failed \n";
     }
+}
+
+const unsigned int TacheComposite::nbComposition() const
+{
+    return composition.size();
 }

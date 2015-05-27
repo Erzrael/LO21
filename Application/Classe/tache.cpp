@@ -1,6 +1,14 @@
 #include "tache.h"
+#include <Classe/projet.h>
+#include <Classe/projetManager.h>
 
-Tache::Tache(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline):
+/*
+Tache::Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Projet* p, const Tache* pe):
+    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline),projet(p),pere(pe){
+    qDebug()<<"Création d'un objet Tache \n";
+}
+*/
+Tache::Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline):
     identificateur(id),titre(t),disponibilite(dispo),echeance(deadline){
     qDebug()<<"Création d'un objet Tache \n";
 }
@@ -14,7 +22,6 @@ Tache::Tache(const Tache& t){
         this->precedence = t.getPrecedence();
     }
 }
-
 
 Tache& Tache::operator=(const Tache& obj){
     if(this != &obj)
@@ -44,6 +51,8 @@ const QString &Tache::getIdentificateur() const
 
 void Tache::setIdentificateur(const QString &value)
 {
+    /*if (ProjetManager::getInstance().isTacheExistante(value))
+        throw CalendarException("erreur ProjetManager : tache id déjà existante");*/
     identificateur = value;
 }
 
@@ -111,11 +120,13 @@ void Tache::ajouterPrecedence(Tache &t)
         qDebug()<<"Ajout précédence failed \n";
     }
 }
+
 /*
  * Cette fonction nécessite de faire appel au projet manager pour récupérer le tableau de taches du projet correspondant.
  * Une fois ce tableau récupéré, on recherche la branche correspondante à la tache où l'on veut ajouter une précédence.
  * Puis on applique l'algorithme ci-dessous à partir de la première tache de la branche correspondante
 */
+
 bool Tache::verifierPrecedence(const Tache &t) const
 {
     if(this->getPrecedence().empty())
@@ -139,4 +150,9 @@ bool Tache::verifierPrecedence(const Tache &t) const
         }
     }
     return true;
+}
+
+const unsigned int Tache::nbPrerequis() const
+{
+    return precedence.size();
 }
