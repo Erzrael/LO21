@@ -17,30 +17,20 @@ int main(int argc, char *argv[])
 int main(void){
 
     ProjetManager &projetManager = ProjetManager::getInstance();
-<<<<<<< HEAD
-    Projet * P1 = projetManager.ajouterProjet("p1",QDate(2014,5,6), QDate(2015,1,3));
-    projetManager.ajouterProjet("haha",QDate(2014,5,6), QDate(2015,1,3));
-    Projet * P2 = projetManager.ajouterProjet("p2",QDate(2015,3,12),QDate(2015,4,5));
-    projetManager.ajouterProjet("aa1",QDate(2014,5,6), QDate(2015,1,3));
-
-    projetManager.ajouterTache("p1", "T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
-    projetManager.ajouterTache("p1","T2","Essai2",QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
-    projetManager.ajouterTache("p2", "T3", "Essaie2", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
-=======
     Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
+    projetManager.ajouterProjet("Ptest", "arg", QDate(2015,3,27),QDate(2015,4,16));
     Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2015,3,27),QDate(2015,4,16));
     P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
     P1->ajouterTache("T2","Essai2",QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
     P2->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
->>>>>>> 43dded9dedb6582d38171370cacff0aba56735ef
 
     ProjetManager::TacheIterator it = projetManager.tache_begin();
 
     while(it != projetManager.tache_end()){
-        qDebug()<<(*it)->getTitre()<<"\n";
+       qDebug()<<(*it)->getTitre()<<"\n";
         it++;
     }
-<<<<<<< HEAD
+
     qDebug()<<"braou";
     /*TacheUnitaire* T1 = new TacheUnitaire("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
     TacheComposite* T2 = new TacheComposite("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));

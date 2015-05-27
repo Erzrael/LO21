@@ -3,25 +3,27 @@
 ProjetManager* ProjetManager::instanceUnique = 0;
 
 ProjetManager::TacheIterator& ProjetManager::TacheIterator::operator++(int){
-//    if (*this == this->end() ){
-//        throw CalendarException("++ on a ending TacheIterator");
-//    }
-    if(tacheIterator != ((*projetIterator)->getTaches().end())--){
-        ++tacheIterator;
-    } else {
-        ++projetIterator;
-        tacheIterator = (*projetIterator)->getTaches().begin();
-    }
-    return *this;
+   // qDebug()<<"operator++\n";
+   ++tacheIterator;
+   if(tacheIterator == ((*projetIterator)->getTaches()).end()){
+      //qDebug()<<"++projetIterator\n";
+      do {
+         ++projetIterator;
+         --nb_projets;
+      } while (nb_projets > 1 && (*projetIterator)->getTaches().empty());
+
+      tacheIterator = (*projetIterator)->getTaches().begin();
+   }
+   return *this;
 }
 
 bool ProjetManager::TacheIterator::operator==(const ProjetManager::TacheIterator &other) const
 {
-    if (&other == this || (this->projetIterator == other.projetIterator && this->tacheIterator == other.tacheIterator)){
+    if (&other == this || (this->tacheIterator == other.tacheIterator)){
         return true;
     } else{
-        return false;
-    }
+       return false;
+   }
 }
 
 bool ProjetManager::TacheIterator::operator!=(const ProjetManager::TacheIterator &other) const
@@ -58,7 +60,27 @@ Projet *ProjetManager::ajouterProjet(const QString& identificateur, const QStrin
     projets.push_back(p);
     return p;
 }
-/*
+
+Tache *ProjetManager::ajouterTache(const QString & id_projet, const QString & id, const QString & titre, const QDate & dispo, const QDate & deadline, const Duree & dur, const bool & pre)
+{
+   if (this->trouverTache(id)) {
+      throw CalendarException("Erreur AjouterTache : l'id de la tache existe déjà");
+   }
+   Projet * p = this->trouverProjet(id_projet);
+   if ( p == NULL ) {
+      throw CalendarException("Erreur AjouterTache : l'id_projet n'existe pas");
+   }
+
+   Tache * t = NULL;
+   if(dur.getDureeEnMinutes() != 0 ) { // si une durée est fixée, la tâche est unitaire
+      t = new TacheUnitaire(id,titre,dispo,deadline,dur,pre);
+   } else {
+      t = new TacheComposite(id,titre,dispo,deadline);
+   }
+   p->ajouterTache(*t);
+   return t;
+}
+
 bool ProjetManager::isTacheExistante(const QString &id) const
 {
     return trouverTache(id)!=0;
@@ -122,7 +144,7 @@ bool ProjetManager::empty() const
 Projet* ProjetManager::trouverProjet(const QString &id) const
 {
     for(std::vector<Projet *>::const_iterator it = projets.begin(); it != projets.end(); ++it)
-        if(id == (*it)->getID())
+        if(id == (*it)->getId())
             return (*it);
     return 0;
 }
@@ -139,7 +161,6 @@ Tache* ProjetManager::trouverTache(const QString &id) const
     }
     return 0;
 }
-*/
 
 ProjetManager::TacheIterator ProjetManager::tache_begin()
 {
@@ -148,23 +169,37 @@ ProjetManager::TacheIterator ProjetManager::tache_begin()
 
 ProjetManager::TacheIterator ProjetManager::tache_end()
 {
-    vector<Projet *>::iterator it = projets.end();
-    --it;
-    return ProjetManager::TacheIterator(it, (*it)->getTaches().end());
+    if(projets.empty()){
+       return ProjetManager::TacheIterator(projets.size(), vector<Projet *>::iterator(), vector<Tache *>::iterator());
+    } else {
+       vector<Projet *>::iterator it = projets.end();
+       --it;
+       return ProjetManager::TacheIterator(projets.size(), it, (*it)->getTaches().end());
+    }
 }
 
-const unsigned int ProjetManager::nbProjets() const
+unsigned int ProjetManager::nbProjets() const
 {
     return projets.size();
 }
 
-ProjetManager::TacheIterator::TacheIterator(vector<Projet *>::iterator it_p, vector<Tache *>::iterator it_t):
-    projetIterator(it_p),
+ProjetManager::TacheIterator::TacheIterator(unsigned int size, vector<Projet *>::iterator it_p, vector<Tache *>::iterator it_t):
+    nb_projets(size), projetIterator(it_p),
     tacheIterator(it_t) {
 
 }
 
-ProjetManager::TacheIterator::TacheIterator(vector<Projet *> p):
-    projetIterator(p.begin()),
-    tacheIterator((*projetIterator)->getTaches().begin()){
+ProjetManager::TacheIterator::TacheIterator(vector<Projet *> & p):
+    nb_projets(p.size()), projetIterator(p.begin()){
+   if(nb_projets == 0){
+//      vector<Tache *> t;
+      tacheIterator = vector<Tache *>::iterator();
+   }else{
+      while (nb_projets != 0 && (*projetIterator)->getTaches().empty()) {
+         ++projetIterator;
+         --nb_projets;
+      }
+      tacheIterator = (*projetIterator)->getTaches().begin();
+   }
+   //qDebug()<<"TacheIterator"<<*projetIterator<<","<<*tacheIterator<<"\n";
 }

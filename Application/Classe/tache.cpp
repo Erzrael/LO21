@@ -152,7 +152,7 @@ bool Tache::verifierPrecedence(const Tache &t) const
     return true;
 }
 
-const unsigned int Tache::nbPrerequis() const
+unsigned int Tache::nbPrerequis() const
 {
     return precedence.size();
 }

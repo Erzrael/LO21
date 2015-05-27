@@ -54,7 +54,7 @@ public:
     /* Autres Fonctions */
     void ajouterPrecedence(Tache& t);
     bool verifierPrecedence(const Tache &t) const;
-    const unsigned int nbPrerequis() const;
+    unsigned int nbPrerequis() const;
 };
 
 #endif // TACHE_H

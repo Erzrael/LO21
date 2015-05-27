@@ -55,7 +55,7 @@ void TacheComposite::ajouterComposition(Tache& t)
     }
 }
 
-const unsigned int TacheComposite::nbComposition() const
+unsigned int TacheComposite::nbComposition() const
 {
     return composition.size();
 }
