@@ -110,3 +110,43 @@ const std::vector<Tache *> &Projet::getTaches() const
 {
     return taches;
 }
+
+Tache* Projet::trouverTache(const QString &id)
+{
+    if(this->getTaches().empty())
+        return 0;
+    else {
+        for(std::vector<Tache*>::iterator it = this->getTaches().begin(); it != this->getTaches().end(); ++it)
+        {
+            if(id == (*it)->getIdentificateur())
+                return (*it);
+        }
+    }
+    return 0;
+}
+
+const Tache* Projet::trouverTache(const QString& id) const{
+    return const_cast<Projet*>(this)->trouverTache(id);
+}
+
+void Projet::supprimerTache(const QString &id)
+{
+    /* Il faut tenir compte si nous avons affaire à une tâche composite : 2 choses à faire :
+     * 1 : (Dans tous les cas où le père de tâche est une tâche composite) Il faut chercher le papa dans tous les cas.
+     *     Considérer les cas à une tâche composite composée d'une seule tâche
+         * Prendre l'ID du père de la tâche composite => Faire une fonction père qui pourune tâche donnée donne l'ID du père ou 0
+         * Trouver le lien dans le vctor du père.
+         * Supprimer le lien.
+     * 2 :
+         * Prendre l'ID des filles
+         * Les détruire via supprimerTache
+     * Supprimer enfin la tâche
+    /* Si je veux supprimer une tâche, il faut que je supprime le lien dans le vector d'où le code suivant */
+    std::vector<Tache *>::iterator it = taches.begin();
+    while(id != (*it)->getIdentificateur() && it != taches.end())
+        ++it;
+    if(id == (*it)->getIdentificateur()){
+        delete *it;
+        taches.erase(it);
+    }
+}

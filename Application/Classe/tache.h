@@ -27,6 +27,7 @@ protected:
     friend class Projet;
 public:
 
+    /* Revoir pour foutre le destructeur en privée */
     virtual ~Tache();
 
     /* Les Setter et Getter */

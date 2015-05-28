@@ -69,8 +69,11 @@ int main(void){
 
     ProjetManager &projetManager = ProjetManager::getInstance();
     Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
-    qDebug()<<P1->getEcheance();
+    Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2014,5,6), QDate(2015,1,3));
+    Projet * P3 = projetManager.ajouterProjet("P3", "Essaie3", QDate(2014,5,6), QDate(2015,1,3));
 
+    projetManager.supprimerProjet("P3");
+    /*
     Tache* T1 = P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
     Tache* T2 = P1->ajouterTache("T2", "Essaie2", QDate(2015,2,15), QDate(2015,2,25));
     Tache* T3 = P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
@@ -90,6 +93,8 @@ int main(void){
     composite2->ajouterComposition(composite3);
     composite3->verifierComposition(composite1);
     composite1->ajouterComposition(T3);
+    */
+    //projetManager.supprimerTache("T3");
 
     /*
     std::vector<Tache *>::iterator it = P1->getTaches().begin();

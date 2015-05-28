@@ -43,6 +43,8 @@ TacheComposite& TacheComposite::operator=(const TacheComposite& obj){
 TacheComposite::~TacheComposite(){
     qDebug()<<"Destruction d'un objet Tache Composite\n";
 
+    /* appeler supprimer tâche de projet (donc refaire un supprimer tâche depuis projet) et Revoir fonction supprimer tâche
+        Refaire la même chose pour supprimer projet */
     while(!composition.empty()){
         /* C'est moche, mais je ne sais pas comment faire autrement... */
         Tache* t = composition.back();
@@ -76,7 +78,7 @@ TacheComposite *TacheComposite::clone() const
 {
     return new TacheComposite(*this);
 }
-
+// Refaire en surchargeant la fonction avec des tacheComposite, tacheUnitaire
 void TacheComposite::ajouterComposition(Tache* t)
 {
     TacheComposite* composite = dynamic_cast<TacheComposite*>(t);

@@ -41,8 +41,10 @@ ProjetManager::ProjetManager() {}
 ProjetManager::~ProjetManager(){
     qDebug()<<"Destruction de ProjetManager";
 
-    while(!projets.empty()){
-        delete projets.back();
+    while(!projets.empty()){/*
+        Projet* p = projets.back();
+        if(p->getId() != "")*/
+            delete projets.back();
         projets.pop_back();
      }
 }
@@ -120,17 +122,27 @@ const Projet *ProjetManager::getProjet(const QString &id) const
     return const_cast<ProjetManager*>(this)->getProjet(id);
 }
 
-
+/*
 void ProjetManager::supprimerTache(const QString &id)
 {
     Tache* t = ProjetManager::getInstance().getTache(id);
     delete t;
 }
-
+*/
 void ProjetManager::supprimerProjet(const QString &id)
 {
+    /*
     Projet* p = ProjetManager::getInstance().getProjet(id);
     delete p;
+    */
+    /* Si je veux supprimer un projet, il faut que je supprime le lien dans le vector d'où le code suivant */
+    std::vector<Projet *>::iterator it = projets.begin();
+    while(id != (*it)->getId() && it != projets.end())
+        ++it;
+    if(id == (*it)->getId()){
+        delete *it;
+        projets.erase(it);
+    }
 }
 
 bool ProjetManager::empty() const
