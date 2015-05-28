@@ -44,6 +44,8 @@ public:
     Projet* ajouterProjet(const QString &identificateur, const QString &ti, const QDate& dispo, const QDate& deadline);
     Tache * ajouterTache(const QString & id_projet, const QString& id, const QString& titre, const QDate& dispo, const QDate& deadline, const Duree &dur = Duree(0), const bool &pre = false);
 
+    std::vector<Projet *>& getProjets();
+    const std::vector<Projet *>& getProjets() const; // Ne fonctionne pas. La surcharge n'est pas possible manifestement
     bool isTacheExistante(const QString& id) const;
     bool isProjetExistant(const QString& id) const;
     Tache *getTache(const QString& id); // Nécessetira des dynamics_cast

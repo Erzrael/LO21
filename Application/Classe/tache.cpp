@@ -154,3 +154,32 @@ unsigned int Tache::nbPrerequis() const
 {
     return precedence.size();
 }
+
+Tache *Tache::getPere()
+{
+    ProjetManager& projetManager = ProjetManager::getInstance();
+    std::vector<Projet *>::const_iterator it_projets = projetManager.getProjets().begin();
+
+    while((it_projets != projetManager.getProjets().end()) && (((*it_projets)->trouverTache(this->getIdentificateur())) == 0))
+        ++it_projets;
+
+    if(it_projets == projetManager.getProjets().end())
+        return 0;
+
+    std::vector<Tache *>::const_iterator it_taches = (*it_projets)->getTaches().begin();
+
+    while(it_taches != (*it_projets)->getTaches().end()){
+        TacheComposite* composite = dynamic_cast<TacheComposite*>(*it_taches);
+        if(composite != 0){
+            std::vector<Tache *>::const_iterator it_compo = composite->getComposition().begin();
+
+            while(it_compo != composite->getComposition().end()){
+                if(this->getIdentificateur() == (*it_compo)->getIdentificateur())
+                    return composite;
+                ++it_compo;
+            }
+        }
+        ++it_taches;
+    }
+    return 0;
+}

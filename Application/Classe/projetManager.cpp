@@ -36,11 +36,22 @@ Tache* ProjetManager::TacheIterator::operator*() const{
     return *tacheIterator;
 }
 
+
+vector<Projet *> &ProjetManager::getProjets()
+{
+    return projets;
+}
+
+const vector<Projet *> &ProjetManager::getProjets() const
+{
+    return projets;
+}
+
 ProjetManager::ProjetManager() {}
 
 ProjetManager::~ProjetManager(){
     qDebug()<<"Destruction de ProjetManager";
-
+    
     while(!projets.empty()){/*
         Projet* p = projets.back();
         if(p->getId() != "")*/
