@@ -163,9 +163,15 @@ void Projet::supprimerTache(const QString &id)
 
         TacheComposite* A_supprimer = dynamic_cast<TacheComposite*>(*it_taches);
 
-        if(A_supprimer != 0){
+        if(A_supprimer != 0){/*
             for(std::vector<Tache *>::iterator it_compo = A_supprimer->getComposition().begin();it_compo != A_supprimer->getComposition().end(); ++it_compo)
+                this->supprimerTache((*it_compo)->getIdentificateur());*/
+            std::vector<Tache *>::iterator it_compo = A_supprimer->getComposition().begin();
+            while(it_compo != A_supprimer->getComposition().end()){
                 this->supprimerTache((*it_compo)->getIdentificateur());
+                /*if(!(A_supprimer->getComposition().empty()))
+                    ++it_compo;*/
+            }
         }
 
         delete *it_taches;
