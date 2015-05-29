@@ -104,7 +104,7 @@ int main(void){
     else
         qDebug()<<"Papa = Projet";
 
-    //P1->supprimerTache("T5");
+    projetManager.supprimerTache("T2");
 
     /*
     std::vector<Tache *>::iterator it = P1->getTaches().begin();

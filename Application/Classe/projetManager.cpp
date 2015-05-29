@@ -133,13 +133,13 @@ const Projet *ProjetManager::getProjet(const QString &id) const
     return const_cast<ProjetManager*>(this)->getProjet(id);
 }
 
-/*
 void ProjetManager::supprimerTache(const QString &id)
 {
     Tache* t = ProjetManager::getInstance().getTache(id);
-    delete t;
+    Projet* p = t->getProjet();
+    p->supprimerTache(id);
 }
-*/
+
 void ProjetManager::supprimerProjet(const QString &id)
 {
     /*
