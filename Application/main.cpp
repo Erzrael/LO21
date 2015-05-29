@@ -74,7 +74,7 @@ int main(void){
 
     projetManager.supprimerProjet("P3");
     */
-    /*
+
     ProjetManager &projetManager = ProjetManager::getInstance();
     Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
     Tache* T1 = P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
@@ -104,8 +104,8 @@ int main(void){
     else
         qDebug()<<"Papa = Projet";
 
-    //projetManager.supprimerTache("T3");
-    */
+    P1->supprimerTache("T4");
+
     /*
     std::vector<Tache *>::iterator it = P1->getTaches().begin();
 

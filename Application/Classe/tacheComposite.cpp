@@ -1,5 +1,6 @@
 #include "tache.h"
 #include "tacheComposite.h"
+#include "projetManager.h"
 
 TacheComposite::TacheComposite(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline):
     Tache(id, t, dispo, deadline), mere_compo(0){
@@ -44,14 +45,20 @@ TacheComposite::~TacheComposite(){
     qDebug()<<"Destruction d'un objet Tache Composite\n";
 
     /* appeler supprimer tâche de projet (donc refaire un supprimer tâche depuis projet) et Revoir fonction supprimer tâche
-        Refaire la même chose pour supprimer projet */
+        Refaire la même chose pour supprimer projet
+        C'est moche, mais je ne sais pas comment faire autrement...*//*
     while(!composition.empty()){
-        /* C'est moche, mais je ne sais pas comment faire autrement... */
+
         Tache* t = composition.back();
         if(t->getIdentificateur() != "")
             delete composition.back();
         composition.pop_back();
-     }
+     } */ /*
+    Projet* P = this->getProjet();
+    while(!composition.empty()){
+        Tache* t = composition.back();
+        P->supprimerTache(t->getIdentificateur());
+     } */
 }
 
 std::vector<Tache *> &TacheComposite::getComposition()

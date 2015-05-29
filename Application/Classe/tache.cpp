@@ -183,3 +183,17 @@ Tache *Tache::getPere()
     }
     return 0;
 }
+
+Projet* Tache::getProjet()
+{
+    ProjetManager& projetManager = ProjetManager::getInstance();
+    std::vector<Projet *>::iterator it_projets = projetManager.getProjets().begin();
+    while((it_projets != projetManager.getProjets().end()) && ((*it_projets)->trouverTache(this->getIdentificateur()) == 0)){
+        ++it_projets;
+    }
+
+    if(it_projets != projetManager.getProjets().end())
+        return *it_projets;
+    else
+        return 0;
+}

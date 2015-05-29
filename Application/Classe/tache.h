@@ -60,6 +60,7 @@ public:
     bool verifierPrecedence(const Tache &t) const;
     unsigned int nbPrerequis() const;
     Tache* getPere(); // Renvoie un pointeur vers la tache père de la tâche appelante ou 0 si le père est le projet
+    Projet* getProjet(); // Renvoie le projet auquel appartient une tâche
 };
 
 #endif // TACHE_H

@@ -45,13 +45,17 @@ Projet &Projet::operator=(const Projet &obj)
 
 Projet::~Projet() {
    qDebug()<<"Destruction d'un objet Projet";
-
+   /* C'est moche, mais je ne sais pas comment faire autrement... *//*
    while(!taches.empty()){
-       /* C'est moche, mais je ne sais pas comment faire autrement... */
        Tache* t = taches.back();
        if(t->getIdentificateur() != "")
            delete taches.back();
        taches.pop_back();
+    }*/
+   while(!taches.empty()){
+       Tache* t = taches.back();
+       this->supprimerTache(t->getIdentificateur());
+       //taches.pop_back();
     }
 }
 
@@ -141,12 +145,32 @@ void Projet::supprimerTache(const QString &id)
          * Prendre l'ID des filles
          * Les détruire via supprimerTache
      * Supprimer enfin la tâche
-     * Si je veux supprimer une tâche, il faut que je supprime le lien dans le vector d'où le code suivant */
-    std::vector<Tache *>::iterator it = taches.begin();
-    while(id != (*it)->getIdentificateur() && it != taches.end())
-        ++it;
-    if(id == (*it)->getIdentificateur()){
-        delete *it;
-        taches.erase(it);
+     * Si je veux supprimer une tâche, il faut que je supprime le lien dans le vector d'où le code suivant */    
+
+    std::vector<Tache *>::iterator it_taches = taches.begin();
+    while(id != (*it_taches)->getIdentificateur() && it_taches != taches.end())
+        ++it_taches;
+
+    if(it_taches != taches.end()){
+        TacheComposite* Pere = dynamic_cast<TacheComposite*>((*it_taches)->getPere());
+
+        if(Pere != 0){
+            std::vector<Tache *>::iterator it_compo = Pere->getComposition().begin();
+            while((*it_compo)->getIdentificateur() != id)
+                ++it_compo;
+            Pere->getComposition().erase(it_compo);
+        }
+
+        TacheComposite* A_supprimer = dynamic_cast<TacheComposite*>(*it_taches);
+
+        if(A_supprimer != 0){
+            for(std::vector<Tache *>::iterator it_compo = A_supprimer->getComposition().begin();it_compo != A_supprimer->getComposition().end(); ++it_compo)
+                this->supprimerTache((*it_compo)->getIdentificateur());
+        }
+
+        delete *it_taches;
+        taches.erase(it_taches);
+    } else {
+        throw CalendarException("La tâche n'existe pas");
     }
 }
