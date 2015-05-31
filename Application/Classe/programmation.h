@@ -1,18 +1,24 @@
 #ifndef PROGRAMMATION_H
 #define PROGRAMMATION_H
 #include "tache.h"
+#include "evenement.h"
 
 class Programmation
 {
-   const Tache* tache;
-   QDate date;
-   QTime horaire;
-public:
-   Programmation(const Tache& t, const QDate& d, const QTime& h):tache(&t), date(d), horaire(h){}
+   const Evenement* evenement;
 
-   const Tache* getTache() const { return tache; }
-   QDate getDate() const { return date; }
-   QTime getHoraire() const { return horaire; }
+   QDate date;
+   QTime debut;
+   QTime fin;
+   Programmation(const Evenement& t, const QDate& d, const QTime& t_debut, const QTime& t_fin);
+
+   friend class Agenda;
+public:
+
+   const Evenement* getEvenement() const;
+   QDate getDate() const;
+   QTime getDebut() const;
+   QTime getFin() const;
 };
 
 #endif // PROGRAMMATION_H

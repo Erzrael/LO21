@@ -1,18 +1,40 @@
 #ifndef AGENDA_H
 #define AGENDA_H
 #include "programmation.h"
-#include <vector>
+#include "tacheUnitaire.h"
+#include "QDate"
+#include <list>
 
 class Agenda
 {
 private:
-   vector<Programmation*> programmations ;
+   list<Programmation*> programmations ;
 public:
-   void ajouterProgrammation(const Tache& t, const QDate& d, const QTime& h);
-   Programmation* trouverProgrammation(const Tache& t)const;
+   class IteratorJournee{
+   private:
+      QDate journee;
+      list<Programmation *>::iterator it_programmation;
+      list<Programmation *>::iterator end;
 
-   std::vector<Programmation *> &getProgrammation();
-   const std::vector<Programmation *> &getProgrammation() const;
+      IteratorJournee(QDate j, list<Programmation *> & p);
+      IteratorJournee(QDate j, list<Programmation *>::iterator it_programmation, list<Programmation *>::iterator end);
+      friend class Agenda;
+   public:
+      IteratorJournee& operator++(int);
+      bool operator==(const IteratorJournee &other) const;
+      bool operator!=(const IteratorJournee &other) const;
+      Programmation* operator*() const;
+   };
+
+   IteratorJournee itJ_begin(QDate journee);
+   IteratorJournee itJ_end(QDate journee);
+
+
+   void ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const QTime& h);
+   Programmation* trouverProgrammation(const TacheUnitaire & t)const;
+
+   std::list<Programmation *> & getProgrammation();
+   const std::list<Programmation *> & getProgrammation() const;
 
 };
 

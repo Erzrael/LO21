@@ -2,15 +2,14 @@
 #include "tacheUnitaire.h"
 
 TacheUnitaire::TacheUnitaire(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline, const Duree &dur, const bool &pre):
-    Tache(id, t, dispo, deadline), preempte(pre), duree(dur){
+    Tache(id, t, dispo, deadline), Evenement(dur), preempte(pre){
     if(!pre)
         if(Duree(12,0) < dur)
             throw CalendarException("Erreur - TacheUnitaire - Durée > 12h et préempté");
     qDebug()<<"Création d'un objet Tache Unitaire\n";
 }
 
-TacheUnitaire::TacheUnitaire(const TacheUnitaire& t):Tache(t){
-    this->setDuree(t.getDuree());
+TacheUnitaire::TacheUnitaire(const TacheUnitaire& t):Tache(t), Evenement(t.getDuree()){
     this->setPreempte(t.getPreempte());
 }
 

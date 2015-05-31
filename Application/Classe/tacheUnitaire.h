@@ -2,14 +2,14 @@
 #define TACHEUNITAIRE_H
 
 #include "duree.h"
+#include "evenement.h"
 
 class Tache;
 
-class TacheUnitaire : public Tache {
+class TacheUnitaire : public Tache, public Evenement {
     friend class ProjetManager;
 
     bool preempte;
-    Duree duree;
 
     TacheUnitaire(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Duree& dur, const bool& pre = false);
     TacheUnitaire(const TacheUnitaire& t);
