@@ -8,13 +8,14 @@
  * \return L'adresse de la programmation
  * \return 0 en cas d'échec (la tâche n'est pas encore programmée)
  */
-/*Programmation* Agenda::trouverProgrammation(const TacheUnitaire& t)const{
+Programmation* Agenda::trouverProgrammation(const TacheUnitaire& t)const{
+   const Evenement * t2 = static_cast<const Evenement *> (&t);
    std::list<Programmation *>::const_iterator it ;
     for(it = programmations.begin(); it != programmations.end() ; ++it)
-        if (&t==(*it)->getEvenement())
+        if (t2 ==(*it)->getEvenement() )
            return *it;
     return 0;
-}*/
+}
 
 std::list<Programmation *> &Agenda::getProgrammation()
 {
@@ -47,7 +48,7 @@ Agenda::IteratorJournee Agenda::itJ_end(QDate journee)
 
 void Agenda::ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const QTime& h){
    // si la tache n'est pas préemptée & que la programmation existe déjà, on ne peut pas la programmer à nouveau
-   if (t.getPreempte() == false /*&& trouverProgrammation(t) */) {
+   if (t.getPreempte() == false && trouverProgrammation(t) ) {
        throw CalendarException("erreur, ProgrammationManager, Programmation deja existante");
    }
 
