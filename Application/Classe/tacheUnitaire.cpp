@@ -48,7 +48,7 @@ void TacheUnitaire::setPreempte(bool value)
     preempte = value;
 }
 
-const Duree& TacheUnitaire::getDuree() const
+/*const Duree& TacheUnitaire::getDuree() const
 {
     return duree;
 }
@@ -64,7 +64,7 @@ void TacheUnitaire::setDuree(const Duree &value)
         if(Duree(12,0) < value)
             throw CalendarException("Erreur - Tache Unitaire - setDuree > 12h et préempté");
     duree = value;
-}
+}*/
 
 TacheUnitaire *TacheUnitaire::clone() const
 {

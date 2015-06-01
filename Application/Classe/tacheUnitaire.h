@@ -24,9 +24,9 @@ public:
     bool& getPreempte();
     void setPreempte(bool value);
 
-    const Duree& getDuree() const;
-    Duree& getDuree();
-    void setDuree(const Duree &value);
+    //const Duree& getDuree() const;
+    //Duree& getDuree();
+    //void setDuree(const Duree &value);
 
     /* Patron Factory Methode */
     virtual TacheUnitaire* clone() const;

@@ -52,12 +52,32 @@ void Agenda::ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const
        throw CalendarException("erreur, ProgrammationManager, Programmation deja existante");
    }
 
-   //list<Programmations*>::iterator it = this->itJ_begin(d);
-   //list<Programmations*>::iterator it2 = it++;
+   int minute_fin = h.minute() + t.getDuree().getMinute();
+   int heure_fin = h.hour() + t.getDuree().getHeure() + (minute_fin / 60) ;
+   minute_fin = minute_fin % 60;
+   if ( !QTime::isValid(heure_fin, minute_fin, 0) ) {
+      throw CalendarException("erreur ajouterProgrammation : une programmation ne peut pas être à cheval sur deux jours");
+   }
 
-   //if( (it == this->itJ_end(d) || (*it).getHeureDebut) )
+   Programmation * p = new Programmation ( t, d, h, *(new QTime(heure_fin, minute_fin)) );
+   list<Programmation *>::iterator iterator = programmations.begin();
 
-   programmations.push_back(new Programmation(t,d,h,h));
+   //-On fait avancer l'itérateur jusqu'au jour qui nous intéresse
+   while ( iterator != programmations.end() && (*iterator)->getDate() != d) {
+      iterator++;
+   }
+
+   // on continue jusqu'à atteindre la programmation située juste après celle à insérer c'est à dire soit :
+   // la fin de la liste, soit la programmation où ce n'est plus le bon jour, soit la programmation suivante dans le planning
+   while ( iterator != programmations.end() && (*iterator)->getDate() == d && !(p->getFin() <= (*iterator)->getFin()) ) {
+      // si on est rentré dans la boucle, on doit vérifier que les deux programmations ne se télescopent pas.
+      if ( p->getDebut() < (*iterator)->getFin() ) {
+         throw CalendarException("Erreur ajouterProgrammation : deux programmations ne peuvent pas se chevaucher");
+      }
+      ++iterator;
+   }
+   //insertion de la programmation
+   programmations.insert(iterator, p);
 }
 
 
