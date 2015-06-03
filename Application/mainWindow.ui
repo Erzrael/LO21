@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Project Manager</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>751</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTreeView" name="treeView"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Vue de l'agenda ?</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuProject_Manager">
+    <property name="title">
+     <string>&amp;Gestion de Projets</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionAjouter_un_Projet"/>
+    <addaction name="actionSupprimer_un_Projet"/>
+    <addaction name="separator"/>
+    <addaction name="actionAjouter_une_T_che_Unitaire"/>
+    <addaction name="actionAjouter_une_T_che_Composite"/>
+    <addaction name="actionSupprimer_une_T_che"/>
+   </widget>
+   <widget class="QMenu" name="menuGestion_des_T_ches">
+    <property name="title">
+     <string>Gestion des Tâches</string>
+    </property>
+    <addaction name="actionModifier_une_T_che"/>
+    <addaction name="separator"/>
+    <addaction name="actionAjouter_une_contrainte_de_pr_c_dence"/>
+    <addaction name="actionSupprimer_une_Contrainte_de_Pr_c_dence"/>
+    <addaction name="separator"/>
+    <addaction name="actionAjouter_une_Composition"/>
+    <addaction name="actionSupprimer_une_Composition"/>
+   </widget>
+   <addaction name="menuProject_Manager"/>
+   <addaction name="menuGestion_des_T_ches"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAjouter_un_Projet">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Ajouter un Projet</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_un_Projet">
+   <property name="text">
+    <string>&amp;Supprimer un Projet</string>
+   </property>
+  </action>
+  <action name="actionAjouter_une_T_che_Unitaire">
+   <property name="text">
+    <string>&amp;Ajouter une Tâche Unitaire</string>
+   </property>
+  </action>
+  <action name="actionAjouter_une_T_che_Composite">
+   <property name="text">
+    <string>&amp;Ajouter une Tâche Composite</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_une_T_che">
+   <property name="text">
+    <string>&amp;Supprimer une Tâche</string>
+   </property>
+  </action>
+  <action name="actionModifier_une_T_che">
+   <property name="text">
+    <string>&amp;Modifier une Tâche</string>
+   </property>
+  </action>
+  <action name="actionAjouter_une_contrainte_de_pr_c_dence">
+   <property name="text">
+    <string>&amp;Ajouter une Contrainte de Précédence</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_une_Contrainte_de_Pr_c_dence">
+   <property name="text">
+    <string>&amp;Supprimer une Contrainte de Précédence</string>
+   </property>
+  </action>
+  <action name="actionAjouter_une_Composition">
+   <property name="text">
+    <string>&amp;Ajouter une Composition</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_une_Composition">
+   <property name="text">
+    <string>&amp;Supprimer une Composition</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

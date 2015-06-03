@@ -19,7 +19,9 @@ SOURCES += main.cpp \
     Classe/projetManager.cpp \
     Classe/projet.cpp \
     Classe/evenement.cpp \
-    Classe/programmation.cpp
+    Classe/programmation.cpp \
+    mainWindow.cpp \
+    ajoutProjetWindow.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -31,4 +33,10 @@ HEADERS += \
     Classe/tacheComposite.h \
     Classe/projetManager.h \
     Classe/projet.h \
-    Classe/evenement.h
+    Classe/evenement.h \
+    mainWindow.h \
+    ajoutProjetWindow.h
+
+FORMS += \
+    mainWindow.ui \
+    AjoutProjetWindow.ui

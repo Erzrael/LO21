@@ -1,20 +1,24 @@
-/*
-#include <QCoreApplication>
-
-int main(int argc, char *argv[])
-{
-    QCoreApplication a(argc, argv);
-
-    return a.exec();
-}
-*/
 #include "Classe/tache.h"
 #include "Classe/tacheUnitaire.h"
 #include "Classe/tacheComposite.h"
 #include "Classe/projet.h"
 #include "Classe/projetManager.h"
+#include "mainWindow.h"
+#include <QCoreApplication>
+#include <QApplication>
+#include <QComboBox>
 
-int main(void){
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+
+    MainWindow e;
+    e.show();
+    return app.exec();
+}
+
+/*
+int main(void){ */
     /*
     ProjetManager &projetManager = ProjetManager::getInstance();
     Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
@@ -74,7 +78,7 @@ int main(void){
 
     projetManager.supprimerProjet("P3");
     */
-
+    /*
     ProjetManager &projetManager = ProjetManager::getInstance();
     Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
     Tache* T1 = P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
@@ -105,7 +109,7 @@ int main(void){
         qDebug()<<"Papa = Projet";
 
     projetManager.supprimerTache("T2");
-
+    */
     /*
     std::vector<Tache *>::iterator it = P1->getTaches().begin();
 
@@ -171,6 +175,6 @@ int main(void){
         TacheUnitaire* item2 = dynamic_cast<TacheUnitaire*>(*(item->getComposition().begin()));
         qDebug()<<item2->getDuree().getHeure()<<"\n";
     }
-    */
+    *//*
     return 0;
-}
+}*/
