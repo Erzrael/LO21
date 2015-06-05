@@ -7,35 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>314</width>
-    <height>163</height>
+    <height>205</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Ajout de Projet</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>-40</x>
-     <y>120</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QSplitter" name="splitter_4">
+  <widget class="QSplitter" name="splitter_5">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
-     <width>291</width>
-     <height>91</height>
+     <y>10</y>
+     <width>301</width>
+     <height>191</height>
     </rect>
    </property>
    <property name="orientation">
@@ -45,34 +29,53 @@
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="Id_Lab">
      <property name="text">
       <string>ID</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit"/>
-   </widget>
-   <widget class="QSplitter" name="splitter_3">
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Date de disponibilité</string>
-     </property>
-    </widget>
-    <widget class="QDateEdit" name="dateEdit"/>
+    <widget class="QLineEdit" name="Id_Edit"/>
    </widget>
    <widget class="QSplitter" name="splitter_2">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="Titre_Lab">
      <property name="text">
       <string>Titre</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2"/>
+    <widget class="QLineEdit" name="Titre_Edit"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_3">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QLabel" name="Dispo_Lab">
+     <property name="text">
+      <string>Date de Disponibilité</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="Dispo_Edit"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_4">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QLabel" name="Echeance_Lab">
+     <property name="text">
+      <string>Date d'échéance</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="Echeance_Edit"/>
+   </widget>
+   <widget class="QDialogButtonBox" name="buttonBox">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="standardButtons">
+     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+    </property>
    </widget>
   </widget>
  </widget>

@@ -21,7 +21,19 @@ SOURCES += main.cpp \
     Classe/evenement.cpp \
     Classe/programmation.cpp \
     mainWindow.cpp \
-    ajoutProjetWindow.cpp
+    ajoutProjetWindow.cpp \
+    supprimerProjetWindow.cpp \
+    ajoutTacheUnitaireWindow.cpp \
+    ajoutTacheCompositeWindow.cpp \
+    supprimerTacheWindow.cpp \
+    choixTacheWindow.cpp \
+    tacheEditionWindow.cpp \
+    editionTacheCompositeWindow.cpp \
+    ajoutPrecedenceWindow.cpp \
+    supprimerPrecedenceWindow.cpp \
+    editionTacheUnitaireWindow.cpp \
+    ajoutCompositionWindow.cpp \
+    supprimerCompositionWindow.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -35,8 +47,32 @@ HEADERS += \
     Classe/projet.h \
     Classe/evenement.h \
     mainWindow.h \
-    ajoutProjetWindow.h
+    ajoutProjetWindow.h \
+    supprimerProjetWindow.h \
+    ajoutTacheUnitaireWindow.h \
+    ajoutTacheCompositeWindow.h \
+    supprimerTacheWindow.h \
+    choixTacheWindow.h \
+    tacheEditionWindow.h \
+    editionTacheCompositeWindow.h \
+    ajoutPrecedenceWindow.h \
+    supprimerPrecedenceWindow.h \
+    editionTacheUnitaireWindow.h \
+    ajoutCompositionWindow.h \
+    supprimerCompositionWindow.h
 
 FORMS += \
     mainWindow.ui \
-    AjoutProjetWindow.ui
+    supprimerProjetWindow.ui \
+    ajoutProjetWindow.ui \
+    ajoutTacheUnitaireWindow.ui \
+    ajoutTacheCompositeWindow.ui \
+    supprimerTacheWindows.ui \
+    choixTacheWindow.ui \
+    tacheEditionWindow.ui \
+    editionTacheCompositeWindow.ui \
+    ajoutPrecedenceWindow.ui \
+    supprimerPrecedenceWindow.ui \
+    editionTacheUnitaireWindow.ui \
+    ajoutCompositionWindow.ui \
+    supprimerCompositionWindow.ui
