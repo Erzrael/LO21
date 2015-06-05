@@ -1,8 +1,10 @@
+/*
 #include "Classe/tache.h"
 #include "Classe/tacheUnitaire.h"
 #include "Classe/tacheComposite.h"
 #include "Classe/projet.h"
 #include "Classe/projetManager.h"
+*/
 #include "mainWindow.h"
 #include <QCoreApplication>
 #include <QApplication>

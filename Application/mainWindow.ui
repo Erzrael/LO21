@@ -25,7 +25,13 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QTreeView" name="treeView"/>
+      <widget class="QTreeWidget" name="TreeView">
+       <column>
+        <property name="text">
+         <string>Liste des tâches du projet</string>
+        </property>
+       </column>
+      </widget>
      </item>
      <item>
       <widget class="QLabel" name="label">

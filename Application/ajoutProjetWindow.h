@@ -15,6 +15,9 @@ public:
     explicit AjoutProjetWindow(QWidget *parent = 0);
     ~AjoutProjetWindow();
 
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::AjoutProjetWindow *ui;
 };

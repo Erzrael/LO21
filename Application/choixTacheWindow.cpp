@@ -15,7 +15,7 @@ ChoixTacheWindow::~ChoixTacheWindow()
     delete ui;
 }
 
-void ChoixTacheWindow::on_Ok_Button_clicked()
+void ChoixTacheWindow::on_buttonBox_accepted()
 {
     EditionTacheCompositeWindow edition_tache_composite_window;
     edition_tache_composite_window.setModal(true);

@@ -18,8 +18,6 @@ public:
 private slots:
     void on_buttonBox_accepted();
 
-    void on_Ok_Button_clicked();
-
 private:
     Ui::ChoixTacheWindow *ui;
 };
