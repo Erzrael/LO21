@@ -8,6 +8,12 @@
 		*** Rajouter une fonction supprimer tache depuis le ProjetManager.
 	** Rajouter des fonctions getTache dans projet (DONE)
 * Marie :
+	** implémenter l'ajout de programmation d'évènements qui ne sont pas des taches
+		*** revoir l'héritage du bordel (notamment l'id cf debut de agenda.h)
+		*** revoir ajoutProgrammation, chercherProgrammation
+	** ajouter l'ajout de programmation à xml::load
+	** Rendre save fonctionnel (pb mémoire rapidxml)
+	** vu graphique semaine
 
 #Hypothèses
 * L'ID d'une tâche est unique dans l'ensemble des projets.
