@@ -20,20 +20,20 @@ SOURCES += main.cpp \
     Classe/projet.cpp \
     Classe/evenement.cpp \
     Classe/programmation.cpp \
-    mainWindow.cpp \
-    ajoutProjetWindow.cpp \
-    supprimerProjetWindow.cpp \
-    ajoutTacheUnitaireWindow.cpp \
-    ajoutTacheCompositeWindow.cpp \
-    supprimerTacheWindow.cpp \
-    choixTacheWindow.cpp \
-    tacheEditionWindow.cpp \
-    editionTacheCompositeWindow.cpp \
-    ajoutPrecedenceWindow.cpp \
-    supprimerPrecedenceWindow.cpp \
-    editionTacheUnitaireWindow.cpp \
-    ajoutCompositionWindow.cpp \
-    supprimerCompositionWindow.cpp
+    InterfaceGraphique/ajoutCompositionWindow.cpp \
+    InterfaceGraphique/ajoutPrecedenceWindow.cpp \
+    InterfaceGraphique/ajoutProjetWindow.cpp \
+    InterfaceGraphique/ajoutTacheCompositeWindow.cpp \
+    InterfaceGraphique/ajoutTacheUnitaireWindow.cpp \
+    InterfaceGraphique/choixTacheWindow.cpp \
+    InterfaceGraphique/editionTacheCompositeWindow.cpp \
+    InterfaceGraphique/editionTacheUnitaireWindow.cpp \
+    InterfaceGraphique/mainWindow.cpp \
+    InterfaceGraphique/supprimerCompositionWindow.cpp \
+    InterfaceGraphique/supprimerPrecedenceWindow.cpp \
+    InterfaceGraphique/supprimerProjetWindow.cpp \
+    InterfaceGraphique/supprimerTacheWindow.cpp \
+    InterfaceGraphique/tacheEditionWindow.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -46,33 +46,33 @@ HEADERS += \
     Classe/projetManager.h \
     Classe/projet.h \
     Classe/evenement.h \
-    mainWindow.h \
-    ajoutProjetWindow.h \
-    supprimerProjetWindow.h \
-    ajoutTacheUnitaireWindow.h \
-    ajoutTacheCompositeWindow.h \
-    supprimerTacheWindow.h \
-    choixTacheWindow.h \
-    tacheEditionWindow.h \
-    editionTacheCompositeWindow.h \
-    ajoutPrecedenceWindow.h \
-    supprimerPrecedenceWindow.h \
-    editionTacheUnitaireWindow.h \
-    ajoutCompositionWindow.h \
-    supprimerCompositionWindow.h
+    InterfaceGraphique/ajoutCompositionWindow.h \
+    InterfaceGraphique/ajoutPrecedenceWindow.h \
+    InterfaceGraphique/ajoutProjetWindow.h \
+    InterfaceGraphique/ajoutTacheCompositeWindow.h \
+    InterfaceGraphique/ajoutTacheUnitaireWindow.h \
+    InterfaceGraphique/choixTacheWindow.h \
+    InterfaceGraphique/editionTacheCompositeWindow.h \
+    InterfaceGraphique/editionTacheUnitaireWindow.h \
+    InterfaceGraphique/mainWindow.h \
+    InterfaceGraphique/supprimerCompositionWindow.h \
+    InterfaceGraphique/supprimerPrecedenceWindow.h \
+    InterfaceGraphique/supprimerProjetWindow.h \
+    InterfaceGraphique/supprimerTacheWindow.h \
+    InterfaceGraphique/tacheEditionWindow.h
 
 FORMS += \
-    mainWindow.ui \
-    supprimerProjetWindow.ui \
-    ajoutProjetWindow.ui \
-    ajoutTacheUnitaireWindow.ui \
-    ajoutTacheCompositeWindow.ui \
-    supprimerTacheWindows.ui \
-    choixTacheWindow.ui \
-    tacheEditionWindow.ui \
-    editionTacheCompositeWindow.ui \
-    ajoutPrecedenceWindow.ui \
-    supprimerPrecedenceWindow.ui \
-    editionTacheUnitaireWindow.ui \
-    ajoutCompositionWindow.ui \
-    supprimerCompositionWindow.ui
+    InterfaceGraphique/ajoutCompositionWindow.ui \
+    InterfaceGraphique/ajoutPrecedenceWindow.ui \
+    InterfaceGraphique/ajoutProjetWindow.ui \
+    InterfaceGraphique/ajoutTacheCompositeWindow.ui \
+    InterfaceGraphique/ajoutTacheUnitaireWindow.ui \
+    InterfaceGraphique/choixTacheWindow.ui \
+    InterfaceGraphique/editionTacheCompositeWindow.ui \
+    InterfaceGraphique/editionTacheUnitaireWindow.ui \
+    InterfaceGraphique/mainWindow.ui \
+    InterfaceGraphique/supprimerCompositionWindow.ui \
+    InterfaceGraphique/supprimerPrecedenceWindow.ui \
+    InterfaceGraphique/supprimerProjetWindow.ui \
+    InterfaceGraphique/supprimerTacheWindows.ui \
+    InterfaceGraphique/tacheEditionWindow.ui

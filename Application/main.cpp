@@ -5,7 +5,7 @@
 #include "Classe/projet.h"
 #include "Classe/projetManager.h"
 */
-#include "mainWindow.h"
+#include "InterfaceGraphique/mainWindow.h"
 #include <QCoreApplication>
 #include <QApplication>
 #include <QComboBox>
