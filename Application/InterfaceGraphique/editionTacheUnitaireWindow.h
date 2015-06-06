@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+class TacheUnitaire;
+
 namespace Ui {
 class EditionTacheUnitaireWindow;
 }
@@ -13,6 +15,7 @@ class EditionTacheUnitaireWindow : public QDialog
 
 public:
     explicit EditionTacheUnitaireWindow(QWidget *parent = 0);
+    EditionTacheUnitaireWindow(TacheUnitaire &T, QWidget *parent = 0);
     ~EditionTacheUnitaireWindow();
 
 private:

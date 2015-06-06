@@ -13,7 +13,7 @@ void Tache::setMere(Tache *value)
 }
 
 Tache::Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline):
-    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline), mere(0){
+    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline), mere(0), mere_compo(0){
     qDebug()<<"Création d'un objet Tache \n";
 }
 
@@ -25,6 +25,7 @@ Tache::Tache(const Tache& t){
         this->setTitre(t.getTitre());
         this->precedence = t.getPrecedence();
         this->setMere(t.getMere());
+        this->setMere_Compo(t.getMere_Compo());
     }
 }
 
@@ -37,6 +38,7 @@ Tache& Tache::operator=(const Tache& obj){
         this->setTitre(obj.getTitre());
         this->precedence = obj.getPrecedence();
         this->setMere(obj.getMere());
+        this->setMere_Compo(obj.getMere_Compo());
     }
     return *this;
 }
@@ -117,6 +119,16 @@ const std::vector<Tache*>& Tache::getPrecedence() const
     return precedence;
 }
 
+Tache *Tache::getMere_Compo() const
+{
+    return mere_compo;
+}
+
+void Tache::setMere_Compo(Tache *value)
+{
+    mere_compo = value;
+}
+
 void Tache::ajouterPrecedence(Tache &t)
 {
     if(this->verifierPrecedence(t)){
@@ -137,6 +149,9 @@ bool Tache::verifierPrecedence(const Tache &t) const
     } else if(t.getEcheance() > this->getEcheance()){
         qDebug()<<"Je retourne faux";
         return false;
+    } else if(t.getMere_Compo() != 0){
+        qDebug()<<"Je retourne faux";
+        return false;
     } else {
         Tache* tache_mere = this->getMere();
             while(tache_mere != 0)
@@ -145,6 +160,30 @@ bool Tache::verifierPrecedence(const Tache &t) const
                     return false;
 
                 tache_mere = tache_mere->getMere();
+            }
+            return true;
+    }
+}
+
+bool Tache::verifierComposition(const Tache &t) const
+{
+    if(this == &t){
+        qDebug()<<"Je retourne faux";
+        return false;
+    } else if(t.getEcheance() > this->getEcheance()){
+        qDebug()<<"Je retourne faux";
+        return false;
+    } else if(t.getMere_Compo() != 0){
+        qDebug()<<"Je retourne faux";
+        return false;
+    } else {
+        Tache* tache_mere = this->getMere_Compo();
+            while(tache_mere != 0)
+            {
+                if(tache_mere == &t)
+                    return false;
+
+                tache_mere = tache_mere->getMere_Compo();
             }
             return true;
     }

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>101</height>
+    <height>132</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,23 @@
      <x>10</x>
      <y>10</y>
      <width>381</width>
-     <height>81</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
+   <widget class="QSplitter" name="splitter_3">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Projet</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="Projet_Box"/>
+   </widget>
    <widget class="QSplitter" name="splitter">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>

@@ -3,13 +3,12 @@
 #include "projetManager.h"
 
 TacheComposite::TacheComposite(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline):
-    Tache(id, t, dispo, deadline), mere_compo(0){
+    Tache(id, t, dispo, deadline){
     qDebug()<<"Création d'un objet Tache Composite";
 }
 
 TacheComposite::TacheComposite(const TacheComposite& t):Tache(t){
     this->composition = t.getComposition();
-    this->setMere_Compo(t.getMere_Compo());
 }
 
 
@@ -71,58 +70,20 @@ const std::vector<Tache *> &TacheComposite::getComposition() const
     return composition;
 }
 
-TacheComposite *TacheComposite::getMere_Compo() const
-{
-    return mere_compo;
-}
-
-void TacheComposite::setMere_Compo(TacheComposite *value)
-{
-    mere_compo = value;
-}
-
 TacheComposite *TacheComposite::clone() const
 {
     return new TacheComposite(*this);
 }
-// Refaire en surchargeant la fonction avec des tacheComposite, tacheUnitaire
-void TacheComposite::ajouterComposition(Tache* t)
+
+void TacheComposite::ajouterComposition(Tache& t)
 {
-    TacheComposite* composite = dynamic_cast<TacheComposite*>(t);
-    if(composite != 0){
-        if(this->verifierComposition(composite)){
-            this->getComposition().push_back(composite);
-            composite->setMere_Compo(this);
-            qDebug()<<"Ajout composition réussi \n";
-        }else{
-            qDebug()<<"Ajout composition failed \n";
-            throw CalendarException("Une tache ne peut pas avoir une tache parente en composition");
-        }
-    } else if(t->getEcheance() <= this->getEcheance()) { // On est dans le cas d'une tâche unitaire
-        this->getComposition().push_back(t);
+    if(this->verifierComposition(t)){
+        this->getComposition().push_back(&t);
+        t.setMere_Compo(this);
         qDebug()<<"Ajout composition réussi \n";
-    } else
-        throw CalendarException("Une tâche composition ne peut avoir de tâches se finissant après elle");
-}
-
-bool TacheComposite::verifierComposition(const TacheComposite *t) const
-{
-    if(this == t){
-        qDebug()<<"Je retourne faux";
-        return false;
-    } else if(t->getEcheance() > this->getEcheance()){
-        qDebug()<<"Je retourne faux";
-        return false;
-    } else {
-        TacheComposite* tache_mere = this->getMere_Compo();
-            while(tache_mere != 0)
-            {
-                if(tache_mere == t)
-                    return false;
-
-                tache_mere = tache_mere->getMere_Compo();
-            }
-            return true;
+    }else{
+        qDebug()<<"Ajout composition failed \n";
+        throw CalendarException("Une tache ne peut pas avoir une tache parente en composition");
     }
 }
 

@@ -9,5 +9,6 @@
 	** Rajouter des fonctions getTache dans projet (DONE)
 * Marie :
 
-#A Faire
-* L'ID d'une tâche est unique dans l'ensemble des projets
+#Hypothèses
+* L'ID d'une tâche est unique dans l'ensemble des projets.
+* Une tâche ne peut être la précédence que d'une seule autre tâche et en composition avec une seule autre tâche

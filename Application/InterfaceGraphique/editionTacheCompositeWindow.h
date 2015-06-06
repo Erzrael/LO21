@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+class TacheComposite;
+
 namespace Ui {
 class EditionTacheCompositeWindow;
 }
@@ -13,6 +15,7 @@ class EditionTacheCompositeWindow : public QDialog
 
 public:
     explicit EditionTacheCompositeWindow(QWidget *parent = 0);
+    EditionTacheCompositeWindow(TacheComposite &T, QWidget *parent = 0);
     ~EditionTacheCompositeWindow();
 
 private:

@@ -16,11 +16,11 @@ protected:
     QDate disponibilite;
     QDate echeance;
     Tache* mere;
+    Tache* mere_compo;
     /*const Projet* projet;
     const Tache* pere;*/
 
     Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline);
-    //Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline, const Projet* p, const Tache* pe = 0);
     Tache(const Tache& t);
     Tache& operator=(const Tache& obj);
 
@@ -52,12 +52,16 @@ public:
 
     Tache *getMere() const;
     void setMere(Tache *value);
+
+    Tache* getMere_Compo() const;
+    void setMere_Compo(Tache *value);
     /* Patron Factory Methode */
     virtual Tache* clone() const = 0;
 
     /* Autres Fonctions */
     void ajouterPrecedence(Tache& t);
     bool verifierPrecedence(const Tache &t) const;
+    bool verifierComposition(const Tache &t) const;
     unsigned int nbPrerequis() const;
     Tache* getPere(); // Renvoie un pointeur vers la tache père de la tâche appelante ou 0 si le père est le projet
     Projet* getProjet(); // Renvoie le projet auquel appartient une tâche
