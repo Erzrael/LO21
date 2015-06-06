@@ -1,4 +1,16 @@
 #include "agenda.h"
+Agenda::Agenda() {}
+
+Agenda::~Agenda(){
+    qDebug()<<"Destruction de Agenda";
+
+    while(!programmations.empty()){
+            delete programmations.back();
+        programmations.pop_back();
+     }
+}
+
+
 /**
  * \brief Renvoie l'adresse de la programmation associée à une tâche
  * \details Cette fonction utilise l'itérator natif de vector pour parcourir le vector de pointeur de Programmation.
@@ -112,4 +124,10 @@ bool Agenda::IteratorJournee::operator!=(const Agenda::IteratorJournee & other) 
 Programmation * Agenda::IteratorJournee::operator*() const
 {
    return *it_programmation;
+}
+
+Agenda &Agenda::getInstance()
+{
+    static Agenda instanceUnique;
+    return instanceUnique;
 }

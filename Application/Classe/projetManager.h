@@ -7,7 +7,7 @@
 class ProjetManager
 {
 private:
-    static ProjetManager * instanceUnique;
+    // static ProjetManager * instanceUnique;
     vector<Projet *> projets;
 
     //DesignPattern Singleton

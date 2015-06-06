@@ -33,7 +33,8 @@ SOURCES += main.cpp \
     InterfaceGraphique/supprimerPrecedenceWindow.cpp \
     InterfaceGraphique/supprimerProjetWindow.cpp \
     InterfaceGraphique/supprimerTacheWindow.cpp \
-    InterfaceGraphique/tacheEditionWindow.cpp
+    InterfaceGraphique/tacheEditionWindow.cpp \
+    ExportImport/import_xml.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -59,7 +60,11 @@ HEADERS += \
     InterfaceGraphique/supprimerPrecedenceWindow.h \
     InterfaceGraphique/supprimerProjetWindow.h \
     InterfaceGraphique/supprimerTacheWindow.h \
-    InterfaceGraphique/tacheEditionWindow.h
+    InterfaceGraphique/tacheEditionWindow.h \
+    ExportImport/exportimport.h \
+    ExportImport/import.h \
+    ExportImport/export.h \
+    ExportImport/import_xml.h
 
 FORMS += \
     InterfaceGraphique/ajoutCompositionWindow.ui \

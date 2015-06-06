@@ -1,6 +1,6 @@
 #include "projetManager.h"
 
-ProjetManager* ProjetManager::instanceUnique = 0;
+// ProjetManager* ProjetManager::instanceUnique = 0;
 
 ProjetManager::TacheIterator& ProjetManager::TacheIterator::operator++(int){
    // qDebug()<<"operator++\n";

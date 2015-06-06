@@ -9,6 +9,13 @@ class Agenda
 {
 private:
    list<Programmation*> programmations ;
+
+   // design pattern singleton
+   Agenda();
+   ~Agenda();
+   Agenda(const Agenda & foo);
+   Agenda & operator=(const Agenda & foo);
+
 public:
    class IteratorJournee{
    private:
@@ -25,9 +32,11 @@ public:
       bool operator!=(const IteratorJournee &other) const;
       Programmation* operator*() const;
    };
-
    IteratorJournee itJ_begin(QDate journee);
    IteratorJournee itJ_end(QDate journee);
+
+   static Agenda &getInstance();
+
 
 
    void ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const QTime& h);
