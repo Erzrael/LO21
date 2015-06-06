@@ -1,6 +1,7 @@
 #include "tache.h"
 #include "tacheComposite.h"
 #include "projetManager.h"
+#include "ExportImport/import_xml.h"
 
 TacheComposite::TacheComposite(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline):
     Tache(id, t, dispo, deadline){
@@ -89,5 +90,21 @@ void TacheComposite::ajouterComposition(Tache& t)
 
 unsigned int TacheComposite::nbComposition() const
 {
-    return composition.size();
+   return composition.size();
+}
+
+void TacheComposite::xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache)
+{
+   using namespace rapidxml;
+   xml_node<> * node_projet = node_tache.parent();
+   if(!node_projet) {
+      throw CalendarException("TacheComposite xml_ajouterAttributs : node_projet nul");
+   }
+
+   for ( vector<Tache *>::iterator compo_iterator = composition.begin() ; compo_iterator != composition.end() ; ++ compo_iterator ) {
+      xml_node<> * compo = doc.allocate_node(node_element, "composition", convertQString( (*compo_iterator)->getIdentificateur() ));
+      node_projet->append_node(compo);
+      xml_attribute<> * attr = doc.allocate_attribute("tache", convertQString(identificateur) );
+      compo->append_attribute(attr);
+   }
 }

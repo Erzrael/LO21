@@ -110,7 +110,8 @@ bool ProjetManager::isProjetExistant(const QString &id) const
 
 Tache* ProjetManager::getTache(const QString &id)
 {
-    Tache* t = trouverTache(id);
+   //qDebug() << "getTache(" << id << ");" ;
+   Tache* t = trouverTache(id);
     if (!t)
         throw CalendarException("erreur, ProjetManager, tache inexistante");
     return t;

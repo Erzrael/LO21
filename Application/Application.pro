@@ -31,8 +31,9 @@ SOURCES += main.cpp \
     InterfaceGraphique/supprimerPrecedenceWindow.cpp \
     InterfaceGraphique/supprimerProjetWindow.cpp \
     InterfaceGraphique/supprimerTacheWindow.cpp \
+    InterfaceGraphique/ajoutTacheWindow.cpp \
     ExportImport/import_xml.cpp \
-    InterfaceGraphique/ajoutTacheWindow.cpp
+    ExportImport/exportimport.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -57,10 +58,12 @@ HEADERS += \
     InterfaceGraphique/supprimerProjetWindow.h \
     InterfaceGraphique/supprimerTacheWindow.h \
     ExportImport/exportimport.h \
-    ExportImport/import.h \
-    ExportImport/export.h \
+    InterfaceGraphique/ajoutTacheWindow.h \
     ExportImport/import_xml.h \
-    InterfaceGraphique/ajoutTacheWindow.h
+    ExportImport/rapidxml-1.13/rapidxml.hpp \
+    ExportImport/rapidxml-1.13/rapidxml_iterators.hpp \
+    ExportImport/rapidxml-1.13/rapidxml_print.hpp \
+    ExportImport/rapidxml-1.13/rapidxml_utils.hpp
 
 FORMS += \
     InterfaceGraphique/ajoutCompositionWindow.ui \

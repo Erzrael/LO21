@@ -3,6 +3,7 @@
 #include "tache.h"
 #include "tacheComposite.h"
 #include "tacheUnitaire.h"
+#include "duree.h"
 //#include <QDate>
 #include <vector>
 
@@ -25,12 +26,16 @@ private:
    friend class ProjetManager;
 public:
 
-   Tache * ajouterTache(const QString& id, const QString& titre, const QDate& dispo, const QDate& deadline, const Duree &dur = Duree(0), const bool &pre = false);
+   Tache * ajouterTache(const QString& id, const QString& titre, const QDate& dispo, const QDate& deadline, const Duree &dur = Duree(static_cast<unsigned int>(0) ), const bool &pre = false);
    Tache *trouverTache(const QString& id); // Nécessetira des dynamics_cast
    const Tache *trouverTache(const QString& id) const;
    void supprimerTache(const QString& id);
 
    //Getters and setters
+   QString & getTitre();
+   const QString & getTitre() const;
+   void setTitre(const QString & value);
+
    QDate& getDisponibilite();
    const QDate& getDisponibilite() const;
    void setDisponibilite(const QDate &value);

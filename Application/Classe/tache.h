@@ -5,6 +5,8 @@
 #include <QDate>
 #include <vector>
 #include <Classe/calendarException.h>
+#include <ExportImport/rapidxml-1.13/rapidxml.hpp>
+
 
 class Projet;
 
@@ -65,6 +67,9 @@ public:
     unsigned int nbPrerequis() const;
     Tache* getPere(); // Renvoie un pointeur vers la tache père de la tâche appelante ou 0 si le père est le projet
     Projet* getProjet(); // Renvoie le projet auquel appartient une tâche
+
+    // nécessaire pour l'import xml
+    virtual void xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache) = 0;
 };
 
 #endif // TACHE_H

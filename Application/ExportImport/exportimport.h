@@ -1,18 +1,25 @@
 #ifndef EXPORTIMPORT_H
 #define EXPORTIMPORT_H
-#include <stdio.h>
 #include <QString>
-#include <Classe/projetManager.h>
-#include <Classe/agenda.h>
+
+class ProjetManager;
+class Agenda;
 
 class ExportImport
 {
 protected:
-   FILE * file;
+   QString filename;
    Agenda & agenda;
-   ProjetManager & projetmanager;
-   ExportImport(FILE * file);
+   ProjetManager & projetManager;
+   ExportImport(QString & filename);
+
+public:
+   virtual void save() = 0;
+   virtual void load() = 0;
+   ~ExportImport();
 };
 
-ExportImport::ExportImport(FILE * file) : file(file), agenda(Agenda::getInstance()), projetmanager(ProjetManager::getInstance()) {}
+
+
+
 #endif // EXPORTIMPORT_H

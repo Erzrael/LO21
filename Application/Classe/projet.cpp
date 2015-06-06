@@ -18,6 +18,12 @@ void Projet::setId(const QString & value)
     id = value;
 }
 
+
+QString & Projet::getTitre()
+{
+    return titre;
+}
+
 Projet::Projet(const QString id_p, const QString ti, const QDate &dispo, const QDate &deadline):
     id(id_p), titre(ti), dateDispo(dispo), echeance(deadline) {
     qDebug()<<"Création d'un objet Projet \n";

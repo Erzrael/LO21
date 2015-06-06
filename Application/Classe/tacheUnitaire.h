@@ -1,8 +1,10 @@
 #ifndef TACHEUNITAIRE_H
 #define TACHEUNITAIRE_H
 
+#include <ExportImport/rapidxml-1.13/rapidxml.hpp>
 #include "duree.h"
 #include "evenement.h"
+
 
 class Tache;
 
@@ -29,7 +31,11 @@ public:
     //void setDuree(const Duree &value);
 
     /* Patron Factory Methode */
+    // Tache interface
     virtual TacheUnitaire* clone() const;
+    virtual void xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache);
+    // Evenement interface
+    const QString &getID();
 };
 
 #endif // TACHEUNITAIRE_H

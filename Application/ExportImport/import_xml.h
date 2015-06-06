@@ -1,10 +1,19 @@
 #ifndef IMPORT_XML_H
 #define IMPORT_XML_H
+#include <ExportImport/exportimport.h>
 
-class import_XML : public Import
-{
+char * convertQString(QString string);
+
+//class ExportImport;
+
+class ExportImport_XML : public ExportImport {
 public:
-   import_XML();
+   ExportImport_XML(QString filename);
+   void load();
+   void save();
+
+private:
+   QString format;
 };
 
 #endif // IMPORT_XML_H

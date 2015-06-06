@@ -5,6 +5,8 @@
 #include <QDate>
 #include <QString>
 
+#include <ExportImport/rapidxml-1.13/rapidxml.hpp>
+
 class Tache;
 
 class TacheComposite : public Tache {
@@ -30,6 +32,8 @@ public:
     /* Autres Fonctions */
     void ajouterComposition(Tache &t);
     unsigned int nbComposition() const;
+
+    virtual void xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache);
 };
 
 #endif // TACHECOMPOSITE_H

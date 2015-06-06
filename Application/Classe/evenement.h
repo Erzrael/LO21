@@ -10,7 +10,7 @@ protected:
    Duree duree;
    Evenement(Duree d);
 public:
-
+   virtual const QString &getID() = 0 ;
    Duree getDuree() const;
    void setDuree(const Duree & value);
 };

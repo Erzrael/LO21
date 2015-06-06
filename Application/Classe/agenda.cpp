@@ -1,4 +1,6 @@
 #include "agenda.h"
+#include "tacheUnitaire.h"
+
 Agenda::Agenda() {}
 
 Agenda::~Agenda(){

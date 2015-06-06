@@ -30,7 +30,7 @@ TacheUnitaire& TacheUnitaire::operator=(const TacheUnitaire& obj){
 }
 
 TacheUnitaire::~TacheUnitaire(){
-    qDebug()<<"Destruction d'un objet Tache Unitaire\n";
+   qDebug()<<"Destruction d'un objet Tache Unitaire\n";
 }
 
 bool& TacheUnitaire::getPreempte()
@@ -68,5 +68,23 @@ void TacheUnitaire::setDuree(const Duree &value)
 
 TacheUnitaire *TacheUnitaire::clone() const
 {
-    return new TacheUnitaire(*this);
+   return new TacheUnitaire(*this);
+}
+
+void TacheUnitaire::xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache)
+{
+   using namespace rapidxml;
+   xml_attribute<> * attribute = doc.allocate_attribute("type", "u");
+   node_tache.append_attribute(attribute);
+   if(preempte == true) {
+      attribute = doc.allocate_attribute("pre", "true");
+      node_tache.append_attribute(attribute);
+   }
+   attribute = doc.allocate_attribute("type", duree.toChar());
+   node_tache.append_attribute(attribute);
+}
+
+const QString &TacheUnitaire::getID()
+{
+   return getIdentificateur();
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<projet id="g1" titre="Première Génération" dispo="1996-06-15" echeance="2018-02-21">
+    <tache type="c" id="tortank" titre="Obtiens un Tortank" dispo="1997-03-27" echeance="2018-02-21" pre="">
+    </tache>
+    <tache type="u" id="evolutioncarabaffe" titre="Fais évoluer Carabaffe" dispo="1996-06-16" echeance="2015-07-25" duree="00300" pre="true" >
+
+    </tache>
+    <tache type="u" id="caracaracarabaaaffe" titre="Fais évoluer Carapuce" dispo="1996-06-15" echeance="2015-06-15" duree="00195" pre="true" >
+    </tache>
+
+    <tache type="c" id="carapuce" titre="Obtiens Carapuce" dispo="1996-06-15" echeance="2015-06-15" >
+    </tache>
+    <tache type="u" id="judicieusement" titre="Choisis le starter le plus badass" dispo="1996-06-15" echeance="2015-06-15" duree="00010">
+    </tache>
+	<tache type="u" id="chen" titre="Va voir Chen" dispo="1996-06-15" echeance="2015-06-15" duree="00020">
+    </tache>
+
+    <precedence tache="evolutioncarabaffe">caracaracarabaaaffe</precedence>
+    <precedence tache="evolutioncarabaffe">carapuce</precedence>
+    <precedence tache="caracaracarabaaaffe">carapuce</precedence>
+    <precedence tache="judicieusement">chen</precedence>
+
+    <composition tache="tortank">evolutioncarabaffe</composition>
+    <composition tache="tortank">caracaracarabaaaffe</composition>
+    <composition tache="tortank">carapuce</composition>
+    <composition tache="carapuce">chen</composition>
+    <composition tache="carapuce">judicieusement</composition>
+</projet>
+
+<projet id="evoli" titre = "Obtenir toutes les évolutions d'Evoli" dispo="2015-06-06" echeance="2015-08-06">
+    <tache type="u" id="voltali" titre="Avoir pyroli (le plus beau !)" dispo="2015-07-06" echeance="2015-08-05" duree="00010">
+    </tache>
+   </projet>
+</root>
+
+<!--
+<programmation date="YYYY-MM-DD" debut="qtime" fin ="qtime">nomEvent</programmation>
+-->
