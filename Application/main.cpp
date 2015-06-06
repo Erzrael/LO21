@@ -1,10 +1,10 @@
-/*
+
 #include "Classe/tache.h"
 #include "Classe/tacheUnitaire.h"
 #include "Classe/tacheComposite.h"
 #include "Classe/projet.h"
 #include "Classe/projetManager.h"
-*/
+
 #include "InterfaceGraphique/mainWindow.h"
 #include <QCoreApplication>
 #include <QApplication>
@@ -14,6 +14,16 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
+    ProjetManager &projetManager = ProjetManager::getInstance();
+    Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
+    Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2014,3,6), QDate(2015,1,3));
+    P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
+    P1->ajouterTache("T2","Essaie2",QDate(2015,1,15), QDate(2015,2,15));
+    P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+    P2->ajouterTache("T4", "Essaie4", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
+    P2->ajouterTache("T5","Essaie5",QDate(2015,1,15), QDate(2015,2,15));
+    P2->ajouterTache("T6", "Essaie6", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+
     MainWindow e;
     e.show();
     return app.exec();
@@ -22,14 +32,6 @@ int main(int argc, char *argv[])
 /*
 int main(void){ */
     /*
-    ProjetManager &projetManager = ProjetManager::getInstance();
-    Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
-    projetManager.ajouterProjet("Ptest", "arg", QDate(2015,3,27),QDate(2015,4,16));
-    Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2015,3,27),QDate(2015,4,16));
-    P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
-    P1->ajouterTache("T2","Essaie2",QDate(2015,1,15), QDate(2015,2,15));
-    P2->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
-
     ProjetManager::TacheIterator it = projetManager.tache_begin();
     ProjetManager::TacheIterator it2 = projetManager.tache_end();
     while(it != projetManager.tache_end()){

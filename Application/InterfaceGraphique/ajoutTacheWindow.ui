@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AjoutTacheUnitaireWindow</class>
- <widget class="QDialog" name="AjoutTacheUnitaireWindow">
+ <class>AjoutTacheWindow</class>
+ <widget class="QDialog" name="AjoutTacheWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>393</width>
-    <height>222</height>
+    <width>400</width>
+    <height>277</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Ajout d'une Tâche Unitaire</string>
+   <string>Ajout d'une Tâche</string>
   </property>
-  <widget class="QSplitter" name="splitter_6">
+  <widget class="QSplitter" name="splitter_7">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>361</width>
-     <height>191</height>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>261</height>
     </rect>
    </property>
    <property name="orientation">
@@ -29,19 +29,30 @@
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
+    <widget class="QLabel" name="Projet_Lab">
+     <property name="text">
+      <string>Projet</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="Projet_Box"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_2">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
     <widget class="QLabel" name="ID_Lab">
      <property name="text">
       <string>ID</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="ID_Edit"/>
-    <widget class="QCheckBox" name="Preempte_Box">
+    <widget class="QCheckBox" name="Preemptee_Box">
      <property name="text">
       <string>Préemptée</string>
      </property>
     </widget>
    </widget>
-   <widget class="QSplitter" name="splitter_2">
+   <widget class="QSplitter" name="splitter_6">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
@@ -52,7 +63,7 @@
     </widget>
     <widget class="QLineEdit" name="Titre_Edit"/>
    </widget>
-   <widget class="QSplitter" name="splitter_3">
+   <widget class="QSplitter" name="splitter_5">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
@@ -63,7 +74,7 @@
     </widget>
     <widget class="QDateEdit" name="Dispo_Edit"/>
    </widget>
-   <widget class="QSplitter" name="splitter_4">
+   <widget class="QSplitter" name="splitter_3">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
@@ -74,7 +85,7 @@
     </widget>
     <widget class="QDateEdit" name="Echeance_Edit"/>
    </widget>
-   <widget class="QSplitter" name="splitter_5">
+   <widget class="QSplitter" name="splitter_4">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
@@ -83,7 +94,18 @@
       <string>Durée</string>
      </property>
     </widget>
-    <widget class="QTimeEdit" name="Duree_Edit"/>
+    <widget class="QSpinBox" name="Heure_Box"/>
+    <widget class="QLabel" name="Heure_Lab">
+     <property name="text">
+      <string>Heure(s)</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="Minute_Box"/>
+    <widget class="QLabel" name="Minute_Lab">
+     <property name="text">
+      <string>Minute(s)</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QDialogButtonBox" name="buttonBox">
     <property name="orientation">
@@ -100,7 +122,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>AjoutTacheUnitaire</receiver>
+   <receiver>AjoutTacheWindow</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -116,7 +138,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>AjoutTacheUnitaire</receiver>
+   <receiver>AjoutTacheWindow</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

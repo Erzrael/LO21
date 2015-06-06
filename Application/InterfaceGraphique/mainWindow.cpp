@@ -2,8 +2,7 @@
 #include "ui_mainWindow.h"
 #include "ajoutProjetWindow.h"
 #include "supprimerProjetWindow.h"
-#include "ajoutTacheUnitaireWindow.h"
-#include "ajoutTacheCompositeWindow.h"
+#include "ajoutTacheWindow.h"
 #include "supprimerTacheWindow.h"
 #include "choixTacheWindow.h"
 #include "ajoutPrecedenceWindow.h"
@@ -35,21 +34,6 @@ void MainWindow::on_actionSupprimer_un_Projet_triggered()
     SupprimerProjetWindow supprimer_projet_window;
     supprimer_projet_window.setModal(true);
     supprimer_projet_window.exec();
-}
-
-void MainWindow::on_actionAjouter_une_T_che_Unitaire_triggered()
-{
-    AjoutTacheUnitaireWindow ajout_tache_unitaire_window;
-    ajout_tache_unitaire_window.setModal(true);
-    ajout_tache_unitaire_window.exec();
-}
-
-
-void MainWindow::on_actionAjouter_une_T_che_Composite_triggered()
-{
-    AjoutTacheCompositeWindow ajout_tache_composite_window;
-    ajout_tache_composite_window.setModal(true);
-    ajout_tache_composite_window.exec();
 }
 
 void MainWindow::on_actionSupprimer_une_T_che_triggered()
@@ -92,4 +76,11 @@ void MainWindow::on_actionSupprimer_une_Composition_triggered()
     SupprimerCompositionWindow supprimer_composition_window;
     supprimer_composition_window.setModal(true);
     supprimer_composition_window.exec();
+}
+
+void MainWindow::on_actionAjouter_une_Tache_triggered()
+{
+    AjoutTacheWindow ajout_tache_window;
+    ajout_tache_window.setModal(true);
+    ajout_tache_window.exec();
 }

@@ -60,8 +60,7 @@
     <addaction name="actionAjouter_un_Projet"/>
     <addaction name="actionSupprimer_un_Projet"/>
     <addaction name="separator"/>
-    <addaction name="actionAjouter_une_T_che_Unitaire"/>
-    <addaction name="actionAjouter_une_T_che_Composite"/>
+    <addaction name="actionAjouter_une_Tache"/>
     <addaction name="actionSupprimer_une_T_che"/>
    </widget>
    <widget class="QMenu" name="menuGestion_des_T_ches">
@@ -93,14 +92,12 @@
     <string>&amp;Supprimer un Projet</string>
    </property>
   </action>
-  <action name="actionAjouter_une_T_che_Unitaire">
+  <action name="actionAjouter_une_Tache">
    <property name="text">
-    <string>&amp;Ajouter une Tâche Unitaire</string>
+    <string>&amp;Ajouter une Tâche</string>
    </property>
-  </action>
-  <action name="actionAjouter_une_T_che_Composite">
-   <property name="text">
-    <string>&amp;Ajouter une Tâche Composite</string>
+   <property name="toolTip">
+    <string>Ajouter une Tâche</string>
    </property>
   </action>
   <action name="actionSupprimer_une_T_che">

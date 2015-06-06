@@ -7,45 +7,56 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>118</height>
+    <height>172</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Ajout d'une Composition</string>
   </property>
-  <widget class="QSplitter" name="splitter_3">
+  <widget class="QSplitter" name="splitter_4">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
      <width>381</width>
-     <height>101</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
+   <widget class="QSplitter" name="splitter_3">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QLabel" name="Prohet_Lab">
+     <property name="text">
+      <string>Projet</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="Projet_Box"/>
+   </widget>
    <widget class="QSplitter" name="splitter">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="Composee_Lab">
      <property name="text">
       <string>Tâche Composée</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox"/>
+    <widget class="QComboBox" name="Composee_Box"/>
    </widget>
    <widget class="QSplitter" name="splitter_2">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="Composante_Lab">
      <property name="text">
       <string>Tâche Composante</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_2"/>
+    <widget class="QComboBox" name="Composante_Box"/>
    </widget>
    <widget class="QDialogButtonBox" name="buttonBox">
     <property name="orientation">
@@ -67,11 +78,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>248</x>
-     <y>254</y>
+     <y>160</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
-     <y>274</y>
+     <y>171</y>
     </hint>
    </hints>
   </connection>
@@ -83,11 +94,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>316</x>
-     <y>260</y>
+     <y>160</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
-     <y>274</y>
+     <y>171</y>
     </hint>
    </hints>
   </connection>

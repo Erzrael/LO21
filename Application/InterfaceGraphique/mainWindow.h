@@ -20,10 +20,6 @@ private slots:
 
     void on_actionSupprimer_un_Projet_triggered();
 
-    void on_actionAjouter_une_T_che_Unitaire_triggered();
-
-    void on_actionAjouter_une_T_che_Composite_triggered();
-
     void on_actionSupprimer_une_T_che_triggered();
 
     void on_actionModifier_une_T_che_triggered();
@@ -35,6 +31,8 @@ private slots:
     void on_actionAjouter_une_Composition_triggered();
 
     void on_actionSupprimer_une_Composition_triggered();
+
+    void on_actionAjouter_une_Tache_triggered();
 
 private:
     Ui::MainWindow *ui;

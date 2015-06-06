@@ -155,7 +155,7 @@ unsigned int Tache::nbPrerequis() const
     return precedence.size();
 }
 
-Tache *Tache::getPere()
+Tache *Tache::getPere() //Problème dans getPere
 {
     ProjetManager& projetManager = ProjetManager::getInstance();
     std::vector<Projet *>::const_iterator it_projets = projetManager.getProjets().begin();

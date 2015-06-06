@@ -8,3 +8,6 @@
 		*** Rajouter une fonction supprimer tache depuis le ProjetManager.
 	** Rajouter des fonctions getTache dans projet (DONE)
 * Marie :
+
+#A Faire
+* L'ID d'une tâche est unique dans l'ensemble des projets

@@ -23,8 +23,6 @@ SOURCES += main.cpp \
     InterfaceGraphique/ajoutCompositionWindow.cpp \
     InterfaceGraphique/ajoutPrecedenceWindow.cpp \
     InterfaceGraphique/ajoutProjetWindow.cpp \
-    InterfaceGraphique/ajoutTacheCompositeWindow.cpp \
-    InterfaceGraphique/ajoutTacheUnitaireWindow.cpp \
     InterfaceGraphique/choixTacheWindow.cpp \
     InterfaceGraphique/editionTacheCompositeWindow.cpp \
     InterfaceGraphique/editionTacheUnitaireWindow.cpp \
@@ -34,7 +32,8 @@ SOURCES += main.cpp \
     InterfaceGraphique/supprimerProjetWindow.cpp \
     InterfaceGraphique/supprimerTacheWindow.cpp \
     InterfaceGraphique/tacheEditionWindow.cpp \
-    ExportImport/import_xml.cpp
+    ExportImport/import_xml.cpp \
+    InterfaceGraphique/ajoutTacheWindow.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -50,8 +49,6 @@ HEADERS += \
     InterfaceGraphique/ajoutCompositionWindow.h \
     InterfaceGraphique/ajoutPrecedenceWindow.h \
     InterfaceGraphique/ajoutProjetWindow.h \
-    InterfaceGraphique/ajoutTacheCompositeWindow.h \
-    InterfaceGraphique/ajoutTacheUnitaireWindow.h \
     InterfaceGraphique/choixTacheWindow.h \
     InterfaceGraphique/editionTacheCompositeWindow.h \
     InterfaceGraphique/editionTacheUnitaireWindow.h \
@@ -64,14 +61,13 @@ HEADERS += \
     ExportImport/exportimport.h \
     ExportImport/import.h \
     ExportImport/export.h \
-    ExportImport/import_xml.h
+    ExportImport/import_xml.h \
+    InterfaceGraphique/ajoutTacheWindow.h
 
 FORMS += \
     InterfaceGraphique/ajoutCompositionWindow.ui \
     InterfaceGraphique/ajoutPrecedenceWindow.ui \
     InterfaceGraphique/ajoutProjetWindow.ui \
-    InterfaceGraphique/ajoutTacheCompositeWindow.ui \
-    InterfaceGraphique/ajoutTacheUnitaireWindow.ui \
     InterfaceGraphique/choixTacheWindow.ui \
     InterfaceGraphique/editionTacheCompositeWindow.ui \
     InterfaceGraphique/editionTacheUnitaireWindow.ui \
@@ -80,4 +76,5 @@ FORMS += \
     InterfaceGraphique/supprimerPrecedenceWindow.ui \
     InterfaceGraphique/supprimerProjetWindow.ui \
     InterfaceGraphique/supprimerTacheWindows.ui \
-    InterfaceGraphique/tacheEditionWindow.ui
+    InterfaceGraphique/tacheEditionWindow.ui \
+    InterfaceGraphique/ajoutTacheWindow.ui
