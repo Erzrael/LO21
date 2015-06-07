@@ -80,7 +80,8 @@ void TacheUnitaire::xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxm
       attribute = doc.allocate_attribute("pre", "true");
       node_tache.append_attribute(attribute);
    }
-   attribute = doc.allocate_attribute("type", duree.toChar());
+   char * node_name = doc.allocate_string( duree.toChar() );
+   attribute = doc.allocate_attribute( "duree", node_name );
    node_tache.append_attribute(attribute);
 }
 

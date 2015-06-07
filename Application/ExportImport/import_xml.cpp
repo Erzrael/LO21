@@ -123,6 +123,7 @@ void ExportImport_XML::save()
    xml_document<> doc;
    xml_node<> * root = doc.allocate_node(node_element, "root");
    doc.append_node(root);
+   char *node_name = NULL;
 
    vector<Projet *> & projets = projetManager.getProjets();
    for (vector<Projet *>::iterator projet_iterator = projets.begin() ; projet_iterator != projets.end() ; ++ projet_iterator) {
@@ -136,16 +137,20 @@ void ExportImport_XML::save()
       xml_node<> * node_projet = doc.allocate_node(node_element, "projet");
       root->append_node(node_projet);
       //ajout de ses attributs
-      xml_attribute<> *attribute = doc.allocate_attribute("id", convertQString( projet.getId() ), projet.getId().size());
+      node_name = doc.allocate_string(convertQString( projet.getId() ));
+      xml_attribute<> *attribute = doc.allocate_attribute("id", node_name);
       node_projet->append_attribute(attribute);
 
-      attribute = doc.allocate_attribute("titre", convertQString( projet.getTitre() ));
+      node_name = doc.allocate_string( convertQString( projet.getId() ) );
+      attribute = doc.allocate_attribute("titre", node_name);
       node_projet->append_attribute(attribute);
 
-      attribute = doc.allocate_attribute("dispo", convertQString( convertQString( projet.getDisponibilite().toString(format)) ));
+      node_name = doc.allocate_string( convertQString( projet.getDisponibilite().toString(format) ) );
+      attribute = doc.allocate_attribute("dispo", node_name);
       node_projet->append_attribute(attribute);
 
-      attribute = doc.allocate_attribute("echeance", convertQString( convertQString( projet.getEcheance().toString(format)) ));
+      node_name = doc.allocate_string( convertQString( projet.getEcheance().toString(format) ) );
+      attribute = doc.allocate_attribute("echeance", node_name);
       node_projet->append_attribute(attribute);
 
       // on va parcourir les tâches et les ajouter une à une
@@ -156,16 +161,20 @@ void ExportImport_XML::save()
          xml_node<> * node_tache = doc.allocate_node(node_element, "tache");
          node_projet->append_node(node_tache);
          // ajout des attributs
-         attribute = doc.allocate_attribute("id", convertQString( tache.getIdentificateur() ));
+         node_name = doc.allocate_string( convertQString( tache.getIdentificateur() ) );
+         attribute = doc.allocate_attribute("id", node_name);
          node_tache->append_attribute(attribute);
 
-         attribute = doc.allocate_attribute("titre", convertQString( tache.getTitre() ));
+         node_name = doc.allocate_string( convertQString( tache.getTitre() ) );
+         attribute = doc.allocate_attribute("titre", node_name);
          node_tache->append_attribute(attribute);
 
-         attribute = doc.allocate_attribute("dispo", convertQString( tache.getDisponibilite().toString(format) ) );
+         node_name = doc.allocate_string( convertQString( tache.getDisponibilite().toString(format) ) );
+         attribute = doc.allocate_attribute("dispo", node_name);
          node_tache->append_attribute(attribute);
 
-         attribute = doc.allocate_attribute("echeance", convertQString( tache.getEcheance().toString(format) ) );
+         node_name = doc.allocate_string( convertQString( tache.getEcheance().toString(format) ) );
+         attribute = doc.allocate_attribute("echeance", node_name );
          node_tache->append_attribute(attribute);
 
          // ajouts des compositions si tache composite, ajout des attributs pour une tache unitaire
@@ -173,9 +182,11 @@ void ExportImport_XML::save()
 
          // ajout des précédences
          for ( vector<Tache *>::iterator pre_iterator = tache.getPrecedence().begin() ; pre_iterator != tache.getPrecedence().end() ; ++ pre_iterator ) {
-            xml_node<> * pre = doc.allocate_node(node_element, "precedence", convertQString( (*pre_iterator)->getIdentificateur() ));
+            node_name = doc.allocate_string( convertQString( (*pre_iterator)->getIdentificateur() ) );
+            xml_node<> * pre = doc.allocate_node(node_element, "precedence", node_name);
             node_projet->append_node(pre);
-            attribute = doc.allocate_attribute("tache", convertQString(tache.getIdentificateur()) );
+            node_name = doc.allocate_string( convertQString( tache.getIdentificateur() ) );
+            attribute = doc.allocate_attribute("tache", node_name);
             pre->append_attribute(attribute);
          }
       }
@@ -209,6 +220,9 @@ void ExportImport_XML::save()
    //on imprime la chaine dans le fichier
    const char * file_name = convertQString(filename);
    FILE * file = fopen(file_name, "w");
+
+   fputs( "<?xml version=\"1.0\" encoding=\"iso-8859-14\"?>" , file);
+   fputc( '\n' , file);
    if (file == NULL) {
       throw CalendarException("Erreur dans l\'ouverture du fichier");
    }

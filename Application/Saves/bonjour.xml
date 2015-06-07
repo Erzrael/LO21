@@ -5,10 +5,10 @@
 		<composition tache="tortank">evolutioncarabaffe</composition>
 		<composition tache="tortank">caracaracarabaaaffe</composition>
 		<composition tache="tortank">carapuce</composition>
-		<tache id="evolutioncarabaffe" titre="Fais ?voluer Carabaffe" dispo="1996-06-16" echeance="2015-07-25" type="u" pre="true" duree="300"/>
+		<tache id="evolutioncarabaffe" titre="Fais évoluer Carabaffe" dispo="1996-06-16" echeance="2015-07-25" type="u" pre="true" duree="300"/>
 		<precedence tache="evolutioncarabaffe">caracaracarabaaaffe</precedence>
 		<precedence tache="evolutioncarabaffe">carapuce</precedence>
-		<tache id="caracaracarabaaaffe" titre="Fais ?voluer Carapuce" dispo="1996-06-15" echeance="2015-06-15" type="u" pre="true" duree="195"/>
+		<tache id="caracaracarabaaaffe" titre="Fais évoluer Carapuce" dispo="1996-06-15" echeance="2015-06-15" type="u" pre="true" duree="195"/>
 		<precedence tache="caracaracarabaaaffe">carapuce</precedence>
 		<tache id="carapuce" titre="Obtiens Carapuce" dispo="1996-06-15" echeance="2015-06-15" type="c"/>
 		<composition tache="carapuce">chen</composition>
