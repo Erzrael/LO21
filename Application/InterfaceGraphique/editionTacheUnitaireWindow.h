@@ -15,8 +15,11 @@ class EditionTacheUnitaireWindow : public QDialog
 
 public:
     explicit EditionTacheUnitaireWindow(QWidget *parent = 0);
-    EditionTacheUnitaireWindow(TacheUnitaire &T, QWidget *parent = 0);
+    explicit EditionTacheUnitaireWindow(TacheUnitaire* T, QWidget *parent = 0);
     ~EditionTacheUnitaireWindow();
+
+private slots:
+    void on_buttonBox_accepted();
 
 private:
     Ui::EditionTacheUnitaireWindow *ui;

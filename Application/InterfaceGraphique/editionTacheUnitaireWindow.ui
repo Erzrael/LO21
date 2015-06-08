@@ -16,10 +16,10 @@
   <widget class="QSplitter" name="splitter_6">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>361</width>
-     <height>191</height>
+     <x>10</x>
+     <y>10</y>
+     <width>371</width>
+     <height>201</height>
     </rect>
    </property>
    <property name="orientation">
@@ -34,7 +34,6 @@
       <string>ID</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="ID_Edit"/>
     <widget class="QCheckBox" name="Preempte_Box">
      <property name="text">
       <string>Préemptée</string>
@@ -83,7 +82,18 @@
       <string>Durée</string>
      </property>
     </widget>
-    <widget class="QTimeEdit" name="Duree_Edit"/>
+    <widget class="QSpinBox" name="Heure_Box"/>
+    <widget class="QLabel" name="Heure_Lab">
+     <property name="text">
+      <string>Heure(s)</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="Minute_Box"/>
+    <widget class="QLabel" name="Minute_Lab">
+     <property name="text">
+      <string>Minute(s)</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QDialogButtonBox" name="buttonBox">
     <property name="orientation">
@@ -96,5 +106,38 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>EditionTacheUnitaireWindow</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>196</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>EditionTacheUnitaireWindow</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>196</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Édition d'une Tâche Composite</string>
   </property>
-  <widget class="QSplitter" name="splitter_5">
+  <widget class="QSplitter" name="splitter">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -25,20 +25,10 @@
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
-   <widget class="QSplitter" name="splitter">
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+   <widget class="QLabel" name="ID_Lab">
+    <property name="text">
+     <string>ID</string>
     </property>
-    <widget class="QLabel" name="ID_Lab">
-     <property name="text">
-      <string>ID</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="ID_Edit">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
    </widget>
    <widget class="QSplitter" name="splitter_2">
     <property name="orientation">

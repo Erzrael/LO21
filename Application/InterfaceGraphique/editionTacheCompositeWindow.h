@@ -15,8 +15,11 @@ class EditionTacheCompositeWindow : public QDialog
 
 public:
     explicit EditionTacheCompositeWindow(QWidget *parent = 0);
-    EditionTacheCompositeWindow(TacheComposite &T, QWidget *parent = 0);
+    explicit EditionTacheCompositeWindow(TacheComposite* T, QWidget *parent = 0);
     ~EditionTacheCompositeWindow();
+
+private slots:
+    void on_buttonBox_accepted();
 
 private:
     Ui::EditionTacheCompositeWindow *ui;
