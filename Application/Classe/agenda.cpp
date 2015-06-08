@@ -44,25 +44,17 @@ const std::list<Programmation *> &Agenda::getProgrammation() const
 {
    return programmations;
 }
-/**
- * \TODO faire attention à ce que deux programmations ne puissent pas se chevaucher
- *
- * \brief Associe une programmation à une tâche passée en argument
- * \details Vérifie si la tâche n'est pas encore programmée, auquel cas lance une exception.
- *
- * \param t Tache que l'on veut programmer
- * \param d Date à laquelle la tache sera programmée
- * \param h Heure à laquelle la tache sera programmée
- */
-Agenda::IteratorJournee Agenda::itJ_begin(QDate journee)
-{
-   return IteratorJournee(journee, programmations);
-}
 
-Agenda::IteratorJournee Agenda::itJ_end(QDate journee)
-{
-   return IteratorJournee(journee, programmations.begin(), programmations.end());
-}
+//Agenda::IteratorJournee Agenda::itJ_begin(QDate journee)
+//{
+//   return IteratorJournee(journee, programmations);
+//}
+//
+//Agenda::IteratorJournee Agenda::itJ_end(QDate journee)
+//{
+//   return IteratorJournee(journee, programmations.begin(), programmations.end());
+//}
+
 void Agenda::ajouterProgrammation(const TachePreemptable & t, const QDate& d, const QTime& h, const Duree duree){
    Duree d_totale = Duree(duree);
 
@@ -143,38 +135,38 @@ bool Agenda::chevauche(const QDate& d, const QTime& debut, const QTime & fin, li
    return false;
 }
 
-Agenda::IteratorJournee::IteratorJournee(QDate j, list<Programmation *> & p): journee(j), it_programmation(p.begin()), end(p.end()){}
-
-Agenda::IteratorJournee::IteratorJournee(QDate j, list<Programmation *>::iterator it_programmation, list<Programmation *>::iterator end) :
-   journee(j), it_programmation(it_programmation), end(end) {}
-
-Agenda::IteratorJournee &Agenda::IteratorJournee::operator++(int)
-{
-   do {
-      it_programmation ++;
-   } while (it_programmation != end && (*it_programmation)->getDate() != journee );
-
-   return *this;
-}
-
-bool Agenda::IteratorJournee::operator==(const Agenda::IteratorJournee & other) const
-{
-   if (&other == this || (this->it_programmation == other.it_programmation)){
-      return true;
-   } else{
-      return false;
-   }
-}
-
-bool Agenda::IteratorJournee::operator!=(const Agenda::IteratorJournee & other) const
-{
-   return !(*this == other);
-}
-
-Programmation * Agenda::IteratorJournee::operator*() const
-{
-   return *it_programmation;
-}
+//Agenda::IteratorJournee::IteratorJournee(QDate j, list<Programmation *> & p): journee(j), it_programmation(p.begin()), end(p.end()){}
+//
+//Agenda::IteratorJournee::IteratorJournee(QDate j, list<Programmation *>::iterator it_programmation, list<Programmation *>::iterator end) :
+//   journee(j), it_programmation(it_programmation), end(end) {}
+//
+//Agenda::IteratorJournee &Agenda::IteratorJournee::operator++(int)
+//{
+//   do {
+//      it_programmation ++;
+//   } while (it_programmation != end && (*it_programmation)->getDate() != journee );
+//
+//   return *this;
+//}
+//
+//bool Agenda::IteratorJournee::operator==(const Agenda::IteratorJournee & other) const
+//{
+//   if (&other == this || (this->it_programmation == other.it_programmation)){
+//      return true;
+//   } else{
+//      return false;
+//   }
+//}
+//
+//bool Agenda::IteratorJournee::operator!=(const Agenda::IteratorJournee & other) const
+//{
+//   return !(*this == other);
+//}
+//
+//Programmation * Agenda::IteratorJournee::operator*() const
+//{
+//   return *it_programmation;
+//}
 
 Agenda &Agenda::getInstance()
 {
