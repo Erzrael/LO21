@@ -8,11 +8,7 @@
 		*** Rajouter une fonction supprimer tache depuis le ProjetManager.
 	** Rajouter des fonctions getTache dans projet (DONE)
 * Marie :
-	** implémenter l'ajout de programmation d'évènements qui ne sont pas des taches
-		*** revoir l'héritage du bordel (notamment l'id cf debut de agenda.h)
-		*** revoir ajoutProgrammation, chercherProgrammation
-	** ajouter l'ajout de programmation à xml::load
-	** Rendre save fonctionnel (pb mémoire rapidxml) (DONE)
+	** Evènements qui ne sont pas des tâches.
 	** vu graphique semaine
 
 #Hypothèses
@@ -20,5 +16,6 @@
 * Une tâche ne peut être la précédence que d'une seule autre tâche et en composition avec une seule autre tâche
 
 #Problèmes connus et mis de côté pour le moment
+
 
 * RapidXML et la gestion des accents

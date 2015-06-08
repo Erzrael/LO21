@@ -1,4 +1,8 @@
 #include "projetManager.h"
+#include "projet.h"
+#include "Classe/tache.h"
+#include "Classe/tachenonpreemptable.h"
+#include "Classe/tachepreemptable.h"
 
 // ProjetManager* ProjetManager::instanceUnique = 0;
 
@@ -90,7 +94,11 @@ Tache *ProjetManager::ajouterTache(const QString & id_projet, const QString & id
 
    Tache * t = 0;
    if(dur.getDureeEnMinutes() != 0 ) { // si une durée est fixée, la tâche est unitaire
-      t = new TacheUnitaire(id,titre,dispo,deadline,dur,pre);
+      if (pre) {
+         t = new TachePreemptable(id,titre,dispo,deadline,dur);
+      } else {
+         t= new TacheNonPreemptable(id, titre, dispo, deadline, dur);
+      }
    } else {
       t = new TacheComposite(id,titre,dispo,deadline);
    }

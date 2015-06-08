@@ -10,13 +10,14 @@
 #include <qdebug.h>
 #include <Classe/duree.h>
 #include <Classe/projetManager.h>
+#include "Classe/projet.h"
 #include <Classe/agenda.h>
 
 //#include <ExportImport/exportimport.h>
 
 using namespace rapidxml;
 
-ExportImport_XML::ExportImport_XML(QString filename) : ExportImport(filename), format(QString("yyyy-MM-dd")) {}
+ExportImport_XML::ExportImport_XML(QString filename) : ExportImport(filename), format(QString("yyyy-MM-dd")), format_time(QString("hh:mm")) {}
 
 char *convertQString(QString string)
 {
@@ -110,6 +111,14 @@ void ExportImport_XML::load()
       }
    }
    // insertion des programmations
+   for ( xml_node<> * prog = root->first_node("programmation") ; prog ; prog = prog->next_sibling("programmation") ) {
+      TacheUnitaire * tache_u = static_cast<TacheUnitaire *>( projetManager.getTache( prog->value() ) ) ;
+      QDate *date = new QDate( QDate::fromString( prog->first_attribute("date")->value(), format) );
+      QTime *debut = new QTime ( QTime::fromString( prog->first_attribute("debut")->value(), format_time) );
+      QTime *fin = new QTime ( QTime::fromString( prog->first_attribute("fin")->value(), format_time) );
+
+      agenda.ajouterProgrammation( *tache_u, *date, *debut, *fin);
+   }
 
 
    qDebug()<< "Fin de l'Import en XML !";
@@ -192,27 +201,31 @@ void ExportImport_XML::save()
       }
    }
 
-//   list<Programmation *> & programmations = agenda.getProgrammation();
-//   // ajout des noeuds de programmation
-//   for ( list<Programmation *>::iterator prog_iterator = programmations.begin() ; prog_iterator != programmations.end() ; ++ prog_iterator ) {
-//      Programmation & prog = **prog_iterator;
-//      xml_node<> * node_prog = doc.allocate_node(node_element, "programmation", convertQString( prog.getEvenement()->getID() ) );
-//      root->append_node(node_prog);
+   list<Programmation *> & programmations = agenda.getProgrammation();
+   // ajout des noeuds de programmation
+   for ( list<Programmation *>::iterator prog_iterator = programmations.begin() ; prog_iterator != programmations.end() ; ++ prog_iterator ) {
+      Programmation & prog = **prog_iterator;
+      node_name = doc.allocate_string(convertQString( prog.getEvenement()->getID() ) );
+      xml_node<> * node_prog = doc.allocate_node(node_element, "programmation", node_name);
+      root->append_node(node_prog);
 
-//      attribute = doc.allocate_attribute("date", convertQString( prog.getDate().toString(format) ) );
-//      node_tache->append_attribute(attribute);
+      node_name = doc.allocate_string(convertQString( prog.getDate().toString(format) )  );
+      xml_attribute<> * attribute = doc.allocate_attribute("date", node_name );
+      node_prog->append_attribute(attribute);
 
-//      attribute = doc.allocate_attribute("debut", convertQString( prog.getDebut().toString() ) );
-//      node_tache->append_attribute(attribute);
+      node_name = doc.allocate_string( convertQString( prog.getDebut().toString() ) );
+      attribute = doc.allocate_attribute("debut",  node_name );
+      node_prog->append_attribute(attribute);
 
-//      attribute = doc.allocate_attribute("fin", convertQString( prog.getFin().toString() ) );
-//      node_tache->append_attribute(attribute);
-//   }
+      node_name = doc.allocate_string( convertQString( prog.getFin().toString() ) );
+      attribute = doc.allocate_attribute("fin", node_name );
+      node_prog->append_attribute(attribute);
+   }
+
+   // Print to stream using operator << (for debug)
+   //   std::cout << doc;
 
    //on imprime le document dans une chaine de charactère
-   // Print to stream using operator <<
-   std::cout << doc;
-
    std::string s;
    print(std::back_inserter(s), doc, 0);
    qDebug() << "taille de s : " << s.size();
@@ -224,7 +237,7 @@ void ExportImport_XML::save()
    fputs( "<?xml version=\"1.0\" encoding=\"iso-8859-14\"?>" , file);
    fputc( '\n' , file);
    if (file == NULL) {
-      throw CalendarException("Erreur dans l\'ouverture du fichier");
+      throw CalendarException("Import XML : Erreur dans l\'ouverture du fichier");
    }
 
    for (unsigned int i = 0 ; i < s.size() ; i ++) {

@@ -1,15 +1,16 @@
 #include "agenda.h"
 #include "tacheUnitaire.h"
+#include "tachepreemptable.h"
 
 Agenda::Agenda() {}
 
 Agenda::~Agenda(){
-    qDebug()<<"Destruction de Agenda";
+   qDebug()<<"Destruction de Agenda";
 
-    while(!programmations.empty()){
-            delete programmations.back();
-        programmations.pop_back();
-     }
+   while(!programmations.empty()){
+      delete programmations.back();
+      programmations.pop_back();
+   }
 }
 
 
@@ -17,18 +18,21 @@ Agenda::~Agenda(){
  * \brief Renvoie l'adresse de la programmation associée à une tâche
  * \details Cette fonction utilise l'itérator natif de vector pour parcourir le vector de pointeur de Programmation.
  * Cette fonction est notamment utilisée afin de vérifier l'existence ou non de la programmation associée à une tâche.
- * 
+ *
  * \param t Tâche dont on veut trouver la programmation
- * \return L'adresse de la programmation
- * \return 0 en cas d'échec (la tâche n'est pas encore programmée)
+ * \return Un vector contenant toutes les programmations associées à la tâche (vector vide en cas d'échec)
  */
-Programmation* Agenda::trouverProgrammation(const TacheUnitaire& t)const{
+vector<Programmation *> & Agenda::trouverProgrammation(const TacheUnitaire& t)const{
+   vector<Programmation *> * listeProgrammation = new vector<Programmation *>();
+
    const Evenement * t2 = static_cast<const Evenement *> (&t);
    std::list<Programmation *>::const_iterator it ;
-    for(it = programmations.begin(); it != programmations.end() ; ++it)
-        if (t2 ==(*it)->getEvenement() )
-           return *it;
-    return 0;
+
+   for(it = programmations.begin(); it != programmations.end() ; ++it)
+      if (t2 ==(*it)->getEvenement() )
+         listeProgrammation->push_back(*it);
+
+   return *listeProgrammation;
 }
 
 std::list<Programmation *> &Agenda::getProgrammation()
@@ -42,10 +46,10 @@ const std::list<Programmation *> &Agenda::getProgrammation() const
 }
 /**
  * \TODO faire attention à ce que deux programmations ne puissent pas se chevaucher
- * 
+ *
  * \brief Associe une programmation à une tâche passée en argument
  * \details Vérifie si la tâche n'est pas encore programmée, auquel cas lance une exception.
- * 
+ *
  * \param t Tache que l'on veut programmer
  * \param d Date à laquelle la tache sera programmée
  * \param h Heure à laquelle la tache sera programmée
@@ -59,11 +63,35 @@ Agenda::IteratorJournee Agenda::itJ_end(QDate journee)
 {
    return IteratorJournee(journee, programmations.begin(), programmations.end());
 }
+void Agenda::ajouterProgrammation(const TachePreemptable & t, const QDate& d, const QTime& h, const Duree duree){
+   Duree d_totale = Duree(duree);
+
+   vector <Programmation *> & listeProgrammation = trouverProgrammation(t);
+   std::vector<Programmation *>::const_iterator it ;
+
+   //On vérifie que la durée totale des taches programmée n'est pas supérieur à la durée de la tache préempée
+   for(it = listeProgrammation.begin(); it != listeProgrammation.end() ; ++it ) {
+      d_totale.setDuree( d_totale.getDureeEnMinutes() + (*it)->getDuree().getDureeEnMinutes() );
+   }
+   if ( d_totale < t.getDuree()  ) {
+      throw CalendarException("erreur AjouterProgrammation : durée totale supérieure à la durée de la tâche") ;
+   }
+
+   int minute_fin = h.minute() + duree.getMinute();
+   int heure_fin = h.hour() + duree.getHeure() + (minute_fin / 60) ;
+   minute_fin = minute_fin % 60;
+   if ( !QTime::isValid(heure_fin, minute_fin, 0) ) {
+      throw CalendarException("erreur ajouterProgrammation : une programmation ne peut pas être à cheval sur deux jours");
+   }
+
+   ajouterProgrammation( t, d, h, *(new QTime(heure_fin, minute_fin)) );
+}
 
 void Agenda::ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const QTime& h){
-   // si la tache n'est pas préemptée & que la programmation existe déjà, on ne peut pas la programmer à nouveau
-   if (t.getPreempte() == false && trouverProgrammation(t) ) {
-       throw CalendarException("erreur, ProgrammationManager, Programmation deja existante");
+   vector <Programmation *> & listeProgrammation = trouverProgrammation(t);
+   // si la programmation existe déjà, on ne peut pas la programmer à nouveau
+   if (listeProgrammation.size() != 0 ) {
+      throw CalendarException("erreur ajouterProgrammation, cette fonction ne peut être appelée que si la tâche n'a jamais été programmée");
    }
 
    int minute_fin = h.minute() + t.getDuree().getMinute();
@@ -73,27 +101,47 @@ void Agenda::ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const
       throw CalendarException("erreur ajouterProgrammation : une programmation ne peut pas être à cheval sur deux jours");
    }
 
-   Programmation * p = new Programmation ( t, d, h, *(new QTime(heure_fin, minute_fin)) );
+   ajouterProgrammation(t, d, h, *(new QTime(heure_fin, minute_fin)) );
+}
+
+void Agenda::ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const QTime& debut, const QTime & fin)
+{
    list<Programmation *>::iterator iterator = programmations.begin();
 
    //-On fait avancer l'itérateur jusqu'au jour qui nous intéresse
-   while ( iterator != programmations.end() && (*iterator)->getDate() != d) {
+   while ( iterator != programmations.end() && (*iterator)->getDate() != d ) {
       iterator++;
    }
 
    // on continue jusqu'à atteindre la programmation située juste après celle à insérer c'est à dire soit :
    // la fin de la liste, soit la programmation où ce n'est plus le bon jour, soit la programmation suivante dans le planning
-   while ( iterator != programmations.end() && (*iterator)->getDate() == d && !(p->getFin() <= (*iterator)->getFin()) ) {
-      // si on est rentré dans la boucle, on doit vérifier que les deux programmations ne se télescopent pas.
-      if ( p->getDebut() < (*iterator)->getFin() ) {
-         throw CalendarException("Erreur ajouterProgrammation : deux programmations ne peuvent pas se chevaucher");
+   while ( iterator != programmations.end() && (*iterator)->getDate() == d && debut > (*iterator)->getFin() ) {
+      if ( Agenda::chevauche(d, debut, fin, iterator)) {
+         throw CalendarException("Erreur AjoutProgrammation : deux prog ne peuvent se chevaucher (le cheval c'est génial)");
       }
       ++iterator;
    }
+   // on vérifie les chevauchements
+   if ( Agenda::chevauche(d, debut, fin, iterator)) {
+      throw CalendarException("Erreur AjoutProgrammation : deux prog ne peuvent se chevaucher (le cheval c'est génial)");
+   }
+
    //insertion de la programmation
-   programmations.insert(iterator, p);
+   programmations.insert(iterator, new Programmation(t, d, debut, fin) );
 }
 
+bool Agenda::chevauche(const QDate& d, const QTime& debut, const QTime & fin, list<Programmation *>::iterator position){
+//   qDebug() << "je vérifie les chevauchements" ;
+   if ( position != programmations.end() && d == (*position)->getDate() ) {
+//      qDebug() << "je vérifie les chevauchements SALOPE" ;
+
+      if ( (debut > (*position)->getDebut() && debut < (*position)->getFin() ) || (fin > (*position)->getDebut() && fin < (*position)->getFin() ) ) {
+         return true;
+      }
+   }
+
+   return false;
+}
 
 Agenda::IteratorJournee::IteratorJournee(QDate j, list<Programmation *> & p): journee(j), it_programmation(p.begin()), end(p.end()){}
 
@@ -112,7 +160,7 @@ Agenda::IteratorJournee &Agenda::IteratorJournee::operator++(int)
 bool Agenda::IteratorJournee::operator==(const Agenda::IteratorJournee & other) const
 {
    if (&other == this || (this->it_programmation == other.it_programmation)){
-       return true;
+      return true;
    } else{
       return false;
    }
@@ -130,6 +178,6 @@ Programmation * Agenda::IteratorJournee::operator*() const
 
 Agenda &Agenda::getInstance()
 {
-    static Agenda instanceUnique;
-    return instanceUnique;
+   static Agenda instanceUnique;
+   return instanceUnique;
 }

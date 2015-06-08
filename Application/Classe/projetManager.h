@@ -1,9 +1,10 @@
 #ifndef PROJETMANAGER_H
 #define PROJETMANAGER_H
 #include <vector>
-#include "projet.h"
-#include "tache.h"
 #include "duree.h"
+
+class Projet;
+class Tache;
 
 class ProjetManager
 {

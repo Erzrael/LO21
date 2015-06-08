@@ -1,5 +1,6 @@
 #include "ajoutTacheWindow.h"
 #include "Classe/projetManager.h"
+#include "Classe/projet.h"
 #include "ui_ajoutTacheWindow.h"
 
 AjoutTacheWindow::AjoutTacheWindow(QWidget *parent) :

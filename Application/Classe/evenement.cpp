@@ -3,6 +3,12 @@
 
 Evenement::Evenement(Duree d) : duree(d){}
 
+const QString & Evenement::getID() const
+{
+   static QString braou("Evènement ponctuel");
+   return braou ;
+}
+
 Duree Evenement::getDuree() const
 {
    return duree;

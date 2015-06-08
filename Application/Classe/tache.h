@@ -57,8 +57,6 @@ public:
 
     Tache* getMere_Compo() const;
     void setMere_Compo(Tache *value);
-    /* Patron Factory Methode */
-    virtual Tache* clone() const = 0;
 
     /* Autres Fonctions */
     void ajouterPrecedence(Tache& t);

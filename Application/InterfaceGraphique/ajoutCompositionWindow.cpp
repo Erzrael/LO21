@@ -1,6 +1,7 @@
 #include "ajoutCompositionWindow.h"
 #include "ui_ajoutCompositionWindow.h"
 #include "Classe/projetManager.h"
+#include "Classe/projet.h"
 
 AjoutCompositionWindow::AjoutCompositionWindow(QWidget *parent) :
     QDialog(parent),

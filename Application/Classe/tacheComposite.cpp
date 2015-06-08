@@ -71,11 +71,6 @@ const std::vector<Tache *> &TacheComposite::getComposition() const
     return composition;
 }
 
-TacheComposite *TacheComposite::clone() const
-{
-    return new TacheComposite(*this);
-}
-
 void TacheComposite::ajouterComposition(Tache& t)
 {
     if(this->verifierComposition(t)){
