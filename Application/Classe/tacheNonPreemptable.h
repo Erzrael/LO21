@@ -1,6 +1,7 @@
 #ifndef TACHENONPREEMPTABLE_H
 #define TACHENONPREEMPTABLE_H
-#include "tacheUnitaire.h"
+
+class TacheUnitaire;
 
 class TacheNonPreemptable : public TacheUnitaire
 {

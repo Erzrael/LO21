@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 //    P2->ajouterTache("T6", "Essaie6", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
 
     // à modifier selon ton chemin local :)
-    ExportImport_XML load("/home/tamica/documents/UTC/LO21/Projet/LO21/Application/Saves/essai.xml");
+    ExportImport_XML load("/home/lraingev/Bureau/Git/LO21/Application/Saves/essai.xml");
     load.load();
 
     MainWindow e;

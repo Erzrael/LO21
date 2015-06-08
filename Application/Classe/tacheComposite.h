@@ -3,7 +3,6 @@
 #include <vector>
 #include <QDate>
 #include <QString>
-
 #include <ExportImport/rapidxml-1.13/rapidxml.hpp>
 
 class Tache;

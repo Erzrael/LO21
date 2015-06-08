@@ -1,4 +1,5 @@
 #include "choixTacheWindow.h"
+#include "Classe/projet.h"
 #include "Classe/projetManager.h"
 #include "ui_choixTacheWindow.h"
 #include "editionTacheCompositeWindow.h"

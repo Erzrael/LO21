@@ -14,33 +14,67 @@
    <string>Project Manager</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>751</width>
-      <height>521</height>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>551</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QTreeWidget" name="TreeView">
-       <column>
-        <property name="text">
-         <string>Liste des tâches du projet</string>
-        </property>
-       </column>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label">
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Projets">
+     <attribute name="title">
+      <string>Projets</string>
+     </attribute>
+     <widget class="QTreeWidget" name="TreeWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>801</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <column>
        <property name="text">
-        <string>Vue de l'agenda ?</string>
+        <string>Identifiant</string>
        </property>
-      </widget>
-     </item>
-    </layout>
+      </column>
+      <column>
+       <property name="text">
+        <string>Titre</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="Actualiser_Button">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>85</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Actualiser</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Agenda">
+     <attribute name="title">
+      <string>Agenda</string>
+     </attribute>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -1,5 +1,7 @@
-#include "editionTacheCompositeWindow.h"
+#include "Classe/tache.h"
 #include "Classe/projetManager.h"
+#include "Classe/tacheComposite.h"
+#include "editionTacheCompositeWindow.h"
 #include "ui_editionTacheCompositeWindow.h"
 
 EditionTacheCompositeWindow::EditionTacheCompositeWindow(QWidget *parent) :

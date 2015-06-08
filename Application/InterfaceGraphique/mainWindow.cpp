@@ -1,3 +1,6 @@
+#include "Classe/projetManager.h"
+#include "Classe/projet.h"
+#include "Classe/tache.h"
 #include "mainWindow.h"
 #include "ui_mainWindow.h"
 #include "ajoutProjetWindow.h"
@@ -83,4 +86,42 @@ void MainWindow::on_actionAjouter_une_Tache_triggered()
     AjoutTacheWindow ajout_tache_window;
     ajout_tache_window.setModal(true);
     ajout_tache_window.exec();
+}
+
+void MainWindow::on_Actualiser_Button_clicked()
+{
+    ProjetManager& projetmanager = ProjetManager::getInstance();
+
+    for(vector<Projet *>::const_iterator it_projets = projetmanager.getProjets().begin(); it_projets != projetmanager.getProjets().end(); ++it_projets){
+        QTreeWidgetItem *treeItem = addTreeRoot((*it_projets)->getId(), (*it_projets)->getTitre());
+        for(vector<Tache*>::const_iterator it_taches = (*it_projets)->getTaches().begin(); it_taches != (*it_projets)->getTaches().end(); ++it_taches){
+            addTreeChild(treeItem, (*it_taches)->getIdentificateur(), (*it_taches)->getTitre());
+        }
+    }
+}
+
+QTreeWidgetItem* MainWindow::addTreeRoot(QString name, QString description)
+{
+    // QTreeWidgetItem(QTreeWidget * parent, int type = Type)
+    QTreeWidgetItem *treeItem = new QTreeWidgetItem(ui->TreeWidget);
+
+    // QTreeWidgetItem::setText(int column, const QString & text)
+    treeItem->setText(0, name);
+    treeItem->setText(1, description);
+
+    return treeItem;
+}
+
+void MainWindow::addTreeChild(QTreeWidgetItem *parent,
+                  QString name, QString description)
+{
+    // QTreeWidgetItem(QTreeWidget * parent, int type = Type)
+    QTreeWidgetItem *treeItem = new QTreeWidgetItem();
+
+    // QTreeWidgetItem::setText(int column, const QString & text)
+    treeItem->setText(0, name);
+    treeItem->setText(1, description);
+
+    // QTreeWidgetItem::addChild(QTreeWidgetItem * child)
+    parent->addChild(treeItem);
 }

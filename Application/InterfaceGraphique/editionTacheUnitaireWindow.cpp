@@ -1,5 +1,9 @@
-#include "editionTacheUnitaireWindow.h"
+#include "Classe/tache.h"
+#include "Classe/tacheUnitaire.h"
+#include "Classe/tacheNonPreemptable.h"
+#include "Classe/tachePreemptable.h"
 #include "Classe/projetManager.h"
+#include "editionTacheUnitaireWindow.h"
 #include "ui_editionTacheUnitaireWindow.h"
 
 EditionTacheUnitaireWindow::EditionTacheUnitaireWindow(QWidget *parent) :
@@ -18,7 +22,6 @@ EditionTacheUnitaireWindow::EditionTacheUnitaireWindow(TacheUnitaire *T, QWidget
     ui->Titre_Edit->setText(T->getTitre());
     ui->Dispo_Edit->setDate(T->getDisponibilite());
     ui->Echeance_Edit->setDate(T->getEcheance());
-    ui->Preempte_Box->setChecked(T->getPreempte());
     ui->Heure_Box->setValue(T->getDuree().getHeure());
     ui->Minute_Box->setValue(T->getDuree().getMinute());
 }
@@ -36,7 +39,6 @@ void EditionTacheUnitaireWindow::on_buttonBox_accepted()
     Unitaire->setTitre(ui->Titre_Edit->text());
     Unitaire->setDisponibilite(ui->Dispo_Edit->date());
     Unitaire->setEcheance(ui->Echeance_Edit->date());
-    Unitaire->setPreempte(ui->Preempte_Box->isChecked());
     Unitaire->setDuree(Duree(ui->Heure_Box->value(), ui->Minute_Box->value()));
     QMessageBox::information(this,"Succès","La tâche a bien été modifée");
 }

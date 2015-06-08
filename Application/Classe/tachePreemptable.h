@@ -1,9 +1,11 @@
 #ifndef TACHEPREEMPTABLE_H
 #define TACHEPREEMPTABLE_H
-#include "tacheUnitaire.h"
+
 #include "QString"
 #include "QDate"
 #include "duree.h"
+
+class TacheUnitaire;
 
 class TachePreemptable : public TacheUnitaire
 {

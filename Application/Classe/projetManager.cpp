@@ -1,8 +1,8 @@
 #include "projetManager.h"
 #include "projet.h"
 #include "Classe/tache.h"
-#include "Classe/tachenonpreemptable.h"
-#include "Classe/tachepreemptable.h"
+#include "Classe/tacheNonPreemptable.h"
+#include "Classe/tachePreemptable.h"
 
 // ProjetManager* ProjetManager::instanceUnique = 0;
 
