@@ -1,52 +1,35 @@
 #include "tache.h"
 #include "tacheUnitaire.h"
 
-TacheUnitaire::TacheUnitaire(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline, const Duree &dur, const bool &pre):
-    Tache(id, t, dispo, deadline), Evenement(dur), preempte(pre){
-    if(!pre)
-        if(Duree(12,0) < dur)
-            throw CalendarException("Erreur - TacheUnitaire - Durée > 12h et préempté");
+TacheUnitaire::TacheUnitaire(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline, const Duree &dur):
+    Tache(id, t, dispo, deadline), Evenement(dur){
     qDebug()<<"Création d'un objet Tache Unitaire\n";
 }
 
-TacheUnitaire::TacheUnitaire(const TacheUnitaire& t):Tache(t), Evenement(t.getDuree()){
-    this->setPreempte(t.getPreempte());
-}
+//TacheUnitaire::TacheUnitaire(const TacheUnitaire& t):Tache(t), Evenement(t.getDuree()){
+//    this->setPreempte(t.getPreempte());
+//}
 
 
-TacheUnitaire& TacheUnitaire::operator=(const TacheUnitaire& obj){
-    if(this != &obj)
-    {
-        this->setDisponibilite(obj.getDisponibilite());
-        this->setEcheance(obj.getEcheance());
-        this->setIdentificateur(obj.getIdentificateur());
-        this->setTitre(obj.getTitre());
-        this->precedence = obj.getPrecedence();
-        this->setMere(obj.getMere());
-        this->setDuree(obj.getDuree());
-        this->setPreempte(obj.getPreempte());
-    }
-    return *this;
-}
+//TacheUnitaire& TacheUnitaire::operator=(const TacheUnitaire& obj){
+//    if(this != &obj)
+//    {
+//        this->setDisponibilite(obj.getDisponibilite());
+//        this->setEcheance(obj.getEcheance());
+//        this->setIdentificateur(obj.getIdentificateur());
+//        this->setTitre(obj.getTitre());
+//        this->precedence = obj.getPrecedence();
+//        this->setMere(obj.getMere());
+//        this->setDuree(obj.getDuree());
+//        this->setPreempte(obj.getPreempte());
+//    }
+//    return *this;
+//}
 
 TacheUnitaire::~TacheUnitaire(){
    qDebug()<<"Destruction d'un objet Tache Unitaire\n";
 }
 
-bool& TacheUnitaire::getPreempte()
-{
-    return preempte;
-}
-
-const bool& TacheUnitaire::getPreempte() const
-{
-    return preempte;
-}
-
-void TacheUnitaire::setPreempte(bool value)
-{
-    preempte = value;
-}
 
 /*const Duree& TacheUnitaire::getDuree() const
 {
@@ -66,25 +49,22 @@ void TacheUnitaire::setDuree(const Duree &value)
     duree = value;
 }*/
 
-TacheUnitaire *TacheUnitaire::clone() const
-{
-   return new TacheUnitaire(*this);
-}
 
 void TacheUnitaire::xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache)
 {
    using namespace rapidxml;
    xml_attribute<> * attribute = doc.allocate_attribute("type", "u");
    node_tache.append_attribute(attribute);
-   if(preempte == true) {
+   if(getPreempte() == true) {
       attribute = doc.allocate_attribute("pre", "true");
       node_tache.append_attribute(attribute);
    }
-   attribute = doc.allocate_attribute("type", duree.toChar());
+   char * node_name = doc.allocate_string( duree.toChar() );
+   attribute = doc.allocate_attribute( "duree", node_name );
    node_tache.append_attribute(attribute);
 }
 
-const QString &TacheUnitaire::getID()
+const QString &TacheUnitaire::getID() const
 {
    return getIdentificateur();
 }

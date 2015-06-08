@@ -209,6 +209,9 @@ namespace rapidxml
         template<class OutIt, class Ch>
         inline OutIt print_attributes(OutIt out, const xml_node<Ch> *node, int flags)
         {
+
+           flags = flags;//Ligne ajoutée pour dire "taggle" au complilateur ^^
+
             for (xml_attribute<Ch> *attribute = node->first_attribute(); attribute; attribute = attribute->next_attribute())
             {
                 if (attribute->name() && attribute->value())

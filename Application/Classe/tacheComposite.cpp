@@ -71,11 +71,6 @@ const std::vector<Tache *> &TacheComposite::getComposition() const
     return composition;
 }
 
-TacheComposite *TacheComposite::clone() const
-{
-    return new TacheComposite(*this);
-}
-
 void TacheComposite::ajouterComposition(Tache& t)
 {
     if(this->verifierComposition(t)){
@@ -96,15 +91,21 @@ unsigned int TacheComposite::nbComposition() const
 void TacheComposite::xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache)
 {
    using namespace rapidxml;
+   xml_attribute<> * attribute = doc.allocate_attribute("type", "c");
+   node_tache.append_attribute(attribute);
+
    xml_node<> * node_projet = node_tache.parent();
    if(!node_projet) {
       throw CalendarException("TacheComposite xml_ajouterAttributs : node_projet nul");
    }
 
    for ( vector<Tache *>::iterator compo_iterator = composition.begin() ; compo_iterator != composition.end() ; ++ compo_iterator ) {
-      xml_node<> * compo = doc.allocate_node(node_element, "composition", convertQString( (*compo_iterator)->getIdentificateur() ));
+      char * node_name = doc.allocate_string( convertQString( (*compo_iterator)->getIdentificateur() ) );
+      xml_node<> * compo = doc.allocate_node(node_element, "composition", node_name);
       node_projet->append_node(compo);
-      xml_attribute<> * attr = doc.allocate_attribute("tache", convertQString(identificateur) );
+
+      node_name = doc.allocate_string( convertQString(identificateur) );
+      xml_attribute<> * attr = doc.allocate_attribute("tache", node_name);
       compo->append_attribute(attr);
    }
 }

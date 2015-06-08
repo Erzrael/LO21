@@ -17,6 +17,7 @@ public:
 
    const Evenement* getEvenement() const;
    QDate getDate() const;
+   Duree getDuree() const;
    QTime getDebut() const;
    QTime getFin() const;
 };

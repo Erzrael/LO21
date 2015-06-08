@@ -33,7 +33,9 @@ SOURCES += main.cpp \
     InterfaceGraphique/supprimerTacheWindow.cpp \
     InterfaceGraphique/ajoutTacheWindow.cpp \
     ExportImport/import_xml.cpp \
-    ExportImport/exportimport.cpp
+    ExportImport/exportimport.cpp \
+    Classe/tachepreemptable.cpp \
+    Classe/tachenonpreemptable.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -63,7 +65,9 @@ HEADERS += \
     ExportImport/rapidxml-1.13/rapidxml.hpp \
     ExportImport/rapidxml-1.13/rapidxml_iterators.hpp \
     ExportImport/rapidxml-1.13/rapidxml_print.hpp \
-    ExportImport/rapidxml-1.13/rapidxml_utils.hpp
+    ExportImport/rapidxml-1.13/rapidxml_utils.hpp \
+    Classe/tachepreemptable.h \
+    Classe/tachenonpreemptable.h
 
 FORMS += \
     InterfaceGraphique/ajoutCompositionWindow.ui \

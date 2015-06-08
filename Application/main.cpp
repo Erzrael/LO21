@@ -4,6 +4,7 @@
 #include "Classe/tacheComposite.h"
 #include "Classe/projet.h"
 #include "Classe/projetManager.h"
+#include "Classe/agenda.h"
 
 #include "InterfaceGraphique/mainWindow.h"
 #include <QCoreApplication>
@@ -16,29 +17,30 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    ProjetManager &projetManager = ProjetManager::getInstance();
-    Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
-    Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2014,3,6), QDate(2015,1,3));
-    P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
-    P1->ajouterTache("T2","Essaie2",QDate(2015,1,15), QDate(2015,2,15));
-    P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
-    P2->ajouterTache("T4", "Essaie4", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
-    P2->ajouterTache("T5","Essaie5",QDate(2015,1,15), QDate(2015,2,15));
-    P2->ajouterTache("T6", "Essaie6", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+//    ProjetManager &projetManager = ProjetManager::getInstance();
+//    Agenda &agenda = Agenda::getInstance();
+//    Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
+//    Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2014,3,6), QDate(2015,1,3));
+//    P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
+//    P1->ajouterTache("T2","Essaie2",QDate(2015,1,15), QDate(2015,2,15));
+//    P1->ajouterTache("T3", "Essaie3", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
+//    P2->ajouterTache("T4", "Essaie4", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
+//    P2->ajouterTache("T5","Essaie5",QDate(2015,1,15), QDate(2015,2,15));
+//    P2->ajouterTache("T6", "Essaie6", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
 
-//    à modifier selon ton chemin local :)
-
-//    ExportImport_XML load("/home/tamica/documents/UTC/LO21/Projet/LO21/Application/Saves/essai.xml");
-//    load.load();
+    // à modifier selon ton chemin local :)
+    ExportImport_XML load("/home/tamica/documents/UTC/LO21/Projet/LO21/Application/Saves/essai.xml");
+    load.load();
 
     MainWindow e;
     e.show();
+
+//   ExportImport_XML save("/home/tamica/documents/UTC/LO21/Projet/LO21/Application/Saves/test_programmation.xml");
+//   save.save();
     return app.exec();
 
-//   ExportImport_XML save("/home/tamica/documents/UTC/LO21/Projet/LO21/Application/Saves/save.xml");
-//   save.save();
 
-   // qDebug() << "Allegria";
+    qDebug() << "Allegria";
 }
 
 /*

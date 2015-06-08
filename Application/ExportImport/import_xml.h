@@ -14,6 +14,7 @@ public:
 
 private:
    QString format;
+   QString format_time;
 };
 
 #endif // IMPORT_XML_H

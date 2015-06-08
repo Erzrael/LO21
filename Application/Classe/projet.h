@@ -26,7 +26,7 @@ private:
    friend class ProjetManager;
 public:
 
-   Tache * ajouterTache(const QString& id, const QString& titre, const QDate& dispo, const QDate& deadline, const Duree &dur = Duree(static_cast<unsigned int>(0) ), const bool &pre = false);
+   Tache * ajouterTache(const QString& id, const QString& titre, const QDate& dispo, const QDate& deadline, const Duree &dur = Duree(), const bool &pre = false);
    Tache *trouverTache(const QString& id); // Nécessetira des dynamics_cast
    const Tache *trouverTache(const QString& id) const;
    void supprimerTache(const QString& id);

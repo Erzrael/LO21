@@ -1,6 +1,8 @@
 #include "ajoutPrecedenceWindow.h"
 #include "ui_ajoutPrecedenceWindow.h"
 #include "Classe/projetManager.h"
+#include "Classe/projet.h"
+
 
 AjoutPrecedenceWindow::AjoutPrecedenceWindow(QWidget *parent) :
     QDialog(parent),
