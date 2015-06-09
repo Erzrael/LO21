@@ -149,7 +149,7 @@ bool Tache::verifierPrecedence(const Tache &t) const
     } else if(t.getEcheance() > this->getEcheance()){
         qDebug()<<"Je retourne faux";
         return false;
-    } else if(t.getMere_Compo() != 0){
+    } else if(t.getMere() != 0){
         qDebug()<<"Je retourne faux";
         return false;
     } else {
