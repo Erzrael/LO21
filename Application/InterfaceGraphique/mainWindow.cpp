@@ -89,13 +89,46 @@ void MainWindow::on_actionAjouter_une_Tache_triggered()
 }
 
 void MainWindow::on_Actualiser_Button_clicked()
-{
+{/*
     ProjetManager& projetmanager = ProjetManager::getInstance();
 
     for(vector<Projet *>::const_iterator it_projets = projetmanager.getProjets().begin(); it_projets != projetmanager.getProjets().end(); ++it_projets){
         QTreeWidgetItem *treeItem = addTreeRoot((*it_projets)->getId(), (*it_projets)->getTitre());
         for(vector<Tache*>::const_iterator it_taches = (*it_projets)->getTaches().begin(); it_taches != (*it_projets)->getTaches().end(); ++it_taches){
             addTreeChild(treeItem, (*it_taches)->getIdentificateur(), (*it_taches)->getTitre());
+        }
+    }*/
+
+    ProjetManager& projetmanager = ProjetManager::getInstance();
+    vector<QTreeWidgetItem*> afficher;
+
+    for(vector<Projet *>::const_iterator it_projets = projetmanager.getProjets().begin(); it_projets != projetmanager.getProjets().end(); ++it_projets){
+        QTreeWidgetItem *treeItem = addTreeRoot((*it_projets)->getId(), (*it_projets)->getTitre());
+        afficher.push_back(treeItem);
+        vector<Tache*> A_afficher = (*it_projets)->getTaches();
+        vector<Tache*>::iterator it_taches = A_afficher.begin();
+        // Affichage des tâches directement reliées au projet
+        while(it_taches != A_afficher.end()){
+            if((*it_taches)->getPere() == 0){
+                afficher.push_back(addTreeChild(treeItem, (*it_taches)->getIdentificateur(), (*it_taches)->getTitre()));
+                it_taches = A_afficher.erase(it_taches);
+            } else {
+                ++it_taches;
+            }
+        }
+
+        // Affichage des compositions
+        it_taches = A_afficher.begin();
+        while(!A_afficher.empty()){
+            QTreeWidgetItem* item = trouver(afficher, (*it_taches)->getPere()->getIdentificateur());
+            if(item){
+                afficher.push_back(addTreeChild(item, (*it_taches)->getIdentificateur(), (*it_taches)->getTitre()));
+                it_taches = A_afficher.erase(it_taches);
+            } else {
+                ++it_taches;
+            }
+            if(it_taches == A_afficher.end())
+                it_taches = A_afficher.begin();
         }
     }
 }
@@ -112,7 +145,7 @@ QTreeWidgetItem* MainWindow::addTreeRoot(QString name, QString description)
     return treeItem;
 }
 
-void MainWindow::addTreeChild(QTreeWidgetItem *parent,
+QTreeWidgetItem* MainWindow::addTreeChild(QTreeWidgetItem *parent,
                   QString name, QString description)
 {
     // QTreeWidgetItem(QTreeWidget * parent, int type = Type)
@@ -124,4 +157,18 @@ void MainWindow::addTreeChild(QTreeWidgetItem *parent,
 
     // QTreeWidgetItem::addChild(QTreeWidgetItem * child)
     parent->addChild(treeItem);
+
+    return treeItem;
+}
+
+QTreeWidgetItem * MainWindow::trouver(std::vector<QTreeWidgetItem *> tab, QString id)
+{
+    for(vector<QTreeWidgetItem*>::const_iterator it = tab.begin(); it != tab.end(); ++it){
+        if(id == (*it)->text(0)){
+            qDebug()<<"Je retourne le widget parent";
+            return *it;
+        }
+    }
+    qDebug()<<"Je retourne 0";
+    return 0;
 }

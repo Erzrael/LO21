@@ -9,15 +9,14 @@
     <tache type="u" id="caracaracarabaaaffe" titre="Fais évoluer Carapuce" dispo="1996-06-15" echeance="2015-06-15" duree="00195" pre="true" >
     </tache>
 
-    <tache type="c" id="carapuce" titre="Obtiens Carapuce" dispo="1996-06-15" echeance="2015-06-15" >
+    <tache type="c" id="carapuce" titre="Obtiens Carapuce" dispo="1996-06-15" echeance="2015-05-15" >
     </tache>
-    <tache type="u" id="judicieusement" titre="Choisis le starter le plus badass" dispo="1996-06-15" echeance="2015-06-15" duree="00010">
+    <tache type="u" id="judicieusement" titre="Choisis le starter le plus badass" dispo="1996-06-15" echeance="2015-04-15" duree="00010">
     </tache>
-	<tache type="u" id="chen" titre="Va voir Chen" dispo="1996-06-15" echeance="2015-06-15" duree="00020">
+	<tache type="u" id="chen" titre="Va voir Chen" dispo="1996-06-15" echeance="2015-03-15" duree="00020">
     </tache>
 
     <precedence tache="evolutioncarabaffe">caracaracarabaaaffe</precedence>
-    <precedence tache="evolutioncarabaffe">carapuce</precedence>
     <precedence tache="caracaracarabaaaffe">carapuce</precedence>
     <precedence tache="judicieusement">chen</precedence>
 

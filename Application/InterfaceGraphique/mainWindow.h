@@ -2,9 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QDirModel>
 
 class QTreeWidgetItem;
+class Tache;
 
 namespace Ui {
 class MainWindow;
@@ -13,11 +13,11 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    QDirModel *model;
 
     QTreeWidgetItem *addTreeRoot(QString name, QString description);
-    void addTreeChild(QTreeWidgetItem *parent,
+    QTreeWidgetItem *addTreeChild(QTreeWidgetItem *parent,
                       QString name, QString description);
+    QTreeWidgetItem *trouver(std::vector<QTreeWidgetItem*> tab, QString id);
 
 public:
     explicit MainWindow(QWidget *parent = 0);
