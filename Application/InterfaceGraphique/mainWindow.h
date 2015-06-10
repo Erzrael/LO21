@@ -44,7 +44,10 @@ private slots:
 
     void on_Actualiser_Button_clicked();
 
+    void action_ajoutProgrammation(int jour = 0, int heure = 0);
 private:
+    void MAJ_treeview();
+
     Ui::MainWindow *ui;
 };
 

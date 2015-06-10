@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Images/Pokemon.jpg</file>
+    </qresource>
+</RCC>

@@ -9,7 +9,10 @@
 	** Rajouter des fonctions getTache dans projet (DONE)
 * Marie :
 	** Evènements qui ne sont pas des tâches.
-	** vu graphique semaine
+	** vu graphique semaine : double clic sur case normale --> ajouterProgrammation (tab view)
+		*** case de plus en plus sombre (4 nuances)
+		*** double clic : affichage des programmations + Case ajouterProgrammation
+		*** (optionnel) empêcher modification
 
 #Hypothèses
 * L'ID d'une tâche est unique dans l'ensemble des projets.

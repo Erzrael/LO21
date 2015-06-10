@@ -35,7 +35,8 @@ SOURCES += main.cpp \
     ExportImport/import_xml.cpp \
     ExportImport/exportimport.cpp \
     Classe/tachePreemptable.cpp \
-    Classe/tacheNonPreemptable.cpp
+    Classe/tacheNonPreemptable.cpp \
+    InterfaceGraphique/ajoutprogrammation.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -67,7 +68,8 @@ HEADERS += \
     ExportImport/rapidxml-1.13/rapidxml_print.hpp \
     ExportImport/rapidxml-1.13/rapidxml_utils.hpp \
     Classe/tacheNonPreemptable.h \
-    Classe/tachePreemptable.h
+    Classe/tachePreemptable.h \
+    InterfaceGraphique/ajoutprogrammation.h
 
 FORMS += \
     InterfaceGraphique/ajoutCompositionWindow.ui \
@@ -81,4 +83,8 @@ FORMS += \
     InterfaceGraphique/supprimerPrecedenceWindow.ui \
     InterfaceGraphique/supprimerProjetWindow.ui \
     InterfaceGraphique/supprimerTacheWindows.ui \
-    InterfaceGraphique/ajoutTacheWindow.ui
+    InterfaceGraphique/ajoutTacheWindow.ui \
+    InterfaceGraphique/ajoutprogrammation.ui
+
+RESOURCES += \
+    InterfaceGraphique/ressources.qrc

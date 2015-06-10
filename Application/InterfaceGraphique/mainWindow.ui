@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>758</width>
+    <height>575</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,15 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>801</width>
-      <height>551</height>
+      <width>761</width>
+      <height>521</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/images/Pokemon.jpg); </string>
+    </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Projets">
      <attribute name="title">
@@ -34,9 +37,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>50</y>
+        <y>0</y>
         <width>801</width>
-        <height>471</height>
+        <height>631</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -56,24 +59,149 @@
        </property>
       </column>
      </widget>
-     <widget class="QPushButton" name="Actualiser_Button">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>85</width>
-        <height>27</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Actualiser</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="Agenda">
+     <property name="minimumSize">
+      <size>
+       <width>757</width>
+       <height>488</height>
+      </size>
+     </property>
      <attribute name="title">
       <string>Agenda</string>
      </attribute>
+     <widget class="QTableWidget" name="TabAgenda">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>733</width>
+        <height>387</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">gridline-color: rgb(202, 202, 202);</string>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>false</bool>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="dragDropOverwriteMode">
+       <bool>false</bool>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>false</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <row>
+       <property name="text">
+        <string>0h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>2h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>4h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>6h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>8h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>10h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>12h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>14h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>16h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>18h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>20h</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>22h</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Horaire</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Lundi</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Mardi</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Mercredi</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Jeudi</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Vendredi</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Dimanche</string>
+       </property>
+      </column>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -82,7 +210,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>758</width>
      <height>27</height>
     </rect>
    </property>
@@ -109,6 +237,14 @@
     <addaction name="actionAjouter_une_Composition"/>
     <addaction name="actionSupprimer_une_Composition"/>
    </widget>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionOuvrir_un_Fichier"/>
+    <addaction name="actionEnregistrer_sous"/>
+   </widget>
+   <addaction name="menuFichier"/>
    <addaction name="menuProject_Manager"/>
    <addaction name="menuGestion_des_T_ches"/>
   </widget>
@@ -162,6 +298,16 @@
   <action name="actionSupprimer_une_Composition">
    <property name="text">
     <string>&amp;Supprimer une Composition</string>
+   </property>
+  </action>
+  <action name="actionOuvrir_un_Fichier">
+   <property name="text">
+    <string>Ouvrir un Fichier</string>
+   </property>
+  </action>
+  <action name="actionEnregistrer_sous">
+   <property name="text">
+    <string>Enregistrer sous...</string>
    </property>
   </action>
  </widget>
