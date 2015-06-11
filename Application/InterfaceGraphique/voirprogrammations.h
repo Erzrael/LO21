@@ -16,9 +16,12 @@ class VoirProgrammations : public QDialog
 public:
    explicit VoirProgrammations(QWidget *parent = 0, QDate date = QDate(), QTime h_debut = QTime());
    ~VoirProgrammations();
-
+private slots:
+   void on_ajouterProg_clicked();
 private:
    Ui::VoirProgrammations *ui;
+   QDate date;
+   QTime time;
 };
 
 #endif // VOIRPROGRAMMATIONS_H

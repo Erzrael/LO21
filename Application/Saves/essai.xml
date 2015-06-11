@@ -31,6 +31,9 @@
     <tache type="u" id="voltali" titre="Avoir pyroli (le plus beau !)" dispo="2015-07-06" echeance="2015-08-05" duree="00010">
     </tache>
    </projet>
+
+	<programmation date="2015-06-11" debut="08:10:00" fin="08:20:00">chen</programmation>
+	<programmation date="2015-06-12" debut="08:00:00" fin="10:45:00">judicieusement</programmation>
 </root>
 
 <!-- <programmation date="YYYY-MM-DD" debut="qtime" fin ="qtime">nomEvent</programmation> -->

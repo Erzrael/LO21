@@ -49,14 +49,14 @@ unsigned int Agenda::chevaucheHoraire(const QDate & date, const QTime & debut, c
 
 }
 
-vector<const Evenement *> &Agenda::tabChevaucheHoraire(const QDate & date, const QTime & debut, const QTime & fin)
+vector<const Programmation *> &Agenda::tabChevaucheHoraire(const QDate & date, const QTime & debut, const QTime & fin)
 {
-   vector<const Evenement *> * tab = new vector<const Evenement *>;
+   vector<const Programmation *> * tab = new vector<const Programmation *>;
    std::list<Programmation *>::iterator it ;
 
    for(it = programmations.begin(); it != programmations.end() ; ++it)
       if ( chevauche(date, debut, fin, it) )
-         tab->push_back( (*it)->getEvenement());
+         tab->push_back( (*it));
 
    return *tab;
 }
@@ -91,18 +91,24 @@ void Agenda::ajouterProgrammation(const TachePreemptable & t, const QDate& d, co
    for(it = listeProgrammation.begin(); it != listeProgrammation.end() ; ++it ) {
       d_totale.setDuree( d_totale.getDureeEnMinutes() + (*it)->getDuree().getDureeEnMinutes() );
    }
-   if ( d_totale < t.getDuree()  ) {
+   if ( t.getDuree() < d_totale ) {
+   //if ( d_totale < t.getDuree() ) {
       throw CalendarException("erreur AjouterProgrammation : durée totale supérieure à la durée de la tâche") ;
    }
 
-   int minute_fin = h.minute() + duree.getMinute();
+   int minutes = duree.getDureeEnMinutes();
+   QTime * fin = new QTime(h.addSecs( minutes * 60) );
+   // qDebug() << "minutes" << minutes << "Time :" << *fin;
+   /*int minute_fin = h.minute() + duree.getMinute();
+   int surplus = minute_fin / 60;
    int heure_fin = h.hour() + duree.getHeure() + (minute_fin / 60) ;
+   qDebug() << "heure :" << heure_fin << "minute :" << minute_fin ;
    minute_fin = minute_fin % 60;
    if ( !QTime::isValid(heure_fin, minute_fin, 0) ) {
       throw CalendarException("erreur ajouterProgrammation : une programmation ne peut pas être à cheval sur deux jours");
-   }
+   }*/
 
-   ajouterProgrammation( t, d, h, *(new QTime(heure_fin, minute_fin)) );
+   ajouterProgrammation( t, d, h, *fin );
 }
 
 void Agenda::ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const QTime& h){

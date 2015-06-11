@@ -4,6 +4,7 @@
 #include "calendarException.h"
 #include <QString>
 #include <QDate>
+#include <QTime>
 #include <QTextStream>
 #include <QFile>
 #include <QTextCodec>
@@ -22,8 +23,15 @@ public:
    /*! \param h heure avec h>=0
         \param m minute avec 0<=m<=59
         */
+   Duree(QTime time) {
+      Duree(time.hour(), time.minute());
+      //nb_minutes = time.hour()*60 + time.minute();
+   }
+
    Duree(unsigned int h, unsigned int m):nb_minutes(h*60+m) {
-      if (m>59) throw CalendarException("erreur: initialisation duree invalide");}
+      if (m>59) throw CalendarException("erreur: initialisation duree invalide");
+      //qDebug() << "Duree" << nb_minutes;
+   }
    //! Constructeur à partir de minute
    /*! \param m minute avec m>=0
         */

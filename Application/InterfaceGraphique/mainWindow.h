@@ -43,8 +43,9 @@ private slots:
 
     void on_actionAjouter_une_Tache_triggered();
 
-    void action_ajoutProgrammation(int heure = 0, int jour = 0);
-    void action_voirProgrammations(int heure = 0, int jour = 0);
+    void on_TabAgenda_cellDoubleClicked(int heure = 0, int jour = 0);
+
+    void on_TabAgenda_cellClicked(int heure = 0, int jour = 0);
 private:
     void MAJ_treeview();
     void MAJ_agenda();

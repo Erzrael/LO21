@@ -10,11 +10,12 @@
 			**** Si une tache : Edition du titre, de la date de dispo et de la date d'échéance (vérifier que les nouvelles dates sont correctes)
 * Marie :
 	** Evènements qui ne sont pas des tâches.
-	** implémenter ajouterProgWindow
+	** suppression de prog
+	** implémenter ajouterProgWindow (DONE)
 	** vu graphique semaine :
 		*** double clic sur case normale --> ajouterProgrammation (tab view) (DONE)
-		*** case de plus en plus sombre (4 nuances) --> test chevaucheHoraire !
-		*** double clic : affichage des programmations + Case ajouterProgrammation
+		*** case de plus en plus sombre (4 nuances) --> test chevaucheHoraire ! (DONE)
+		*** double clic : affichage des programmations + Case ajouterProgrammation (DONE)
 		*** (optionnel) empêcher modification
 
 #Hypothèses

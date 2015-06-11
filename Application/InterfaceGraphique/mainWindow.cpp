@@ -23,10 +23,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->TabAgenda, SIGNAL( cellClicked(int,int)), this, SLOT( action_voirProgrammations(int,int) ) ) ;
-    connect(ui->TabAgenda, SIGNAL( cellDoubleClicked (int, int)), this, SLOT( action_ajoutProgrammation( int , int ) )) ;
-//    connect(ui->TabAgenda, SIGNAL( cellDoubleClicked (int, int)), this, SLOT( on_actionAjouter_un_Projet_triggered() )) ;
-
     MAJ_treeview();
     MAJ_agenda();
 }
@@ -38,20 +34,21 @@ MainWindow::~MainWindow()
    delete ui;
 }
 
-void MainWindow::action_ajoutProgrammation(int heure, int jour)
+
+void MainWindow::on_TabAgenda_cellDoubleClicked(int heure, int jour)
 {
    if (heure == 0 ) { // on ne peut pas ajouter une programmation sur la premère ligne du tableau (affiche les dates)
       return;
    }
    //interpréter paramètres
-   qDebug() << "Je me fous de taggle";
-   ajoutProgrammation ajout_p_window;
+   //qDebug() << "Je me fous de taggle";
+   ajoutProgrammation ajout_p_window(this, getDate(jour), getTime(heure) );
    ajout_p_window.setModal(true);
    ajout_p_window.exec();
    MAJ_agenda();
 }
 
-void MainWindow::action_voirProgrammations(int heure, int jour)
+void MainWindow::on_TabAgenda_cellClicked(int heure, int jour)
 {
 //   qDebug() << "Date :: " << getDate(jour).toString("d/MM/yyyy");
 //   qDebug() << "Heure :: " << getTime(heure).toString("hh:mm");
@@ -59,7 +56,7 @@ void MainWindow::action_voirProgrammations(int heure, int jour)
    if (ui->TabAgenda->item(heure, jour)->text() == "0")
       return;
 
-   VoirProgrammations v_programmations(0, getDate(jour), getTime(heure));
+   VoirProgrammations v_programmations(this, getDate(jour), getTime(heure));
    v_programmations.setModal(true);
    v_programmations.exec();
    MAJ_agenda();

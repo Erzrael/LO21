@@ -16,8 +16,8 @@
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>1</y>
+     <x>1</x>
+     <y>2</y>
      <width>260</width>
      <height>252</height>
     </rect>
@@ -31,7 +31,44 @@
      </widget>
     </item>
     <item>
-     <widget class="QListWidget" name="listTache"/>
+     <widget class="QTableWidget" name="eventTab">
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>75</number>
+      </attribute>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>11</number>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderHighlightSections">
+       <bool>true</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>debut</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>fin</string>
+       </property>
+      </column>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">

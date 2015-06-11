@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>280</width>
-    <height>327</height>
+    <width>286</width>
+    <height>325</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,7 +62,7 @@
              <string>Tâche</string>
             </property>
            </widget>
-           <widget class="QComboBox" name="Precedee_Box_2"/>
+           <widget class="QComboBox" name="tache_box"/>
           </widget>
          </item>
         </layout>
@@ -198,12 +198,15 @@
      </widget>
     </item>
     <item>
-     <widget class="QDialogButtonBox" name="buttonBox">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+     <widget class="QDialogButtonBox" name="cancel_ok">
+      <property name="autoFillBackground">
+       <bool>false</bool>
       </property>
       <property name="standardButtons">
-       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       <set>QDialogButtonBox::Abort|QDialogButtonBox::Save</set>
+      </property>
+      <property name="centerButtons">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -216,34 +219,34 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>ajoutProgrammation</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
+   <sender>cancel_ok</sender>
    <signal>accepted()</signal>
    <receiver>ajoutProgrammation</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>140</x>
+     <y>298</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
+     <x>142</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancel_ok</sender>
+   <signal>rejected()</signal>
+   <receiver>ajoutProgrammation</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>298</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>142</x>
+     <y>162</y>
     </hint>
    </hints>
   </connection>
