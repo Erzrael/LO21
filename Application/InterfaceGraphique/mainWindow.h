@@ -43,10 +43,14 @@ private slots:
 
     void on_actionAjouter_une_Tache_triggered();
 
-    void action_ajoutProgrammation(int jour = 0, int heure = 0);
+    void action_ajoutProgrammation(int heure = 0, int jour = 0);
+    void action_voirProgrammations(int heure = 0, int jour = 0);
 private:
     void MAJ_treeview();
     void MAJ_agenda();
+
+    QDate getDate(int jour);
+    QTime getTime(int heure);
 
     QDate choixSemaine;
 

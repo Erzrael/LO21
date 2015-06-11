@@ -49,6 +49,18 @@ unsigned int Agenda::chevaucheHoraire(const QDate & date, const QTime & debut, c
 
 }
 
+vector<const Evenement *> &Agenda::tabChevaucheHoraire(const QDate & date, const QTime & debut, const QTime & fin)
+{
+   vector<const Evenement *> * tab = new vector<const Evenement *>;
+   std::list<Programmation *>::iterator it ;
+
+   for(it = programmations.begin(); it != programmations.end() ; ++it)
+      if ( chevauche(date, debut, fin, it) )
+         tab->push_back( (*it)->getEvenement());
+
+   return *tab;
+}
+
 std::list<Programmation *> &Agenda::getProgrammation()
 {
    return programmations;

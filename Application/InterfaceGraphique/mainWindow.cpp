@@ -14,6 +14,7 @@
 #include "ajoutCompositionWindow.h"
 #include "supprimerCompositionWindow.h"
 #include "ajoutprogrammation.h"
+#include "voirprogrammations.h"
 #include "Classe/agenda.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -22,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    connect(ui->TabAgenda, SIGNAL( cellClicked(int,int)), this, SLOT( action_voirProgrammations(int,int) ) ) ;
     connect(ui->TabAgenda, SIGNAL( cellDoubleClicked (int, int)), this, SLOT( action_ajoutProgrammation( int , int ) )) ;
 //    connect(ui->TabAgenda, SIGNAL( cellDoubleClicked (int, int)), this, SLOT( on_actionAjouter_un_Projet_triggered() )) ;
 
@@ -36,7 +38,7 @@ MainWindow::~MainWindow()
    delete ui;
 }
 
-void MainWindow::action_ajoutProgrammation(int jour, int heure)
+void MainWindow::action_ajoutProgrammation(int heure, int jour)
 {
    if (heure == 0 ) { // on ne peut pas ajouter une programmation sur la premère ligne du tableau (affiche les dates)
       return;
@@ -46,6 +48,20 @@ void MainWindow::action_ajoutProgrammation(int jour, int heure)
    ajoutProgrammation ajout_p_window;
    ajout_p_window.setModal(true);
    ajout_p_window.exec();
+   MAJ_agenda();
+}
+
+void MainWindow::action_voirProgrammations(int heure, int jour)
+{
+//   qDebug() << "Date :: " << getDate(jour).toString("d/MM/yyyy");
+//   qDebug() << "Heure :: " << getTime(heure).toString("hh:mm");
+
+   if (ui->TabAgenda->item(heure, jour)->text() == "0")
+      return;
+
+   VoirProgrammations v_programmations(0, getDate(jour), getTime(heure));
+   v_programmations.setModal(true);
+   v_programmations.exec();
    MAJ_agenda();
 }
 
@@ -174,9 +190,11 @@ void MainWindow::MAJ_agenda()
 
       for (int ligne = 1 ; ligne < 13 ; ++ligne) {
          nbProgramme = Agenda::getInstance().chevaucheHoraire(jour, debut, fin);
-         if (nbProgramme != 0) {
-            ui->TabAgenda->setItem(ligne, colonne, new QTableWidgetItem(QString::number(nbProgramme) ) );
-         }
+         ui->TabAgenda->setItem(ligne, colonne, new QTableWidgetItem(QString::number(nbProgramme) ) );
+//         if (nbProgramme != 0) {
+//            ui->TabAgenda->setItem(ligne, colonne, new QTableWidgetItem(QString::number(nbProgramme) ) );
+//            // ui->TabAgenda->item(ligne, colonne)->setCheckState(Qt::Checked);
+//         }
          //on passe à la tranche horaire supérieure (+2H)
          debut = debut.addSecs(7200);
          fin = fin.addSecs(7200);
@@ -190,6 +208,18 @@ void MainWindow::MAJ_agenda()
    for(int colonne = 0 ; colonne < 6 ; ++colonne ) {
 
    }
+}
+
+QDate MainWindow::getDate(int jour)
+{
+   QString s = ui->TabAgenda->item(0, jour)->text() ;
+   return QDate::fromString(s, "d/MM/yyyy") ;
+}
+
+QTime MainWindow::getTime(int heure)
+{
+   int h = (heure - 1) * 2;
+   return QTime(h, 0, 0);
 }
 
 QTreeWidgetItem* MainWindow::addTreeRoot(QString name, QString description)
