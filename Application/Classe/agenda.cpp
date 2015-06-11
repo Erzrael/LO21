@@ -137,15 +137,22 @@ void Agenda::ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const
 }
 
 bool Agenda::chevauche(const QDate& d, const QTime& debut, const QTime & fin, list<Programmation *>::iterator position){
-//   qDebug() << "je vérifie les chevauchements" ;
+   if (position == programmations.end() )
+      return false;
+
+//   qDebug() << "chevauche :" << d.toString() << debut.toString() << fin.toString() << " et "
+//            << (*position)->getDate().toString() << (*position)->getDebut().toString() << (*position)->getFin().toString() ;
    if ( position != programmations.end() && d == (*position)->getDate() ) {
 //      qDebug() << "je vérifie les chevauchements SALOPE" ;
-
-      if ( (debut > (*position)->getDebut() && debut < (*position)->getFin() ) || (fin > (*position)->getDebut() && fin < (*position)->getFin() ) ) {
+      if ( (debut >= (*position)->getDebut() && debut < (*position)->getFin() ) ||
+           (fin > (*position)->getDebut() && fin <= (*position)->getFin() ) ||
+           ((*position)->getDebut() >= debut && (*position)->getDebut() < fin ) ||
+           ((*position)->getFin() > debut && (*position)->getFin() <=  fin ) ) {
+         //qDebug() << "Se chevauchent" ;
          return true;
       }
    }
-
+   //qDebug() << "ne se chevauchent pas";
    return false;
 }
 
