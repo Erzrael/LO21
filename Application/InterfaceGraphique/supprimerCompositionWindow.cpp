@@ -22,10 +22,41 @@ SupprimerCompositionWindow::~SupprimerCompositionWindow()
 
 void SupprimerCompositionWindow::on_Tache_Box_currentTextChanged(const QString &arg1)
 {
+    if(ui->Tache_Box->currentText() != ""){
+        ui->Composante_Box->clear();
+        ProjetManager &projetmanager = ProjetManager::getInstance();
 
+        Projet* P = projetmanager.getProjet(ui->Projet_Box->currentText());
+
+        TacheComposite* T = dynamic_cast<TacheComposite*>(P->trouverTache(ui->Tache_Box->currentText()));
+
+        for(vector<Tache*>::const_iterator it = T->getComposition().begin(); it != T->getComposition().end(); ++it)
+            ui->Composante_Box->addItem((*it)->getIdentificateur());
+    }
 }
 
-void SupprimerCompositionWindow::on_Composante_Box_currentTextChanged(const QString &arg1)
+void SupprimerCompositionWindow::on_Projet_Box_currentTextChanged(const QString &arg1)
 {
+    ui->Tache_Box->clear();
+    ui->Composante_Box->clear();
+    ProjetManager &projetmanager = ProjetManager::getInstance();
 
+    Projet* P = projetmanager.getProjet(ui->Projet_Box->currentText());
+
+    for(vector<Tache*>::const_iterator it = P->getTaches().begin(); it != P->getTaches().end(); ++it){
+        TacheComposite* item = dynamic_cast<TacheComposite*>(*it);
+        if(item)
+            ui->Tache_Box->addItem(item->getIdentificateur());
+    }
+}
+
+void SupprimerCompositionWindow::on_buttonBox_accepted()
+{
+    ProjetManager &projetmanager = ProjetManager::getInstance();
+
+    Projet* P = projetmanager.getProjet(ui->Projet_Box->currentText());
+
+    TacheComposite* T = dynamic_cast<TacheComposite*>(P->trouverTache(ui->Tache_Box->currentText()));
+
+    T->supprimerComposition(ui->Composante_Box->currentText());
 }

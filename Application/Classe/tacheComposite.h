@@ -18,8 +18,6 @@ class TacheComposite : public Tache {
     ~TacheComposite();
 
 public:
-
-
     /* Les Getters et Setters */
     std::vector<Tache *> &getComposition();
     const std::vector<Tache *> &getComposition() const;
@@ -27,6 +25,7 @@ public:
     /* Autres Fonctions */
     void ajouterComposition(Tache &t);
     unsigned int nbComposition() const;
+    bool supprimerComposition(const QString & id);
 
     virtual void xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache);
 };

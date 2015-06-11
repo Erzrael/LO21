@@ -1,12 +1,13 @@
 #A Faire
 * Lucas : 
-	** Finir la partie projet
-	** Revoir la partie gestion de la mémoire lors de la destruction. Vérifier le bon fonctionnement dans tous les cas envisageables (DONE)
-		FONCTIONNE !
-		*** SupprimerTache, faire appel à une fonction père dans le cas de tache composite (DONE)
-		*** SupprimerProjet a été revu dans le cadre de la segmentation fault.
-		*** Rajouter une fonction supprimer tache depuis le ProjetManager.
-	** Rajouter des fonctions getTache dans projet (DONE)
+	** Remodifier les fenetres d'ajout des précédences pour n'afficher que les taches elligibles
+	** Suppression des précédences
+	** Rajouter des popups partout lors de l'échec ou de la réussite
+	** Modifier les précédences en trandformant le tout en vector
+	** TreeView :
+		*** Ajouter les évènements d'édition si double click 
+			**** Si un projet : Edition du titre, de la date de disponibilité
+			**** Si une tache : Edition du titre, de la date de dispo et de la date d'échéance (vérifier que les nouvelles dates sont correctes)
 * Marie :
 	** Evènements qui ne sont pas des tâches.
 	** implémenter ajouterProgWindow

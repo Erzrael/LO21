@@ -85,7 +85,23 @@ void TacheComposite::ajouterComposition(Tache& t)
 
 unsigned int TacheComposite::nbComposition() const
 {
-   return composition.size();
+    return composition.size();
+}
+
+bool TacheComposite::supprimerComposition(const QString &id)
+{
+    std::vector<Tache*>::iterator iterator_composition = this->getComposition().begin();
+
+    while(iterator_composition != this->getComposition().end() && (*iterator_composition)->getIdentificateur() != id){
+        ++iterator_composition;
+    }
+
+    if(iterator_composition != this->getComposition().end()){
+        (*iterator_composition)->setMere_Compo(0);
+        this->getComposition().erase(iterator_composition);
+        return true;
+    } else
+        return false;
 }
 
 void TacheComposite::xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache)

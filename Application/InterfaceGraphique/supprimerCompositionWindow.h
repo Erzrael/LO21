@@ -18,7 +18,9 @@ public:
 private slots:
     void on_Tache_Box_currentTextChanged(const QString &arg1);
 
-    void on_Composante_Box_currentTextChanged(const QString &arg1);
+    void on_Projet_Box_currentTextChanged(const QString &arg1);
+
+    void on_buttonBox_accepted();
 
 private:
     Ui::SupprimerCompositionWindow *ui;
