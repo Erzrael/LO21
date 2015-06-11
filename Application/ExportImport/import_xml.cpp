@@ -17,7 +17,7 @@
 
 using namespace rapidxml;
 
-ExportImport_XML::ExportImport_XML(QString filename) : ExportImport(filename), format(QString("yyyy-MM-dd")), format_time(QString("hh:mm")) {}
+ExportImport_XML::ExportImport_XML(QString filename) : ExportImport(filename), format(QString("yyyy-MM-dd")), format_time(QString("hh:mm:ss")) {}
 
 char *convertQString(QString string)
 {
