@@ -15,6 +15,11 @@ public:
     explicit SupprimerTacheWindow(QWidget *parent = 0);
     ~SupprimerTacheWindow();
 
+private slots:
+    void on_Projet_Box_currentTextChanged(const QString &arg1);
+
+    void on_buttonBox_accepted();
+
 private:
     Ui::SupprimerTacheWindow *ui;
 };

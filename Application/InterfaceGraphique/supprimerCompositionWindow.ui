@@ -7,45 +7,56 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>128</height>
+    <height>198</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Supprimer une Composition</string>
   </property>
-  <widget class="QSplitter" name="splitter_3">
+  <widget class="QSplitter" name="splitter_4">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
      <width>381</width>
-     <height>111</height>
+     <height>181</height>
     </rect>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
+   <widget class="QSplitter" name="splitter_3">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QLabel" name="Projet_Lab">
+     <property name="text">
+      <string>Projet</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="Projet_Box"/>
+   </widget>
    <widget class="QSplitter" name="splitter">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="Tache_Lab">
      <property name="text">
       <string>Tâche</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox"/>
+    <widget class="QComboBox" name="Tache_Box"/>
    </widget>
    <widget class="QSplitter" name="splitter_2">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="Composante_Lab">
      <property name="text">
       <string>Tâche Composante</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_2"/>
+    <widget class="QComboBox" name="Composante_Box"/>
    </widget>
    <widget class="QDialogButtonBox" name="buttonBox">
     <property name="orientation">

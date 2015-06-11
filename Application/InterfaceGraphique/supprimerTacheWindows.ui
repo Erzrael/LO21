@@ -7,24 +7,35 @@
     <x>0</x>
     <y>0</y>
     <width>390</width>
-    <height>81</height>
+    <height>119</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Supprimer une Tâche</string>
   </property>
-  <widget class="QSplitter" name="splitter_2">
+  <widget class="QSplitter" name="splitter_3">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
      <width>371</width>
-     <height>61</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
+   <widget class="QSplitter" name="splitter_2">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QLabel" name="Projet_Lab">
+     <property name="text">
+      <string>Projet</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="Projet_Box"/>
+   </widget>
    <widget class="QSplitter" name="splitter">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>

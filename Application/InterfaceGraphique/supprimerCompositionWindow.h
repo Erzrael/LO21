@@ -15,6 +15,11 @@ public:
     explicit SupprimerCompositionWindow(QWidget *parent = 0);
     ~SupprimerCompositionWindow();
 
+private slots:
+    void on_Tache_Box_currentTextChanged(const QString &arg1);
+
+    void on_Composante_Box_currentTextChanged(const QString &arg1);
+
 private:
     Ui::SupprimerCompositionWindow *ui;
 };

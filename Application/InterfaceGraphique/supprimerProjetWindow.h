@@ -15,6 +15,9 @@ public:
     explicit SupprimerProjetWindow(QWidget *parent = 0);
     ~SupprimerProjetWindow();
 
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::SupprimerProjetWindow *ui;
 };
