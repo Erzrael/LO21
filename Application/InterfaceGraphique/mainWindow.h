@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDate>
 
 class QTreeWidgetItem;
 class Tache;
@@ -47,6 +48,9 @@ private slots:
     void action_ajoutProgrammation(int jour = 0, int heure = 0);
 private:
     void MAJ_treeview();
+    void MAJ_agenda();
+
+    QDate choixSemaine;
 
     Ui::MainWindow *ui;
 };

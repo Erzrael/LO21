@@ -9,8 +9,10 @@
 	** Rajouter des fonctions getTache dans projet (DONE)
 * Marie :
 	** Evènements qui ne sont pas des tâches.
-	** vu graphique semaine : double clic sur case normale --> ajouterProgrammation (tab view)
-		*** case de plus en plus sombre (4 nuances)
+	** implémenter ajouterProgWindow
+	** vu graphique semaine :
+		*** double clic sur case normale --> ajouterProgrammation (tab view) (DONE)
+		*** case de plus en plus sombre (4 nuances) --> test chevaucheHoraire !
 		*** double clic : affichage des programmations + Case ajouterProgrammation
 		*** (optionnel) empêcher modification
 

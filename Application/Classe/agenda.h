@@ -110,6 +110,8 @@ public:
     */
    vector<Programmation *> & trouverProgrammation(const TacheUnitaire & t)const;
 
+   unsigned int chevaucheHoraire(const QDate & date, const QTime &debut, const QTime & fin);
+
    std::list<Programmation *> & getProgrammation();
    const std::list<Programmation *> & getProgrammation() const;
 

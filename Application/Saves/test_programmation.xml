@@ -6,21 +6,21 @@
 		<composition tache="tortank">caracaracarabaaaffe</composition>
 		<composition tache="tortank">carapuce</composition>
 		<tache id="evolutioncarabaffe" titre="Fais évoluer Carabaffe" dispo="1996-06-16" echeance="2015-07-25" type="u" pre="true" duree="300"/>
-		<precedence tache="evolutioncarabaffe">caracaracarabaaaffe</precedence>
-		<precedence tache="evolutioncarabaffe">carapuce</precedence>
+		<!--<precedence tache="evolutioncarabaffe">caracaracarabaaaffe</precedence>
+		<precedence tache="evolutioncarabaffe">carapuce</precedence> -->
 		<tache id="caracaracarabaaaffe" titre="Fais évoluer Carapuce" dispo="1996-06-15" echeance="2015-06-15" type="u" pre="true" duree="195"/>
-		<precedence tache="caracaracarabaaaffe">carapuce</precedence>
+		<!--<precedence tache="caracaracarabaaaffe">carapuce</precedence>-->
 		<tache id="carapuce" titre="Obtiens Carapuce" dispo="1996-06-15" echeance="2015-06-15" type="c"/>
 		<composition tache="carapuce">chen</composition>
 		<composition tache="carapuce">judicieusement</composition>
 		<tache id="judicieusement" titre="Choisis le starter le plus badass" dispo="1996-06-15" echeance="2015-06-15" type="u" duree="10"/>
-		<precedence tache="judicieusement">chen</precedence>
+		<!--<precedence tache="judicieusement">chen</precedence>-->
 		<tache id="chen" titre="Va voir Chen" dispo="1996-06-15" echeance="2015-06-15" type="u" duree="20"/>
 	</projet>
 	<projet id="evoli" titre="evoli" dispo="2015-06-06" echeance="2015-08-06">
 		<tache id="voltali" titre="Avoir pyroli (le plus beau !)" dispo="2015-07-06" echeance="2015-08-05" type="u" duree="10"/>
 	</projet>
-	<programmation date="2015-06-08" debut="11:30:00" fin="11:50:00">chen</programmation>
-	<programmation date="2015-06-08" debut="12:00:00" fin="12:10:00">judicieusement</programmation>
+	<programmation date="2015-06-11" debut="11:30:00" fin="11:50:00">chen</programmation>
+	<programmation date="2015-06-12" debut="08:00:00" fin="12:00:00">judicieusement</programmation>
 </root>
 

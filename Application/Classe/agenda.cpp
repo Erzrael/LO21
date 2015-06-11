@@ -35,6 +35,20 @@ vector<Programmation *> & Agenda::trouverProgrammation(const TacheUnitaire& t)co
    return *listeProgrammation;
 }
 
+unsigned int Agenda::chevaucheHoraire(const QDate & date, const QTime & debut, const QTime & fin)
+{
+   int result = 0;
+
+   std::list<Programmation *>::iterator it ;
+
+   for(it = programmations.begin(); it != programmations.end() ; ++it)
+      if ( chevauche(date, debut, fin, it) )
+         result ++;
+
+   return result;
+
+}
+
 std::list<Programmation *> &Agenda::getProgrammation()
 {
    return programmations;
