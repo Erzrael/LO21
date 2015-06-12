@@ -88,7 +88,7 @@ unsigned int TacheComposite::nbComposition() const
     return composition.size();
 }
 
-bool TacheComposite::supprimerComposition(const QString &id)
+void TacheComposite::supprimerComposition(const QString &id)
 {
     std::vector<Tache*>::iterator iterator_composition = this->getComposition().begin();
 
@@ -99,9 +99,8 @@ bool TacheComposite::supprimerComposition(const QString &id)
     if(iterator_composition != this->getComposition().end()){
         (*iterator_composition)->setMere_Compo(0);
         this->getComposition().erase(iterator_composition);
-        return true;
     } else
-        return false;
+        throw CalendarException("La composition n'a pas été supprimée.");
 }
 
 void TacheComposite::xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache)

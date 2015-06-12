@@ -17,6 +17,9 @@
 #include "supprimerCompositionWindow.h"
 #include "ajoutprogrammation.h"
 #include "voirprogrammations.h"
+#include "editionTacheCompositeWindow.h"
+#include "editionTacheUnitaireWindow.h"
+#include "editionProjetWindow.h"
 #include "Classe/agenda.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -26,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     MAJ_agenda();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
 MainWindow::~MainWindow()
@@ -113,7 +116,7 @@ void MainWindow::on_actionAjouter_un_Projet_triggered()
     AjoutProjetWindow ajout_projet_window;
     ajout_projet_window.setModal(true);
     ajout_projet_window.exec();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
 void MainWindow::on_actionSupprimer_un_Projet_triggered()
@@ -121,7 +124,7 @@ void MainWindow::on_actionSupprimer_un_Projet_triggered()
     SupprimerProjetWindow supprimer_projet_window;
     supprimer_projet_window.setModal(true);
     supprimer_projet_window.exec();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
 void MainWindow::on_actionSupprimer_une_T_che_triggered()
@@ -129,7 +132,7 @@ void MainWindow::on_actionSupprimer_une_T_che_triggered()
     SupprimerTacheWindow supprimer_tache_window;
     supprimer_tache_window.setModal(true);
     supprimer_tache_window.exec();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
 void MainWindow::on_actionModifier_une_T_che_triggered()
@@ -137,7 +140,7 @@ void MainWindow::on_actionModifier_une_T_che_triggered()
     ChoixTacheWindow choix_tache_window;
     choix_tache_window.setModal(true);
     choix_tache_window.exec();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
 void MainWindow::on_actionAjouter_une_contrainte_de_pr_c_dence_triggered()
@@ -145,7 +148,7 @@ void MainWindow::on_actionAjouter_une_contrainte_de_pr_c_dence_triggered()
     AjoutPrecedenceWindow ajout_precedence_window;
     ajout_precedence_window.setModal(true);
     ajout_precedence_window.exec();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
 void MainWindow::on_actionSupprimer_une_Contrainte_de_Pr_c_dence_triggered()
@@ -153,7 +156,7 @@ void MainWindow::on_actionSupprimer_une_Contrainte_de_Pr_c_dence_triggered()
     SupprimerPrecedenceWindow supprimer_precedence_window;
     supprimer_precedence_window.setModal(true);
     supprimer_precedence_window.exec();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
 void MainWindow::on_actionAjouter_une_Composition_triggered()
@@ -161,7 +164,7 @@ void MainWindow::on_actionAjouter_une_Composition_triggered()
     AjoutCompositionWindow ajout_composition_window;
     ajout_composition_window.setModal(true);
     ajout_composition_window.exec();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
 void MainWindow::on_actionSupprimer_une_Composition_triggered()
@@ -169,7 +172,7 @@ void MainWindow::on_actionSupprimer_une_Composition_triggered()
     SupprimerCompositionWindow supprimer_composition_window;
     supprimer_composition_window.setModal(true);
     supprimer_composition_window.exec();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
 void MainWindow::on_actionAjouter_une_Tache_triggered()
@@ -177,12 +180,12 @@ void MainWindow::on_actionAjouter_une_Tache_triggered()
     AjoutTacheWindow ajout_tache_window;
     ajout_tache_window.setModal(true);
     ajout_tache_window.exec();
-    MAJ_treeview();
+    MAJ_treeview_Composition();
 }
 
-void MainWindow::MAJ_treeview()
+void MainWindow::MAJ_treeview_Composition()
 {
-   ui->TreeWidget->clear();
+    ui->TreeWidget->clear();
     ProjetManager& projetmanager = ProjetManager::getInstance();
     vector<QTreeWidgetItem*> afficher;
 
@@ -303,4 +306,40 @@ QTreeWidgetItem * MainWindow::trouver(std::vector<QTreeWidgetItem *> tab, QStrin
     }
     qDebug()<<"Je retourne 0";
     return 0;
+}
+
+void MainWindow::on_TreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int)
+{
+    ProjetManager& projetmanager = ProjetManager::getInstance();
+
+    if(ui->TreeWidget->itemAbove(ui->TreeWidget->itemAbove(item)) == 0)
+    {
+        EditionProjetWindow* edition_projet_window = new EditionProjetWindow(projetmanager.getProjet(item->text(0)));
+        edition_projet_window->setModal(true);
+        edition_projet_window->exec();
+        delete edition_projet_window;
+
+    } else {
+        try{
+            Tache* T = projetmanager.getTache(item->text(0));
+            TacheComposite* Compo = dynamic_cast<TacheComposite*>(T);
+
+            if(Compo){
+                EditionTacheCompositeWindow* edition_tache_composite_window = new EditionTacheCompositeWindow(Compo);
+                edition_tache_composite_window->setModal(true);
+                edition_tache_composite_window->exec();
+                delete edition_tache_composite_window;
+            } else {
+                TacheUnitaire* Unitaire = dynamic_cast<TacheUnitaire*>(T);
+                EditionTacheUnitaireWindow* edition_tache_unitaire_window = new EditionTacheUnitaireWindow(Unitaire);
+                edition_tache_unitaire_window->setModal(true);
+                edition_tache_unitaire_window->exec();
+                delete edition_tache_unitaire_window;
+            }
+        } catch (CalendarException e) {
+            QMessageBox::warning(this, "Erreur", e.getInfo());
+        }
+    }
+
+    MAJ_treeview_Composition();
 }

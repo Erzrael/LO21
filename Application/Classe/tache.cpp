@@ -106,6 +106,28 @@ const QDate &Tache::getEcheance() const
 
 void Tache::setEcheance(const QDate &value)
 {
+    if(this->getMere().empty()){
+        if(value < this->getDisponibilite())
+            throw CalendarException("La date d'échéance voulue n'est pas correct vis à vis de la disponibilité");
+    } else {
+        QDate temp(9999,12,31);
+        for(std::vector<Tache*>::const_iterator it_precedence = this->getMere().begin(); it_precedence != this->getMere().end(); ++it_precedence){
+            if(temp > (*it_precedence)->getEcheance())
+                temp = (*it_precedence)->getEcheance();
+        }
+
+        if(temp < value)
+            throw CalendarException("La date d'échéance voulue n'est pas correct vis à vis des précédences");
+    }
+
+    TacheComposite* Composite = dynamic_cast<TacheComposite*>(this);
+
+    if(Composite){
+        if(value > Composite->getMere_Compo()->getEcheance())
+            throw CalendarException("La date d'échéance voulue n'est pas correct vis à vis des compositions");
+    }
+
+    // Si on arrive ici, c'est qu'aucun problème n'a été détecté.
     echeance = value;
 }
 
@@ -225,6 +247,30 @@ bool Tache::verifierComposition(Tache &t) const
 
     // Si tous les tests sont validés, c'est bon
     return true;
+}
+
+void Tache::supprimerPrecedence(const QString &id)
+{
+    std::vector<Tache*>::iterator iterator_precedence = this->getPrecedence().begin();
+
+    while(iterator_precedence != this->getPrecedence().end() && (*iterator_precedence)->getIdentificateur() != id){
+        ++iterator_precedence;
+    }
+
+    if(iterator_precedence != this->getPrecedence().end()){
+        std::vector<Tache*>::iterator it_mere_prece = (*iterator_precedence)->getMere().begin();
+        bool suppression = false;
+        while((it_mere_prece != (*iterator_precedence)->getMere().end()) && !suppression){
+
+            if((*it_mere_prece)->getIdentificateur() == this->getIdentificateur()){
+                (*iterator_precedence)->getMere().erase(it_mere_prece);
+                suppression = true;
+            }
+        }
+
+        this->getPrecedence().erase(iterator_precedence);
+    } else
+        throw CalendarException("La précédence n'a pas été supprimée");
 }
 
 unsigned int Tache::nbPrerequis() const

@@ -33,31 +33,44 @@
      <attribute name="title">
       <string>Projets</string>
      </attribute>
-     <widget class="QTreeWidget" name="TreeWidget">
+     <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>801</width>
-        <height>631</height>
+        <width>751</width>
+        <height>481</height>
        </rect>
       </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <column>
-       <property name="text">
-        <string>Identifiant</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Titre</string>
-       </property>
-      </column>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="Composition_Lab">
+         <property name="text">
+          <string>Composition</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTreeWidget" name="TreeWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <column>
+          <property name="text">
+           <string>Identifiant</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Titre</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="Agenda">

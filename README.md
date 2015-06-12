@@ -3,10 +3,10 @@
 	* Remodifier les fenetres d'ajout des précédences pour n'afficher que les taches elligibles (DONE)
 	* Modifier les précédences en trandformant le tout en vector (DONE)
 	* Modifier algo verifierCompo (DONE)
-	* Suppression des précédences
+	* Suppression des précédences (DONE)
 	* Rajouter des popups partout lors de l'échec ou de la réussite (DONE, pour le moment)
 	* TreeView :
-		* Ajouter les évènements d'édition si double click 
+		* Ajouter les évènements d'édition si double click (DONE)
 			* Si un projet : Edition du titre, de la date de disponibilité
 			* Si une tache : Edition du titre, de la date de dispo et de la date d'échéance (vérifier que les nouvelles dates sont correctes)
 * Marie :
@@ -26,6 +26,7 @@
 #Hypothèses
 * L'ID d'une tâche est unique dans l'ensemble des projets.
 * Une tâche ne peut être la précédence que d'une seule autre tâche et en composition avec une seule autre tâche
+* L'ID d'une tâche ou d'un projet est unique dans l'ensemble de l'application
 
 #Problèmes connus et mis de côté pour le moment
 

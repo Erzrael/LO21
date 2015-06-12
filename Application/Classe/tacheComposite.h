@@ -25,7 +25,7 @@ public:
     /* Autres Fonctions */
     void ajouterComposition(Tache &t);
     unsigned int nbComposition() const;
-    bool supprimerComposition(const QString & id);
+    void supprimerComposition(const QString & id);
 
     virtual void xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache);
 };

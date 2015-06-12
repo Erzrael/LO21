@@ -37,7 +37,8 @@ SOURCES += main.cpp \
     Classe/tachePreemptable.cpp \
     Classe/tacheNonPreemptable.cpp \
     InterfaceGraphique/ajoutprogrammation.cpp \
-    InterfaceGraphique/voirprogrammations.cpp
+    InterfaceGraphique/voirprogrammations.cpp \
+    InterfaceGraphique/editionProjetWindow.cpp
 
 HEADERS += \
     Classe/tache.h \
@@ -71,7 +72,8 @@ HEADERS += \
     Classe/tacheNonPreemptable.h \
     Classe/tachePreemptable.h \
     InterfaceGraphique/ajoutprogrammation.h \
-    InterfaceGraphique/voirprogrammations.h
+    InterfaceGraphique/voirprogrammations.h \
+    InterfaceGraphique/editionProjetWindow.h
 
 FORMS += \
     InterfaceGraphique/ajoutCompositionWindow.ui \
@@ -87,7 +89,8 @@ FORMS += \
     InterfaceGraphique/supprimerTacheWindows.ui \
     InterfaceGraphique/ajoutTacheWindow.ui \
     InterfaceGraphique/ajoutprogrammation.ui \
-    InterfaceGraphique/voirprogrammations.ui
+    InterfaceGraphique/voirprogrammations.ui \
+    InterfaceGraphique/editionProjetWindow.ui
 
 RESOURCES += \
     InterfaceGraphique/ressources.qrc

@@ -15,6 +15,13 @@ public:
     explicit SupprimerPrecedenceWindow(QWidget *parent = 0);
     ~SupprimerPrecedenceWindow();
 
+private slots:
+    void on_Projet_Box_currentTextChanged(const QString);
+
+    void on_Precedee_Box_currentTextChanged(const QString);
+
+    void on_buttonBox_accepted();
+
 private:
     Ui::SupprimerPrecedenceWindow *ui;
 };

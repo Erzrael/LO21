@@ -1,58 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>EditionTacheUnitaireWindow</class>
- <widget class="QDialog" name="EditionTacheUnitaireWindow">
+ <class>EditionProjetWindow</class>
+ <widget class="QDialog" name="EditionProjetWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>393</width>
-    <height>222</height>
+    <width>400</width>
+    <height>218</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Édition d'une Tâche Unitaire</string>
+   <string>Dialog</string>
   </property>
-  <widget class="QSplitter" name="splitter_6">
+  <widget class="QSplitter" name="splitter_4">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>371</width>
+     <width>381</width>
      <height>201</height>
     </rect>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
-   <widget class="QSplitter" name="splitter">
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+   <widget class="QLabel" name="ID_Lab">
+    <property name="text">
+     <string>TextLabel</string>
     </property>
-    <widget class="QLabel" name="ID_Lab">
-     <property name="text">
-      <string>ID</string>
-     </property>
-    </widget>
    </widget>
-   <widget class="QSplitter" name="splitter_2">
+   <widget class="QSplitter" name="splitter">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
     <widget class="QLabel" name="Titre_Lab">
      <property name="text">
-      <string>Titre</string>
+      <string>TextLabel</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="Titre_Edit"/>
    </widget>
-   <widget class="QSplitter" name="splitter_3">
+   <widget class="QSplitter" name="splitter_2">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
     <widget class="QLabel" name="Dispo_Lab">
      <property name="text">
-      <string>Date de disponibilité</string>
+      <string>TextLabel</string>
      </property>
     </widget>
     <widget class="QDateEdit" name="Dispo_Edit">
@@ -61,7 +56,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QSplitter" name="splitter_4">
+   <widget class="QSplitter" name="splitter_3">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
@@ -70,33 +65,7 @@
       <string>Date d'échéance</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="Echeance_Edit">
-     <property name="calendarPopup">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QSplitter" name="splitter_5">
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <widget class="QLabel" name="Duree_Lab">
-     <property name="text">
-      <string>Durée</string>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="Heure_Box"/>
-    <widget class="QLabel" name="Heure_Lab">
-     <property name="text">
-      <string>Heure(s)</string>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="Minute_Box"/>
-    <widget class="QLabel" name="Minute_Lab">
-     <property name="text">
-      <string>Minute(s)</string>
-     </property>
-    </widget>
+    <widget class="QDateEdit" name="Echeance_Edit"/>
    </widget>
    <widget class="QDialogButtonBox" name="buttonBox">
     <property name="orientation">
@@ -113,32 +82,32 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>EditionTacheUnitaireWindow</receiver>
+   <receiver>EditionProjetWindow</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>200</x>
-     <y>196</y>
+     <x>248</x>
+     <y>254</y>
     </hint>
     <hint type="destinationlabel">
-     <x>196</x>
-     <y>110</y>
+     <x>157</x>
+     <y>274</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>EditionTacheUnitaireWindow</receiver>
+   <receiver>EditionProjetWindow</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>200</x>
-     <y>196</y>
+     <x>316</x>
+     <y>260</y>
     </hint>
     <hint type="destinationlabel">
-     <x>196</x>
-     <y>110</y>
+     <x>286</x>
+     <y>274</y>
     </hint>
    </hints>
   </connection>

@@ -19,10 +19,19 @@ void Projet::setId(const QString & value)
     id = value;
 }
 
-
 QString & Projet::getTitre()
 {
     return titre;
+}
+
+const QString & Projet::getTitre() const
+{
+    return titre;
+}
+
+void Projet::setTitre(const QString &value)
+{
+    titre = value;
 }
 
 Projet::Projet(const QString id_p, const QString ti, const QDate &dispo, const QDate &deadline):

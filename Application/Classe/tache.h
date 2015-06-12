@@ -62,6 +62,7 @@ public:
     void ajouterPrecedence(Tache& t);
     bool verifierPrecedence(Tache &t) const;
     bool verifierComposition(Tache &t) const;
+    void supprimerPrecedence(const QString & id);
     unsigned int nbPrerequis() const;
     Tache* getPere(); // Renvoie un pointeur vers la tache père de la tâche appelante ou 0 si le père est le projet
     Projet* getProjet(); // Renvoie le projet auquel appartient une tâche

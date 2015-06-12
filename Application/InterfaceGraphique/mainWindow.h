@@ -49,9 +49,12 @@ private slots:
 
     void on_TabAgenda_cellDoubleClicked(int heure = 0, int jour = 0);
 
-    void on_TabAgenda_cellClicked(int heure = 0, int jour = 0);
+    void on_TabAgenda_cellClicked(int heure = 0, int jour = 0);    
+
+    void on_TreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int);
+
 private:
-    void MAJ_treeview();
+    void MAJ_treeview_Composition();
     void MAJ_agenda();
 
     QDate getDate(int jour);

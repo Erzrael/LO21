@@ -35,7 +35,7 @@ void SupprimerCompositionWindow::on_Tache_Box_currentTextChanged(const QString)
     }
 }
 
-void SupprimerCompositionWindow::on_Projet_Box_currentTextChanged(const QString )
+void SupprimerCompositionWindow::on_Projet_Box_currentTextChanged(const QString)
 {
     ui->Tache_Box->clear();
     ui->Composante_Box->clear();

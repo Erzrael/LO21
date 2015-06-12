@@ -56,7 +56,11 @@
       <string>Date de Disponibilité</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="Dispo_Edit"/>
+    <widget class="QDateEdit" name="Dispo_Edit">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QSplitter" name="splitter_4">
     <property name="orientation">
@@ -67,7 +71,11 @@
       <string>Date d'échéance</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="Echeance_Edit"/>
+    <widget class="QDateEdit" name="Echeance_Edit">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QDialogButtonBox" name="buttonBox">
     <property name="orientation">
