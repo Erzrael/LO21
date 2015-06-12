@@ -20,6 +20,8 @@ private slots:
 
     void on_Projet_Box_currentTextChanged(const QString &arg1);
 
+    void on_Composee_Box_currentTextChanged(const QString &arg1);
+
 private:
     Ui::AjoutCompositionWindow *ui;
 };

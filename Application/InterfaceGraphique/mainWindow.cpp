@@ -23,8 +23,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    MAJ_treeview();
     MAJ_agenda();
+    MAJ_treeview();
 }
 
 MainWindow::~MainWindow()

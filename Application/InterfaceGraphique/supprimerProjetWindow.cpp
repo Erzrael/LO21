@@ -22,5 +22,10 @@ void SupprimerProjetWindow::on_buttonBox_accepted()
 {
     ProjetManager &projetmanager = ProjetManager::getInstance();
 
-    projetmanager.supprimerProjet(ui->Projet_Box->currentText());
+    try{
+        projetmanager.supprimerProjet(ui->Projet_Box->currentText());
+        QMessageBox::information(this,"Succès","Le projet a bien été supprimé");
+    } catch (CalendarException e) {
+        QMessageBox::warning(this,"Erreur",e.getInfo());
+    }
 }

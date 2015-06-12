@@ -46,10 +46,21 @@ void AjoutCompositionWindow::on_Projet_Box_currentTextChanged(const QString &arg
         if(item)
             ui->Composee_Box->addItem(item->getIdentificateur());
     }
+}
 
-    QString id = ui->Composee_Box->currentText();
+void AjoutCompositionWindow::on_Composee_Box_currentTextChanged(const QString &arg1)
+{
+    if(ui->Composee_Box->currentText() != ""){
+        ui->Composante_Box->clear();
+        ProjetManager &projetmanager = ProjetManager::getInstance();
 
-    for(vector<Tache*>::const_iterator it = P->getTaches().begin(); it != P->getTaches().end(); ++it){
-        ui->Composante_Box->addItem((*it)->getIdentificateur());
+        Projet* P = projetmanager.getProjet(ui->Projet_Box->currentText());
+
+        Tache* T = P->trouverTache(ui->Composee_Box->currentText());
+
+        for(vector<Tache*>::const_iterator it = P->getTaches().begin(); it != P->getTaches().end(); ++it){
+            if(T->verifierComposition(**it))
+                ui->Composante_Box->addItem((*it)->getIdentificateur());
+        }
     }
 }

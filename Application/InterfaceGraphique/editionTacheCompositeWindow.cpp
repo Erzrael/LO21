@@ -31,10 +31,13 @@ void EditionTacheCompositeWindow::on_buttonBox_accepted()
 {
     ProjetManager &projetmanager = ProjetManager::getInstance();
 
-    TacheComposite* Composite = dynamic_cast<TacheComposite*>(projetmanager.getTache(ui->ID_Lab->text()));
-    Composite->setTitre(ui->Titre_Edit->text());
-    Composite->setDisponibilite(ui->Dispo_Edit->date());
-    Composite->setEcheance(ui->Echeance_Edit->date());
-    QMessageBox::information(this,"Succès","La tâche a bien été modifée");
-    qDebug()<<Composite->getTitre();
+    try{
+        TacheComposite* Composite = dynamic_cast<TacheComposite*>(projetmanager.getTache(ui->ID_Lab->text()));
+        Composite->setTitre(ui->Titre_Edit->text());
+        Composite->setDisponibilite(ui->Dispo_Edit->date());
+        Composite->setEcheance(ui->Echeance_Edit->date());
+        QMessageBox::information(this,"Succès","La tâche a bien été modifée");
+    } catch (CalendarException e) {
+        QMessageBox::warning(this,"Erreur",e.getInfo());
+    }
 }
