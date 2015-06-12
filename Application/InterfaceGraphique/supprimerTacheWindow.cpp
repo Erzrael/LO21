@@ -36,5 +36,10 @@ void SupprimerTacheWindow::on_buttonBox_accepted()
 
     Projet* P = projetmanager.getProjet(ui->Projet_Box->currentText());
 
-    P->supprimerTache(ui->Tache_Box->currentText());
+    try{
+        P->supprimerTache(ui->Tache_Box->currentText());
+        QMessageBox::information(this,"Succès","La tache a bien été supprimé");
+    } catch (CalendarException e) {
+        QMessageBox::warning(this,"Erreur",e.getInfo());
+    }
 }

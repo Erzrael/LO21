@@ -35,10 +35,14 @@ void EditionTacheUnitaireWindow::on_buttonBox_accepted()
 {
     ProjetManager &projetmanager = ProjetManager::getInstance();
 
-    TacheUnitaire* Unitaire = dynamic_cast<TacheUnitaire*>(projetmanager.getTache(ui->ID_Lab->text()));
-    Unitaire->setTitre(ui->Titre_Edit->text());
-    Unitaire->setDisponibilite(ui->Dispo_Edit->date());
-    Unitaire->setEcheance(ui->Echeance_Edit->date());
-    Unitaire->setDuree(Duree(ui->Heure_Box->value(), ui->Minute_Box->value()));
-    QMessageBox::information(this,"Succès","La tâche a bien été modifée");
+    try{
+        TacheUnitaire* Unitaire = dynamic_cast<TacheUnitaire*>(projetmanager.getTache(ui->ID_Lab->text()));
+        Unitaire->setTitre(ui->Titre_Edit->text());
+        Unitaire->setDisponibilite(ui->Dispo_Edit->date());
+        Unitaire->setEcheance(ui->Echeance_Edit->date());
+        Unitaire->setDuree(Duree(ui->Heure_Box->value(), ui->Minute_Box->value()));
+        QMessageBox::information(this,"Succès","La tâche a bien été modifée");
+    } catch (CalendarException e) {
+        QMessageBox::warning(this,"Erreur",e.getInfo());
+    }
 }

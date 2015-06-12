@@ -58,5 +58,10 @@ void SupprimerCompositionWindow::on_buttonBox_accepted()
 
     TacheComposite* T = dynamic_cast<TacheComposite*>(P->trouverTache(ui->Tache_Box->currentText()));
 
-    T->supprimerComposition(ui->Composante_Box->currentText());
+    try{
+        T->supprimerComposition(ui->Composante_Box->currentText());
+        QMessageBox::information(this,"Succès","La composition a bien été supprimée");
+    } catch (CalendarException e) {
+        QMessageBox::warning(this,"Erreur",e.getInfo());
+    }
 }

@@ -44,10 +44,21 @@ void AjoutPrecedenceWindow::on_Projet_Box_currentTextChanged(const QString &arg1
     for(vector<Tache*>::const_iterator it = P->getTaches().begin(); it != P->getTaches().end(); ++it){
         ui->Precedee_Box->addItem((*it)->getIdentificateur());
     }
+}
 
-    QString id = ui->Precedee_Box->currentText();
+void AjoutPrecedenceWindow::on_Precedee_Box_currentTextChanged(const QString &arg1)
+{
+    if(ui->Precedee_Box->currentText() != ""){
+        ui->Precedente_Box->clear();
+        ProjetManager &projetmanager = ProjetManager::getInstance();
 
-    for(vector<Tache*>::const_iterator it = P->getTaches().begin(); it != P->getTaches().end(); ++it){
-        ui->Precedente_Box->addItem((*it)->getIdentificateur());
+        Projet* P = projetmanager.getProjet(ui->Projet_Box->currentText());
+
+        Tache* T = P->trouverTache(ui->Precedee_Box->currentText());
+
+        for(vector<Tache*>::const_iterator it = P->getTaches().begin(); it != P->getTaches().end(); ++it){
+            if(T->verifierPrecedence(**it))
+                ui->Precedente_Box->addItem((*it)->getIdentificateur());
+        }
     }
 }

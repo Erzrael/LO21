@@ -1,9 +1,9 @@
 #A Faire
 * Lucas : 
-	** Remodifier les fenetres d'ajout des précédences pour n'afficher que les taches elligibles
-	** Suppression des précédences
-	** Rajouter des popups partout lors de l'échec ou de la réussite
+	** Remodifier les fenetres d'ajout des précédences pour n'afficher que les taches elligibles (DONE)
 	** Modifier les précédences en trandformant le tout en vector
+	** Suppression des précédences
+	** Rajouter des popups partout lors de l'échec ou de la réussite (DONE, pour le moment)
 	** TreeView :
 		*** Ajouter les évènements d'édition si double click 
 			**** Si un projet : Edition du titre, de la date de disponibilité
