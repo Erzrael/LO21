@@ -10,17 +10,18 @@
 			**** Si un projet : Edition du titre, de la date de disponibilité
 			**** Si une tache : Edition du titre, de la date de dispo et de la date d'échéance (vérifier que les nouvelles dates sont correctes)
 * Marie :
-	** import XML des évènements non tâche.
-	** suppression tache => suppression programmation (DONE)
-	** faire fenêtre load / save (too easy sisi) (DONE, Marie est dans la place)
-	** Evènements qui ne sont pas des tâches. (MOTHERFUCKING PUTAIN DE DONE)
-	** suppression de prog (fucking DONE)
-	** implémenter ajouterProgWindow (DONE)
-	** vu graphique semaine :
-		*** double clic sur case normale --> ajouterProgrammation (tab view) (DONE)
-		*** case de plus en plus sombre (4 nuances) --> test chevaucheHoraire ! (DONE)
-		*** double clic : affichage des programmations + Case ajouterProgrammation (DONE)
-		*** ajout programmation venant d'une fenêtre : load tab (RAB : rien à branler)
+	* vu graphique semaine :
+		* les nuances, car c'est plus bow.
+		* ajout programmation venant d'une fenêtre : load tab (RAB : rien à branler)
+		* double clic sur case normale --> ajouterProgrammation (tab view) (DONE)
+		* case de plus en plus sombre (4 nuances) --> test chevaucheHoraire ! (DONE)
+		* double clic : affichage des programmations + Case ajouterProgrammation (DONE)
+	* import XML des évènements non tâche. (DONE)
+	* suppression tache => suppression programmation (DONE)
+	* faire fenêtre load / save (too easy sisi) (DONE, Marie est dans la place)
+	* Evènements qui ne sont pas des tâches. (MOTHERFUCKING PUTAIN DE DONE)
+	* suppression de prog (fucking DONE)
+	* implémenter ajouterProgWindow (DONE)
 
 #Hypothèses
 * L'ID d'une tâche est unique dans l'ensemble des projets.
