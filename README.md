@@ -1,7 +1,8 @@
 #A Faire
 * Lucas : 
 	** Remodifier les fenetres d'ajout des précédences pour n'afficher que les taches elligibles (DONE)
-	** Modifier les précédences en trandformant le tout en vector
+	** Modifier les précédences en trandformant le tout en vector (DONE)
+	** Modifier algo verifierCompo (DONE)
 	** Suppression des précédences
 	** Rajouter des popups partout lors de l'échec ou de la réussite (DONE, pour le moment)
 	** TreeView :

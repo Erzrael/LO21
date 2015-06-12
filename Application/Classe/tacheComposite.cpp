@@ -21,7 +21,7 @@ TacheComposite& TacheComposite::operator=(const TacheComposite& obj){
         this->setIdentificateur(obj.getIdentificateur());
         this->setTitre(obj.getTitre());
         this->precedence = obj.getPrecedence();
-        this->setMere(obj.getMere());
+        this->mere = obj.getMere();
         this->composition = obj.getComposition();
         this->setMere_Compo(obj.getMere_Compo());
     }

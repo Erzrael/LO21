@@ -2,18 +2,18 @@
 #include <Classe/projet.h>
 #include <Classe/projetManager.h>
 
-Tache *Tache::getMere() const
+const std::vector<Tache *> &Tache::getMere() const
 {
     return mere;
 }
 
-void Tache::setMere(Tache *value)
+std::vector<Tache *> &Tache::getMere()
 {
-    mere = value;
+    return mere;
 }
 
 Tache::Tache(const QString& id, const QString& t, const QDate& dispo, const QDate& deadline):
-    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline), mere(0), mere_compo(0){
+    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline), mere_compo(0){
     qDebug()<<"Création d'un objet Tache \n";
 }
 
@@ -24,7 +24,7 @@ Tache::Tache(const Tache& t){
         this->setIdentificateur(t.getIdentificateur());
         this->setTitre(t.getTitre());
         this->precedence = t.getPrecedence();
-        this->setMere(t.getMere());
+        this->mere = t.getMere();
         this->setMere_Compo(t.getMere_Compo());
     }
 }
@@ -37,7 +37,7 @@ Tache& Tache::operator=(const Tache& obj){
         this->setIdentificateur(obj.getIdentificateur());
         this->setTitre(obj.getTitre());
         this->precedence = obj.getPrecedence();
-        this->setMere(obj.getMere());
+        this->mere = obj.getMere();
         this->setMere_Compo(obj.getMere_Compo());
     }
     return *this;
@@ -133,7 +133,7 @@ void Tache::ajouterPrecedence(Tache &t)
 {
     if(this->verifierPrecedence(t)){
         this->getPrecedence().push_back(&t);
-        t.setMere(this);
+        t.getMere().push_back(this);
         qDebug()<<"Ajout précédence réussi \n";
     }else{
         qDebug()<<"Ajout précédence failed \n";
@@ -141,42 +141,74 @@ void Tache::ajouterPrecedence(Tache &t)
     }
 }
 
-bool Tache::verifierPrecedence(const Tache &t) const
+bool Tache::verifierPrecedence(Tache &t) const
 {
+    // On vérifie que l'on ajoute pas une même tâche en précédence d'elle-même
     if(this == &t){
         qDebug()<<"Je retourne faux";
         return false;
-    } else if(t.getEcheance() > this->getEcheance()){
-        qDebug()<<"Je retourne faux";
-        return false;
-    } else if(t.getMere() != 0){
-        qDebug()<<"Je retourne faux";
-        return false;
-    } else {
-        Tache* tache_mere = this->getMere();
-            while(tache_mere != 0)
-            {
-                if(tache_mere == &t)
-                    return false;
-
-                tache_mere = tache_mere->getMere();
-            }
-            return true;
     }
+    // On vérifie que les dates d'échéances correspondent
+    if(t.getEcheance() > this->getEcheance()){
+        qDebug()<<"Je retourne faux";
+        return false;
+    }
+    // On vérifie que t ne fait pas déjà partie des précédences existantes
+    for(std::vector<Tache*>::const_iterator it_prece = this->getPrecedence().begin(); it_prece != this->getPrecedence().end(); ++it_prece)
+        if((*it_prece)->getIdentificateur() == t.getIdentificateur()){
+            qDebug()<<"Je retourne faux";
+            return false;
+        }
+
+    // Vérifier pour les taches composites
+    TacheComposite* Compo = dynamic_cast<TacheComposite*>(&t);
+
+    if(Compo){
+        for(std::vector<Tache*>::const_iterator it = Compo->getComposition().begin(); it != Compo->getComposition().end(); ++it){
+            if(!verifierPrecedence(**it))
+                return false;
+        }
+    }
+
+    // On vérifie la même chose pour les taĉhes précédentes mères de this et en prenant compte du cas des compositions
+    std::vector<Tache*> tache_mere = this->getMere();
+
+    for(std::vector<Tache*>::const_iterator it = tache_mere.begin(); it != tache_mere.end(); ++it){
+        TacheComposite* item = dynamic_cast<TacheComposite*>(*it);
+
+        if(item){
+            for(std::vector<Tache*>::const_iterator it_compo = item->getComposition().begin(); it_compo != item->getComposition().end(); ++it_compo)
+                if(!(*it)->verifierPrecedence(t))
+                    return false;
+        }
+
+        if(!(*it)->verifierPrecedence(t))
+            return false;
+
+    }
+
+    // Si on sort de la boucle, cela veut dire que tout est bon
+    return true;
 }
 
-bool Tache::verifierComposition(const Tache &t) const
+bool Tache::verifierComposition(Tache &t) const
 {
+    // On vérifie que l'on ajoute pas une même tâche en composition d'elle-même
     if(this == &t){
         qDebug()<<"Je retourne faux";
         return false;
-    } else if(t.getEcheance() > this->getEcheance()){
+    }
+    // On vérifie que les échéances concordent
+    if(t.getEcheance() > this->getEcheance()){
         qDebug()<<"Je retourne faux";
         return false;
-    } else if(t.getMere_Compo() != 0){
+    }
+    // On vérifie si la tâche est déjà en composition
+    if(t.getMere_Compo() != 0){
         qDebug()<<"Je retourne faux";
         return false;
     } else {
+        // Sinon on vérifie l'absence de cycles
         Tache* tache_mere = this->getMere_Compo();
             while(tache_mere != 0)
             {
@@ -185,8 +217,14 @@ bool Tache::verifierComposition(const Tache &t) const
 
                 tache_mere = tache_mere->getMere_Compo();
             }
-            return true;
     }
+
+    // On vérifie que les précédences restent logiques
+    if(!this->verifierPrecedence(t))
+        return false;
+
+    // Si tous les tests sont validés, c'est bon
+    return true;
 }
 
 unsigned int Tache::nbPrerequis() const
@@ -194,7 +232,7 @@ unsigned int Tache::nbPrerequis() const
     return precedence.size();
 }
 
-Tache *Tache::getPere() //Problème dans getPere
+Tache *Tache::getPere()
 {
     ProjetManager& projetManager = ProjetManager::getInstance();
     std::vector<Projet *>::const_iterator it_projets = projetManager.getProjets().begin();

@@ -17,7 +17,7 @@ protected:
     QString titre;
     QDate disponibilite;
     QDate echeance;
-    Tache* mere;
+    std::vector<Tache*> mere;
     Tache* mere_compo;
     /*const Projet* projet;
     const Tache* pere;*/
@@ -52,16 +52,16 @@ public:
     std::vector<Tache *> &getPrecedence();
     const std::vector<Tache *> &getPrecedence() const;
 
-    Tache *getMere() const;
-    void setMere(Tache *value);
+    std::vector<Tache *> &getMere();
+    const std::vector<Tache*> &getMere() const;
 
     Tache* getMere_Compo() const;
     void setMere_Compo(Tache *value);
 
     /* Autres Fonctions */
     void ajouterPrecedence(Tache& t);
-    bool verifierPrecedence(const Tache &t) const;
-    bool verifierComposition(const Tache &t) const;
+    bool verifierPrecedence(Tache &t) const;
+    bool verifierComposition(Tache &t) const;
     unsigned int nbPrerequis() const;
     Tache* getPere(); // Renvoie un pointeur vers la tache père de la tâche appelante ou 0 si le père est le projet
     Projet* getProjet(); // Renvoie le projet auquel appartient une tâche
