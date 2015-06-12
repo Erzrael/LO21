@@ -92,7 +92,7 @@
              <string>Nom</string>
             </property>
            </widget>
-           <widget class="QLineEdit" name="lineEdit"/>
+           <widget class="QLineEdit" name="nom_evt"/>
           </widget>
          </item>
         </layout>

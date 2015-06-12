@@ -10,7 +10,9 @@ class Programmation
    QDate date;
    QTime debut;
    QTime fin;
-   Programmation(const Evenement& t, const QDate& d, const QTime& t_debut, const QTime& t_fin);
+   Programmation( const Evenement & t, const QDate& d, const QTime& t_debut, const QTime& t_fin);
+
+   ~Programmation();
 
    friend class Agenda;
 public:

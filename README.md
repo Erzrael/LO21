@@ -9,14 +9,15 @@
 			**** Si un projet : Edition du titre, de la date de disponibilité
 			**** Si une tache : Edition du titre, de la date de dispo et de la date d'échéance (vérifier que les nouvelles dates sont correctes)
 * Marie :
-	** Evènements qui ne sont pas des tâches.
-	** suppression de prog
+	** faire fenêtre load / save (too easy sisi)
+	** Evènements qui ne sont pas des tâches. (MOTHERFUCKING PUTAIN DE DONE)
+	** suppression de prog (fucking DONE)
 	** implémenter ajouterProgWindow (DONE)
 	** vu graphique semaine :
 		*** double clic sur case normale --> ajouterProgrammation (tab view) (DONE)
 		*** case de plus en plus sombre (4 nuances) --> test chevaucheHoraire ! (DONE)
 		*** double clic : affichage des programmations + Case ajouterProgrammation (DONE)
-		*** (optionnel) empêcher modification
+		*** ajout programmation venant d'une fenêtre : load tab (RAB : rien à branler)
 
 #Hypothèses
 * L'ID d'une tâche est unique dans l'ensemble des projets.
@@ -26,3 +27,7 @@
 
 
 * RapidXML et la gestion des accents
+
+#Notes
+
+* const cast destructeur programmation

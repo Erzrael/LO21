@@ -37,28 +37,45 @@ void ajoutProgrammation::on_cancel_ok_accepted()
    Agenda & agenda = Agenda::getInstance();
    ProjetManager &projetmanager = ProjetManager::getInstance();
 
-   TacheUnitaire* unitaire = static_cast<TacheUnitaire*>(projetmanager.getTache(ui->tache_box->currentText()));
+   if ( ui->selection_type->currentIndex() == 0 ) { // on veut insérer une tâche
+      TacheUnitaire* unitaire = static_cast<TacheUnitaire*>(projetmanager.getTache(ui->tache_box->currentText()));
 
-   // s'il n'y a pas de durée ou que la tache n'est pas préemtable
-   if ( unitaire->getPreempte() == false || ui->duree->time() == QTime() ) {
-      try {
-         agenda.ajouterProgrammation(*unitaire, ui->date->date(), ui->heure_debut->time());
-         QMessageBox::information(this,"Succès","Programmation Ajoutée");
-      } catch (CalendarException e) {
-         QMessageBox::warning(this,"Erreur : ",e.getInfo());
+      // s'il n'y a pas de durée ou que la tache n'est pas préemtable
+      if ( unitaire->getPreempte() == false || ( ui->duree->time().hour() == 0 && ui->duree->time().minute() == 0 ) ) {
+         try {
+            agenda.ajouterProgrammation(*unitaire, ui->date->date(), ui->heure_debut->time());
+            QMessageBox::information(this,"Succès","Programmation Ajoutée");
+         } catch (CalendarException e) {
+            QMessageBox::warning(this,"Erreur : ",e.getInfo());
+         }
+      } else {
+         //TachePreemptable * p = unitaire ;
+         TachePreemptable * p = reinterpret_cast<TachePreemptable*>( unitaire );
+         //      int heure = ui->duree->time().hour();
+         //      int minute = ui->duree->time().minute();
+         try {
+            QTime foutoidemaggle(ui->duree->time());
+            Duree dbraou(foutoidemaggle.hour(), foutoidemaggle.minute());
+            agenda.ajouterProgrammation(*p, ui->date->date(), ui->heure_debut->time(), dbraou);
+            QMessageBox::information(this,"Succès","Programmation Ajoutée");
+         } catch (CalendarException e) {
+            QMessageBox::warning(this,"Erreur : ",e.getInfo());
+         }
+      }
+   } else if (ui->selection_type->currentIndex() == 1 ) { // on veut insérer un évènement traditionnel
+      // s'il n'y a pas de durée, erreur
+      if ( ui->duree->time().hour() == 0 && ui->duree->time().minute() == 0 ) {
+         QMessageBox::warning(this,"Erreur ", "veuillez indiquer une durée");
+      } else {
+         try {
+            QTime foutoidemaggle(ui->duree->time());
+            Duree dbraou(foutoidemaggle.hour(), foutoidemaggle.minute());
+            agenda.ajouterProgrammation( ui->nom_evt->text(), ui->date->date(), ui->heure_debut->time(), dbraou);
+         } catch (CalendarException e) {
+            QMessageBox::warning(this,"Erreur : ",e.getInfo());
+         }
       }
    } else {
-      //TachePreemptable * p = unitaire ;
-      TachePreemptable * p = reinterpret_cast<TachePreemptable*>( unitaire );
-//      int heure = ui->duree->time().hour();
-//      int minute = ui->duree->time().minute();
-      try {
-         QTime foutoidemaggle(ui->duree->time());
-         Duree dbraou(foutoidemaggle.hour(), foutoidemaggle.minute());
-         agenda.ajouterProgrammation(*p, ui->date->date(), ui->heure_debut->time(), dbraou);
-         QMessageBox::information(this,"Succès","Programmation Ajoutée");
-      } catch (CalendarException e) {
-         QMessageBox::warning(this,"Erreur : ",e.getInfo());
-      }
+      QMessageBox::warning(this,"Erreur ", "Désolée Sacha, cette fonctionnalité du Pokétache n'est pas encore implémentée !");
    }
 }

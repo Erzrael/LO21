@@ -18,7 +18,10 @@ public:
    ~VoirProgrammations();
 private slots:
    void on_ajouterProg_clicked();
+   void on_suppr_clicked();
 private:
+   void load_tab();
+
    Ui::VoirProgrammations *ui;
    QDate date;
    QTime time;

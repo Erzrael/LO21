@@ -20,6 +20,9 @@ public:
     virtual void xml_ajouterAttributs(rapidxml::xml_document<> & doc, rapidxml::xml_node<> & node_tache);
     // Evenement interface
     const QString & getID() const;
+    void suppressionProgrammation();
+
+public:
 };
 
 #endif // TACHEUNITAIRE_H

@@ -128,7 +128,7 @@ void Agenda::ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const
    ajouterProgrammation(t, d, h, *(new QTime(heure_fin, minute_fin)) );
 }
 
-void Agenda::ajouterProgrammation(const TacheUnitaire & t, const QDate& d, const QTime& debut, const QTime & fin)
+void Agenda::ajouterProgrammation(const Evenement & t, const QDate& d, const QTime& debut, const QTime & fin)
 {
    list<Programmation *>::iterator iterator = programmations.begin();
 
@@ -211,4 +211,32 @@ Agenda &Agenda::getInstance()
 {
    static Agenda instanceUnique;
    return instanceUnique;
+}
+
+void Agenda::supprimerProgramation(const QDate & d, const QTime & h)
+{
+   std::list<Programmation *>::const_iterator it ;
+
+   for(it = programmations.begin(); it != programmations.end() ; ++it)
+      if ( (*it)->getDate() == d && (*it)->getDebut() == h ) {
+         delete (*it);
+         return ;
+      }
+
+   throw CalendarException("La programmation que vous voulez supprimer n'existe pas");
+}
+
+void Agenda::ajouterProgrammation(const QString & nomDeLEventClassique, const QDate & d, const QTime & h, const Duree duree)
+{
+   EvenementClassique & evt = *(new EvenementClassique(duree, nomDeLEventClassique) );
+
+   int minute_fin = h.minute() + duree.getMinute();
+   int heure_fin = h.hour() + duree.getHeure() + (minute_fin / 60) ;
+   minute_fin = minute_fin % 60;
+   if ( !QTime::isValid(heure_fin, minute_fin, 0) ) {
+      throw CalendarException("erreur ajouterProgrammation : une programmation ne peut pas être à cheval sur deux jours");
+   }
+
+   ajouterProgrammation(evt, d, h, *(new QTime(heure_fin, minute_fin)) );
+
 }
