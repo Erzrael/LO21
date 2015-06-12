@@ -3,6 +3,11 @@
 
 Evenement::Evenement(Duree d) : duree(d){}
 
+Evenement::~Evenement()
+{
+
+}
+
 const QString & Evenement::getID() const
 {
    static QString braou("Evènement ponctuel");
@@ -17,4 +22,9 @@ Duree Evenement::getDuree() const
 void Evenement::setDuree(const Duree & value)
 {
    duree = value;
+}
+
+void Evenement::suppressionProgrammation()
+{
+   this->~Evenement();
 }

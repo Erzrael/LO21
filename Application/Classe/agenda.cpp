@@ -212,3 +212,16 @@ Agenda &Agenda::getInstance()
    static Agenda instanceUnique;
    return instanceUnique;
 }
+
+void Agenda::supprimerProgramation(const QDate & d, const QTime & h)
+{
+   std::list<Programmation *>::const_iterator it ;
+
+   for(it = programmations.begin(); it != programmations.end() ; ++it)
+      if ( (*it)->getDate() == d && (*it)->getDebut() == h ) {
+         delete (*it);
+         return ;
+      }
+
+   throw CalendarException("La programmation que vous voulez supprimer n'existe pas");
+}

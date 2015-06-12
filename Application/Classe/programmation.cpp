@@ -7,6 +7,12 @@ Programmation::Programmation(const Evenement & t, const QDate & d, const QTime &
 
 }
 
+Programmation::~Programmation()
+{
+   Evenement * e = const_cast<Evenement *> (evenement);
+   e->suppressionProgrammation();
+}
+
 const Evenement *Programmation::getEvenement() const
 {
    return evenement;

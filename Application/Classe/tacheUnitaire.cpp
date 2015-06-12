@@ -1,5 +1,6 @@
 #include "tache.h"
 #include "tacheUnitaire.h"
+#include "evenement.h"
 
 TacheUnitaire::TacheUnitaire(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline, const Duree &dur):
     Tache(id, t, dispo, deadline), Evenement(dur){
@@ -68,3 +69,5 @@ const QString &TacheUnitaire::getID() const
 {
    return getIdentificateur();
 }
+
+void TacheUnitaire::suppressionProgrammation() {}

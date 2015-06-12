@@ -10,7 +10,7 @@
 			**** Si une tache : Edition du titre, de la date de dispo et de la date d'échéance (vérifier que les nouvelles dates sont correctes)
 * Marie :
 	** Evènements qui ne sont pas des tâches.
-	** suppression de prog
+	** suppression de prog (fucking DONE)
 	** implémenter ajouterProgWindow (DONE)
 	** vu graphique semaine :
 		*** double clic sur case normale --> ajouterProgrammation (tab view) (DONE)
@@ -26,3 +26,7 @@
 
 
 * RapidXML et la gestion des accents
+
+#Notes
+
+* const cast destructeur programmation

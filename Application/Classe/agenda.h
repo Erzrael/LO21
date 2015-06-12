@@ -69,7 +69,7 @@ public:
 
    static Agenda &getInstance();
 
-
+   void supprimerProgramation(const QDate &d, const QTime &h);
 
    /*! \brief Permet l'ajout de la programmation d'une tâche préemptable
     *
@@ -81,7 +81,8 @@ public:
     *
     */
    void ajouterProgrammation(const TachePreemptable & t, const QDate& d, const QTime& h, const Duree duree);
-   /*! \brief Permet l'ajout de la programmation d'une tâche unitaire (préemptable ou non). La durée de la programmation sera systématiquement la durée de la tâche
+   /*! \brief Permet l'ajout de la programmation d'une tâche unitaire (préemptable ou non).
+    * La durée de la programmation sera systématiquement la durée de la tâche
     *
     * \param t const TacheUnitaire& Tâche à ajouter
     * \param d const QDate& Date à laquelle la tâche est programmée
