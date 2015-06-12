@@ -56,6 +56,7 @@ public:
     const Projet *getProjet(const QString& id) const;
     void supprimerTache(const QString& id);
     void supprimerProjet(const QString &id);
+    void supprimerTout();
     bool empty() const;
 
     /* Autres fonctions */

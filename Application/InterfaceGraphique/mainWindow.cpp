@@ -1,3 +1,5 @@
+#include "QFileDialog"
+
 #include "Classe/projetManager.h"
 #include "Classe/projet.h"
 #include "Classe/tache.h"
@@ -32,6 +34,50 @@ MainWindow::~MainWindow()
    ExportImport_XML save("SAUVEGARDE.xml");
    save.save();
    delete ui;
+}
+
+void MainWindow::on_actionOuvrir_un_Fichier_triggered()
+{
+   QString fn = QFileDialog::getOpenFileName(this, tr("Open File..."),
+                                             QString(), tr("XML-Files (*.xml);;All Files (*)"));
+
+   // braou extension de fichiers.
+   if (!fn.isEmpty()) {
+      if ( fn.endsWith(".xml") ) {
+         try {
+            Agenda::getInstance().supprimerTout();
+            ProjetManager::getInstance().supprimerTout();
+
+            ExportImport_XML load(fn);
+            load.load();
+            QMessageBox::information(this,"BRAVO !!!","Le fichier a bien été importé !");
+         } catch (CalendarException e) {
+            QMessageBox::warning(this,"Erreur : ",e.getInfo());
+         }
+      } else {
+         QMessageBox::warning(this,"Erreur : ","Extension non reconnue (.xml) ");
+      }
+   }
+}
+
+void MainWindow::on_actionEnregistrer_sous_triggered()
+{
+   QString fn = QFileDialog::getSaveFileName(this, tr("Save as..."),
+                                             QString(), tr("XML-Files (*.xml);;All Files (*)"));
+   if (fn.isEmpty())
+       return;
+   if (! (fn.endsWith(".xml", Qt::CaseInsensitive) ) ) {
+       QMessageBox::warning(this,"Erreur : ","Extension non reconnue (.xml) ");
+       return;
+   } else {
+      try {
+         ExportImport_XML save(fn);
+         save.save();
+         QMessageBox::information(this,"BRAVO !!!","Le fichier a bien été exporté !");
+      } catch (CalendarException e) {
+         QMessageBox::warning(this,"Erreur : ",e.getInfo());
+      }
+   }
 }
 
 

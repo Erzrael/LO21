@@ -121,6 +121,8 @@ public:
     */
    vector<Programmation *> & trouverProgrammation(const TacheUnitaire & t)const;
 
+   void supprimerTout();
+
    unsigned int chevaucheHoraire(const QDate & date, const QTime &debut, const QTime & fin);
    vector<const Programmation *> & tabChevaucheHoraire(const QDate & date, const QTime &debut, const QTime & fin);
 
