@@ -46,7 +46,7 @@ private:
     * \return void
     *
     */
-   void ajouterProgrammation(const TacheUnitaire & t, const QDate & d, const QTime & debut, const QTime & fin);
+   void ajouterProgrammation(const Evenement & t, const QDate & d, const QTime & debut, const QTime & fin);
 
 public:
 //   class IteratorJournee{
@@ -71,6 +71,16 @@ public:
 
    void supprimerProgramation(const QDate &d, const QTime &h);
 
+   /*! \brief Permet l'ajout de la programmation d'un evenement classique
+    *
+    * \param nomDeLEventClassique const QString & Nom de l'Event à ajouter
+    * \param d const QDate& Date à laquelle l'event est programmée
+    * \param h const QTime& Heure à laquelle l'event est programmée
+    * \param duree const Duree Durée de la programmation.
+    * \return void
+    *
+    */
+   void ajouterProgrammation(const QString &nomDeLEventClassique, const QDate &d, const QTime& h, const Duree duree);
    /*! \brief Permet l'ajout de la programmation d'une tâche préemptable
     *
     * \param t const TachePreemptable& Tâche à ajouter
