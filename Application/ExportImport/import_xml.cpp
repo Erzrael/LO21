@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <stdio.h>
+#include <stdlib.h>
 #include <fstream>
 #include <string>
 #include <qdebug.h>
@@ -112,26 +113,19 @@ void ExportImport_XML::load()
    }
    // insertion des programmations
    for ( xml_node<> * prog = root->first_node("programmation") ; prog ; prog = prog->next_sibling("programmation") ) {
+      QDate *date = new QDate( QDate::fromString( prog->first_attribute("date")->value(), format) );
+      QTime *debut = new QTime ( QTime::fromString( prog->first_attribute("debut")->value(), format_time) );
+
       if( projetManager.isTacheExistante( prog->value() ) ) { // ajout d'une tâche
          TacheUnitaire * tache_u = static_cast<TacheUnitaire *>( projetManager.getTache( prog->value() ) ) ;
-         QDate *date = new QDate( QDate::fromString( prog->first_attribute("date")->value(), format) );
-         QTime *debut = new QTime ( QTime::fromString( prog->first_attribute("debut")->value(), format_time) );
          QTime *fin = new QTime ( QTime::fromString( prog->first_attribute("fin")->value(), format_time) );
 
          agenda.ajouterProgrammation( *tache_u, *date, *debut, *fin);
       } else { // ajout d'un évènement
          QString * titre = new QString ( prog->value() ) ;
+         Duree * duree = new Duree( prog->first_attribute("duree")->value() );
 
-         /*int minute_fin = h.minute() + duree.getMinute();
-         int heure_fin = h.hour() + duree.getHeure() + (minute_fin / 60) ;
-         minute_fin = minute_fin % 60;
-         if ( !QTime::isValid(heure_fin, minute_fin, 0) ) {
-            throw CalendarException("erreur ajouterProgrammation : une programmation ne peut pas être à cheval sur deux jours");
-         }
-
-         // ajouterProgrammation(evt, d, h, *(new QTime(heure_fin, minute_fin)) );
-
-         agenda.ajouterProgrammation( *titre, *date, *debut,  *(new QTime(heure_fin, minute_fin)) ); */
+         agenda.ajouterProgrammation( *titre, *date, *debut,  *duree );
       }
    }
 
@@ -226,6 +220,10 @@ void ExportImport_XML::save()
 
       node_name = doc.allocate_string(convertQString( prog.getDate().toString(format) )  );
       xml_attribute<> * attribute = doc.allocate_attribute("date", node_name );
+      node_prog->append_attribute(attribute);
+
+      node_name = doc.allocate_string(prog.getDuree().toChar());
+      attribute = doc.allocate_attribute("duree", node_name);
       node_prog->append_attribute(attribute);
 
       node_name = doc.allocate_string( convertQString( prog.getDebut().toString() ) );

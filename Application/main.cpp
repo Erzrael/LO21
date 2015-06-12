@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
 //    ProjetManager &projetManager = ProjetManager::getInstance();
-//    Agenda &agenda = Agenda::getInstance();
+    Agenda &agenda = Agenda::getInstance();
 //    Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
 //    Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2014,3,6), QDate(2015,1,3));
 //    P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);
@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
 //    P2->ajouterTache("T6", "Essaie6", QDate(2015,1,15), QDate(2015,2,15), Duree(2,41));
 
     // à modifier selon ton chemin local :)
-    ExportImport_XML load("/home/lraingev/Bureau/Git/LO21/Application/Saves/essai.xml");
-//    ExportImport_XML load("/home/tamica/documents/UTC/LO21/Projet/LO21/Application/Saves/essai.xml");
+//    ExportImport_XML load("/home/lraingev/Bureau/Git/LO21/Application/Saves/essai.xml");
+    ExportImport_XML load("/home/tamica/documents/UTC/LO21/Projet/LO21/Application/Saves/essai.xml");
     load.load();
 
     MainWindow e;
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
 //   ExportImport_XML save("/home/tamica/documents/UTC/LO21/Projet/LO21/Application/Saves/test_programmation.xml");
 //   save.save();
-    return app.exec();
+   return app.exec();
 
 
     qDebug() << "Allegria";

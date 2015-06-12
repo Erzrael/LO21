@@ -5,9 +5,9 @@
 		<composition tache="tortank">evolutioncarabaffe</composition>
 		<composition tache="tortank">caracaracarabaaaffe</composition>
 		<composition tache="tortank">carapuce</composition>
-		<tache id="evolutioncarabaffe" titre="Fais ?voluer Carabaffe" dispo="1996-06-16" echeance="2015-07-25" type="u" pre="true" duree="300"/>
+		<tache id="evolutioncarabaffe" titre="Fais évoluer Carabaffe" dispo="1996-06-16" echeance="2015-07-25" type="u" pre="true" duree="300"/>
 		<precedence tache="evolutioncarabaffe">caracaracarabaaaffe</precedence>
-		<tache id="caracaracarabaaaffe" titre="Fais ?voluer Carapuce" dispo="1996-06-15" echeance="2015-06-15" type="u" pre="true" duree="195"/>
+		<tache id="caracaracarabaaaffe" titre="Fais évoluer Carapuce" dispo="1996-06-15" echeance="2015-06-15" type="u" pre="true" duree="195"/>
 		<precedence tache="caracaracarabaaaffe">carapuce</precedence>
 		<tache id="carapuce" titre="Obtiens Carapuce" dispo="1996-06-15" echeance="2015-05-15" type="c"/>
 		<composition tache="carapuce">chen</composition>
@@ -19,9 +19,10 @@
 	<projet id="evoli" titre="evoli" dispo="2015-06-06" echeance="2015-08-06">
 		<tache id="voltali" titre="Avoir pyroli (le plus beau !)" dispo="2015-07-06" echeance="2015-08-05" type="u" duree="10"/>
 	</projet>
-	<programmation date="2015-06-11" duree="10" debut="08:10:00" fin="08:20:00">chen</programmation>
-	<programmation date="2015-06-12" duree="165" debut="08:00:00" fin="10:45:00">judicieusement</programmation>
-	<programmation date="2015-06-09" duree="7" debut="02:00:00" fin="02:07:00">Loutre</programmation>
-	<programmation date="2015-06-10" duree="30" debut="08:00:00" fin="08:30:00">conasse</programmation>
+	<programmation date="2015-06-11" debut="08:10:00" fin="08:20:00">chen</programmation>
+	<programmation date="2015-06-12" debut="08:00:00" fin="10:45:00">judicieusement</programmation>
+	<programmation date="2015-06-10" debut="06:00:00" fin="06:42:00">pigeon</programmation>
+	<programmation date="2015-06-10" debut="06:45:00" fin="07:05:00">canard</programmation>
+	<programmation date="2015-06-08" debut="06:00:00" fin="06:35:00">loutre</programmation>
 </root>
 
