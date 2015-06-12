@@ -69,7 +69,8 @@ public:
 
    static Agenda &getInstance();
 
-   void supprimerProgramation(const QDate &d, const QTime &h);
+   void supprimerProgrammation(const QDate &d, const QTime &h);
+   void supprimerProgrammation(const TacheUnitaire &t);
 
    /*! \brief Permet l'ajout de la programmation d'un evenement classique
     *

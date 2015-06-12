@@ -45,8 +45,8 @@ void MainWindow::on_actionOuvrir_un_Fichier_triggered()
    if (!fn.isEmpty()) {
       if ( fn.endsWith(".xml") ) {
          try {
-            Agenda::getInstance().supprimerTout();
             ProjetManager::getInstance().supprimerTout();
+            Agenda::getInstance().supprimerTout();
 
             ExportImport_XML load(fn);
             load.load();

@@ -35,7 +35,7 @@ void VoirProgrammations::on_suppr_clicked()
 
    //qDebug() << "suppression "
    try {
-      Agenda::getInstance().supprimerProgramation( date, debut );
+      Agenda::getInstance().supprimerProgrammation( date, debut );
       QMessageBox::information(this, "Bravo !", "Programmation supprimée");
       ui->eventTab->removeRow(ligne);
    } catch (CalendarException e) {

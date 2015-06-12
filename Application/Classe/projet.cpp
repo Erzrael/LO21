@@ -1,5 +1,6 @@
 #include "projet.h"
 #include "projetManager.h"
+#include "agenda.h"
 
 
 QString &Projet::getId(){
@@ -59,7 +60,9 @@ Projet::~Projet() {
        taches.pop_back();
     }*/
    while(!taches.empty()){
-       Tache* t = taches.back();
+       Tache* t = taches.back();      
+
+
        this->supprimerTache(t->getIdentificateur());
        //taches.pop_back();
     }
@@ -178,7 +181,10 @@ void Projet::supprimerTache(const QString &id)
                 /*if(!(A_supprimer->getComposition().empty()))
                     ++it_compo;*/
             }
-        }
+        } /*else { // AJOUT MARIE : si la tâche est unitaire
+           TacheUnitaire * tu = reinterpret_cast< TacheUnitaire *> (*it_taches);
+           Agenda::getInstance().supprimerProgrammation(*tu);
+        } */
 
         delete *it_taches;
         taches.erase(it_taches);

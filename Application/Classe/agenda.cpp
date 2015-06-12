@@ -38,9 +38,9 @@ vector<Programmation *> & Agenda::trouverProgrammation(const TacheUnitaire& t)co
 void Agenda::supprimerTout()
 {
    while(!programmations.empty()){
-           delete programmations.back();
-       programmations.pop_back();
-    }
+      delete programmations.back();
+      programmations.pop_back();
+   }
 }
 
 unsigned int Agenda::chevaucheHoraire(const QDate & date, const QTime & debut, const QTime & fin)
@@ -221,17 +221,28 @@ Agenda &Agenda::getInstance()
    return instanceUnique;
 }
 
-void Agenda::supprimerProgramation(const QDate & d, const QTime & h)
+void Agenda::supprimerProgrammation(const QDate & d, const QTime & h)
 {
-   std::list<Programmation *>::const_iterator it ;
+   std::list<Programmation *>::iterator it ;
 
    for(it = programmations.begin(); it != programmations.end() ; ++it)
       if ( (*it)->getDate() == d && (*it)->getDebut() == h ) {
          delete (*it);
+         programmations.erase(it);
          return ;
       }
 
    throw CalendarException("La programmation que vous voulez supprimer n'existe pas");
+}
+
+void Agenda::supprimerProgrammation(const TacheUnitaire & t)
+{
+   vector<Programmation *> tab = this->trouverProgrammation(t);
+   while ( !tab.empty() ) { // lolilol c'est un peu dégueulasse x)
+      supprimerProgrammation( tab.back()->getDate(), tab.back()->getDebut() );
+      // delete tab.back();
+      tab.pop_back();
+   }
 }
 
 void Agenda::ajouterProgrammation(const QString & nomDeLEventClassique, const QDate & d, const QTime & h, const Duree duree)

@@ -1,6 +1,7 @@
 #include "tache.h"
 #include "tacheUnitaire.h"
 #include "evenement.h"
+#include "agenda.h"
 
 TacheUnitaire::TacheUnitaire(const QString &id, const QString &t, const QDate &dispo, const QDate &deadline, const Duree &dur):
     Tache(id, t, dispo, deadline), Evenement(dur){
@@ -28,7 +29,9 @@ TacheUnitaire::TacheUnitaire(const QString &id, const QString &t, const QDate &d
 //}
 
 TacheUnitaire::~TacheUnitaire(){
+   Agenda::getInstance().supprimerProgrammation(*this);
    qDebug()<<"Destruction d'un objet Tache Unitaire\n";
+
 }
 
 

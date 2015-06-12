@@ -10,7 +10,8 @@
 			**** Si un projet : Edition du titre, de la date de disponibilité
 			**** Si une tache : Edition du titre, de la date de dispo et de la date d'échéance (vérifier que les nouvelles dates sont correctes)
 * Marie :
-	** suppression tache => suppression programmation
+	** import XML des évènements non tâche.
+	** suppression tache => suppression programmation (DONE)
 	** faire fenêtre load / save (too easy sisi) (DONE, Marie est dans la place)
 	** Evènements qui ne sont pas des tâches. (MOTHERFUCKING PUTAIN DE DONE)
 	** suppression de prog (fucking DONE)

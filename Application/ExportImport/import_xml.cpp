@@ -112,12 +112,27 @@ void ExportImport_XML::load()
    }
    // insertion des programmations
    for ( xml_node<> * prog = root->first_node("programmation") ; prog ; prog = prog->next_sibling("programmation") ) {
-      TacheUnitaire * tache_u = static_cast<TacheUnitaire *>( projetManager.getTache( prog->value() ) ) ;
-      QDate *date = new QDate( QDate::fromString( prog->first_attribute("date")->value(), format) );
-      QTime *debut = new QTime ( QTime::fromString( prog->first_attribute("debut")->value(), format_time) );
-      QTime *fin = new QTime ( QTime::fromString( prog->first_attribute("fin")->value(), format_time) );
+      if( projetManager.isTacheExistante( prog->value() ) ) { // ajout d'une tâche
+         TacheUnitaire * tache_u = static_cast<TacheUnitaire *>( projetManager.getTache( prog->value() ) ) ;
+         QDate *date = new QDate( QDate::fromString( prog->first_attribute("date")->value(), format) );
+         QTime *debut = new QTime ( QTime::fromString( prog->first_attribute("debut")->value(), format_time) );
+         QTime *fin = new QTime ( QTime::fromString( prog->first_attribute("fin")->value(), format_time) );
 
-      agenda.ajouterProgrammation( *tache_u, *date, *debut, *fin);
+         agenda.ajouterProgrammation( *tache_u, *date, *debut, *fin);
+      } else { // ajout d'un évènement
+         QString * titre = new QString ( prog->value() ) ;
+
+         /*int minute_fin = h.minute() + duree.getMinute();
+         int heure_fin = h.hour() + duree.getHeure() + (minute_fin / 60) ;
+         minute_fin = minute_fin % 60;
+         if ( !QTime::isValid(heure_fin, minute_fin, 0) ) {
+            throw CalendarException("erreur ajouterProgrammation : une programmation ne peut pas être à cheval sur deux jours");
+         }
+
+         // ajouterProgrammation(evt, d, h, *(new QTime(heure_fin, minute_fin)) );
+
+         agenda.ajouterProgrammation( *titre, *date, *debut,  *(new QTime(heure_fin, minute_fin)) ); */
+      }
    }
 
 
