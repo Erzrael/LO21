@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
 //    ProjetManager &projetManager = ProjetManager::getInstance();
-    Agenda &agenda = Agenda::getInstance();
+    //Agenda &agenda = Agenda::getInstance();
 //    Projet * P1 = projetManager.ajouterProjet("P1", "Essaie1", QDate(2014,5,6), QDate(2015,1,3));
 //    Projet * P2 = projetManager.ajouterProjet("P2", "Essaie2", QDate(2014,3,6), QDate(2015,1,3));
 //    P1->ajouterTache("T1", "Essaie1", QDate(2015,2,1), QDate(2015,3,1), Duree(3,43), true);

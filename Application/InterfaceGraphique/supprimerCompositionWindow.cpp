@@ -20,7 +20,7 @@ SupprimerCompositionWindow::~SupprimerCompositionWindow()
     delete ui;
 }
 
-void SupprimerCompositionWindow::on_Tache_Box_currentTextChanged(const QString &arg1)
+void SupprimerCompositionWindow::on_Tache_Box_currentTextChanged(const QString)
 {
     if(ui->Tache_Box->currentText() != ""){
         ui->Composante_Box->clear();
@@ -35,7 +35,7 @@ void SupprimerCompositionWindow::on_Tache_Box_currentTextChanged(const QString &
     }
 }
 
-void SupprimerCompositionWindow::on_Projet_Box_currentTextChanged(const QString &arg1)
+void SupprimerCompositionWindow::on_Projet_Box_currentTextChanged(const QString )
 {
     ui->Tache_Box->clear();
     ui->Composante_Box->clear();

@@ -18,7 +18,7 @@ public:
 private slots:
     void on_buttonBox_accepted();
 
-    void on_Projet_Box_currentTextChanged(const QString &arg1);
+    void on_Projet_Box_currentTextChanged(const QString);
 
 private:
     Ui::ChoixTacheWindow *ui;

@@ -18,7 +18,7 @@ SupprimerTacheWindow::~SupprimerTacheWindow()
     delete ui;
 }
 
-void SupprimerTacheWindow::on_Projet_Box_currentTextChanged(const QString &arg1)
+void SupprimerTacheWindow::on_Projet_Box_currentTextChanged(const QString )
 {
     ui->Tache_Box->clear();
     ProjetManager &projetmanager = ProjetManager::getInstance();

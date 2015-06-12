@@ -40,7 +40,7 @@ void ChoixTacheWindow::on_buttonBox_accepted()
     }
 }
 
-void ChoixTacheWindow::on_Projet_Box_currentTextChanged(const QString &arg1)
+void ChoixTacheWindow::on_Projet_Box_currentTextChanged(const QString )
 {
     ui->Tache_Box->clear();
     ProjetManager &projetmanager = ProjetManager::getInstance();

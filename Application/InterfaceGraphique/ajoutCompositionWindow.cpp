@@ -32,7 +32,7 @@ void AjoutCompositionWindow::on_buttonBox_accepted()
     }
 }
 
-void AjoutCompositionWindow::on_Projet_Box_currentTextChanged(const QString &arg1)
+void AjoutCompositionWindow::on_Projet_Box_currentTextChanged(const QString)
 {
     ui->Composee_Box->clear();
     ui->Composante_Box->clear();
@@ -48,7 +48,7 @@ void AjoutCompositionWindow::on_Projet_Box_currentTextChanged(const QString &arg
     }
 }
 
-void AjoutCompositionWindow::on_Composee_Box_currentTextChanged(const QString &arg1)
+void AjoutCompositionWindow::on_Composee_Box_currentTextChanged(const QString )
 {
     if(ui->Composee_Box->currentText() != ""){
         ui->Composante_Box->clear();

@@ -33,7 +33,7 @@ void AjoutPrecedenceWindow::on_buttonBox_accepted()
     }
 }
 
-void AjoutPrecedenceWindow::on_Projet_Box_currentTextChanged(const QString &arg1)
+void AjoutPrecedenceWindow::on_Projet_Box_currentTextChanged(const QString )
 {
     ui->Precedente_Box->clear();
     ui->Precedee_Box->clear();
@@ -46,7 +46,7 @@ void AjoutPrecedenceWindow::on_Projet_Box_currentTextChanged(const QString &arg1
     }
 }
 
-void AjoutPrecedenceWindow::on_Precedee_Box_currentTextChanged(const QString &arg1)
+void AjoutPrecedenceWindow::on_Precedee_Box_currentTextChanged(const QString )
 {
     if(ui->Precedee_Box->currentText() != ""){
         ui->Precedente_Box->clear();
