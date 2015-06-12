@@ -165,6 +165,16 @@ void ProjetManager::supprimerProjet(const QString &id)
     }
 }
 
+void ProjetManager::supprimerTout()
+{
+   while(!projets.empty()){/*
+       Projet* p = projets.back();
+       if(p->getId() != "")*/
+           delete projets.back();
+       projets.pop_back();
+    }
+}
+
 bool ProjetManager::empty() const
 {
     ProjetManager &projetManager = ProjetManager::getInstance();

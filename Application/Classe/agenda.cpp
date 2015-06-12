@@ -35,6 +35,14 @@ vector<Programmation *> & Agenda::trouverProgrammation(const TacheUnitaire& t)co
    return *listeProgrammation;
 }
 
+void Agenda::supprimerTout()
+{
+   while(!programmations.empty()){
+           delete programmations.back();
+       programmations.pop_back();
+    }
+}
+
 unsigned int Agenda::chevaucheHoraire(const QDate & date, const QTime & debut, const QTime & fin)
 {
    int result = 0;

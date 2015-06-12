@@ -25,6 +25,10 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_actionOuvrir_un_Fichier_triggered();
+
+    void on_actionEnregistrer_sous_triggered();
+
     void on_actionAjouter_un_Projet_triggered();
 
     void on_actionSupprimer_un_Projet_triggered();
