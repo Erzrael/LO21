@@ -2,10 +2,13 @@
 #define IMPORT_XML_H
 #include <ExportImport/exportimport.h>
 
-char * convertQString(QString string);
+char * convertQString(QString string); /*!< permet de convertir une Qstring en char* */
 
 //class ExportImport;
 
+/*! \brief classe permettant l'import/export de l'agenda au format XML
+ * Implémentation de la classe ExportImport
+ */
 class ExportImport_XML : public ExportImport {
 public:
    ExportImport_XML(QString filename);
@@ -13,8 +16,8 @@ public:
    void save();
 
 private:
-   QString format;
-   QString format_time;
+   QString format; /*!< format des dates dans le fichier */
+   QString format_time; /*!< format des dates dans le fichier */
 };
 
 #endif // IMPORT_XML_H

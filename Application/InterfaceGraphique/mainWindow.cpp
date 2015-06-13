@@ -67,6 +67,8 @@ void MainWindow::on_actionOuvrir_un_Fichier_triggered()
          QMessageBox::warning(this,"Erreur : ","Extension non reconnue (.xml) ");
       }
    }
+
+   MAJ_treeview_Composition();
 }
 
 void MainWindow::on_actionEnregistrer_sous_triggered()

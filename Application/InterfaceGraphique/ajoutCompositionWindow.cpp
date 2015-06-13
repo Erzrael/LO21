@@ -56,7 +56,7 @@ void AjoutCompositionWindow::on_Composee_Box_currentTextChanged(const QString )
 
         Projet* P = projetmanager.getProjet(ui->Projet_Box->currentText());
 
-        Tache* T = P->trouverTache(ui->Composee_Box->currentText());
+        TacheComposite * T = dynamic_cast<TacheComposite * > (P->trouverTache(ui->Composee_Box->currentText()) );
 
         for(vector<Tache*>::const_iterator it = P->getTaches().begin(); it != P->getTaches().end(); ++it){
             if(T->verifierComposition(**it))

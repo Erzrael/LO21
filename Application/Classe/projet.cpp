@@ -77,12 +77,6 @@ Projet::~Projet() {
     }
 }
 
-Tache *Projet::ajouterTache(const QString & id, const QString & titre, const QDate & dispo, const QDate & deadline, const Duree & dur, const bool & pre)
-{
-   ProjetManager & pm = ProjetManager::getInstance();
-   return pm.ajouterTache(this->getId(), id, titre, dispo, deadline, dur, pre);
-}
-
 void Projet::ajouterTache(Tache &t)
 {
    // l'échéance du projet est repoussée si nécessaire
@@ -148,7 +142,7 @@ Tache* Projet::trouverTache(const QString &id)
 }
 
 const Tache* Projet::trouverTache(const QString& id) const{
-    return const_cast<Projet*>(this)->trouverTache(id);
+    return trouverTache(id);
 }
 
 void Projet::supprimerTache(const QString &id)

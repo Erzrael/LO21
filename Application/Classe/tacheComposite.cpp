@@ -83,6 +83,42 @@ void TacheComposite::ajouterComposition(Tache& t)
     }
 }
 
+bool TacheComposite::verifierComposition(Tache &t) const
+{
+    // On vérifie que l'on ajoute pas une même tâche en composition d'elle-même
+    if(this == &t){
+        qDebug()<<"Je retourne faux";
+        return false;
+    }
+    // On vérifie que les échéances concordent
+    if(t.getEcheance() > this->getEcheance()){
+        qDebug()<<"Je retourne faux";
+        return false;
+    }
+    // On vérifie si la tâche est déjà en composition
+    if(t.getMere_Compo() != 0){
+        qDebug()<<"Je retourne faux";
+        return false;
+    } else {
+        // Sinon on vérifie l'absence de cycles
+        Tache* tache_mere = this->getMere_Compo();
+            while(tache_mere != 0)
+            {
+                if(tache_mere == &t)
+                    return false;
+
+                tache_mere = tache_mere->getMere_Compo();
+            }
+    }
+
+    // On vérifie que les précédences restent logiques
+    if(!this->verifierPrecedence(t))
+        return false;
+
+    // Si tous les tests sont validés, c'est bon
+    return true;
+}
+
 unsigned int TacheComposite::nbComposition() const
 {
     return composition.size();

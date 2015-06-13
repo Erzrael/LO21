@@ -126,7 +126,7 @@ Tache* ProjetManager::getTache(const QString &id)
 }
 
 const Tache* ProjetManager::getTache(const QString& id) const{
-    return const_cast<ProjetManager*>(this)->getTache(id);
+   return this->getTache(id);
 }
 
 Projet *ProjetManager::getProjet(const QString &id)
@@ -151,11 +151,7 @@ void ProjetManager::supprimerTache(const QString &id)
 
 void ProjetManager::supprimerProjet(const QString &id)
 {
-    /*
-    Projet* p = ProjetManager::getInstance().getProjet(id);
-    delete p;
-    */
-    /* Si je veux supprimer un projet, il faut que je supprime le lien dans le vector d'où le code suivant */
+    /* Si je veux supprimer un projet, il faut que je supprime le lien dans le vector */
     std::vector<Projet *>::iterator it = projets.begin();
     while(id != (*it)->getId() && it != projets.end())
         ++it;
@@ -167,9 +163,7 @@ void ProjetManager::supprimerProjet(const QString &id)
 
 void ProjetManager::supprimerTout()
 {
-   while(!projets.empty()){/*
-       Projet* p = projets.back();
-       if(p->getId() != "")*/
+   while(!projets.empty()){
            delete projets.back();
        projets.pop_back();
     }
@@ -238,7 +232,6 @@ ProjetManager::TacheIterator::TacheIterator(unsigned int size, vector<Projet *>:
 ProjetManager::TacheIterator::TacheIterator(vector<Projet *> & p):
     nb_projets(p.size()), projetIterator(p.begin()){
    if(nb_projets == 0){
-//      vector<Tache *> t;
       tacheIterator = vector<Tache *>::iterator();
    }else{
       while (nb_projets != 0 && (*projetIterator)->getTaches().empty()) {
@@ -247,5 +240,4 @@ ProjetManager::TacheIterator::TacheIterator(vector<Projet *> & p):
       }
       tacheIterator = (*projetIterator)->getTaches().begin();
    }
-   //qDebug()<<"TacheIterator"<<*projetIterator<<","<<*tacheIterator<<"\n";
 }
