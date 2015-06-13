@@ -1,0 +1,8 @@
+<map id="Tache::setIdentificateur" name="Tache::setIdentificateur">
+<area shape="rect" id="node2" href="$class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9" title="accès à l&#39;instance unique du ProjetManager " alt="" coords="942,17,1125,44"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#a3ce54feba8ce6c6ff0dd0b86f8d98707" title="vérifie l&#39;existence d&#39;une tâche " alt="" coords="214,43,429,69"/>
+<area shape="rect" id="node4" href="$class_projet_manager.html#a2e4d05223f3bb596945b59d8476d145a" title="trouver une tache " alt="" coords="478,68,669,95"/>
+<area shape="rect" id="node5" href="$class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0" title="vérifie s&#39;il existe une tâche dans l&#39;ensemble des projets du ProjetManager " alt="" coords="730,68,881,95"/>
+<area shape="rect" id="node6" href="$class_projet_manager.html#a8d422bf8cd9499467bc66c9de934ea52" title="initialiser un TacheIterator " alt="" coords="732,119,879,161"/>
+<area shape="rect" id="node7" href="$class_projet_manager.html#a84607056c8e0d4ad35b3a28609bcd7c2" title="Fin du TacheIterator. " alt="" coords="718,185,893,212"/>
+</map>

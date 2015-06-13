@@ -1,0 +1,7 @@
+<map id="Projet::getTaches" name="Projet::getTaches">
+<area shape="rect" id="node2" href="$class_projet.html#a82c60fc5ac6724e997b46215418cb81f" title="operateur d&#39;affectation " alt="" coords="203,5,322,32"/>
+<area shape="rect" id="node3" href="$class_projet.html#a9573fe6a0bcae020d0a3050a41233dd1" title="opérateur de recopie " alt="" coords="213,56,312,83"/>
+<area shape="rect" id="node4" href="$class_export_import___x_m_l.html#ac7bf5ada76ff5ec5e4a4e6ea04d5c5fd" title="ExportImport_XML::save" alt="" coords="179,107,346,133"/>
+<area shape="rect" id="node5" href="$class_projet.html#ae9d518996ac1f14d10ac6c88aac7856e" title="trouve une tâche appartenant au projet " alt="" coords="193,157,333,184"/>
+<area shape="rect" id="node6" href="$class_projet.html#a2df9569763c785fb44febb8908a898a0" title="trouve une tâche appartenant au projet " alt="" coords="395,157,535,184"/>
+</map>

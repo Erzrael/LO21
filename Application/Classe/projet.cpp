@@ -117,11 +117,6 @@ void Projet::setDisponibilite(const QDate &value)
    dateDispo = value;
 }
 
-std::vector<Tache *> &Projet::getTaches()
-{
-    return taches;
-}
-
 const std::vector<Tache *> &Projet::getTaches() const
 {
     return taches;
@@ -132,7 +127,7 @@ Tache* Projet::trouverTache(const QString &id)
     if(this->getTaches().empty())
         return 0;
     else {
-        for(std::vector<Tache*>::iterator it = this->getTaches().begin(); it != this->getTaches().end(); ++it)
+        for(std::vector<Tache*>::const_iterator it = this->getTaches().begin(); it != this->getTaches().end(); ++it)
         {
             if(id == (*it)->getIdentificateur())
                 return (*it);

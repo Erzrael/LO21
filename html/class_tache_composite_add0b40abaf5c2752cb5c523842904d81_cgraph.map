@@ -1,0 +1,11 @@
+<map id="TacheComposite::ajouterComposition" name="TacheComposite::ajouterComposition">
+<area shape="rect" id="node2" href="$class_tache_composite.html#a4a35dc8841f7eaa15ed33cf5e4db7c17" title="vérifie si une composition est valide ou non " alt="" coords="296,85,464,126"/>
+<area shape="rect" id="node8" href="$class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af" title="TacheComposite::getComposition" alt="" coords="737,208,957,235"/>
+<area shape="rect" id="node10" href="$class_tache.html#acea24c79ff5eeeb5fb8e2ba1db0515d6" title="Tache::setMere_Compo" alt="" coords="299,223,461,249"/>
+<area shape="rect" id="node3" href="$class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0" title="Tache::getEcheance" alt="" coords="775,5,918,32"/>
+<area shape="rect" id="node4" href="$class_tache.html#a76cfb9b69d2b29a43ccd7ad3df0b63fe" title="Tache::getMere_Compo" alt="" coords="519,56,681,83"/>
+<area shape="rect" id="node5" href="$class_tache.html#a66940ce36910ba80500844dc5f7eaa69" title="vérifie si une précédence est valide ou non vérifie si cette tâche peut être précédée d&#39;une autre tâc..." alt="" coords="513,107,687,133"/>
+<area shape="rect" id="node6" href="$class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520" title="Tache::getPrecedence" alt="" coords="770,56,923,83"/>
+<area shape="rect" id="node7" href="$class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9" title="Tache::getIdentificateur" alt="" coords="767,107,926,133"/>
+<area shape="rect" id="node9" href="$class_tache.html#aee46b06ec81175bd2f82002428f9d377" title="Tache::getMere" alt="" coords="790,157,903,184"/>
+</map>

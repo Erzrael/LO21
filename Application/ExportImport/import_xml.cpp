@@ -143,8 +143,8 @@ void ExportImport_XML::save()
    doc.append_node(root);
    char *node_name = NULL;
 
-   vector<Projet *> & projets = projetManager.getProjets();
-   for (vector<Projet *>::iterator projet_iterator = projets.begin() ; projet_iterator != projets.end() ; ++ projet_iterator) {
+   const vector<Projet *> & projets = projetManager.getProjets();
+   for (vector<Projet *>::const_iterator projet_iterator = projets.begin() ; projet_iterator != projets.end() ; ++ projet_iterator) {
       Projet & projet = **projet_iterator;
 //      xml_node<> *node = doc.allocate_node(node_element, "a", "Google");
 //      doc.append_node(node);
@@ -172,8 +172,8 @@ void ExportImport_XML::save()
       node_projet->append_attribute(attribute);
 
       // on va parcourir les tâches et les ajouter une à une
-      vector <Tache *> & taches = (*projet_iterator)->getTaches();
-      for (vector< Tache *>::iterator tache_iterator = taches.begin() ; tache_iterator != taches.end() ; ++ tache_iterator) {
+      const vector <Tache *> & taches = (*projet_iterator)->getTaches();
+      for (vector< Tache *>::const_iterator tache_iterator = taches.begin() ; tache_iterator != taches.end() ; ++ tache_iterator) {
          Tache & tache = **tache_iterator;
          //creation du noeud tache
          xml_node<> * node_tache = doc.allocate_node(node_element, "tache");
@@ -199,7 +199,7 @@ void ExportImport_XML::save()
          tache.xml_ajouterAttributs(doc, *node_tache);
 
          // ajout des précédences
-         for ( vector<Tache *>::iterator pre_iterator = tache.getPrecedence().begin() ; pre_iterator != tache.getPrecedence().end() ; ++ pre_iterator ) {
+         for ( vector<Tache *>::const_iterator pre_iterator = tache.getPrecedence().begin() ; pre_iterator != tache.getPrecedence().end() ; ++ pre_iterator ) {
             node_name = doc.allocate_string( convertQString( (*pre_iterator)->getIdentificateur() ) );
             xml_node<> * pre = doc.allocate_node(node_element, "precedence", node_name);
             node_projet->append_node(pre);

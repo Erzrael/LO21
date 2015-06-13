@@ -1,0 +1,5 @@
+<map id="Projet::~Projet" name="Projet::~Projet">
+<area shape="rect" id="node2" href="$class_projet.html#a2e48a04595acca5e279d95eb4848d6be" title="supprime une tâche " alt="" coords="161,5,319,32"/>
+<area shape="rect" id="node4" href="$class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9" title="Tache::getIdentificateur" alt="" coords="161,56,319,83"/>
+<area shape="rect" id="node3" href="$class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af" title="TacheComposite::getComposition" alt="" coords="369,5,589,32"/>
+</map>

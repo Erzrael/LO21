@@ -1,3 +1,9 @@
+/*! \file
+ * \brief contient la déclaration de la classe TacheNonPreemptable
+ *
+ *
+ */
+
 #ifndef TACHENONPREEMPTABLE_H
 #define TACHENONPREEMPTABLE_H
 

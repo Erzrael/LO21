@@ -1,3 +1,9 @@
+/*! \file
+ * \brief contient la déclaration de la classe Programmation
+ *
+ *
+ */
+
 #ifndef PROGRAMMATION_H
 #define PROGRAMMATION_H
 #include "tache.h"

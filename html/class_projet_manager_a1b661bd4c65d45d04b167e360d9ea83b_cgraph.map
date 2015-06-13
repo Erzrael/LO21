@@ -1,0 +1,12 @@
+<map id="ProjetManager::supprimerTache" name="ProjetManager::supprimerTache">
+<area shape="rect" id="node2" href="$class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9" title="accès à l&#39;instance unique du ProjetManager " alt="" coords="934,24,1117,50"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#ab8e7d2321071601b2a258c1d021faf5a" title="récupérer une tâche " alt="" coords="224,137,392,164"/>
+<area shape="rect" id="node8" href="$class_tache.html#a88e8f26c6486039e5e2832e96f0ce90d" title="Tache::getProjet" alt="" coords="249,217,367,244"/>
+<area shape="rect" id="node10" href="$class_projet.html#a2e48a04595acca5e279d95eb4848d6be" title="supprime une tâche " alt="" coords="229,293,387,320"/>
+<area shape="rect" id="node4" href="$class_projet_manager.html#a2e4d05223f3bb596945b59d8476d145a" title="trouver une tache " alt="" coords="455,108,646,134"/>
+<area shape="rect" id="node5" href="$class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0" title="vérifie s&#39;il existe une tâche dans l&#39;ensemble des projets du ProjetManager " alt="" coords="722,49,873,76"/>
+<area shape="rect" id="node6" href="$class_projet_manager.html#a8d422bf8cd9499467bc66c9de934ea52" title="initialiser un TacheIterator " alt="" coords="724,100,871,142"/>
+<area shape="rect" id="node7" href="$class_projet_manager.html#a84607056c8e0d4ad35b3a28609bcd7c2" title="Fin du TacheIterator. " alt="" coords="710,166,885,193"/>
+<area shape="rect" id="node9" href="$class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0" title="getters " alt="" coords="464,268,637,294"/>
+<area shape="rect" id="node11" href="$class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af" title="TacheComposite::getComposition" alt="" coords="441,318,661,345"/>
+</map>

@@ -1,0 +1,22 @@
+<map id="ExportImport_XML::save" name="ExportImport_XML::save">
+<area shape="rect" id="node2" href="$class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0" title="getters " alt="" coords="236,5,409,32"/>
+<area shape="rect" id="node3" href="$import__xml_8h.html#a7724cc07f358d2f5c6772d7c723aff15" title="convertQString" alt="" coords="268,56,377,83"/>
+<area shape="rect" id="node4" href="$class_projet.html#a351ca5ceca7841960779a1a7b39aaef4" title="Projet::getId" alt="" coords="276,107,369,133"/>
+<area shape="rect" id="node5" href="$class_projet.html#a686b68f148a309621b8b791234f6d9bf" title="Projet::getDisponibilite" alt="" coords="246,157,399,184"/>
+<area shape="rect" id="node6" href="$class_projet.html#a8d132d2420b92db3a95e131b47517f6c" title="Projet::getEcheance" alt="" coords="253,208,393,235"/>
+<area shape="rect" id="node7" href="$class_projet.html#aa9b1fb9c9ad22fc567fe5e1d51370f9d" title="Projet::getTaches" alt="" coords="260,259,385,285"/>
+<area shape="rect" id="node8" href="$class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9" title="Tache::getIdentificateur" alt="" coords="243,309,402,336"/>
+<area shape="rect" id="node9" href="$class_tache.html#a8159c83c1cba13737b27d3088817eba6" title="Tache::getTitre" alt="" coords="267,360,378,387"/>
+<area shape="rect" id="node10" href="$class_tache.html#ad977616edf447b17c725a19db71b8b70" title="Tache::getDisponibilite" alt="" coords="245,411,400,437"/>
+<area shape="rect" id="node11" href="$class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0" title="Tache::getEcheance" alt="" coords="251,461,394,488"/>
+<area shape="rect" id="node12" href="$class_tache.html#abb1b496a728a015e6e133b88829c9da1" title="ajoute les attributs à un noeud XML " alt="" coords="231,512,414,539"/>
+<area shape="rect" id="node13" href="$class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520" title="Tache::getPrecedence" alt="" coords="246,563,399,589"/>
+<area shape="rect" id="node14" href="$class_agenda.html#a300d09b8eca60665810a4abab595d9b3" title="Récupère les Programmations. " alt="" coords="233,613,413,640"/>
+<area shape="rect" id="node15" href="$class_programmation.html#a92960d21f9fe9780f90baadb541c79ca" title="Getter de evenement. " alt="" coords="221,664,424,691"/>
+<area shape="rect" id="node16" href="$class_evenement.html#aa6da255cca4b1cdf260da11c18d9b765" title="Récupération de l&#39;ID. " alt="" coords="259,715,387,741"/>
+<area shape="rect" id="node17" href="$class_programmation.html#abd1632dfa907a6bf2a84bfdbc3bef38f" title="Getter de date. " alt="" coords="241,765,405,792"/>
+<area shape="rect" id="node18" href="$class_programmation.html#a86e406352b60adb786c1dd5b8ae1888a" title="Récupération de la durée. " alt="" coords="237,816,408,843"/>
+<area shape="rect" id="node19" href="$class_duree.html#aed1437ce19ac8bb11f00bcba1ac0938d" title="conversion du nombre de minute en char* " alt="" coords="271,867,375,893"/>
+<area shape="rect" id="node20" href="$class_programmation.html#a1bec27ff2907165f5ac776604dfbc8bc" title="Getter de début. " alt="" coords="237,917,408,944"/>
+<area shape="rect" id="node21" href="$class_programmation.html#af6dca9f78b45863ba82d3597ee3c31f6" title="getter de fin " alt="" coords="245,968,400,995"/>
+</map>

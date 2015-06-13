@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>LO21 - Le Pokétache:  Fichier source de Application/InterfaceGraphique/ajoutprogrammation.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="poketache_logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">LO21 - Le Pokétache
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ajoutprogrammation_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ajoutprogrammation.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;ajoutprogrammation.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;ui_ajoutprogrammation.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="projet_manager_8h.html">Classe/projetManager.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="projet_8h.html">Classe/projet.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="agenda_8h.html">Classe/agenda.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="duree_8h.html">Classe/duree.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;ajoutProgrammation::ajoutProgrammation(QWidget * parent, QDate date, QTime h_debut):</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;   QDialog(parent),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;   ui(new Ui::<a class="code" href="classajout_programmation.html">ajoutProgrammation</a>)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   ui-&gt;setupUi(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;   <span class="comment">//initialisation d&#39;après les paramètres</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;   ui-&gt;date-&gt;setDate(date);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;   ui-&gt;heure_debut-&gt;setTime(h_debut);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   <a class="code" href="class_projet_manager.html">ProjetManager</a> &amp;projetmanager = <a class="code" href="class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9">ProjetManager::getInstance</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   <a class="code" href="class_agenda.html">Agenda</a> &amp; agenda = <a class="code" href="class_agenda.html#ad02e39069d3e80ef6b934f49f6246ae6">Agenda::getInstance</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   <span class="comment">//on ne peut sélectionner que les taches ajoutables : les taches unitaires, les préemptables ou celles qui n&#39;ont pas encore été programmées</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <span class="keywordflow">for</span>(<a class="code" href="class_projet_manager_1_1_tache_iterator.html">ProjetManager::TacheIterator</a> it = projetmanager.<a class="code" href="class_projet_manager.html#a8d422bf8cd9499467bc66c9de934ea52">tache_begin</a>(); it != projetmanager.<a class="code" href="class_projet_manager.html#a84607056c8e0d4ad35b3a28609bcd7c2">tache_end</a>(); it++) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <a class="code" href="class_tache_unitaire.html">TacheUnitaire</a> * tu = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_tache_unitaire.html">TacheUnitaire</a> *<span class="keyword">&gt;</span> (*it) ;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keywordflow">if</span> (tu) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         <span class="keywordflow">if</span>(tu-&gt;<a class="code" href="class_tache_unitaire.html#ad7235a61c6dafa0526136d1b5059f8cc">getPreempte</a>() == <span class="keyword">true</span> || agenda.<a class="code" href="class_agenda.html#aefb12b2118fe188e961e916e2119d690">trouverProgrammation</a>(*tu).empty()) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            ui-&gt;tache_box-&gt;addItem((*it)-&gt;getIdentificateur());</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;         }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;ajoutProgrammation::~ajoutProgrammation()</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <span class="keyword">delete</span> ui;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> ajoutProgrammation::on_cancel_ok_accepted()</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   <a class="code" href="class_agenda.html">Agenda</a> &amp; agenda = <a class="code" href="class_agenda.html#ad02e39069d3e80ef6b934f49f6246ae6">Agenda::getInstance</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   <a class="code" href="class_projet_manager.html">ProjetManager</a> &amp;projetmanager = <a class="code" href="class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9">ProjetManager::getInstance</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;   <span class="keywordflow">if</span> ( ui-&gt;selection_type-&gt;currentIndex() == 0 ) { <span class="comment">// on veut insérer une tâche</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <a class="code" href="class_tache_unitaire.html">TacheUnitaire</a>* unitaire = <span class="keyword">static_cast&lt;</span><a class="code" href="class_tache_unitaire.html">TacheUnitaire</a>*<span class="keyword">&gt;</span>(projetmanager.<a class="code" href="class_projet_manager.html#ab8e7d2321071601b2a258c1d021faf5a">getTache</a>(ui-&gt;tache_box-&gt;currentText()));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="comment">// s&#39;il n&#39;y a pas de durée ou que la tache n&#39;est pas préemtable</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordflow">if</span> ( unitaire-&gt;<a class="code" href="class_tache_unitaire.html#ad7235a61c6dafa0526136d1b5059f8cc">getPreempte</a>() == <span class="keyword">false</span> || ( ui-&gt;duree-&gt;time().hour() == 0 &amp;&amp; ui-&gt;duree-&gt;time().minute() == 0 ) ) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;         <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            agenda.<a class="code" href="class_agenda.html#a730a452851088ad3b30740120b64e4b6">ajouterProgrammation</a>(*unitaire, ui-&gt;date-&gt;date(), ui-&gt;heure_debut-&gt;time());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            QMessageBox::information(<span class="keyword">this</span>,<span class="stringliteral">&quot;Succès&quot;</span>,<span class="stringliteral">&quot;Programmation Ajoutée&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;         } <span class="keywordflow">catch</span> (<a class="code" href="class_calendar_exception.html">CalendarException</a> e) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erreur : &quot;</span>,e.<a class="code" href="class_calendar_exception.html#a5a7ad3b9a770fbc361c809dde840d44c">getInfo</a>());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;         }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;         <span class="comment">//TachePreemptable * p = unitaire ;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;         <a class="code" href="class_tache_preemptable.html">TachePreemptable</a> * p = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="class_tache_preemptable.html">TachePreemptable</a>*<span class="keyword">&gt;</span>( unitaire );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;         <span class="comment">//      int heure = ui-&gt;duree-&gt;time().hour();</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;         <span class="comment">//      int minute = ui-&gt;duree-&gt;time().minute();</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;         <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            QTime foutoidemaggle(ui-&gt;duree-&gt;time());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="class_duree.html">Duree</a> dbraou(foutoidemaggle.hour(), foutoidemaggle.minute());</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            agenda.<a class="code" href="class_agenda.html#a730a452851088ad3b30740120b64e4b6">ajouterProgrammation</a>(*p, ui-&gt;date-&gt;date(), ui-&gt;heure_debut-&gt;time(), dbraou);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            QMessageBox::information(<span class="keyword">this</span>,<span class="stringliteral">&quot;Succès&quot;</span>,<span class="stringliteral">&quot;Programmation Ajoutée&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;         } <span class="keywordflow">catch</span> (<a class="code" href="class_calendar_exception.html">CalendarException</a> e) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erreur : &quot;</span>,e.<a class="code" href="class_calendar_exception.html#a5a7ad3b9a770fbc361c809dde840d44c">getInfo</a>());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;         }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ui-&gt;selection_type-&gt;currentIndex() == 1 ) { <span class="comment">// on veut insérer un évènement traditionnel</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="comment">// s&#39;il n&#39;y a pas de durée, erreur</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">if</span> ( ui-&gt;duree-&gt;time().hour() == 0 &amp;&amp; ui-&gt;duree-&gt;time().minute() == 0 ) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;         QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erreur &quot;</span>, <span class="stringliteral">&quot;veuillez indiquer une durée&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;         <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            QTime foutoidemaggle(ui-&gt;duree-&gt;time());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="class_duree.html">Duree</a> dbraou(foutoidemaggle.hour(), foutoidemaggle.minute());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            agenda.<a class="code" href="class_agenda.html#a730a452851088ad3b30740120b64e4b6">ajouterProgrammation</a>( ui-&gt;nom_evt-&gt;text(), ui-&gt;date-&gt;date(), ui-&gt;heure_debut-&gt;time(), dbraou);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;         } <span class="keywordflow">catch</span> (<a class="code" href="class_calendar_exception.html">CalendarException</a> e) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erreur : &quot;</span>,e.<a class="code" href="class_calendar_exception.html#a5a7ad3b9a770fbc361c809dde840d44c">getInfo</a>());</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;   } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      QMessageBox::warning(<span class="keyword">this</span>,<span class="stringliteral">&quot;Erreur &quot;</span>, <span class="stringliteral">&quot;Désolée Sacha, cette fonctionnalité du Pokétache n&#39;est pas encore implémentée !&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="ttc" id="class_agenda_html_a730a452851088ad3b30740120b64e4b6"><div class="ttname"><a href="class_agenda.html#a730a452851088ad3b30740120b64e4b6">Agenda::ajouterProgrammation</a></div><div class="ttdeci">void ajouterProgrammation(const Evenement &amp;t, const QDate &amp;d, const QTime &amp;debut, const QTime &amp;fin)</div><div class="ttdoc">Permet l&#39;ajout de la programmation d&#39;un évènement. </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00110">agenda.cpp:110</a></div></div>
+<div class="ttc" id="class_projet_manager_html_ab8e7d2321071601b2a258c1d021faf5a"><div class="ttname"><a href="class_projet_manager.html#ab8e7d2321071601b2a258c1d021faf5a">ProjetManager::getTache</a></div><div class="ttdeci">Tache * getTache(const QString &amp;id)</div><div class="ttdoc">récupérer une tâche </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00119">projetManager.cpp:119</a></div></div>
+<div class="ttc" id="agenda_8h_html"><div class="ttname"><a href="agenda_8h.html">agenda.h</a></div><div class="ttdoc">Fichier contenant la déclaration de la classe Agenda Un agenda gère des Programmations. </div></div>
+<div class="ttc" id="duree_8h_html"><div class="ttname"><a href="duree_8h.html">duree.h</a></div><div class="ttdoc">contient la déclaration de la classe Duree </div></div>
+<div class="ttc" id="class_agenda_html"><div class="ttname"><a href="class_agenda.html">Agenda</a></div><div class="ttdoc">une classe gérant une liste de programmation </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8h_source.html#l00025">agenda.h:25</a></div></div>
+<div class="ttc" id="class_projet_manager_html"><div class="ttname"><a href="class_projet_manager.html">ProjetManager</a></div><div class="ttdoc">classe gérant les projets du PokéTache ProjetManager crée les projets et les garde en mémoire...</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00019">projetManager.h:19</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a8d422bf8cd9499467bc66c9de934ea52"><div class="ttname"><a href="class_projet_manager.html#a8d422bf8cd9499467bc66c9de934ea52">ProjetManager::tache_begin</a></div><div class="ttdeci">TacheIterator tache_begin()</div><div class="ttdoc">initialiser un TacheIterator </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00205">projetManager.cpp:205</a></div></div>
+<div class="ttc" id="class_tache_unitaire_html"><div class="ttname"><a href="class_tache_unitaire.html">TacheUnitaire</a></div><div class="ttdoc">Classe représentant une tache unitaire classe abstraite Une tache unitaire est programmable dans l&#39;Ag...</div><div class="ttdef"><b>Definition:</b> <a href="tache_unitaire_8h_source.html#l00018">tacheUnitaire.h:18</a></div></div>
+<div class="ttc" id="class_tache_unitaire_html_ad7235a61c6dafa0526136d1b5059f8cc"><div class="ttname"><a href="class_tache_unitaire.html#ad7235a61c6dafa0526136d1b5059f8cc">TacheUnitaire::getPreempte</a></div><div class="ttdeci">virtual bool getPreempte()=0</div></div>
+<div class="ttc" id="projet_8h_html"><div class="ttname"><a href="projet_8h.html">projet.h</a></div><div class="ttdoc">contient la déclaration de la classe Projet </div></div>
+<div class="ttc" id="class_agenda_html_ad02e39069d3e80ef6b934f49f6246ae6"><div class="ttname"><a href="class_agenda.html#ad02e39069d3e80ef6b934f49f6246ae6">Agenda::getInstance</a></div><div class="ttdeci">static Agenda &amp; getInstance()</div><div class="ttdoc">accès à l&#39;instance unique d&#39;Agenda Permet l&#39;accès à l&#39;instance unique d&#39;Agenda fonction statique du d...</div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00156">agenda.cpp:156</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a84607056c8e0d4ad35b3a28609bcd7c2"><div class="ttname"><a href="class_projet_manager.html#a84607056c8e0d4ad35b3a28609bcd7c2">ProjetManager::tache_end</a></div><div class="ttdeci">TacheIterator tache_end()</div><div class="ttdoc">Fin du TacheIterator. </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00210">projetManager.cpp:210</a></div></div>
+<div class="ttc" id="class_calendar_exception_html"><div class="ttname"><a href="class_calendar_exception.html">CalendarException</a></div><div class="ttdoc">Classe utilisée pour toutes les exceptions. </div><div class="ttdef"><b>Definition:</b> <a href="calendar_exception_8h_source.html#l00022">calendarException.h:22</a></div></div>
+<div class="ttc" id="class_tache_preemptable_html"><div class="ttname"><a href="class_tache_preemptable.html">TachePreemptable</a></div><div class="ttdoc">classe représentant une tache préemptable une tâche préemptable peut être associée à plusieurs progra...</div><div class="ttdef"><b>Definition:</b> <a href="tache_preemptable_8h_source.html#l00018">tachePreemptable.h:18</a></div></div>
+<div class="ttc" id="class_agenda_html_aefb12b2118fe188e961e916e2119d690"><div class="ttname"><a href="class_agenda.html#aefb12b2118fe188e961e916e2119d690">Agenda::trouverProgrammation</a></div><div class="ttdeci">vector&lt; Programmation * &gt; &amp; trouverProgrammation(const Evenement &amp;t) const </div><div class="ttdoc">trouve toutes les Programmations de la tâche passée en paramètre </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00016">agenda.cpp:16</a></div></div>
+<div class="ttc" id="class_projet_manager_html_af0b8d536c3d208289033d6a3b757fac9"><div class="ttname"><a href="class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9">ProjetManager::getInstance</a></div><div class="ttdeci">static ProjetManager &amp; getInstance()</div><div class="ttdoc">accès à l&#39;instance unique du ProjetManager </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00067">projetManager.cpp:67</a></div></div>
+<div class="ttc" id="class_calendar_exception_html_a5a7ad3b9a770fbc361c809dde840d44c"><div class="ttname"><a href="class_calendar_exception.html#a5a7ad3b9a770fbc361c809dde840d44c">CalendarException::getInfo</a></div><div class="ttdeci">QString getInfo() const </div><div class="ttdoc">Récupère l&#39;info Fonction permet d&#39;accéder à l&#39;information d&#39;erreur de cette exception. </div><div class="ttdef"><b>Definition:</b> <a href="calendar_exception_8h_source.html#l00044">calendarException.h:44</a></div></div>
+<div class="ttc" id="class_duree_html"><div class="ttname"><a href="class_duree.html">Duree</a></div><div class="ttdoc">Classe permettant de manipuler des durees L&#39;utilisation de cette classe nécessite des durées valides ...</div><div class="ttdef"><b>Definition:</b> <a href="duree_8h_source.html#l00026">duree.h:26</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html">ProjetManager::TacheIterator</a></div><div class="ttdoc">Iterator des tâches du projetManager Itérator uni-directionnel permettant de parcourir l&#39;ensemble des...</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00054">projetManager.h:54</a></div></div>
+<div class="ttc" id="classajout_programmation_html"><div class="ttname"><a href="classajout_programmation.html">ajoutProgrammation</a></div><div class="ttdef"><b>Definition:</b> <a href="ajoutprogrammation_8h_source.html#l00012">ajoutprogrammation.h:12</a></div></div>
+<div class="ttc" id="projet_manager_8h_html"><div class="ttname"><a href="projet_manager_8h.html">projetManager.h</a></div><div class="ttdoc">contient la déclaration de la classe ProjetManager </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_eb1463819d84903762eb6f59cc0c4383.html">Application</a></li><li class="navelem"><a class="el" href="dir_adf0fb5c1330b5c33ee885fce950b143.html">InterfaceGraphique</a></li><li class="navelem"><b>ajoutprogrammation.cpp</b></li>
+    <li class="footer">Généré le Samedi 13 Juin 2015 16:56:21 pour LO21 - Le Pokétache par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

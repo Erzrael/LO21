@@ -1,3 +1,9 @@
+/*! \file
+ * \brief contient la déclaration de la classe TacheUnitaire
+ *
+ *
+ */
+
 #ifndef TACHEUNITAIRE_H
 #define TACHEUNITAIRE_H
 #include "tache.h"

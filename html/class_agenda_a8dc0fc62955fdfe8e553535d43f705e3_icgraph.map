@@ -1,0 +1,7 @@
+<map id="Agenda::chevauche" name="Agenda::chevauche">
+<area shape="rect" id="node2" href="$class_agenda.html#a730a452851088ad3b30740120b64e4b6" title="Permet l&#39;ajout de la programmation d&#39;un évènement. " alt="" coords="193,31,394,57"/>
+<area shape="rect" id="node5" href="$class_agenda.html#a5029e56aff5ea9c16940901b96e7952c" title="Nombre de tâches sur un horaire. " alt="" coords="204,81,383,108"/>
+<area shape="rect" id="node6" href="$class_agenda.html#ac0c4ed270daa914a71027eb1ed7c2864" title="Tableau des tâches chevauchant un horaire. " alt="" coords="193,132,393,159"/>
+<area shape="rect" id="node3" href="$class_agenda.html#aeee1ea5bc441e7a972b9ce5e6e64fb76" title="Permet l&#39;ajout de la programmation d&#39;une tâche préemptable. " alt="" coords="443,5,645,32"/>
+<area shape="rect" id="node4" href="$class_export_import___x_m_l.html#a77c75d10ca173d8c6f8790ffb555c69d" title="ExportImport_XML::load" alt="" coords="463,56,625,83"/>
+</map>

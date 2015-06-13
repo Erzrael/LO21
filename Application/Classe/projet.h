@@ -1,3 +1,9 @@
+/*! \file
+ * \brief contient la déclaration de la classe Projet
+ *
+ *
+ */
+
 #ifndef PROJET_H
 #define PROJET_H
 #include "tache.h"
@@ -128,7 +134,6 @@ public:
     */
    void setEcheance(const QDate &value);
 
-   std::vector<Tache *> &getTaches(); /*!< retourne le tableau des tâches */
    const std::vector<Tache *> &getTaches() const; /*!< retourne le tableau des tâches */
 
    QString& getId(); /*!< retourne l'ID du projet */

@@ -1,0 +1,5 @@
+<map id="ProjetManager::ajouterProjet" name="ProjetManager::ajouterProjet">
+<area shape="rect" id="node2" href="$class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9" title="accès à l&#39;instance unique du ProjetManager " alt="" coords="253,5,435,32"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#afa468839723f96517afa8da6bdcc4cb4" title="vérifie l&#39;existence d&#39;un projet " alt="" coords="241,56,447,83"/>
+<area shape="rect" id="node4" href="$class_projet_manager.html#a9399a30b76b2fd878cbb59d24ccfcba1" title="trouver un projet " alt="" coords="497,56,685,83"/>
+</map>

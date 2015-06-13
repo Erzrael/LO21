@@ -1,3 +1,8 @@
+/*! \file
+ * \brief contient la déclaration de la classe ExportImport_XML (import export de l'agenda au format XML
+ *
+ *
+ */
 #ifndef IMPORT_XML_H
 #define IMPORT_XML_H
 #include <ExportImport/exportimport.h>

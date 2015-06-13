@@ -1,0 +1,4 @@
+<map id="ExportImport" name="ExportImport">
+<area shape="rect" id="node2" href="$class_projet_manager.html" title="classe gérant les projets du PokéTache ProjetManager crée les projets et les garde en mémoire..." alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node3" href="$class_agenda.html" title="une classe gérant une liste de programmation " alt="" coords="143,5,209,32"/>
+</map>

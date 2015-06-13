@@ -1,0 +1,6 @@
+<map id="Agenda::ajouterProgrammation" name="Agenda::ajouterProgrammation">
+<area shape="rect" id="node2" href="$class_agenda.html#aefb12b2118fe188e961e916e2119d690" title="trouve toutes les Programmations de la tâche passée en paramètre " alt="" coords="256,5,459,32"/>
+<area shape="rect" id="node3" href="$class_evenement.html#a43c92d1917720282ac6ba3a598fac708" title="récupération de la durée de l&#39;évènement " alt="" coords="283,56,432,83"/>
+<area shape="rect" id="node4" href="$class_agenda.html#a730a452851088ad3b30740120b64e4b6" title="Permet l&#39;ajout de la programmation d&#39;un évènement. " alt="" coords="257,107,458,133"/>
+<area shape="rect" id="node5" href="$class_agenda.html#a8dc0fc62955fdfe8e553535d43f705e3" title="permet de déterminer si une programmation que l&#39;on veut créer se chevauche avec une programmation déj..." alt="" coords="507,107,645,133"/>
+</map>

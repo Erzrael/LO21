@@ -1,0 +1,8 @@
+<map id="ProjetManager::getTache" name="ProjetManager::getTache">
+<area shape="rect" id="node2" href="$class_projet_manager.html#ab8e7d2321071601b2a258c1d021faf5a" title="récupérer une tâche " alt="" coords="221,60,389,87"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#a2e4d05223f3bb596945b59d8476d145a" title="trouver une tache " alt="" coords="438,60,629,87"/>
+<area shape="rect" id="node4" href="$class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9" title="accès à l&#39;instance unique du ProjetManager " alt="" coords="902,5,1085,32"/>
+<area shape="rect" id="node5" href="$class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0" title="vérifie s&#39;il existe une tâche dans l&#39;ensemble des projets du ProjetManager " alt="" coords="690,31,841,57"/>
+<area shape="rect" id="node6" href="$class_projet_manager.html#a8d422bf8cd9499467bc66c9de934ea52" title="initialiser un TacheIterator " alt="" coords="692,82,839,123"/>
+<area shape="rect" id="node7" href="$class_projet_manager.html#a84607056c8e0d4ad35b3a28609bcd7c2" title="Fin du TacheIterator. " alt="" coords="678,148,853,175"/>
+</map>

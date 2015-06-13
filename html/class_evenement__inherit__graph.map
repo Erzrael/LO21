@@ -1,0 +1,6 @@
+<map id="Evenement" name="Evenement">
+<area shape="rect" id="node2" href="$class_evenement_classique.html" title="Evènement classique Classe représentant un évènement &quot;classique&quot; avec pour seul attribut un nom..." alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node3" href="$class_tache_unitaire.html" title="Classe représentant une tache unitaire classe abstraite Une tache unitaire est programmable dans l&#39;Ag..." alt="" coords="177,80,279,107"/>
+<area shape="rect" id="node4" href="$class_tache_non_preemptable.html" title="classe représentant une tache non préemptable une tache non préemptable ne peut avoir qu&#39;une seule pr..." alt="" coords="68,155,221,181"/>
+<area shape="rect" id="node5" href="$class_tache_preemptable.html" title="classe représentant une tache préemptable une tâche préemptable peut être associée à plusieurs progra..." alt="" coords="247,155,376,181"/>
+</map>

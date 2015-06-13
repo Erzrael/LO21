@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>LO21 - Le Pokétache:  Fichier source de Application/Classe/tacheComposite.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="poketache_logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">LO21 - Le Pokétache
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('tache_composite_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">tacheComposite.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="tache_composite_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef TACHECOMPOSITE_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TACHECOMPOSITE_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QDate&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;ExportImport/rapidxml-1.13/rapidxml.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="class_tache.html">Tache</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_tache_composite.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tache_composite.html">TacheComposite</a> : <span class="keyword">public</span> <a class="code" href="class_tache.html">Tache</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_projet_manager.html">ProjetManager</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_tache_composite.html#a298f456fcc9e20b506b027aa5954710b">   22</a></span>&#160;    std::vector&lt;Tache*&gt; <a class="code" href="class_tache_composite.html#a298f456fcc9e20b506b027aa5954710b">composition</a>; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_tache_composite.html#ab1d2941b68da2ee1a2f86c3c53338e81">TacheComposite</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>, <span class="keyword">const</span> QString&amp; t, <span class="keyword">const</span> QDate&amp; dispo, <span class="keyword">const</span> QDate&amp; deadline); </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_tache_composite.html#ab1d2941b68da2ee1a2f86c3c53338e81">TacheComposite</a>(<span class="keyword">const</span> <a class="code" href="class_tache_composite.html">TacheComposite</a>&amp; t); </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_tache_composite.html">TacheComposite</a>&amp; <a class="code" href="class_tache_composite.html#a18e7142486f9248483238dbad1669225">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_tache_composite.html">TacheComposite</a>&amp; obj); </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_tache_composite.html#a70ddee42aa910b22a06e8197f5873698">~TacheComposite</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/* Les Getters et Setters */</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::vector&lt;Tache *&gt; &amp;<a class="code" href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">getComposition</a>(); </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> std::vector&lt;Tache *&gt; &amp;<a class="code" href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">getComposition</a>() <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tache_composite.html#add0b40abaf5c2752cb5c523842904d81">ajouterComposition</a>(<a class="code" href="class_tache.html">Tache</a> &amp;t);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_tache_composite.html#a4a35dc8841f7eaa15ed33cf5e4db7c17">verifierComposition</a>(<a class="code" href="class_tache.html">Tache</a> &amp;t) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_tache_composite.html#a16ebd46813e0cf099b762d587da23d9e">nbComposition</a>() <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tache_composite.html#a4e53576441a8614d087977f9612711c5">supprimerComposition</a>(<span class="keyword">const</span> QString &amp; <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_tache_composite.html#a0ea3c635685e747246340af47bc0060c">xml_ajouterAttributs</a>(rapidxml::xml_document&lt;&gt; &amp; doc, rapidxml::xml_node&lt;&gt; &amp; node_tache);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif // TACHECOMPOSITE_H</span></div>
+<div class="ttc" id="class_tache_composite_html_a16ebd46813e0cf099b762d587da23d9e"><div class="ttname"><a href="class_tache_composite.html#a16ebd46813e0cf099b762d587da23d9e">TacheComposite::nbComposition</a></div><div class="ttdeci">unsigned int nbComposition() const </div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00122">tacheComposite.cpp:122</a></div></div>
+<div class="ttc" id="class_tache_composite_html_a0ea3c635685e747246340af47bc0060c"><div class="ttname"><a href="class_tache_composite.html#a0ea3c635685e747246340af47bc0060c">TacheComposite::xml_ajouterAttributs</a></div><div class="ttdeci">virtual void xml_ajouterAttributs(rapidxml::xml_document&lt;&gt; &amp;doc, rapidxml::xml_node&lt;&gt; &amp;node_tache)</div><div class="ttdoc">ajoute les attributs à un noeud XML </div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00142">tacheComposite.cpp:142</a></div></div>
+<div class="ttc" id="class_projet_manager_html"><div class="ttname"><a href="class_projet_manager.html">ProjetManager</a></div><div class="ttdoc">classe gérant les projets du PokéTache ProjetManager crée les projets et les garde en mémoire...</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00019">projetManager.h:19</a></div></div>
+<div class="ttc" id="class_tache_composite_html_a4e53576441a8614d087977f9612711c5"><div class="ttname"><a href="class_tache_composite.html#a4e53576441a8614d087977f9612711c5">TacheComposite::supprimerComposition</a></div><div class="ttdeci">void supprimerComposition(const QString &amp;id)</div><div class="ttdoc">supprime une composition à cette tâche </div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00127">tacheComposite.cpp:127</a></div></div>
+<div class="ttc" id="class_tache_composite_html"><div class="ttname"><a href="class_tache_composite.html">TacheComposite</a></div><div class="ttdoc">classe représentant une tâche composite Hérite de Tache. Une tâche composite est composée de différen...</div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8h_source.html#l00019">tacheComposite.h:19</a></div></div>
+<div class="ttc" id="class_tache_composite_html_ab1d2941b68da2ee1a2f86c3c53338e81"><div class="ttname"><a href="class_tache_composite.html#ab1d2941b68da2ee1a2f86c3c53338e81">TacheComposite::TacheComposite</a></div><div class="ttdeci">TacheComposite(const QString &amp;id, const QString &amp;t, const QDate &amp;dispo, const QDate &amp;deadline)</div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00006">tacheComposite.cpp:6</a></div></div>
+<div class="ttc" id="class_tache_composite_html_a4a35dc8841f7eaa15ed33cf5e4db7c17"><div class="ttname"><a href="class_tache_composite.html#a4a35dc8841f7eaa15ed33cf5e4db7c17">TacheComposite::verifierComposition</a></div><div class="ttdeci">bool verifierComposition(Tache &amp;t) const </div><div class="ttdoc">vérifie si une composition est valide ou non </div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00086">tacheComposite.cpp:86</a></div></div>
+<div class="ttc" id="class_tache_html"><div class="ttname"><a href="class_tache.html">Tache</a></div><div class="ttdoc">classe représentant une tâche </div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00024">tache.h:24</a></div></div>
+<div class="ttc" id="class_tache_composite_html_ab4f7303bf3aaf37315bd4b5f7c7d99af"><div class="ttname"><a href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">TacheComposite::getComposition</a></div><div class="ttdeci">std::vector&lt; Tache * &gt; &amp; getComposition()</div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00064">tacheComposite.cpp:64</a></div></div>
+<div class="ttc" id="class_tache_composite_html_a70ddee42aa910b22a06e8197f5873698"><div class="ttname"><a href="class_tache_composite.html#a70ddee42aa910b22a06e8197f5873698">TacheComposite::~TacheComposite</a></div><div class="ttdeci">~TacheComposite()</div><div class="ttdoc">destructeur </div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00044">tacheComposite.cpp:44</a></div></div>
+<div class="ttc" id="class_tache_composite_html_a298f456fcc9e20b506b027aa5954710b"><div class="ttname"><a href="class_tache_composite.html#a298f456fcc9e20b506b027aa5954710b">TacheComposite::composition</a></div><div class="ttdeci">std::vector&lt; Tache * &gt; composition</div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8h_source.html#l00022">tacheComposite.h:22</a></div></div>
+<div class="ttc" id="class_tache_composite_html_add0b40abaf5c2752cb5c523842904d81"><div class="ttname"><a href="class_tache_composite.html#add0b40abaf5c2752cb5c523842904d81">TacheComposite::ajouterComposition</a></div><div class="ttdeci">void ajouterComposition(Tache &amp;t)</div><div class="ttdoc">ajoute une composition à cette tache </div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00074">tacheComposite.cpp:74</a></div></div>
+<div class="ttc" id="class_tache_composite_html_a18e7142486f9248483238dbad1669225"><div class="ttname"><a href="class_tache_composite.html#a18e7142486f9248483238dbad1669225">TacheComposite::operator=</a></div><div class="ttdeci">TacheComposite &amp; operator=(const TacheComposite &amp;obj)</div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00016">tacheComposite.cpp:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_eb1463819d84903762eb6f59cc0c4383.html">Application</a></li><li class="navelem"><a class="el" href="dir_406eb62538976f3b4fdc4cd9ddb43324.html">Classe</a></li><li class="navelem"><a class="el" href="tache_composite_8h.html">tacheComposite.h</a></li>
+    <li class="footer">Généré le Samedi 13 Juin 2015 16:56:21 pour LO21 - Le Pokétache par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,3 +1,9 @@
+/*! \file
+ * \brief contient la description des classes Evenement et EvenementClassique
+ *
+ *
+ */
+
 #ifndef EVENEMENT_H
 #define EVENEMENT_H
 

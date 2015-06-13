@@ -131,11 +131,6 @@ void Tache::setEcheance(const QDate &value)
     echeance = value;
 }
 
-std::vector<Tache*>& Tache::getPrecedence()
-{
-    return precedence;
-}
-
 const std::vector<Tache*>& Tache::getPrecedence() const
 {
     return precedence;
@@ -154,7 +149,7 @@ void Tache::setMere_Compo(Tache *value)
 void Tache::ajouterPrecedence(Tache &t)
 {
     if(this->verifierPrecedence(t)){
-        this->getPrecedence().push_back(&t);
+        precedence.push_back(&t);
         t.getMere().push_back(this);
         qDebug()<<"Ajout précédence réussi \n";
     }else{
@@ -216,7 +211,7 @@ bool Tache::verifierPrecedence(Tache &t) const
 
 void Tache::supprimerPrecedence(const QString &id)
 {
-    std::vector<Tache*>::iterator iterator_precedence = this->getPrecedence().begin();
+    std::vector<Tache*>::iterator iterator_precedence = precedence.begin();
 
     while(iterator_precedence != this->getPrecedence().end() && (*iterator_precedence)->getIdentificateur() != id){
         ++iterator_precedence;
@@ -233,7 +228,7 @@ void Tache::supprimerPrecedence(const QString &id)
             }
         }
 
-        this->getPrecedence().erase(iterator_precedence);
+        precedence.erase(iterator_precedence);
     } else
         throw CalendarException("La précédence n'a pas été supprimée");
 }
@@ -275,7 +270,7 @@ Tache *Tache::getPere()
 Projet* Tache::getProjet()
 {
     ProjetManager& projetManager = ProjetManager::getInstance();
-    std::vector<Projet *>::iterator it_projets = projetManager.getProjets().begin();
+    std::vector<Projet *>::const_iterator it_projets = projetManager.getProjets().begin();
     while((it_projets != projetManager.getProjets().end()) && ((*it_projets)->trouverTache(this->getIdentificateur()) == 0)){
         ++it_projets;
     }

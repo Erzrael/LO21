@@ -1,0 +1,7 @@
+<map id="Tache::verifierPrecedence" name="Tache::verifierPrecedence">
+<area shape="rect" id="node2" href="$class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0" title="Tache::getEcheance" alt="" coords="269,5,411,32"/>
+<area shape="rect" id="node3" href="$class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520" title="Tache::getPrecedence" alt="" coords="263,56,417,83"/>
+<area shape="rect" id="node4" href="$class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9" title="Tache::getIdentificateur" alt="" coords="261,107,419,133"/>
+<area shape="rect" id="node5" href="$class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af" title="TacheComposite::getComposition" alt="" coords="230,157,450,184"/>
+<area shape="rect" id="node6" href="$class_tache.html#aee46b06ec81175bd2f82002428f9d377" title="Tache::getMere" alt="" coords="283,208,397,235"/>
+</map>

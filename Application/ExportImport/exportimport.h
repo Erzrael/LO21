@@ -1,3 +1,8 @@
+/*! \file
+ * \brief contient la déclaration de la classe ExportImport
+ *
+ *
+ */
 #ifndef EXPORTIMPORT_H
 #define EXPORTIMPORT_H
 #include <QString>

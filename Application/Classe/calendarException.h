@@ -1,3 +1,9 @@
+/*! \file 
+ * \brief contient la déclaration de la classe CalendarException
+ *
+ *
+ */
+
 #ifndef CALENDAREXCEPTION_H
 #define CALENDAREXCEPTION_H
 

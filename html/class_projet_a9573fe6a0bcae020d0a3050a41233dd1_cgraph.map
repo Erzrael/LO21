@@ -1,0 +1,7 @@
+<map id="Projet::Projet" name="Projet::Projet">
+<area shape="rect" id="node2" href="$class_projet.html#abebd41a8721c10ca413f06da66497b6b" title="modifier la disponibilité " alt="" coords="153,5,306,32"/>
+<area shape="rect" id="node3" href="$class_projet.html#a686b68f148a309621b8b791234f6d9bf" title="Projet::getDisponibilite" alt="" coords="153,56,306,83"/>
+<area shape="rect" id="node4" href="$class_projet.html#a69570e612af039c10a56c084efaf34dd" title="modifier la date d&#39;échéance de ce projet " alt="" coords="159,107,299,133"/>
+<area shape="rect" id="node5" href="$class_projet.html#a8d132d2420b92db3a95e131b47517f6c" title="Projet::getEcheance" alt="" coords="159,157,299,184"/>
+<area shape="rect" id="node6" href="$class_projet.html#aa9b1fb9c9ad22fc567fe5e1d51370f9d" title="Projet::getTaches" alt="" coords="167,208,292,235"/>
+</map>

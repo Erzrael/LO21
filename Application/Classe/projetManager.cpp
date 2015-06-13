@@ -41,10 +41,10 @@ Tache* ProjetManager::TacheIterator::operator*() const{
 }
 
 
-vector<Projet *> &ProjetManager::getProjets()
-{
-    return projets;
-}
+//vector<Projet *> &ProjetManager::getProjets()
+//{
+//    return projets;
+//}
 
 const vector<Projet *> &ProjetManager::getProjets() const
 {
@@ -223,7 +223,7 @@ unsigned int ProjetManager::nbProjets() const
     return projets.size();
 }
 
-ProjetManager::TacheIterator::TacheIterator(unsigned int size, vector<Projet *>::iterator it_p, vector<Tache *>::iterator it_t):
+ProjetManager::TacheIterator::TacheIterator(unsigned int size, vector<Projet *>::const_iterator it_p, vector<Tache *>::const_iterator it_t):
     nb_projets(size), projetIterator(it_p),
     tacheIterator(it_t) {
 

@@ -1,3 +1,9 @@
+/*! \file
+ * \brief contient la déclaration de la classe ProjetManager
+ *
+ *
+ */
+
 #ifndef PROJETMANAGER_H
 #define PROJETMANAGER_H
 #include <vector>
@@ -48,8 +54,8 @@ public:
     class TacheIterator{
     private:
        unsigned int nb_projets; /*!< nombre de projets restant dans l'itérateur */
-       vector<Projet *>::iterator projetIterator; /*!< itérator sur le tableau des projets du ProjetManager */
-       vector<Tache *>::iterator tacheIterator; /*!< itérator sur le tableau des tâches du projet désigné par le projetIterator */
+       vector<Projet *>::const_iterator projetIterator; /*!< itérator sur le tableau des projets du ProjetManager */
+       vector<Tache *>::const_iterator tacheIterator; /*!< itérator sur le tableau des tâches du projet désigné par le projetIterator */
 
        //Le tacheIterator est initialisé avec l'itérator du premier projet de ProjetManager
        /*! \brief constructeur
@@ -59,7 +65,7 @@ public:
         *
         */
        TacheIterator(vector<Projet *> & p);
-       TacheIterator(unsigned int size, vector<Projet *>::iterator it_p, vector<Tache *>::iterator it_t); /*!< constructeur */
+       TacheIterator(unsigned int size, vector<Projet *>::const_iterator it_p, vector<Tache *>::const_iterator it_t); /*!< constructeur */
 
        friend class ProjetManager;
     public:
@@ -133,7 +139,7 @@ public:
     bool isProjetExistant(const QString& id) const;
 
     /// getters
-    std::vector<Projet *>& getProjets(); /*!< getter de projets */
+//    std::vector<Projet *>& getProjets(); /*!< getter de projets */
     const std::vector<Projet *>& getProjets() const; /*!< getter de projets */
 
     /*! \brief récupérer une tâche

@@ -1,0 +1,8 @@
+<map id="Tache::setEcheance" name="Tache::setEcheance">
+<area shape="rect" id="node2" href="$class_tache.html#aee46b06ec81175bd2f82002428f9d377" title="Tache::getMere" alt="" coords="222,5,335,32"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0" title="vérifie s&#39;il existe une tâche dans l&#39;ensemble des projets du ProjetManager " alt="" coords="203,56,354,83"/>
+<area shape="rect" id="node5" href="$class_tache.html#ad977616edf447b17c725a19db71b8b70" title="Tache::getDisponibilite" alt="" coords="201,107,356,133"/>
+<area shape="rect" id="node6" href="$class_tache.html#a76cfb9b69d2b29a43ccd7ad3df0b63fe" title="Tache::getMere_Compo" alt="" coords="197,157,360,184"/>
+<area shape="rect" id="node7" href="$class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0" title="Tache::getEcheance" alt="" coords="207,208,350,235"/>
+<area shape="rect" id="node4" href="$class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9" title="accès à l&#39;instance unique du ProjetManager " alt="" coords="409,56,591,83"/>
+</map>

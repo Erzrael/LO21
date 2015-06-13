@@ -1,0 +1,8 @@
+<map id="ProjetManager::trouverProjet" name="ProjetManager::trouverProjet">
+<area shape="rect" id="node2" href="$class_projet_manager.html#acdd5b959eabe1a1895ac3e960af22ca8" title="ajouter une tâche à un projet " alt="" coords="499,5,688,32"/>
+<area shape="rect" id="node4" href="$class_projet_manager.html#ad11de628dd20f454ce7e0a28fc0d1ef4" title="récupérer un projet " alt="" coords="263,56,430,83"/>
+<area shape="rect" id="node6" href="$class_projet_manager.html#afa468839723f96517afa8da6bdcc4cb4" title="vérifie l&#39;existence d&#39;un projet " alt="" coords="243,107,450,133"/>
+<area shape="rect" id="node3" href="$class_export_import___x_m_l.html#a77c75d10ca173d8c6f8790ffb555c69d" title="ExportImport_XML::load" alt="" coords="736,56,899,83"/>
+<area shape="rect" id="node5" href="$class_projet_manager.html#ab9df93f0d93d11c559133acd03abd08b" title="récupérer un projet " alt="" coords="510,56,677,83"/>
+<area shape="rect" id="node7" href="$class_projet_manager.html#a3162d3a997d803429e25e93a5d06bafd" title="ajouter un projet " alt="" coords="500,107,687,133"/>
+</map>

@@ -1,3 +1,9 @@
+/*! \file
+ * \brief contient la déclaration de la classe Duree
+ *
+ *
+ */
+
 #ifndef DUREE_H
 #define DUREE_H
 

@@ -1,0 +1,11 @@
+<map id="ProjetManager::ajouterTache" name="ProjetManager::ajouterTache">
+<area shape="rect" id="node2" href="$class_projet_manager.html#a2e4d05223f3bb596945b59d8476d145a" title="trouver une tache " alt="" coords="243,93,434,120"/>
+<area shape="rect" id="node7" href="$class_projet_manager.html#a9399a30b76b2fd878cbb59d24ccfcba1" title="trouver un projet " alt="" coords="245,148,433,175"/>
+<area shape="rect" id="node8" href="$class_projet.html#a1ac7de1a4850b0efd72275294eb6ede3" title="ajouter une tache " alt="" coords="269,203,408,229"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9" title="accès à l&#39;instance unique du ProjetManager " alt="" coords="707,9,890,36"/>
+<area shape="rect" id="node4" href="$class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0" title="vérifie s&#39;il existe une tâche dans l&#39;ensemble des projets du ProjetManager " alt="" coords="495,35,646,61"/>
+<area shape="rect" id="node5" href="$class_projet_manager.html#a8d422bf8cd9499467bc66c9de934ea52" title="initialiser un TacheIterator " alt="" coords="497,86,644,127"/>
+<area shape="rect" id="node6" href="$class_projet_manager.html#a84607056c8e0d4ad35b3a28609bcd7c2" title="Fin du TacheIterator. " alt="" coords="483,152,658,179"/>
+<area shape="rect" id="node9" href="$class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0" title="Tache::getEcheance" alt="" coords="499,203,642,229"/>
+<area shape="rect" id="node10" href="$class_projet.html#a8d132d2420b92db3a95e131b47517f6c" title="Projet::getEcheance" alt="" coords="501,253,641,280"/>
+</map>

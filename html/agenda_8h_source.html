@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>LO21 - Le Pokétache:  Fichier source de Application/Classe/agenda.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="poketache_logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">LO21 - Le Pokétache
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('agenda_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">agenda.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="agenda_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef AGENDA_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define AGENDA_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="programmation_8h.html">programmation.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;QDate&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="class_tache_unitaire.html">TacheUnitaire</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="class_tache_preemptable.html">TachePreemptable</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_agenda.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_agenda.html">Agenda</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_export_import___x_m_l.html">ExportImport_XML</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_agenda.html#a103804ae35de404c90b6f15eb366aa73">   30</a></span>&#160;   list&lt;Programmation*&gt; <a class="code" href="class_agenda.html#a103804ae35de404c90b6f15eb366aa73">programmations</a> ;     </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <span class="comment">// design pattern singleton</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   <a class="code" href="class_agenda.html#a6685054d2b4ccbf2a4ef2ac5e3746bc3">Agenda</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <a class="code" href="class_agenda.html#a2344fe71f31e64ad95bf8d893e9d1025">~Agenda</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   <a class="code" href="class_agenda.html#a6685054d2b4ccbf2a4ef2ac5e3746bc3">Agenda</a>(<span class="keyword">const</span> <a class="code" href="class_agenda.html">Agenda</a> &amp; foo);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <a class="code" href="class_agenda.html">Agenda</a> &amp; <a class="code" href="class_agenda.html#a15231b43edccc1b306e9fd27a22a565e">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_agenda.html">Agenda</a> &amp; foo);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="class_agenda.html#a730a452851088ad3b30740120b64e4b6">ajouterProgrammation</a>(<span class="keyword">const</span> <a class="code" href="class_evenement.html">Evenement</a> &amp; t, <span class="keyword">const</span> QDate &amp; d, <span class="keyword">const</span> QTime &amp; debut, <span class="keyword">const</span> QTime &amp; fin);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   <span class="keyword">static</span> <a class="code" href="class_agenda.html">Agenda</a> &amp;<a class="code" href="class_agenda.html#ad02e39069d3e80ef6b934f49f6246ae6">getInstance</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="class_agenda.html#acabad3242a25288c879b6de65053f8be">supprimerProgrammation</a>(<span class="keyword">const</span> QDate &amp;d, <span class="keyword">const</span> QTime &amp;h);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="class_agenda.html#acabad3242a25288c879b6de65053f8be">supprimerProgrammation</a>(<span class="keyword">const</span> <a class="code" href="class_evenement.html">Evenement</a> &amp; t);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="class_agenda.html#a730a452851088ad3b30740120b64e4b6">ajouterProgrammation</a>(<span class="keyword">const</span> QString &amp;nomDeLEventClassique, <span class="keyword">const</span> QDate &amp;d, <span class="keyword">const</span> QTime&amp; h, <span class="keyword">const</span> <a class="code" href="class_duree.html">Duree</a> duree);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="class_agenda.html#a730a452851088ad3b30740120b64e4b6">ajouterProgrammation</a>(<span class="keyword">const</span> <a class="code" href="class_tache_preemptable.html">TachePreemptable</a> &amp; t, <span class="keyword">const</span> QDate&amp; d, <span class="keyword">const</span> QTime&amp; h, <span class="keyword">const</span> <a class="code" href="class_duree.html">Duree</a> duree);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="class_agenda.html#a730a452851088ad3b30740120b64e4b6">ajouterProgrammation</a>(<span class="keyword">const</span> <a class="code" href="class_tache_unitaire.html">TacheUnitaire</a> &amp; t, <span class="keyword">const</span> QDate&amp; d, <span class="keyword">const</span> QTime&amp; h);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="class_agenda.html#a8dc0fc62955fdfe8e553535d43f705e3">chevauche</a>(<span class="keyword">const</span> QDate&amp; d, <span class="keyword">const</span> QTime&amp; debut, <span class="keyword">const</span> QTime &amp; fin, list&lt;Programmation *&gt;::iterator position);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;   vector&lt;Programmation *&gt; &amp; <a class="code" href="class_agenda.html#aefb12b2118fe188e961e916e2119d690">trouverProgrammation</a>(<span class="keyword">const</span> <a class="code" href="class_evenement.html">Evenement</a> &amp; t)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="class_agenda.html#a943af252db5ed045bdd0d646f2a6bba2">supprimerTout</a>();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_agenda.html#a5029e56aff5ea9c16940901b96e7952c">chevaucheHoraire</a>(<span class="keyword">const</span> QDate &amp; date, <span class="keyword">const</span> QTime &amp;debut, <span class="keyword">const</span> QTime &amp; fin);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;   vector&lt;const Programmation *&gt; &amp; <a class="code" href="class_agenda.html#ac0c4ed270daa914a71027eb1ed7c2864">tabChevaucheHoraire</a>(<span class="keyword">const</span> QDate &amp; date, <span class="keyword">const</span> QTime &amp;debut, <span class="keyword">const</span> QTime &amp; fin);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;   std::list&lt;Programmation *&gt; &amp; <a class="code" href="class_agenda.html#a300d09b8eca60665810a4abab595d9b3">getProgrammation</a>();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;   <span class="keyword">const</span> std::list&lt;Programmation *&gt; &amp; <a class="code" href="class_agenda.html#a300d09b8eca60665810a4abab595d9b3">getProgrammation</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;};</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#endif // AGENDA_H</span></div>
+<div class="ttc" id="class_agenda_html_a6685054d2b4ccbf2a4ef2ac5e3746bc3"><div class="ttname"><a href="class_agenda.html#a6685054d2b4ccbf2a4ef2ac5e3746bc3">Agenda::Agenda</a></div><div class="ttdeci">Agenda()</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00005">agenda.cpp:5</a></div></div>
+<div class="ttc" id="class_agenda_html_a730a452851088ad3b30740120b64e4b6"><div class="ttname"><a href="class_agenda.html#a730a452851088ad3b30740120b64e4b6">Agenda::ajouterProgrammation</a></div><div class="ttdeci">void ajouterProgrammation(const Evenement &amp;t, const QDate &amp;d, const QTime &amp;debut, const QTime &amp;fin)</div><div class="ttdoc">Permet l&#39;ajout de la programmation d&#39;un évènement. </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00110">agenda.cpp:110</a></div></div>
+<div class="ttc" id="programmation_8h_html"><div class="ttname"><a href="programmation_8h.html">programmation.h</a></div><div class="ttdoc">contient la déclaration de la classe Programmation </div></div>
+<div class="ttc" id="class_agenda_html"><div class="ttname"><a href="class_agenda.html">Agenda</a></div><div class="ttdoc">une classe gérant une liste de programmation </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8h_source.html#l00025">agenda.h:25</a></div></div>
+<div class="ttc" id="class_agenda_html_a943af252db5ed045bdd0d646f2a6bba2"><div class="ttname"><a href="class_agenda.html#a943af252db5ed045bdd0d646f2a6bba2">Agenda::supprimerTout</a></div><div class="ttdeci">void supprimerTout()</div><div class="ttdoc">Supprimer toutes les programmations. </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00028">agenda.cpp:28</a></div></div>
+<div class="ttc" id="class_tache_unitaire_html"><div class="ttname"><a href="class_tache_unitaire.html">TacheUnitaire</a></div><div class="ttdoc">Classe représentant une tache unitaire classe abstraite Une tache unitaire est programmable dans l&#39;Ag...</div><div class="ttdef"><b>Definition:</b> <a href="tache_unitaire_8h_source.html#l00018">tacheUnitaire.h:18</a></div></div>
+<div class="ttc" id="class_evenement_html"><div class="ttname"><a href="class_evenement.html">Evenement</a></div><div class="ttdoc">classe évènement Classe programmable dans l&#39;agenda. La classe est virtuelle pure. ...</div><div class="ttdef"><b>Definition:</b> <a href="evenement_8h_source.html#l00018">evenement.h:18</a></div></div>
+<div class="ttc" id="class_agenda_html_a300d09b8eca60665810a4abab595d9b3"><div class="ttname"><a href="class_agenda.html#a300d09b8eca60665810a4abab595d9b3">Agenda::getProgrammation</a></div><div class="ttdeci">std::list&lt; Programmation * &gt; &amp; getProgrammation()</div><div class="ttdoc">Récupère les Programmations. </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00062">agenda.cpp:62</a></div></div>
+<div class="ttc" id="class_agenda_html_a15231b43edccc1b306e9fd27a22a565e"><div class="ttname"><a href="class_agenda.html#a15231b43edccc1b306e9fd27a22a565e">Agenda::operator=</a></div><div class="ttdeci">Agenda &amp; operator=(const Agenda &amp;foo)</div><div class="ttdoc">Opérateur d&#39;affectation. </div></div>
+<div class="ttc" id="class_export_import___x_m_l_html"><div class="ttname"><a href="class_export_import___x_m_l.html">ExportImport_XML</a></div><div class="ttdoc">classe permettant l&#39;import/export de l&#39;agenda au format XML Implémentation de la classe ExportImport ...</div><div class="ttdef"><b>Definition:</b> <a href="import__xml_8h_source.html#l00017">import_xml.h:17</a></div></div>
+<div class="ttc" id="class_agenda_html_ad02e39069d3e80ef6b934f49f6246ae6"><div class="ttname"><a href="class_agenda.html#ad02e39069d3e80ef6b934f49f6246ae6">Agenda::getInstance</a></div><div class="ttdeci">static Agenda &amp; getInstance()</div><div class="ttdoc">accès à l&#39;instance unique d&#39;Agenda Permet l&#39;accès à l&#39;instance unique d&#39;Agenda fonction statique du d...</div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00156">agenda.cpp:156</a></div></div>
+<div class="ttc" id="class_agenda_html_a5029e56aff5ea9c16940901b96e7952c"><div class="ttname"><a href="class_agenda.html#a5029e56aff5ea9c16940901b96e7952c">Agenda::chevaucheHoraire</a></div><div class="ttdeci">unsigned int chevaucheHoraire(const QDate &amp;date, const QTime &amp;debut, const QTime &amp;fin)</div><div class="ttdoc">Nombre de tâches sur un horaire. </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00036">agenda.cpp:36</a></div></div>
+<div class="ttc" id="class_agenda_html_ac0c4ed270daa914a71027eb1ed7c2864"><div class="ttname"><a href="class_agenda.html#ac0c4ed270daa914a71027eb1ed7c2864">Agenda::tabChevaucheHoraire</a></div><div class="ttdeci">vector&lt; const Programmation * &gt; &amp; tabChevaucheHoraire(const QDate &amp;date, const QTime &amp;debut, const QTime &amp;fin)</div><div class="ttdoc">Tableau des tâches chevauchant un horaire. </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00050">agenda.cpp:50</a></div></div>
+<div class="ttc" id="class_agenda_html_a2344fe71f31e64ad95bf8d893e9d1025"><div class="ttname"><a href="class_agenda.html#a2344fe71f31e64ad95bf8d893e9d1025">Agenda::~Agenda</a></div><div class="ttdeci">~Agenda()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00007">agenda.cpp:7</a></div></div>
+<div class="ttc" id="class_agenda_html_a103804ae35de404c90b6f15eb366aa73"><div class="ttname"><a href="class_agenda.html#a103804ae35de404c90b6f15eb366aa73">Agenda::programmations</a></div><div class="ttdeci">list&lt; Programmation * &gt; programmations</div><div class="ttdef"><b>Definition:</b> <a href="agenda_8h_source.html#l00030">agenda.h:30</a></div></div>
+<div class="ttc" id="class_tache_preemptable_html"><div class="ttname"><a href="class_tache_preemptable.html">TachePreemptable</a></div><div class="ttdoc">classe représentant une tache préemptable une tâche préemptable peut être associée à plusieurs progra...</div><div class="ttdef"><b>Definition:</b> <a href="tache_preemptable_8h_source.html#l00018">tachePreemptable.h:18</a></div></div>
+<div class="ttc" id="class_agenda_html_a8dc0fc62955fdfe8e553535d43f705e3"><div class="ttname"><a href="class_agenda.html#a8dc0fc62955fdfe8e553535d43f705e3">Agenda::chevauche</a></div><div class="ttdeci">bool chevauche(const QDate &amp;d, const QTime &amp;debut, const QTime &amp;fin, list&lt; Programmation * &gt;::iterator position)</div><div class="ttdoc">permet de déterminer si une programmation que l&#39;on veut créer se chevauche avec une programmation déj...</div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00136">agenda.cpp:136</a></div></div>
+<div class="ttc" id="class_agenda_html_acabad3242a25288c879b6de65053f8be"><div class="ttname"><a href="class_agenda.html#acabad3242a25288c879b6de65053f8be">Agenda::supprimerProgrammation</a></div><div class="ttdeci">void supprimerProgrammation(const QDate &amp;d, const QTime &amp;h)</div><div class="ttdoc">suppression d&#39;une Programmation unique Permet la suppression d&#39;une Programmation unique Si cette prog...</div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00162">agenda.cpp:162</a></div></div>
+<div class="ttc" id="class_agenda_html_aefb12b2118fe188e961e916e2119d690"><div class="ttname"><a href="class_agenda.html#aefb12b2118fe188e961e916e2119d690">Agenda::trouverProgrammation</a></div><div class="ttdeci">vector&lt; Programmation * &gt; &amp; trouverProgrammation(const Evenement &amp;t) const </div><div class="ttdoc">trouve toutes les Programmations de la tâche passée en paramètre </div><div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00016">agenda.cpp:16</a></div></div>
+<div class="ttc" id="class_duree_html"><div class="ttname"><a href="class_duree.html">Duree</a></div><div class="ttdoc">Classe permettant de manipuler des durees L&#39;utilisation de cette classe nécessite des durées valides ...</div><div class="ttdef"><b>Definition:</b> <a href="duree_8h_source.html#l00026">duree.h:26</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_eb1463819d84903762eb6f59cc0c4383.html">Application</a></li><li class="navelem"><a class="el" href="dir_406eb62538976f3b4fdc4cd9ddb43324.html">Classe</a></li><li class="navelem"><a class="el" href="agenda_8h.html">agenda.h</a></li>
+    <li class="footer">Généré le Samedi 13 Juin 2015 16:56:21 pour LO21 - Le Pokétache par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

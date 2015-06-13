@@ -1,0 +1,6 @@
+<map id="ProjetManager::trouverTache" name="ProjetManager::trouverTache">
+<area shape="rect" id="node2" href="$class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9" title="accès à l&#39;instance unique du ProjetManager " alt="" coords="470,5,653,32"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0" title="vérifie s&#39;il existe une tâche dans l&#39;ensemble des projets du ProjetManager " alt="" coords="258,31,409,57"/>
+<area shape="rect" id="node4" href="$class_projet_manager.html#a8d422bf8cd9499467bc66c9de934ea52" title="initialiser un TacheIterator " alt="" coords="260,82,407,123"/>
+<area shape="rect" id="node5" href="$class_projet_manager.html#a84607056c8e0d4ad35b3a28609bcd7c2" title="Fin du TacheIterator. " alt="" coords="246,148,421,175"/>
+</map>

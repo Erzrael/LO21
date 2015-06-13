@@ -1,0 +1,6 @@
+<map id="Tache" name="Tache">
+<area shape="rect" id="node2" href="$class_tache_composite.html" title="classe représentant une tâche composite Hérite de Tache. Une tâche composite est composée de différen..." alt="" coords="5,80,125,107"/>
+<area shape="rect" id="node3" href="$class_tache_unitaire.html" title="Classe représentant une tache unitaire classe abstraite Une tache unitaire est programmable dans l&#39;Ag..." alt="" coords="150,80,252,107"/>
+<area shape="rect" id="node4" href="$class_tache_non_preemptable.html" title="classe représentant une tache non préemptable une tache non préemptable ne peut avoir qu&#39;une seule pr..." alt="" coords="41,155,195,181"/>
+<area shape="rect" id="node5" href="$class_tache_preemptable.html" title="classe représentant une tache préemptable une tâche préemptable peut être associée à plusieurs progra..." alt="" coords="220,155,349,181"/>
+</map>

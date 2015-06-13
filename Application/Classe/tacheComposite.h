@@ -1,3 +1,8 @@
+/*! \file
+ * \brief contient la déclaration de la classe TacheComposite
+ *
+ *
+ */
 #ifndef TACHECOMPOSITE_H
 #define TACHECOMPOSITE_H
 #include <vector>

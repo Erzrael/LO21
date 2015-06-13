@@ -1,0 +1,14 @@
+<map id="Tache::getEcheance" name="Tache::getEcheance">
+<area shape="rect" id="node2" href="$class_projet.html#a1ac7de1a4850b0efd72275294eb6ede3" title="ajouter une tache " alt="" coords="216,5,355,32"/>
+<area shape="rect" id="node5" href="$class_tache_composite.html#a18e7142486f9248483238dbad1669225" title="TacheComposite::operator=" alt="" coords="421,183,605,209"/>
+<area shape="rect" id="node6" href="$class_tache.html#a315e94e47547f85806411315ae84bb55" title="Tache::operator=" alt="" coords="453,253,574,280"/>
+<area shape="rect" id="node7" href="$class_export_import___x_m_l.html#ac7bf5ada76ff5ec5e4a4e6ea04d5c5fd" title="ExportImport_XML::save" alt="" coords="202,364,369,391"/>
+<area shape="rect" id="node8" href="$class_tache.html#a8aab097218d80c638acf96af86165732" title="Tache::setEcheance" alt="" coords="214,212,357,239"/>
+<area shape="rect" id="node9" href="$class_tache.html#af154eeeb0bcfa9f8364025260d5f70b6" title="Tache::Tache" alt="" coords="462,304,565,331"/>
+<area shape="rect" id="node10" href="$class_tache_composite.html#a4a35dc8841f7eaa15ed33cf5e4db7c17" title="vérifie si une composition est valide ou non " alt="" coords="429,55,597,97"/>
+<area shape="rect" id="node12" href="$class_tache.html#a66940ce36910ba80500844dc5f7eaa69" title="vérifie si une précédence est valide ou non vérifie si cette tâche peut être précédée d&#39;une autre tâc..." alt="" coords="198,111,373,137"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#acdd5b959eabe1a1895ac3e960af22ca8" title="ajouter une tâche à un projet " alt="" coords="680,8,869,35"/>
+<area shape="rect" id="node4" href="$class_export_import___x_m_l.html#a77c75d10ca173d8c6f8790ffb555c69d" title="ExportImport_XML::load" alt="" coords="944,63,1107,89"/>
+<area shape="rect" id="node11" href="$class_tache_composite.html#add0b40abaf5c2752cb5c523842904d81" title="ajoute une composition à cette tache " alt="" coords="654,63,895,89"/>
+<area shape="rect" id="node13" href="$class_tache.html#ac8a68b49b3d06f29ffb0ae9295740698" title="ajouter une précédence " alt="" coords="687,117,862,144"/>
+</map>

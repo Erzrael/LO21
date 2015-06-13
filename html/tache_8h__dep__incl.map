@@ -1,0 +1,33 @@
+<map id="Application/Classe/tache.h" name="Application/Classe/tache.h">
+<area shape="rect" id="node2" href="$programmation_8h.html" title="contient la déclaration de la classe Programmation " alt="" coords="917,97,1047,138"/>
+<area shape="rect" id="node7" href="$tache_unitaire_8cpp_source.html" title="Application/Classe\l/tacheUnitaire.cpp" alt="" coords="5,278,135,319"/>
+<area shape="rect" id="node11" href="$main_window_8cpp_source.html" title="Application/InterfaceGraphique\l/mainWindow.cpp" alt="" coords="883,278,1081,319"/>
+<area shape="rect" id="node13" href="$main_8cpp.html" title="contient le programme principal (fonction main) : lancement de l&#39;interface graphique ..." alt="" coords="1451,285,1593,312"/>
+<area shape="rect" id="node15" href="$tache_unitaire_8h.html" title="contient la déclaration de la classe TacheUnitaire " alt="" coords="1816,97,1945,138"/>
+<area shape="rect" id="node16" href="$projet_8h.html" title="contient la déclaration de la classe Projet " alt="" coords="2093,187,2223,229"/>
+<area shape="rect" id="node17" href="$projet_manager_8cpp_source.html" title="Application/Classe\l/projetManager.cpp" alt="" coords="3663,278,3796,319"/>
+<area shape="rect" id="node18" href="$tache_8cpp_source.html" title="Application/Classe\l/tache.cpp" alt="" coords="3820,278,3949,319"/>
+<area shape="rect" id="node25" href="$supprimer_precedence_window_8cpp_source.html" title="Application/InterfaceGraphique\l/supprimerPrecedenceWindow.cpp" alt="" coords="3975,278,4197,319"/>
+<area shape="rect" id="node30" href="$edition_tache_unitaire_window_8cpp_source.html" title="Application/InterfaceGraphique\l/editionTacheUnitaireWindow.cpp" alt="" coords="2249,187,2465,229"/>
+<area shape="rect" id="node31" href="$tache_composite_8cpp_source.html" title="Application/Classe\l/tacheComposite.cpp" alt="" coords="2643,97,2789,138"/>
+<area shape="rect" id="node32" href="$edition_tache_composite_window_8cpp_source.html" title="Application/InterfaceGraphique\l/editionTacheCompositeWindow.cpp" alt="" coords="2813,97,3047,138"/>
+<area shape="rect" id="node3" href="$agenda_8h.html" title="Fichier contenant la déclaration de la classe Agenda Un agenda gère des Programmations. " alt="" coords="917,187,1047,229"/>
+<area shape="rect" id="node14" href="$programmation_8cpp_source.html" title="Application/Classe\l/programmation.cpp" alt="" coords="654,187,791,229"/>
+<area shape="rect" id="node4" href="$agenda_8cpp_source.html" title="Application/Classe\l/agenda.cpp" alt="" coords="160,278,289,319"/>
+<area shape="rect" id="node5" href="$evenement_8cpp_source.html" title="Application/Classe\l/evenement.cpp" alt="" coords="315,278,444,319"/>
+<area shape="rect" id="node6" href="$projet_8cpp_source.html" title="Application/Classe\l/projet.cpp" alt="" coords="1107,278,1236,319"/>
+<area shape="rect" id="node8" href="$exportimport_8cpp_source.html" title="Application/ExportImport\l/exportimport.cpp" alt="" coords="469,278,633,319"/>
+<area shape="rect" id="node9" href="$import__xml_8cpp_source.html" title="Application/ExportImport\l/import_xml.cpp" alt="" coords="1261,278,1425,319"/>
+<area shape="rect" id="node10" href="$ajoutprogrammation_8cpp_source.html" title="Application/InterfaceGraphique\l/ajoutprogrammation.cpp" alt="" coords="1617,278,1816,319"/>
+<area shape="rect" id="node12" href="$voirprogrammations_8cpp_source.html" title="Application/InterfaceGraphique\l/voirprogrammations.cpp" alt="" coords="659,278,857,319"/>
+<area shape="rect" id="node28" href="$tache_non_preemptable_8cpp_source.html" title="Application/Classe\l/tacheNonPreemptable.cpp" alt="" coords="1695,187,1875,229"/>
+<area shape="rect" id="node29" href="$tache_preemptable_8cpp_source.html" title="Application/Classe\l/tachePreemptable.cpp" alt="" coords="1899,187,2055,229"/>
+<area shape="rect" id="node19" href="$ajout_composition_window_8cpp_source.html" title="Application/InterfaceGraphique\l/ajoutCompositionWindow.cpp" alt="" coords="2065,278,2264,319"/>
+<area shape="rect" id="node20" href="$ajout_precedence_window_8cpp_source.html" title="Application/InterfaceGraphique\l/ajoutPrecedenceWindow.cpp" alt="" coords="2289,278,2488,319"/>
+<area shape="rect" id="node21" href="$ajout_tache_window_8cpp_source.html" title="Application/InterfaceGraphique\l/ajoutTacheWindow.cpp" alt="" coords="2513,278,2712,319"/>
+<area shape="rect" id="node22" href="$choix_tache_window_8cpp_source.html" title="Application/InterfaceGraphique\l/choixTacheWindow.cpp" alt="" coords="2737,278,2936,319"/>
+<area shape="rect" id="node23" href="$edition_projet_window_8cpp_source.html" title="Application/InterfaceGraphique\l/editionProjetWindow.cpp" alt="" coords="2961,278,3160,319"/>
+<area shape="rect" id="node24" href="$supprimer_composition_window_8cpp_source.html" title="Application/InterfaceGraphique\l/supprimerCompositionWindow.cpp" alt="" coords="3186,278,3413,319"/>
+<area shape="rect" id="node26" href="$supprimer_projet_window_8cpp_source.html" title="Application/InterfaceGraphique\l/supprimerProjetWindow.cpp" alt="" coords="3439,278,3637,319"/>
+<area shape="rect" id="node27" href="$supprimer_tache_window_8cpp_source.html" title="Application/InterfaceGraphique\l/supprimerTacheWindow.cpp" alt="" coords="1841,278,2040,319"/>
+</map>

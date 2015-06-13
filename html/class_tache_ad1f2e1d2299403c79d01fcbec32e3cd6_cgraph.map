@@ -1,0 +1,6 @@
+<map id="Tache::getPere" name="Tache::getPere">
+<area shape="rect" id="node2" href="$class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9" title="accès à l&#39;instance unique du ProjetManager " alt="" coords="185,5,367,32"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0" title="getters " alt="" coords="189,56,363,83"/>
+<area shape="rect" id="node4" href="$class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af" title="TacheComposite::getComposition" alt="" coords="166,107,386,133"/>
+<area shape="rect" id="node5" href="$class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9" title="Tache::getIdentificateur" alt="" coords="197,157,355,184"/>
+</map>

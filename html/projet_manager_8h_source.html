@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>LO21 - Le Pokétache:  Fichier source de Application/Classe/projetManager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="poketache_logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">LO21 - Le Pokétache
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('projet_manager_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">projetManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="projet_manager_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef PROJETMANAGER_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PROJETMANAGER_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="duree_8h.html">duree.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_projet.html">Projet</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="class_tache.html">Tache</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_projet_manager.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_projet_manager.html">ProjetManager</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// static ProjetManager * instanceUnique;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_projet_manager.html#ae6434cf860492f17334e1cf505043be5">   23</a></span>&#160;    vector&lt;Projet *&gt; <a class="code" href="class_projet_manager.html#ae6434cf860492f17334e1cf505043be5">projets</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//DesignPattern Singleton</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_projet_manager.html#a98d8ba59bd9bc6eec2ec5285102ac9a1">ProjetManager</a>(); </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_projet_manager.html#af5a44cde2f8d92f05bb7e52a18aa883a">~ProjetManager</a>(); </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_projet_manager.html#a98d8ba59bd9bc6eec2ec5285102ac9a1">ProjetManager</a>(<span class="keyword">const</span> <a class="code" href="class_projet_manager.html">ProjetManager</a> &amp; foo); </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_projet_manager.html">ProjetManager</a> &amp; <a class="code" href="class_projet_manager.html#aece8681ed2e0832e9f1996511c15356b">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_projet_manager.html">ProjetManager</a> &amp; foo); </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_projet.html">Projet</a> *<a class="code" href="class_projet_manager.html#a9399a30b76b2fd878cbb59d24ccfcba1">trouverProjet</a>(<span class="keyword">const</span> QString &amp;<span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_tache.html">Tache</a> *<a class="code" href="class_projet_manager.html#a2e4d05223f3bb596945b59d8476d145a">trouverTache</a>(<span class="keyword">const</span> QString &amp;<span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_projet_manager_1_1_tache_iterator.html">   54</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_projet_manager_1_1_tache_iterator.html">TacheIterator</a>{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_projet_manager_1_1_tache_iterator.html#acd1b3eaf26dc19699b782ed3d5413194">   56</a></span>&#160;       <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_projet_manager_1_1_tache_iterator.html#acd1b3eaf26dc19699b782ed3d5413194">nb_projets</a>; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_projet_manager_1_1_tache_iterator.html#a301e887a778a4307801a43666250af1f">   57</a></span>&#160;       vector&lt;Projet *&gt;::const_iterator <a class="code" href="class_projet_manager_1_1_tache_iterator.html#a301e887a778a4307801a43666250af1f">projetIterator</a>; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_projet_manager_1_1_tache_iterator.html#ac8d521d63ca0ff6a58640aecb69a4743">   58</a></span>&#160;       vector&lt;Tache *&gt;::const_iterator <a class="code" href="class_projet_manager_1_1_tache_iterator.html#ac8d521d63ca0ff6a58640aecb69a4743">tacheIterator</a>; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;       <span class="comment">//Le tacheIterator est initialisé avec l&#39;itérator du premier projet de ProjetManager</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span>       <a class="code" href="class_projet_manager_1_1_tache_iterator.html#abe31bbe5b50d9e68821db0ebbb526a4a">TacheIterator</a>(vector&lt;Projet *&gt; &amp; p);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;       <a class="code" href="class_projet_manager_1_1_tache_iterator.html#abe31bbe5b50d9e68821db0ebbb526a4a">TacheIterator</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size, vector&lt;Projet *&gt;::const_iterator it_p, vector&lt;Tache *&gt;::const_iterator it_t); </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;       <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_projet_manager.html">ProjetManager</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;       <a class="code" href="class_projet_manager_1_1_tache_iterator.html">TacheIterator</a>&amp; <a class="code" href="class_projet_manager_1_1_tache_iterator.html#a0b51a1d76e13690d21e4dfb57c621f61">operator++</a>(<span class="keywordtype">int</span>); </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;       <span class="keywordtype">bool</span> <a class="code" href="class_projet_manager_1_1_tache_iterator.html#a6dfdc028d28028aaa3b44e9a8b26b843">operator==</a>(<span class="keyword">const</span> <a class="code" href="class_projet_manager_1_1_tache_iterator.html">TacheIterator</a> &amp;other) <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;       <span class="keywordtype">bool</span> <a class="code" href="class_projet_manager_1_1_tache_iterator.html#adc89aef106a85d9ba7e599e2cc6091a9">operator!=</a>(<span class="keyword">const</span> <a class="code" href="class_projet_manager_1_1_tache_iterator.html">TacheIterator</a> &amp;other) <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;       <a class="code" href="class_tache.html">Tache</a>* <a class="code" href="class_projet_manager_1_1_tache_iterator.html#aee8f103686d70e79d7452603362e1acf">operator*</a>() <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    };</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_projet_manager_1_1_tache_iterator.html">TacheIterator</a> <a class="code" href="class_projet_manager.html#a8d422bf8cd9499467bc66c9de934ea52">tache_begin</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="class_projet_manager_1_1_tache_iterator.html">TacheIterator</a> <a class="code" href="class_projet_manager.html#a84607056c8e0d4ad35b3a28609bcd7c2">tache_end</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_projet_manager.html">ProjetManager</a> &amp;<a class="code" href="class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9">getInstance</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="class_projet.html">Projet</a>* <a class="code" href="class_projet_manager.html#a3162d3a997d803429e25e93a5d06bafd">ajouterProjet</a>(<span class="keyword">const</span> QString &amp;identificateur, <span class="keyword">const</span> QString &amp;ti, <span class="keyword">const</span> QDate&amp; dispo, <span class="keyword">const</span> QDate&amp; deadline);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="class_tache.html">Tache</a> * <a class="code" href="class_projet_manager.html#acdd5b959eabe1a1895ac3e960af22ca8">ajouterTache</a>(<span class="keyword">const</span> QString &amp; id_projet, <span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>, <span class="keyword">const</span> QString&amp; titre, <span class="keyword">const</span> QDate&amp; dispo, <span class="keyword">const</span> QDate&amp; deadline, <span class="keyword">const</span> <a class="code" href="class_duree.html">Duree</a> &amp;dur = <a class="code" href="class_duree.html">Duree</a>(), <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;pre = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_projet_manager.html#a3ce54feba8ce6c6ff0dd0b86f8d98707">isTacheExistante</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_projet_manager.html#afa468839723f96517afa8da6bdcc4cb4">isProjetExistant</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">//    std::vector&lt;Projet *&gt;&amp; getProjets(); /*!&lt; getter de projets */</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">const</span> std::vector&lt;Projet *&gt;&amp; <a class="code" href="class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0">getProjets</a>() <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="class_tache.html">Tache</a> *<a class="code" href="class_projet_manager.html#ab8e7d2321071601b2a258c1d021faf5a">getTache</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_tache.html">Tache</a> *<a class="code" href="class_projet_manager.html#ab8e7d2321071601b2a258c1d021faf5a">getTache</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="class_projet.html">Projet</a> *<a class="code" href="class_projet_manager.html#ad11de628dd20f454ce7e0a28fc0d1ef4">getProjet</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_projet.html">Projet</a> *<a class="code" href="class_projet_manager.html#ad11de628dd20f454ce7e0a28fc0d1ef4">getProjet</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_projet_manager.html#a1b661bd4c65d45d04b167e360d9ea83b">supprimerTache</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_projet_manager.html#a1b34cd3eac32213c2b7a63a794b1676b">supprimerProjet</a>(<span class="keyword">const</span> QString &amp;<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_projet_manager.html#aab5e4d8b323ef7be35e54a8aa13542ca">supprimerTout</a>();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0">empty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">/* Autres fonctions */</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_projet_manager.html#a82a12bdd8e66f08706fb006fae89ba56">nbProjets</a>() <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;};</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#endif // PROJETMANAGER_H</span></div>
+<div class="ttc" id="class_projet_manager_html_aab5e4d8b323ef7be35e54a8aa13542ca"><div class="ttname"><a href="class_projet_manager.html#aab5e4d8b323ef7be35e54a8aa13542ca">ProjetManager::supprimerTout</a></div><div class="ttdeci">void supprimerTout()</div><div class="ttdoc">Tout supprimer méthode supprimant tous les projets et toutes les tâches contenues dans projets...</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00164">projetManager.cpp:164</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html_a6dfdc028d28028aaa3b44e9a8b26b843"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html#a6dfdc028d28028aaa3b44e9a8b26b843">ProjetManager::TacheIterator::operator==</a></div><div class="ttdeci">bool operator==(const TacheIterator &amp;other) const </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00025">projetManager.cpp:25</a></div></div>
+<div class="ttc" id="class_projet_manager_html_ab8e7d2321071601b2a258c1d021faf5a"><div class="ttname"><a href="class_projet_manager.html#ab8e7d2321071601b2a258c1d021faf5a">ProjetManager::getTache</a></div><div class="ttdeci">Tache * getTache(const QString &amp;id)</div><div class="ttdoc">récupérer une tâche </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00119">projetManager.cpp:119</a></div></div>
+<div class="ttc" id="duree_8h_html"><div class="ttname"><a href="duree_8h.html">duree.h</a></div><div class="ttdoc">contient la déclaration de la classe Duree </div></div>
+<div class="ttc" id="class_projet_manager_html"><div class="ttname"><a href="class_projet_manager.html">ProjetManager</a></div><div class="ttdoc">classe gérant les projets du PokéTache ProjetManager crée les projets et les garde en mémoire...</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00019">projetManager.h:19</a></div></div>
+<div class="ttc" id="class_projet_manager_html_aba45edf972656f816d1ad2f7e876f3d0"><div class="ttname"><a href="class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0">ProjetManager::getProjets</a></div><div class="ttdeci">const std::vector&lt; Projet * &gt; &amp; getProjets() const </div><div class="ttdoc">getters </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00049">projetManager.cpp:49</a></div></div>
+<div class="ttc" id="class_projet_manager_html_afa468839723f96517afa8da6bdcc4cb4"><div class="ttname"><a href="class_projet_manager.html#afa468839723f96517afa8da6bdcc4cb4">ProjetManager::isProjetExistant</a></div><div class="ttdeci">bool isProjetExistant(const QString &amp;id) const </div><div class="ttdoc">vérifie l&#39;existence d&#39;un projet </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00114">projetManager.cpp:114</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a8d422bf8cd9499467bc66c9de934ea52"><div class="ttname"><a href="class_projet_manager.html#a8d422bf8cd9499467bc66c9de934ea52">ProjetManager::tache_begin</a></div><div class="ttdeci">TacheIterator tache_begin()</div><div class="ttdoc">initialiser un TacheIterator </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00205">projetManager.cpp:205</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a1b661bd4c65d45d04b167e360d9ea83b"><div class="ttname"><a href="class_projet_manager.html#a1b661bd4c65d45d04b167e360d9ea83b">ProjetManager::supprimerTache</a></div><div class="ttdeci">void supprimerTache(const QString &amp;id)</div><div class="ttdoc">supprime une tâche </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00145">projetManager.cpp:145</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a8d34cfa5d7ebdae4fcfe94e17f9b69a0"><div class="ttname"><a href="class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0">ProjetManager::empty</a></div><div class="ttdeci">bool empty() const </div><div class="ttdoc">vérifie s&#39;il existe une tâche dans l&#39;ensemble des projets du ProjetManager </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00172">projetManager.cpp:172</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html_adc89aef106a85d9ba7e599e2cc6091a9"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html#adc89aef106a85d9ba7e599e2cc6091a9">ProjetManager::TacheIterator::operator!=</a></div><div class="ttdeci">bool operator!=(const TacheIterator &amp;other) const </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00034">projetManager.cpp:34</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html_a301e887a778a4307801a43666250af1f"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html#a301e887a778a4307801a43666250af1f">ProjetManager::TacheIterator::projetIterator</a></div><div class="ttdeci">vector&lt; Projet * &gt;::const_iterator projetIterator</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00057">projetManager.h:57</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a9399a30b76b2fd878cbb59d24ccfcba1"><div class="ttname"><a href="class_projet_manager.html#a9399a30b76b2fd878cbb59d24ccfcba1">ProjetManager::trouverProjet</a></div><div class="ttdeci">Projet * trouverProjet(const QString &amp;id) const </div><div class="ttdoc">trouver un projet </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00184">projetManager.cpp:184</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a3162d3a997d803429e25e93a5d06bafd"><div class="ttname"><a href="class_projet_manager.html#a3162d3a997d803429e25e93a5d06bafd">ProjetManager::ajouterProjet</a></div><div class="ttdeci">Projet * ajouterProjet(const QString &amp;identificateur, const QString &amp;ti, const QDate &amp;dispo, const QDate &amp;deadline)</div><div class="ttdoc">ajouter un projet </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00073">projetManager.cpp:73</a></div></div>
+<div class="ttc" id="class_projet_manager_html_acdd5b959eabe1a1895ac3e960af22ca8"><div class="ttname"><a href="class_projet_manager.html#acdd5b959eabe1a1895ac3e960af22ca8">ProjetManager::ajouterTache</a></div><div class="ttdeci">Tache * ajouterTache(const QString &amp;id_projet, const QString &amp;id, const QString &amp;titre, const QDate &amp;dispo, const QDate &amp;deadline, const Duree &amp;dur=Duree(), const bool &amp;pre=false)</div><div class="ttdoc">ajouter une tâche à un projet </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00085">projetManager.cpp:85</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a82a12bdd8e66f08706fb006fae89ba56"><div class="ttname"><a href="class_projet_manager.html#a82a12bdd8e66f08706fb006fae89ba56">ProjetManager::nbProjets</a></div><div class="ttdeci">unsigned int nbProjets() const </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00221">projetManager.cpp:221</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html_abe31bbe5b50d9e68821db0ebbb526a4a"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html#abe31bbe5b50d9e68821db0ebbb526a4a">ProjetManager::TacheIterator::TacheIterator</a></div><div class="ttdeci">TacheIterator(vector&lt; Projet * &gt; &amp;p)</div><div class="ttdoc">constructeur </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00232">projetManager.cpp:232</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a2e4d05223f3bb596945b59d8476d145a"><div class="ttname"><a href="class_projet_manager.html#a2e4d05223f3bb596945b59d8476d145a">ProjetManager::trouverTache</a></div><div class="ttdeci">Tache * trouverTache(const QString &amp;id) const </div><div class="ttdoc">trouver une tache </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00192">projetManager.cpp:192</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a84607056c8e0d4ad35b3a28609bcd7c2"><div class="ttname"><a href="class_projet_manager.html#a84607056c8e0d4ad35b3a28609bcd7c2">ProjetManager::tache_end</a></div><div class="ttdeci">TacheIterator tache_end()</div><div class="ttdoc">Fin du TacheIterator. </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00210">projetManager.cpp:210</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html_ac8d521d63ca0ff6a58640aecb69a4743"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html#ac8d521d63ca0ff6a58640aecb69a4743">ProjetManager::TacheIterator::tacheIterator</a></div><div class="ttdeci">vector&lt; Tache * &gt;::const_iterator tacheIterator</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00058">projetManager.h:58</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html_a0b51a1d76e13690d21e4dfb57c621f61"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html#a0b51a1d76e13690d21e4dfb57c621f61">ProjetManager::TacheIterator::operator++</a></div><div class="ttdeci">TacheIterator &amp; operator++(int)</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00009">projetManager.cpp:9</a></div></div>
+<div class="ttc" id="class_projet_manager_html_ad11de628dd20f454ce7e0a28fc0d1ef4"><div class="ttname"><a href="class_projet_manager.html#ad11de628dd20f454ce7e0a28fc0d1ef4">ProjetManager::getProjet</a></div><div class="ttdeci">Projet * getProjet(const QString &amp;id)</div><div class="ttdoc">récupérer un projet </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00132">projetManager.cpp:132</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a3ce54feba8ce6c6ff0dd0b86f8d98707"><div class="ttname"><a href="class_projet_manager.html#a3ce54feba8ce6c6ff0dd0b86f8d98707">ProjetManager::isTacheExistante</a></div><div class="ttdeci">bool isTacheExistante(const QString &amp;id) const </div><div class="ttdoc">vérifie l&#39;existence d&#39;une tâche </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00109">projetManager.cpp:109</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a1b34cd3eac32213c2b7a63a794b1676b"><div class="ttname"><a href="class_projet_manager.html#a1b34cd3eac32213c2b7a63a794b1676b">ProjetManager::supprimerProjet</a></div><div class="ttdeci">void supprimerProjet(const QString &amp;id)</div><div class="ttdoc">supprime un projet </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00152">projetManager.cpp:152</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a98d8ba59bd9bc6eec2ec5285102ac9a1"><div class="ttname"><a href="class_projet_manager.html#a98d8ba59bd9bc6eec2ec5285102ac9a1">ProjetManager::ProjetManager</a></div><div class="ttdeci">ProjetManager()</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00054">projetManager.cpp:54</a></div></div>
+<div class="ttc" id="class_tache_html"><div class="ttname"><a href="class_tache.html">Tache</a></div><div class="ttdoc">classe représentant une tâche </div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00024">tache.h:24</a></div></div>
+<div class="ttc" id="class_projet_manager_html_ae6434cf860492f17334e1cf505043be5"><div class="ttname"><a href="class_projet_manager.html#ae6434cf860492f17334e1cf505043be5">ProjetManager::projets</a></div><div class="ttdeci">vector&lt; Projet * &gt; projets</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00023">projetManager.h:23</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html_acd1b3eaf26dc19699b782ed3d5413194"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html#acd1b3eaf26dc19699b782ed3d5413194">ProjetManager::TacheIterator::nb_projets</a></div><div class="ttdeci">unsigned int nb_projets</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00056">projetManager.h:56</a></div></div>
+<div class="ttc" id="class_projet_html"><div class="ttname"><a href="class_projet.html">Projet</a></div><div class="ttdoc">classe représentant un projet du calendrier la classe gère les informations relatives à un projet...</div><div class="ttdef"><b>Definition:</b> <a href="projet_8h_source.html#l00021">projet.h:21</a></div></div>
+<div class="ttc" id="class_projet_manager_html_af0b8d536c3d208289033d6a3b757fac9"><div class="ttname"><a href="class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9">ProjetManager::getInstance</a></div><div class="ttdeci">static ProjetManager &amp; getInstance()</div><div class="ttdoc">accès à l&#39;instance unique du ProjetManager </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00067">projetManager.cpp:67</a></div></div>
+<div class="ttc" id="class_duree_html"><div class="ttname"><a href="class_duree.html">Duree</a></div><div class="ttdoc">Classe permettant de manipuler des durees L&#39;utilisation de cette classe nécessite des durées valides ...</div><div class="ttdef"><b>Definition:</b> <a href="duree_8h_source.html#l00026">duree.h:26</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html">ProjetManager::TacheIterator</a></div><div class="ttdoc">Iterator des tâches du projetManager Itérator uni-directionnel permettant de parcourir l&#39;ensemble des...</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00054">projetManager.h:54</a></div></div>
+<div class="ttc" id="class_projet_manager_1_1_tache_iterator_html_aee8f103686d70e79d7452603362e1acf"><div class="ttname"><a href="class_projet_manager_1_1_tache_iterator.html#aee8f103686d70e79d7452603362e1acf">ProjetManager::TacheIterator::operator*</a></div><div class="ttdeci">Tache * operator*() const </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00039">projetManager.cpp:39</a></div></div>
+<div class="ttc" id="class_projet_manager_html_aece8681ed2e0832e9f1996511c15356b"><div class="ttname"><a href="class_projet_manager.html#aece8681ed2e0832e9f1996511c15356b">ProjetManager::operator=</a></div><div class="ttdeci">ProjetManager &amp; operator=(const ProjetManager &amp;foo)</div></div>
+<div class="ttc" id="class_projet_manager_html_af5a44cde2f8d92f05bb7e52a18aa883a"><div class="ttname"><a href="class_projet_manager.html#af5a44cde2f8d92f05bb7e52a18aa883a">ProjetManager::~ProjetManager</a></div><div class="ttdeci">~ProjetManager()</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00056">projetManager.cpp:56</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_eb1463819d84903762eb6f59cc0c4383.html">Application</a></li><li class="navelem"><a class="el" href="dir_406eb62538976f3b4fdc4cd9ddb43324.html">Classe</a></li><li class="navelem"><a class="el" href="projet_manager_8h.html">projetManager.h</a></li>
+    <li class="footer">Généré le Samedi 13 Juin 2015 16:56:21 pour LO21 - Le Pokétache par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

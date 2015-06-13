@@ -1,0 +1,8 @@
+<map id="Tache::ajouterPrecedence" name="Tache::ajouterPrecedence">
+<area shape="rect" id="node2" href="$class_tache.html#a66940ce36910ba80500844dc5f7eaa69" title="vérifie si une précédence est valide ou non vérifie si cette tâche peut être précédée d&#39;une autre tâc..." alt="" coords="230,120,405,147"/>
+<area shape="rect" id="node7" href="$class_tache.html#aee46b06ec81175bd2f82002428f9d377" title="Tache::getMere" alt="" coords="507,208,621,235"/>
+<area shape="rect" id="node3" href="$class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0" title="Tache::getEcheance" alt="" coords="493,5,635,32"/>
+<area shape="rect" id="node4" href="$class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520" title="Tache::getPrecedence" alt="" coords="487,56,641,83"/>
+<area shape="rect" id="node5" href="$class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9" title="Tache::getIdentificateur" alt="" coords="485,107,643,133"/>
+<area shape="rect" id="node6" href="$class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af" title="TacheComposite::getComposition" alt="" coords="454,157,674,184"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="TacheComposite::getComposition" name="TacheComposite::getComposition">
+<area shape="rect" id="node2" href="$class_tache_composite.html#add0b40abaf5c2752cb5c523842904d81" title="ajoute une composition à cette tache " alt="" coords="771,266,1013,293"/>
+<area shape="rect" id="node4" href="$class_tache.html#ad1f2e1d2299403c79d01fcbec32e3cd6" title="Tache::getPere" alt="" coords="334,40,445,66"/>
+<area shape="rect" id="node5" href="$class_tache_composite.html#a18e7142486f9248483238dbad1669225" title="TacheComposite::operator=" alt="" coords="297,90,481,117"/>
+<area shape="rect" id="node6" href="$class_tache_composite.html#a4e53576441a8614d087977f9612711c5" title="supprime une composition à cette tâche " alt="" coords="296,142,483,183"/>
+<area shape="rect" id="node7" href="$class_projet.html#a2e48a04595acca5e279d95eb4848d6be" title="supprime une tâche " alt="" coords="311,208,468,234"/>
+<area shape="rect" id="node10" href="$class_tache_composite.html#acd9242554d57dc522cc65fb5af9d4d59" title="TacheComposite::TacheComposite" alt="" coords="275,258,503,285"/>
+<area shape="rect" id="node11" href="$class_tache.html#a66940ce36910ba80500844dc5f7eaa69" title="vérifie si une précédence est valide ou non vérifie si cette tâche peut être précédée d&#39;une autre tâc..." alt="" coords="302,309,477,336"/>
+<area shape="rect" id="node3" href="$class_export_import___x_m_l.html#a77c75d10ca173d8c6f8790ffb555c69d" title="ExportImport_XML::load" alt="" coords="1061,294,1224,321"/>
+<area shape="rect" id="node8" href="$class_projet_manager.html#a1b661bd4c65d45d04b167e360d9ea83b" title="supprime une tâche " alt="" coords="552,142,723,183"/>
+<area shape="rect" id="node9" href="$class_projet.html#a26e3e136385eca01dda79df7fba4e03d" title="destructeur " alt="" coords="584,208,691,234"/>
+<area shape="rect" id="node12" href="$class_tache.html#ac8a68b49b3d06f29ffb0ae9295740698" title="ajouter une précédence " alt="" coords="805,321,979,348"/>
+<area shape="rect" id="node13" href="$class_tache_composite.html#a4a35dc8841f7eaa15ed33cf5e4db7c17" title="vérifie si une composition est valide ou non " alt="" coords="553,259,721,300"/>
+</map>

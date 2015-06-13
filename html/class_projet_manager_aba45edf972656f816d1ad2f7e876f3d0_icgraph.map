@@ -1,0 +1,6 @@
+<map id="ProjetManager::getProjets" name="ProjetManager::getProjets">
+<area shape="rect" id="node2" href="$class_tache.html#ad1f2e1d2299403c79d01fcbec32e3cd6" title="Tache::getPere" alt="" coords="255,5,366,32"/>
+<area shape="rect" id="node3" href="$class_tache.html#a88e8f26c6486039e5e2832e96f0ce90d" title="Tache::getProjet" alt="" coords="251,56,370,83"/>
+<area shape="rect" id="node5" href="$class_export_import___x_m_l.html#ac7bf5ada76ff5ec5e4a4e6ea04d5c5fd" title="ExportImport_XML::save" alt="" coords="227,107,394,133"/>
+<area shape="rect" id="node4" href="$class_projet_manager.html#a1b661bd4c65d45d04b167e360d9ea83b" title="supprime une tâche " alt="" coords="443,49,613,90"/>
+</map>

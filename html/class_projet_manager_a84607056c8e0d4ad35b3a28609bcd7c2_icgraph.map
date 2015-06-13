@@ -1,0 +1,13 @@
+<map id="ProjetManager::tache_end" name="ProjetManager::tache_end">
+<area shape="rect" id="node2" href="$class_projet_manager.html#a2e4d05223f3bb596945b59d8476d145a" title="trouver une tache " alt="" coords="230,107,421,133"/>
+<area shape="rect" id="node3" href="$class_projet_manager.html#acdd5b959eabe1a1895ac3e960af22ca8" title="ajouter une tâche à un projet " alt="" coords="483,107,672,133"/>
+<area shape="rect" id="node5" href="$class_projet_manager.html#a3ce54feba8ce6c6ff0dd0b86f8d98707" title="vérifie l&#39;existence d&#39;une tâche " alt="" coords="470,56,685,83"/>
+<area shape="rect" id="node10" href="$class_projet_manager.html#ab8e7d2321071601b2a258c1d021faf5a" title="récupérer une tâche " alt="" coords="493,157,661,184"/>
+<area shape="rect" id="node4" href="$class_export_import___x_m_l.html#a77c75d10ca173d8c6f8790ffb555c69d" title="ExportImport_XML::load" alt="" coords="737,107,900,133"/>
+<area shape="rect" id="node6" href="$class_tache.html#a98843c52ff0af48586b79c614d5e44a5" title="modifier identificateur " alt="" coords="739,56,898,83"/>
+<area shape="rect" id="node7" href="$class_tache.html#af154eeeb0bcfa9f8364025260d5f70b6" title="Tache::Tache" alt="" coords="993,5,1095,32"/>
+<area shape="rect" id="node8" href="$class_tache.html#a315e94e47547f85806411315ae84bb55" title="Tache::operator=" alt="" coords="983,56,1105,83"/>
+<area shape="rect" id="node9" href="$class_tache_composite.html#a18e7142486f9248483238dbad1669225" title="TacheComposite::operator=" alt="" coords="952,107,1136,133"/>
+<area shape="rect" id="node11" href="$class_projet_manager.html#ad3d0a4f24a50c06c6fef6aeea9412805" title="récupérer une tâche " alt="" coords="735,157,903,184"/>
+<area shape="rect" id="node12" href="$class_projet_manager.html#a1b661bd4c65d45d04b167e360d9ea83b" title="supprime une tâche " alt="" coords="733,209,904,250"/>
+</map>

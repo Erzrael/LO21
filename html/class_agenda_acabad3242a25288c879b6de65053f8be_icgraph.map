@@ -1,0 +1,5 @@
+<map id="Agenda::supprimerProgrammation" name="Agenda::supprimerProgrammation">
+<area shape="rect" id="node2" href="$class_evenement.html#a4c3b1d41477ebb15e01b694fa4fadeae" title="Modification de la durée de l&#39;évènement. " alt="" coords="307,5,456,32"/>
+<area shape="rect" id="node3" href="$class_agenda.html#a3b6272637537f3c110acbccc2ae47b81" title="suppression de toutes les programamtions en lien avec une Tache Unitaire Permet la suppression de tou..." alt="" coords="272,56,491,83"/>
+<area shape="rect" id="node4" href="$class_tache_unitaire.html#a54c9937fb3088c48348883ad1b385f8c" title="TacheUnitaire::~TacheUnitaire" alt="" coords="281,107,481,133"/>
+</map>

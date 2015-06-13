@@ -1,0 +1,4 @@
+<map id="Projet::ajouterTache" name="Projet::ajouterTache">
+<area shape="rect" id="node2" href="$class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0" title="Tache::getEcheance" alt="" coords="193,5,335,32"/>
+<area shape="rect" id="node3" href="$class_projet.html#a8d132d2420b92db3a95e131b47517f6c" title="Projet::getEcheance" alt="" coords="194,56,334,83"/>
+</map>

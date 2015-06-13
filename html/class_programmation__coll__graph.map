@@ -1,0 +1,4 @@
+<map id="Programmation" name="Programmation">
+<area shape="rect" id="node2" href="$class_evenement.html" title="classe évènement Classe programmable dans l&#39;agenda. La classe est virtuelle pure. ..." alt="" coords="16,96,104,123"/>
+<area shape="rect" id="node3" href="$class_duree.html" title="Classe permettant de manipuler des durees L&#39;utilisation de cette classe nécessite des durées valides ..." alt="" coords="31,5,88,32"/>
+</map>

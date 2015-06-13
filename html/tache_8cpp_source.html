@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>LO21 - Le Pokétache:  Fichier source de Application/Classe/tache.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="poketache_logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">LO21 - Le Pokétache
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('tache_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">tache.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tache_8h.html">tache.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="projet_8h.html">Classe/projet.h</a>&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="projet_manager_8h.html">Classe/projetManager.h</a>&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_tache.html#a0e99fa8bdfcfcd0e63d2e455bbd18acd">    5</a></span>&#160;<span class="keyword">const</span> std::vector&lt;Tache *&gt; &amp;<a class="code" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">Tache::getMere</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#ac13147fd4d48aadf1cf38848512dce62">mere</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">   10</a></span>&#160;std::vector&lt;Tache *&gt; &amp;<a class="code" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">Tache::getMere</a>()</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#ac13147fd4d48aadf1cf38848512dce62">mere</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_tache.html#a6328279c2cfb9aa1c17720e16afe8f3a">   15</a></span>&#160;<a class="code" href="class_tache.html#a6328279c2cfb9aa1c17720e16afe8f3a">Tache::Tache</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>, <span class="keyword">const</span> QString&amp; t, <span class="keyword">const</span> QDate&amp; dispo, <span class="keyword">const</span> QDate&amp; deadline):</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    identificateur(id),titre(t),disponibilite(dispo),echeance(deadline), mere_compo(0){</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    qDebug()&lt;&lt;<span class="stringliteral">&quot;Création d&#39;un objet Tache \n&quot;</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_tache.html#af154eeeb0bcfa9f8364025260d5f70b6">   20</a></span>&#160;<a class="code" href="class_tache.html#a6328279c2cfb9aa1c17720e16afe8f3a">Tache::Tache</a>(<span class="keyword">const</span> <a class="code" href="class_tache.html">Tache</a>&amp; t){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;t) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        this-&gt;<a class="code" href="class_tache.html#a344736a783d0f83787093dd50d861d67">setDisponibilite</a>(t.<a class="code" href="class_tache.html#ad977616edf447b17c725a19db71b8b70">getDisponibilite</a>());</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        this-&gt;<a class="code" href="class_tache.html#a8aab097218d80c638acf96af86165732">setEcheance</a>(t.<a class="code" href="class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0">getEcheance</a>());</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        this-&gt;<a class="code" href="class_tache.html#a98843c52ff0af48586b79c614d5e44a5">setIdentificateur</a>(t.<a class="code" href="class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9">getIdentificateur</a>());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        this-&gt;<a class="code" href="class_tache.html#ab985eab7dcf7755c750f8b5e18155806">setTitre</a>(t.<a class="code" href="class_tache.html#a8159c83c1cba13737b27d3088817eba6">getTitre</a>());</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        this-&gt;<a class="code" href="class_tache.html#a1fb4d4094e0d968763d555b90bb15803">precedence</a> = t.<a class="code" href="class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520">getPrecedence</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        this-&gt;<a class="code" href="class_tache.html#ac13147fd4d48aadf1cf38848512dce62">mere</a> = t.<a class="code" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">getMere</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        this-&gt;<a class="code" href="class_tache.html#acea24c79ff5eeeb5fb8e2ba1db0515d6">setMere_Compo</a>(t.<a class="code" href="class_tache.html#a76cfb9b69d2b29a43ccd7ad3df0b63fe">getMere_Compo</a>());</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_tache.html#a315e94e47547f85806411315ae84bb55">   32</a></span>&#160;<a class="code" href="class_tache.html">Tache</a>&amp; <a class="code" href="class_tache.html#a315e94e47547f85806411315ae84bb55">Tache::operator=</a>(<span class="keyword">const</span> <a class="code" href="class_tache.html">Tache</a>&amp; obj){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;obj)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        this-&gt;<a class="code" href="class_tache.html#a344736a783d0f83787093dd50d861d67">setDisponibilite</a>(obj.<a class="code" href="class_tache.html#ad977616edf447b17c725a19db71b8b70">getDisponibilite</a>());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        this-&gt;<a class="code" href="class_tache.html#a8aab097218d80c638acf96af86165732">setEcheance</a>(obj.<a class="code" href="class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0">getEcheance</a>());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        this-&gt;<a class="code" href="class_tache.html#a98843c52ff0af48586b79c614d5e44a5">setIdentificateur</a>(obj.<a class="code" href="class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9">getIdentificateur</a>());</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        this-&gt;<a class="code" href="class_tache.html#ab985eab7dcf7755c750f8b5e18155806">setTitre</a>(obj.<a class="code" href="class_tache.html#a8159c83c1cba13737b27d3088817eba6">getTitre</a>());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        this-&gt;<a class="code" href="class_tache.html#a1fb4d4094e0d968763d555b90bb15803">precedence</a> = obj.<a class="code" href="class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520">getPrecedence</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        this-&gt;<a class="code" href="class_tache.html#ac13147fd4d48aadf1cf38848512dce62">mere</a> = obj.<a class="code" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">getMere</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        this-&gt;<a class="code" href="class_tache.html#acea24c79ff5eeeb5fb8e2ba1db0515d6">setMere_Compo</a>(obj.<a class="code" href="class_tache.html#a76cfb9b69d2b29a43ccd7ad3df0b63fe">getMere_Compo</a>());</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_tache.html#a7ff832b739f8365acbe60275c7868c63">   46</a></span>&#160;<a class="code" href="class_tache.html#a7ff832b739f8365acbe60275c7868c63">Tache::~Tache</a>(){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    qDebug()&lt;&lt;<span class="stringliteral">&quot;Destruction d&#39;un objet Tache\n&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9">   50</a></span>&#160;QString &amp;<a class="code" href="class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9">Tache::getIdentificateur</a>()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#ae22f26aa33762082872376475946acff">identificateur</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_tache.html#a7c5e66eaa580f6c4948d879b4b63ffe5">   55</a></span>&#160;<span class="keyword">const</span> QString &amp;<a class="code" href="class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9">Tache::getIdentificateur</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#ae22f26aa33762082872376475946acff">identificateur</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_tache.html#a98843c52ff0af48586b79c614d5e44a5">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_tache.html#a98843c52ff0af48586b79c614d5e44a5">Tache::setIdentificateur</a>(<span class="keyword">const</span> QString &amp;value)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9">ProjetManager::getInstance</a>().<a class="code" href="class_projet_manager.html#a3ce54feba8ce6c6ff0dd0b86f8d98707">isTacheExistante</a>(value))</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="class_calendar_exception.html">CalendarException</a>(<span class="stringliteral">&quot;erreur ProjetManager : tache id déjà existante&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_tache.html#ae22f26aa33762082872376475946acff">identificateur</a> = value;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_tache.html#a8159c83c1cba13737b27d3088817eba6">   67</a></span>&#160;QString &amp;<a class="code" href="class_tache.html#a8159c83c1cba13737b27d3088817eba6">Tache::getTitre</a>()</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#a1d3d20046c0c4cc8482f71bb555b79cf">titre</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_tache.html#aedb53448d7726b02c9054e282b1d81da">   72</a></span>&#160;<span class="keyword">const</span> QString &amp;<a class="code" href="class_tache.html#a8159c83c1cba13737b27d3088817eba6">Tache::getTitre</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#a1d3d20046c0c4cc8482f71bb555b79cf">titre</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_tache.html#ab985eab7dcf7755c750f8b5e18155806">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_tache.html#ab985eab7dcf7755c750f8b5e18155806">Tache::setTitre</a>(<span class="keyword">const</span> QString &amp;value)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="class_tache.html#a1d3d20046c0c4cc8482f71bb555b79cf">titre</a> = value;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_tache.html#ad977616edf447b17c725a19db71b8b70">   82</a></span>&#160;QDate &amp;<a class="code" href="class_tache.html#ad977616edf447b17c725a19db71b8b70">Tache::getDisponibilite</a>()</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#a00028aefb54c5ce37ac5d52be4b2d5ab">disponibilite</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_tache.html#a11b8c36709ffc043e14f154ad4117bbc">   87</a></span>&#160;<span class="keyword">const</span> QDate &amp;<a class="code" href="class_tache.html#ad977616edf447b17c725a19db71b8b70">Tache::getDisponibilite</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#a00028aefb54c5ce37ac5d52be4b2d5ab">disponibilite</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_tache.html#a344736a783d0f83787093dd50d861d67">   92</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_tache.html#a344736a783d0f83787093dd50d861d67">Tache::setDisponibilite</a>(<span class="keyword">const</span> QDate &amp;value)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="class_tache.html#a00028aefb54c5ce37ac5d52be4b2d5ab">disponibilite</a> = value;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0">   97</a></span>&#160;QDate &amp;<a class="code" href="class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0">Tache::getEcheance</a>()</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#af532e2d97c7a076487f635ee669f7749">echeance</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_tache.html#ac3dfc9cf207703233b31a2824f6a53f8">  102</a></span>&#160;<span class="keyword">const</span> QDate &amp;<a class="code" href="class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0">Tache::getEcheance</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#af532e2d97c7a076487f635ee669f7749">echeance</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_tache.html#a8aab097218d80c638acf96af86165732">  107</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_tache.html#a8aab097218d80c638acf96af86165732">Tache::setEcheance</a>(<span class="keyword">const</span> QDate &amp;value)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span>(this-&gt;<a class="code" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">getMere</a>().<a class="code" href="class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0">empty</a>()){</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span>(value &lt; this-&gt;<a class="code" href="class_tache.html#ad977616edf447b17c725a19db71b8b70">getDisponibilite</a>())</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="class_calendar_exception.html">CalendarException</a>(<span class="stringliteral">&quot;La date d&#39;échéance voulue n&#39;est pas correct vis à vis de la disponibilité&quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        QDate temp(9999,12,31);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">for</span>(std::vector&lt;Tache*&gt;::const_iterator it_precedence = this-&gt;<a class="code" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">getMere</a>().begin(); it_precedence != this-&gt;<a class="code" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">getMere</a>().end(); ++it_precedence){</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">if</span>(temp &gt; (*it_precedence)-&gt;getEcheance())</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                temp = (*it_precedence)-&gt;getEcheance();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span>(temp &lt; value)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="class_calendar_exception.html">CalendarException</a>(<span class="stringliteral">&quot;La date d&#39;échéance voulue n&#39;est pas correct vis à vis des précédences&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="class_tache_composite.html">TacheComposite</a>* Composite = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_tache_composite.html">TacheComposite</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span>(Composite){</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span>(value &gt; Composite-&gt;<a class="code" href="class_tache.html#a76cfb9b69d2b29a43ccd7ad3df0b63fe">getMere_Compo</a>()-&gt;<a class="code" href="class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0">getEcheance</a>())</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="class_calendar_exception.html">CalendarException</a>(<span class="stringliteral">&quot;La date d&#39;échéance voulue n&#39;est pas correct vis à vis des compositions&quot;</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// Si on arrive ici, c&#39;est qu&#39;aucun problème n&#39;a été détecté.</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="class_tache.html#af532e2d97c7a076487f635ee669f7749">echeance</a> = value;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520">  134</a></span>&#160;<span class="keyword">const</span> std::vector&lt;Tache*&gt;&amp; <a class="code" href="class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520">Tache::getPrecedence</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#a1fb4d4094e0d968763d555b90bb15803">precedence</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_tache.html#a76cfb9b69d2b29a43ccd7ad3df0b63fe">  139</a></span>&#160;<a class="code" href="class_tache.html">Tache</a> *<a class="code" href="class_tache.html#a76cfb9b69d2b29a43ccd7ad3df0b63fe">Tache::getMere_Compo</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#a38a94e804180c2c7aedaafacd20f1ffa">mere_compo</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="class_tache.html#acea24c79ff5eeeb5fb8e2ba1db0515d6">  144</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_tache.html#acea24c79ff5eeeb5fb8e2ba1db0515d6">Tache::setMere_Compo</a>(<a class="code" href="class_tache.html">Tache</a> *value)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="class_tache.html#a38a94e804180c2c7aedaafacd20f1ffa">mere_compo</a> = value;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_tache.html#ac8a68b49b3d06f29ffb0ae9295740698">  149</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_tache.html#ac8a68b49b3d06f29ffb0ae9295740698">Tache::ajouterPrecedence</a>(<a class="code" href="class_tache.html">Tache</a> &amp;t)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span>(this-&gt;<a class="code" href="class_tache.html#a66940ce36910ba80500844dc5f7eaa69">verifierPrecedence</a>(t)){</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="class_tache.html#a1fb4d4094e0d968763d555b90bb15803">precedence</a>.push_back(&amp;t);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        t.<a class="code" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">getMere</a>().push_back(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        qDebug()&lt;&lt;<span class="stringliteral">&quot;Ajout précédence réussi \n&quot;</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        qDebug()&lt;&lt;<span class="stringliteral">&quot;Ajout précédence failed \n&quot;</span>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="class_calendar_exception.html">CalendarException</a>(<span class="stringliteral">&quot;Une tache ne peut pas avoir une tache parente en prérequis&quot;</span>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="class_tache.html#a66940ce36910ba80500844dc5f7eaa69">  161</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_tache.html#a66940ce36910ba80500844dc5f7eaa69">Tache::verifierPrecedence</a>(<a class="code" href="class_tache.html">Tache</a> &amp;t)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// On vérifie que l&#39;on ajoute pas une même tâche en précédence d&#39;elle-même</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">if</span>(<span class="keyword">this</span> == &amp;t){</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        qDebug()&lt;&lt;<span class="stringliteral">&quot;Je retourne faux&quot;</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// On vérifie que les dates d&#39;échéances correspondent</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span>(t.<a class="code" href="class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0">getEcheance</a>() &gt; this-&gt;<a class="code" href="class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0">getEcheance</a>()){</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        qDebug()&lt;&lt;<span class="stringliteral">&quot;Je retourne faux&quot;</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// On vérifie que t ne fait pas déjà partie des précédences existantes</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">for</span>(std::vector&lt;Tache*&gt;::const_iterator it_prece = this-&gt;<a class="code" href="class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520">getPrecedence</a>().begin(); it_prece != this-&gt;<a class="code" href="class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520">getPrecedence</a>().end(); ++it_prece)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span>((*it_prece)-&gt;getIdentificateur() == t.<a class="code" href="class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9">getIdentificateur</a>()){</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            qDebug()&lt;&lt;<span class="stringliteral">&quot;Je retourne faux&quot;</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// Vérifier pour les taches composites</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="class_tache_composite.html">TacheComposite</a>* Compo = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_tache_composite.html">TacheComposite</a>*<span class="keyword">&gt;</span>(&amp;t);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">if</span>(Compo){</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">for</span>(std::vector&lt;Tache*&gt;::const_iterator it = Compo-&gt;<a class="code" href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">getComposition</a>().begin(); it != Compo-&gt;<a class="code" href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">getComposition</a>().end(); ++it){</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_tache.html#a66940ce36910ba80500844dc5f7eaa69">verifierPrecedence</a>(**it))</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// On vérifie la même chose pour les taĉhes précédentes mères de this et en prenant compte du cas des compositions</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    std::vector&lt;Tache*&gt; tache_mere = this-&gt;<a class="code" href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">getMere</a>();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">for</span>(std::vector&lt;Tache*&gt;::const_iterator it = tache_mere.begin(); it != tache_mere.end(); ++it){</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="class_tache_composite.html">TacheComposite</a>* item = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_tache_composite.html">TacheComposite</a>*<span class="keyword">&gt;</span>(*it);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span>(item){</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">for</span>(std::vector&lt;Tache*&gt;::const_iterator it_compo = item-&gt;<a class="code" href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">getComposition</a>().begin(); it_compo != item-&gt;<a class="code" href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">getComposition</a>().end(); ++it_compo)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="keywordflow">if</span>(!(*it)-&gt;verifierPrecedence(t))</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">if</span>(!(*it)-&gt;verifierPrecedence(t))</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">// Si on sort de la boucle, cela veut dire que tout est bon</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="class_tache.html#a954149c1c6e8ebc46e38c3ea04e08c06">  212</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_tache.html#a954149c1c6e8ebc46e38c3ea04e08c06">Tache::supprimerPrecedence</a>(<span class="keyword">const</span> QString &amp;<span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    std::vector&lt;Tache*&gt;::iterator iterator_precedence = <a class="code" href="class_tache.html#a1fb4d4094e0d968763d555b90bb15803">precedence</a>.begin();</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">while</span>(iterator_precedence != this-&gt;<a class="code" href="class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520">getPrecedence</a>().end() &amp;&amp; (*iterator_precedence)-&gt;getIdentificateur() != id){</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        ++iterator_precedence;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span>(iterator_precedence != this-&gt;<a class="code" href="class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520">getPrecedence</a>().end()){</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        std::vector&lt;Tache*&gt;::iterator it_mere_prece = (*iterator_precedence)-&gt;getMere().begin();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordtype">bool</span> suppression = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">while</span>((it_mere_prece != (*iterator_precedence)-&gt;getMere().end()) &amp;&amp; !suppression){</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">if</span>((*it_mere_prece)-&gt;getIdentificateur() == this-&gt;<a class="code" href="class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9">getIdentificateur</a>()){</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                (*iterator_precedence)-&gt;getMere().erase(it_mere_prece);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                suppression = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="class_tache.html#a1fb4d4094e0d968763d555b90bb15803">precedence</a>.erase(iterator_precedence);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="class_calendar_exception.html">CalendarException</a>(<span class="stringliteral">&quot;La précédence n&#39;a pas été supprimée&quot;</span>);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="class_tache.html#ac7cd5bb2d783a32356c95ac36e878e1a">  236</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_tache.html#ac7cd5bb2d783a32356c95ac36e878e1a">Tache::nbPrerequis</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_tache.html#a1fb4d4094e0d968763d555b90bb15803">precedence</a>.size();</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="class_tache.html#ad1f2e1d2299403c79d01fcbec32e3cd6">  241</a></span>&#160;<a class="code" href="class_tache.html">Tache</a> *<a class="code" href="class_tache.html#ad1f2e1d2299403c79d01fcbec32e3cd6">Tache::getPere</a>()</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;{</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="class_projet_manager.html">ProjetManager</a>&amp; projetManager = <a class="code" href="class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9">ProjetManager::getInstance</a>();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    std::vector&lt;Projet *&gt;::const_iterator it_projets = projetManager.<a class="code" href="class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0">getProjets</a>().begin();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">while</span>((it_projets != projetManager.<a class="code" href="class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0">getProjets</a>().end()) &amp;&amp; (((*it_projets)-&gt;trouverTache(this-&gt;getIdentificateur())) == 0))</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        ++it_projets;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span>(it_projets == projetManager.<a class="code" href="class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0">getProjets</a>().end())</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    std::vector&lt;Tache *&gt;::const_iterator it_taches = (*it_projets)-&gt;getTaches().begin();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">while</span>(it_taches != (*it_projets)-&gt;getTaches().end()){</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="class_tache_composite.html">TacheComposite</a>* composite = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_tache_composite.html">TacheComposite</a>*<span class="keyword">&gt;</span>(*it_taches);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">if</span>(composite != 0){</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            std::vector&lt;Tache *&gt;::const_iterator it_compo = composite-&gt;<a class="code" href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">getComposition</a>().begin();</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">while</span>(it_compo != composite-&gt;<a class="code" href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">getComposition</a>().end()){</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                <span class="keywordflow">if</span>(this-&gt;<a class="code" href="class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9">getIdentificateur</a>() == (*it_compo)-&gt;getIdentificateur())</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    <span class="keywordflow">return</span> composite;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                ++it_compo;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        ++it_taches;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="class_tache.html#a88e8f26c6486039e5e2832e96f0ce90d">  270</a></span>&#160;<a class="code" href="class_projet.html">Projet</a>* <a class="code" href="class_tache.html#a88e8f26c6486039e5e2832e96f0ce90d">Tache::getProjet</a>()</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;{</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <a class="code" href="class_projet_manager.html">ProjetManager</a>&amp; projetManager = <a class="code" href="class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9">ProjetManager::getInstance</a>();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    std::vector&lt;Projet *&gt;::const_iterator it_projets = projetManager.<a class="code" href="class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0">getProjets</a>().begin();</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">while</span>((it_projets != projetManager.<a class="code" href="class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0">getProjets</a>().end()) &amp;&amp; ((*it_projets)-&gt;trouverTache(this-&gt;getIdentificateur()) == 0)){</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        ++it_projets;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">if</span>(it_projets != projetManager.<a class="code" href="class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0">getProjets</a>().end())</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">return</span> *it_projets;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
+<div class="ttc" id="class_tache_html_ada1719ca7265a7faf1f49725f3fb6fc0"><div class="ttname"><a href="class_tache.html#ada1719ca7265a7faf1f49725f3fb6fc0">Tache::getEcheance</a></div><div class="ttdeci">QDate &amp; getEcheance()</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00097">tache.cpp:97</a></div></div>
+<div class="ttc" id="class_tache_html_a1590b4a6f2935567ac17584f43c9c5f9"><div class="ttname"><a href="class_tache.html#a1590b4a6f2935567ac17584f43c9c5f9">Tache::getIdentificateur</a></div><div class="ttdeci">QString &amp; getIdentificateur()</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00050">tache.cpp:50</a></div></div>
+<div class="ttc" id="class_tache_html_ad3e7dd672efcce01a5f07ff53b1d9520"><div class="ttname"><a href="class_tache.html#ad3e7dd672efcce01a5f07ff53b1d9520">Tache::getPrecedence</a></div><div class="ttdeci">const std::vector&lt; Tache * &gt; &amp; getPrecedence() const </div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00134">tache.cpp:134</a></div></div>
+<div class="ttc" id="class_tache_html_ac8a68b49b3d06f29ffb0ae9295740698"><div class="ttname"><a href="class_tache.html#ac8a68b49b3d06f29ffb0ae9295740698">Tache::ajouterPrecedence</a></div><div class="ttdeci">void ajouterPrecedence(Tache &amp;t)</div><div class="ttdoc">ajouter une précédence </div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00149">tache.cpp:149</a></div></div>
+<div class="ttc" id="class_projet_manager_html"><div class="ttname"><a href="class_projet_manager.html">ProjetManager</a></div><div class="ttdoc">classe gérant les projets du PokéTache ProjetManager crée les projets et les garde en mémoire...</div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8h_source.html#l00019">projetManager.h:19</a></div></div>
+<div class="ttc" id="class_tache_html_a344736a783d0f83787093dd50d861d67"><div class="ttname"><a href="class_tache.html#a344736a783d0f83787093dd50d861d67">Tache::setDisponibilite</a></div><div class="ttdeci">void setDisponibilite(const QDate &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00092">tache.cpp:92</a></div></div>
+<div class="ttc" id="class_tache_html_ad977616edf447b17c725a19db71b8b70"><div class="ttname"><a href="class_tache.html#ad977616edf447b17c725a19db71b8b70">Tache::getDisponibilite</a></div><div class="ttdeci">QDate &amp; getDisponibilite()</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00082">tache.cpp:82</a></div></div>
+<div class="ttc" id="class_projet_manager_html_aba45edf972656f816d1ad2f7e876f3d0"><div class="ttname"><a href="class_projet_manager.html#aba45edf972656f816d1ad2f7e876f3d0">ProjetManager::getProjets</a></div><div class="ttdeci">const std::vector&lt; Projet * &gt; &amp; getProjets() const </div><div class="ttdoc">getters </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00049">projetManager.cpp:49</a></div></div>
+<div class="ttc" id="class_tache_html_ad1f2e1d2299403c79d01fcbec32e3cd6"><div class="ttname"><a href="class_tache.html#ad1f2e1d2299403c79d01fcbec32e3cd6">Tache::getPere</a></div><div class="ttdeci">Tache * getPere()</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00241">tache.cpp:241</a></div></div>
+<div class="ttc" id="class_tache_html_a954149c1c6e8ebc46e38c3ea04e08c06"><div class="ttname"><a href="class_tache.html#a954149c1c6e8ebc46e38c3ea04e08c06">Tache::supprimerPrecedence</a></div><div class="ttdeci">void supprimerPrecedence(const QString &amp;id)</div><div class="ttdoc">supprime un précédence </div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00212">tache.cpp:212</a></div></div>
+<div class="ttc" id="class_tache_html_a1fb4d4094e0d968763d555b90bb15803"><div class="ttname"><a href="class_tache.html#a1fb4d4094e0d968763d555b90bb15803">Tache::precedence</a></div><div class="ttdeci">std::vector&lt; Tache * &gt; precedence</div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00026">tache.h:26</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a8d34cfa5d7ebdae4fcfe94e17f9b69a0"><div class="ttname"><a href="class_projet_manager.html#a8d34cfa5d7ebdae4fcfe94e17f9b69a0">ProjetManager::empty</a></div><div class="ttdeci">bool empty() const </div><div class="ttdoc">vérifie s&#39;il existe une tâche dans l&#39;ensemble des projets du ProjetManager </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00172">projetManager.cpp:172</a></div></div>
+<div class="ttc" id="class_tache_html_a8aab097218d80c638acf96af86165732"><div class="ttname"><a href="class_tache.html#a8aab097218d80c638acf96af86165732">Tache::setEcheance</a></div><div class="ttdeci">void setEcheance(const QDate &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00107">tache.cpp:107</a></div></div>
+<div class="ttc" id="class_tache_html_ae22f26aa33762082872376475946acff"><div class="ttname"><a href="class_tache.html#ae22f26aa33762082872376475946acff">Tache::identificateur</a></div><div class="ttdeci">QString identificateur</div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00027">tache.h:27</a></div></div>
+<div class="ttc" id="class_tache_html_a6328279c2cfb9aa1c17720e16afe8f3a"><div class="ttname"><a href="class_tache.html#a6328279c2cfb9aa1c17720e16afe8f3a">Tache::Tache</a></div><div class="ttdeci">Tache(const QString &amp;id, const QString &amp;t, const QDate &amp;dispo, const QDate &amp;deadline)</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00015">tache.cpp:15</a></div></div>
+<div class="ttc" id="projet_8h_html"><div class="ttname"><a href="projet_8h.html">projet.h</a></div><div class="ttdoc">contient la déclaration de la classe Projet </div></div>
+<div class="ttc" id="class_tache_composite_html"><div class="ttname"><a href="class_tache_composite.html">TacheComposite</a></div><div class="ttdoc">classe représentant une tâche composite Hérite de Tache. Une tâche composite est composée de différen...</div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8h_source.html#l00019">tacheComposite.h:19</a></div></div>
+<div class="ttc" id="class_tache_html_a66940ce36910ba80500844dc5f7eaa69"><div class="ttname"><a href="class_tache.html#a66940ce36910ba80500844dc5f7eaa69">Tache::verifierPrecedence</a></div><div class="ttdeci">bool verifierPrecedence(Tache &amp;t) const </div><div class="ttdoc">vérifie si une précédence est valide ou non vérifie si cette tâche peut être précédée d&#39;une autre tâc...</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00161">tache.cpp:161</a></div></div>
+<div class="ttc" id="class_tache_html_a88e8f26c6486039e5e2832e96f0ce90d"><div class="ttname"><a href="class_tache.html#a88e8f26c6486039e5e2832e96f0ce90d">Tache::getProjet</a></div><div class="ttdeci">Projet * getProjet()</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00270">tache.cpp:270</a></div></div>
+<div class="ttc" id="class_tache_html_a8159c83c1cba13737b27d3088817eba6"><div class="ttname"><a href="class_tache.html#a8159c83c1cba13737b27d3088817eba6">Tache::getTitre</a></div><div class="ttdeci">QString &amp; getTitre()</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00067">tache.cpp:67</a></div></div>
+<div class="ttc" id="class_tache_html_a38a94e804180c2c7aedaafacd20f1ffa"><div class="ttname"><a href="class_tache.html#a38a94e804180c2c7aedaafacd20f1ffa">Tache::mere_compo</a></div><div class="ttdeci">Tache * mere_compo</div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00032">tache.h:32</a></div></div>
+<div class="ttc" id="class_projet_manager_html_a3ce54feba8ce6c6ff0dd0b86f8d98707"><div class="ttname"><a href="class_projet_manager.html#a3ce54feba8ce6c6ff0dd0b86f8d98707">ProjetManager::isTacheExistante</a></div><div class="ttdeci">bool isTacheExistante(const QString &amp;id) const </div><div class="ttdoc">vérifie l&#39;existence d&#39;une tâche </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00109">projetManager.cpp:109</a></div></div>
+<div class="ttc" id="class_calendar_exception_html"><div class="ttname"><a href="class_calendar_exception.html">CalendarException</a></div><div class="ttdoc">Classe utilisée pour toutes les exceptions. </div><div class="ttdef"><b>Definition:</b> <a href="calendar_exception_8h_source.html#l00022">calendarException.h:22</a></div></div>
+<div class="ttc" id="class_tache_html_ac7cd5bb2d783a32356c95ac36e878e1a"><div class="ttname"><a href="class_tache.html#ac7cd5bb2d783a32356c95ac36e878e1a">Tache::nbPrerequis</a></div><div class="ttdeci">unsigned int nbPrerequis() const </div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00236">tache.cpp:236</a></div></div>
+<div class="ttc" id="class_tache_html_aee46b06ec81175bd2f82002428f9d377"><div class="ttname"><a href="class_tache.html#aee46b06ec81175bd2f82002428f9d377">Tache::getMere</a></div><div class="ttdeci">std::vector&lt; Tache * &gt; &amp; getMere()</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00010">tache.cpp:10</a></div></div>
+<div class="ttc" id="class_tache_html_ac13147fd4d48aadf1cf38848512dce62"><div class="ttname"><a href="class_tache.html#ac13147fd4d48aadf1cf38848512dce62">Tache::mere</a></div><div class="ttdeci">std::vector&lt; Tache * &gt; mere</div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00031">tache.h:31</a></div></div>
+<div class="ttc" id="class_tache_html_acea24c79ff5eeeb5fb8e2ba1db0515d6"><div class="ttname"><a href="class_tache.html#acea24c79ff5eeeb5fb8e2ba1db0515d6">Tache::setMere_Compo</a></div><div class="ttdeci">void setMere_Compo(Tache *value)</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00144">tache.cpp:144</a></div></div>
+<div class="ttc" id="class_tache_html_a7ff832b739f8365acbe60275c7868c63"><div class="ttname"><a href="class_tache.html#a7ff832b739f8365acbe60275c7868c63">Tache::~Tache</a></div><div class="ttdeci">virtual ~Tache()</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00046">tache.cpp:46</a></div></div>
+<div class="ttc" id="class_tache_html"><div class="ttname"><a href="class_tache.html">Tache</a></div><div class="ttdoc">classe représentant une tâche </div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00024">tache.h:24</a></div></div>
+<div class="ttc" id="class_tache_composite_html_ab4f7303bf3aaf37315bd4b5f7c7d99af"><div class="ttname"><a href="class_tache_composite.html#ab4f7303bf3aaf37315bd4b5f7c7d99af">TacheComposite::getComposition</a></div><div class="ttdeci">std::vector&lt; Tache * &gt; &amp; getComposition()</div><div class="ttdef"><b>Definition:</b> <a href="tache_composite_8cpp_source.html#l00064">tacheComposite.cpp:64</a></div></div>
+<div class="ttc" id="class_projet_html"><div class="ttname"><a href="class_projet.html">Projet</a></div><div class="ttdoc">classe représentant un projet du calendrier la classe gère les informations relatives à un projet...</div><div class="ttdef"><b>Definition:</b> <a href="projet_8h_source.html#l00021">projet.h:21</a></div></div>
+<div class="ttc" id="class_tache_html_a98843c52ff0af48586b79c614d5e44a5"><div class="ttname"><a href="class_tache.html#a98843c52ff0af48586b79c614d5e44a5">Tache::setIdentificateur</a></div><div class="ttdeci">void setIdentificateur(const QString &amp;value)</div><div class="ttdoc">modifier identificateur </div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00060">tache.cpp:60</a></div></div>
+<div class="ttc" id="class_tache_html_a315e94e47547f85806411315ae84bb55"><div class="ttname"><a href="class_tache.html#a315e94e47547f85806411315ae84bb55">Tache::operator=</a></div><div class="ttdeci">Tache &amp; operator=(const Tache &amp;obj)</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00032">tache.cpp:32</a></div></div>
+<div class="ttc" id="class_tache_html_a00028aefb54c5ce37ac5d52be4b2d5ab"><div class="ttname"><a href="class_tache.html#a00028aefb54c5ce37ac5d52be4b2d5ab">Tache::disponibilite</a></div><div class="ttdeci">QDate disponibilite</div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00029">tache.h:29</a></div></div>
+<div class="ttc" id="class_projet_manager_html_af0b8d536c3d208289033d6a3b757fac9"><div class="ttname"><a href="class_projet_manager.html#af0b8d536c3d208289033d6a3b757fac9">ProjetManager::getInstance</a></div><div class="ttdeci">static ProjetManager &amp; getInstance()</div><div class="ttdoc">accès à l&#39;instance unique du ProjetManager </div><div class="ttdef"><b>Definition:</b> <a href="projet_manager_8cpp_source.html#l00067">projetManager.cpp:67</a></div></div>
+<div class="ttc" id="tache_8h_html"><div class="ttname"><a href="tache_8h.html">tache.h</a></div><div class="ttdoc">contient la déclaration de la classe Tache </div></div>
+<div class="ttc" id="class_tache_html_af532e2d97c7a076487f635ee669f7749"><div class="ttname"><a href="class_tache.html#af532e2d97c7a076487f635ee669f7749">Tache::echeance</a></div><div class="ttdeci">QDate echeance</div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00030">tache.h:30</a></div></div>
+<div class="ttc" id="class_tache_html_a1d3d20046c0c4cc8482f71bb555b79cf"><div class="ttname"><a href="class_tache.html#a1d3d20046c0c4cc8482f71bb555b79cf">Tache::titre</a></div><div class="ttdeci">QString titre</div><div class="ttdef"><b>Definition:</b> <a href="tache_8h_source.html#l00028">tache.h:28</a></div></div>
+<div class="ttc" id="class_tache_html_ab985eab7dcf7755c750f8b5e18155806"><div class="ttname"><a href="class_tache.html#ab985eab7dcf7755c750f8b5e18155806">Tache::setTitre</a></div><div class="ttdeci">void setTitre(const QString &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00077">tache.cpp:77</a></div></div>
+<div class="ttc" id="projet_manager_8h_html"><div class="ttname"><a href="projet_manager_8h.html">projetManager.h</a></div><div class="ttdoc">contient la déclaration de la classe ProjetManager </div></div>
+<div class="ttc" id="class_tache_html_a76cfb9b69d2b29a43ccd7ad3df0b63fe"><div class="ttname"><a href="class_tache.html#a76cfb9b69d2b29a43ccd7ad3df0b63fe">Tache::getMere_Compo</a></div><div class="ttdeci">Tache * getMere_Compo() const </div><div class="ttdef"><b>Definition:</b> <a href="tache_8cpp_source.html#l00139">tache.cpp:139</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_eb1463819d84903762eb6f59cc0c4383.html">Application</a></li><li class="navelem"><a class="el" href="dir_406eb62538976f3b4fdc4cd9ddb43324.html">Classe</a></li><li class="navelem"><b>tache.cpp</b></li>
+    <li class="footer">Généré le Samedi 13 Juin 2015 16:56:21 pour LO21 - Le Pokétache par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>
