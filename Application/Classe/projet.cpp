@@ -61,19 +61,10 @@ Projet &Projet::operator=(const Projet &obj)
 
 Projet::~Projet() {
    qDebug()<<"Destruction d'un objet Projet";
-   /* C'est moche, mais je ne sais pas comment faire autrement... *//*
-   while(!taches.empty()){
-       Tache* t = taches.back();
-       if(t->getIdentificateur() != "")
-           delete taches.back();
-       taches.pop_back();
-    }*/
+
    while(!taches.empty()){
        Tache* t = taches.back();      
-
-
        this->supprimerTache(t->getIdentificateur());
-       //taches.pop_back();
     }
 }
 
@@ -142,25 +133,15 @@ const Tache* Projet::trouverTache(const QString& id) const{
 
 void Projet::supprimerTache(const QString &id)
 {
-    /* Il faut tenir compte si nous avons affaire à une tâche composite : 2 choses à faire :
-     * 1 : (Dans tous les cas où le père de tâche est une tâche composite) Il faut chercher le papa dans tous les cas.
-     *     Considérer les cas à une tâche composite composée d'une seule tâche
-         * Prendre l'ID du père de la tâche composite => Faire une fonction père qui pourune tâche donnée donne l'ID du père ou 0
-         * Trouver le lien dans le vector du père.
-         * Supprimer le lien.
-     * 2 :
-         * Prendre l'ID des filles
-         * Les détruire via supprimerTache
-     * Supprimer enfin la tâche
-     * Si je veux supprimer une tâche, il faut que je supprime le lien dans le vector d'où le code suivant */    
-
+    // Recherche de la tâche à supprimer dans le vector<Tache*> de projet
     std::vector<Tache *>::iterator it_taches = taches.begin();
     while(id != (*it_taches)->getIdentificateur() && it_taches != taches.end())
         ++it_taches;
 
+    // On recherche le père de la tâche à supprimer
     if(it_taches != taches.end()){
         TacheComposite* Pere = dynamic_cast<TacheComposite*>((*it_taches)->getPere());
-
+        // Si le père est une tâche composite, il faut supprimer le lien de composition
         if(Pere != 0){
             std::vector<Tache *>::iterator it_compo = Pere->getComposition().begin();
             while((*it_compo)->getIdentificateur() != id)
@@ -168,22 +149,31 @@ void Projet::supprimerTache(const QString &id)
             Pere->getComposition().erase(it_compo);
         }
 
+        // Pour chaque tache précédente père, on parcourt le vector<Tache*> de précédence
+        // et quand les IDs sont les mêmes, on supprime le lien.
+        std::vector<Tache*>::iterator it_prece = (*it_taches)->getMere().begin();
+        while(it_prece != (*it_taches)->getMere().end()){
+            std::vector<Tache*>::iterator it_prece_pere = (*it_prece)->getPrecedence().begin();
+            while(it_prece_pere != (*it_prece)->getPrecedence().end()){
+                if((*it_prece_pere)->getIdentificateur() == id)
+                    (*it_prece)->getPrecedence().erase(it_prece_pere);
+                else
+                    ++it_prece_pere;
+            }
+            ++it_prece;
+        }
+
         TacheComposite* A_supprimer = dynamic_cast<TacheComposite*>(*it_taches);
 
-        if(A_supprimer != 0){/*
-            for(std::vector<Tache *>::iterator it_compo = A_supprimer->getComposition().begin();it_compo != A_supprimer->getComposition().end(); ++it_compo)
-                this->supprimerTache((*it_compo)->getIdentificateur());*/
+        // Si la tâche à supprimer est une tâche composite, il faut supprimer chacune de ses tâches filles
+        if(A_supprimer != 0){
             std::vector<Tache *>::iterator it_compo = A_supprimer->getComposition().begin();
             while(it_compo != A_supprimer->getComposition().end()){
                 this->supprimerTache((*it_compo)->getIdentificateur());
-                /*if(!(A_supprimer->getComposition().empty()))
-                    ++it_compo;*/
             }
-        } /*else { // AJOUT MARIE : si la tâche est unitaire
-           TacheUnitaire * tu = reinterpret_cast< TacheUnitaire *> (*it_taches);
-           Agenda::getInstance().supprimerProgrammation(*tu);
-        } */
+        }
 
+        // Enfin, on supprime la tâche finale
         delete *it_taches;
         taches.erase(it_taches);
     } else {

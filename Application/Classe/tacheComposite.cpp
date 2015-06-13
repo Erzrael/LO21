@@ -28,37 +28,8 @@ TacheComposite& TacheComposite::operator=(const TacheComposite& obj){
     return *this;
 }
 
-/*
- * Si on est dans le cas suivant, cela plante :
- *  On a trois tâches : T1, T2 et T3
- *  T1 est composé de T2, elle-même composé de T3
- *  Alors, lors de la destruction lors de la fermeture de l'application :
- *  T3 est détruit, puis T2. Comme T2 est composé d'une tâche, le destructeur de cette tâche est appelée.
- *  Hors cette tâche est T3 et est déjà détruite. => Segmentation Fault
- *
- * Pour résoudre le problème, il faut que j'ai un moyen de supprimer tous les vecteurs pointant vers un objet en cours de destruction
- * Deuxième solution : savoir quand une case du vector est vide ou non
- * Troisième solution : concaténer le vector avant la destruction (en supposant que les cases vides de vector soient enlevés
-*/
-
 TacheComposite::~TacheComposite(){
     qDebug()<<"Destruction d'un objet Tache Composite\n";
-
-    /* appeler supprimer tâche de projet (donc refaire un supprimer tâche depuis projet) et Revoir fonction supprimer tâche
-        Refaire la même chose pour supprimer projet
-        C'est moche, mais je ne sais pas comment faire autrement...*//*
-    while(!composition.empty()){
-
-        Tache* t = composition.back();
-        if(t->getIdentificateur() != "")
-            delete composition.back();
-        composition.pop_back();
-     } */ /*
-    Projet* P = this->getProjet();
-    while(!composition.empty()){
-        Tache* t = composition.back();
-        P->supprimerTache(t->getIdentificateur());
-     } */
 }
 
 std::vector<Tache *> &TacheComposite::getComposition()

@@ -62,6 +62,7 @@ public:
     const QDate& getEcheance() const;  /*!< retourne la date d'échéance de cette tâche */
     void setEcheance(const QDate &value); /*!< modification d'échéance de cette tâche */
 
+    std::vector<Tache*>& getPrecedence(); /*!< retourne l'ensemble des tâches qui ont cette tâche en précédence */
     const std::vector<Tache *> &getPrecedence() const; /*!< retourne l'ensemble des tâches qui ont cette tâche en précédence */
 
     std::vector<Tache *> &getMere(); /*!< retourne l'ensemble des tâches qui ont cette tâche en précédence */
