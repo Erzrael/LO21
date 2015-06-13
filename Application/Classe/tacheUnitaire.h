@@ -12,7 +12,7 @@ protected:
     //comme de toute manière TacheUnitaire est abstraite, pas besoin de mettre les opérateurs en privé
     //    TacheUnitaire(const TacheUnitaire& t);
     //    TacheUnitaire& operator=(const TacheUnitaire& obj);
-    ~TacheUnitaire();
+    virtual ~TacheUnitaire();
 
 public:
     virtual bool getPreempte() = 0;

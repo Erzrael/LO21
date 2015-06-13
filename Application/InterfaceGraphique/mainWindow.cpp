@@ -39,6 +39,12 @@ MainWindow::~MainWindow()
    delete ui;
 }
 
+void MainWindow::on_choixDate_dateChanged(const QDate & nouvelleDate)
+{
+   choixSemaine = nouvelleDate;
+   MAJ_agenda();
+}
+
 void MainWindow::on_actionOuvrir_un_Fichier_triggered()
 {
    QString fn = QFileDialog::getOpenFileName(this, tr("Open File..."),

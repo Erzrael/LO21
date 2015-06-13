@@ -25,6 +25,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_choixDate_dateChanged(const QDate & nouvelleDate);
+
     void on_actionOuvrir_un_Fichier_triggered();
 
     void on_actionEnregistrer_sous_triggered();

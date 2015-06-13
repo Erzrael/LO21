@@ -27,8 +27,7 @@ class Agenda
    friend class ExportImport_XML;
 
 private:
-    /*!< la liste des programmations, utilisant la librairie STL */
-   list<Programmation*> programmations ;
+   list<Programmation*> programmations ;     /*!< la liste des programmations, utilisant la librairie STL */
 
    // design pattern singleton
 

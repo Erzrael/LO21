@@ -30,8 +30,8 @@ int main(int argc, char *argv[])
 
     // à modifier selon ton chemin local :)
 //    ExportImport_XML load("/home/lraingev/Bureau/Git/LO21/Application/Saves/essai.xml");
-    ExportImport_XML load("/home/lraingev/Bureau/Git/LO21/Application/Saves/essai.xml");
-    load.load();
+//    ExportImport_XML load("/home/lraingev/Bureau/Git/LO21/Application/Saves/essai.xml");
+//    load.load();
 
     MainWindow e;
     e.show();

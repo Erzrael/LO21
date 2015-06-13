@@ -3,6 +3,9 @@
 #include "tache.h"
 #include "evenement.h"
 
+/*! \brief Programamtion d'un évènement
+ * Gère une programmation d'un évènement
+ */
 class Programmation
 {
    const Evenement* evenement;

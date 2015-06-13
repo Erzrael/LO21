@@ -15,7 +15,7 @@ using namespace std;
 /*! \class Duree
         \brief Classe permettant de manipuler des durees
         L'utilisation de cette classe nécessite des durées valides au sens commun du terme.
-        D?clenchement d'exception dans le cas contraire
+        Déclenchement d'exception dans le cas contraire
 */
 class Duree{
 public:
@@ -38,6 +38,12 @@ public:
    Duree(unsigned int m=0):nb_minutes(m) {}
 
    Duree(char * minutes);
+   /*! \brief conversion du nombre de minute en char*
+    *
+    * Fonction convertissant le nombre de minute dans un char * (buffer de taille 10)
+    * \return char* pointeur vers le tableau généré.
+    *
+    */
    char * toChar();
 
    void setDuree(unsigned int minutes) { nb_minutes=minutes; }
