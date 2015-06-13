@@ -31,14 +31,35 @@ private:
    list<Programmation*> programmations ;
 
    // design pattern singleton
+
+   /*! \brief Constructeur
+    *
+    * Constructeur de la classe Agenda
+    */
    Agenda();
+   /*! \brief Destructeur
+    *
+    * Destructeur de la classe Agenda
+    */
    ~Agenda();
+   /*! \brief Opérateur de recopie
+    *
+    * Opérateur de recopie de la classe Agenda
+    * \param foo const Agenda&
+    *
+    */
    Agenda(const Agenda & foo);
+   /*! \brief Opérateur d'affectation
+    *
+    * Opérateur d'affectation de la classe agenda
+    * \param foo const Agenda&
+    * \return Agenda&
+    *
+    */
    Agenda & operator=(const Agenda & foo);
 
    /*! \brief Permet l'ajout de la programmation d'un évènement
     *
-    * \todo modifier
     * \param t const TacheUnitaire&
     * \param d const QDate&
     * \param debut const QTime&
@@ -49,28 +70,31 @@ private:
    void ajouterProgrammation(const Evenement & t, const QDate & d, const QTime & debut, const QTime & fin);
 
 public:
-//   class IteratorJournee{
-//   private:
-//      QDate journee;
-//      list<Programmation *>::iterator it_programmation;
-//      list<Programmation *>::iterator end;
-//
-//      IteratorJournee(QDate j, list<Programmation *> & p);
-//      IteratorJournee(QDate j, list<Programmation *>::iterator it_programmation, list<Programmation *>::iterator end);
-//      friend class Agenda;
-//   public:
-//      IteratorJournee& operator++(int);
-//      bool operator==(const IteratorJournee &other) const;
-//      bool operator!=(const IteratorJournee &other) const;
-//      Programmation* operator*() const;
-//   };
-//   IteratorJournee itJ_begin(QDate journee);
-//   IteratorJournee itJ_end(QDate journee);
 
+   /*! \brief accès à l'instance unique d'Agenda
+    * Permet l'accès à l'instance unique d'Agenda
+    * fonction statique du design patern Singleton.
+    * \return Agenda& l'instance unique
+    *
+    */
    static Agenda &getInstance();
 
+   /*! \brief suppression d'une Programmation unique
+    * Permet la suppression d'une Programmation unique
+    * Si cette programmation est en lien avec un évènement qui n'est pas une tâche, alors ce dernier sera détruit.
+    * \param d const QDate& Date de la programmation à supprimer
+    * \param h const QTime& Heure de la programmation à supprimer
+    * \return void
+    *
+    */
    void supprimerProgrammation(const QDate &d, const QTime &h);
-   void supprimerProgrammation(const TacheUnitaire &t);
+   /*! \brief suppression de toutes les programamtions en lien avec une Tache Unitaire
+    * Permet la suppression de toutes les programamtions en lien avec une Tache Unitaire
+    * \param t const TacheUnitaire& Tache Unitaire dont on veut appeler
+    * \return void
+    *
+    */
+   void supprimerProgrammation(const Evenement & t);
 
    /*! \brief Permet l'ajout de la programmation d'un evenement classique
     *
@@ -120,14 +144,50 @@ public:
     * \return vector<Programmation *>& tableau des programmations. Tableau vide (vector::size() == 0)
     *
     */
-   vector<Programmation *> & trouverProgrammation(const TacheUnitaire & t)const;
+   vector<Programmation *> & trouverProgrammation(const Evenement & t)const;
 
+   /*! \brief Supprimer toutes les programmations
+    *
+    * Supprime toutes les programmations comprises dans l'agenda.
+    * \return void
+    *
+    */
    void supprimerTout();
 
+   /*! \brief Nombre de tâches sur un horaire
+    *
+    * Fonction qui permet de déterminer le nombre de Programmations qui sont programmées sur une période donnée.
+    * \param date const QDate& Date de cette période
+    * \param debut const QTime& Début de cette période
+    * \param fin const QTime& Fin de cette période
+    * \return unsigned int Le nombre de Programmations chevauchant cette période.
+    *
+    */
    unsigned int chevaucheHoraire(const QDate & date, const QTime &debut, const QTime & fin);
+   /*! \brief Tableau des tâches chevauchant un horaire
+    *
+    * Fonction qui permet d'obtenir toutes les programmations qui sont programmées sur une période donnée.
+    * \param date const QDate& Date de cette période
+    * \param debut const QTime& Début de cette période
+    * \param fin const QTime& Fin de cette période
+    * \return vector<const Programmation *>& Tableau de toutes les programmations chevauchant cette période.
+    *
+    */
    vector<const Programmation *> & tabChevaucheHoraire(const QDate & date, const QTime &debut, const QTime & fin);
 
+   /*! \brief Récupère les Programmations
+    *
+    * Fonction accesseur permettant d'accéder aux programmations de l'agenda.
+    * \return std::list<Programmation *>&
+    *
+    */
    std::list<Programmation *> & getProgrammation();
+   /*! \brief Récupère les Programmations
+    *
+    * Fonction accesseur permettant d'accéder aux programmations de l'agenda.
+    * \return std::list<Programmation *>&
+    *
+    */
    const std::list<Programmation *> & getProgrammation() const;
 
 };

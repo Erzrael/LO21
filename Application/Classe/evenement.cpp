@@ -23,6 +23,7 @@ Duree Evenement::getDuree() const
 
 void Evenement::setDuree(const Duree & value)
 {
+   Agenda::getInstance().supprimerProgrammation(*this);
    duree = value;
 }
 

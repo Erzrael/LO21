@@ -13,23 +13,13 @@ Agenda::~Agenda(){
    }
 }
 
-
-/**
- * \brief Renvoie l'adresse de la programmation associée à une tâche
- * \details Cette fonction utilise l'itérator natif de vector pour parcourir le vector de pointeur de Programmation.
- * Cette fonction est notamment utilisée afin de vérifier l'existence ou non de la programmation associée à une tâche.
- *
- * \param t Tâche dont on veut trouver la programmation
- * \return Un vector contenant toutes les programmations associées à la tâche (vector vide en cas d'échec)
- */
-vector<Programmation *> & Agenda::trouverProgrammation(const TacheUnitaire& t)const{
+vector<Programmation *> & Agenda::trouverProgrammation(const Evenement& t)const{
    vector<Programmation *> * listeProgrammation = new vector<Programmation *>();
 
-   const Evenement * t2 = static_cast<const Evenement *> (&t);
    std::list<Programmation *>::const_iterator it ;
 
    for(it = programmations.begin(); it != programmations.end() ; ++it)
-      if (t2 ==(*it)->getEvenement() )
+      if (&t ==(*it)->getEvenement() )
          listeProgrammation->push_back(*it);
 
    return *listeProgrammation;
@@ -79,42 +69,23 @@ const std::list<Programmation *> &Agenda::getProgrammation() const
    return programmations;
 }
 
-//Agenda::IteratorJournee Agenda::itJ_begin(QDate journee)
-//{
-//   return IteratorJournee(journee, programmations);
-//}
-//
-//Agenda::IteratorJournee Agenda::itJ_end(QDate journee)
-//{
-//   return IteratorJournee(journee, programmations.begin(), programmations.end());
-//}
-
 void Agenda::ajouterProgrammation(const TachePreemptable & t, const QDate& d, const QTime& h, const Duree duree){
    Duree d_totale = Duree(duree);
 
    vector <Programmation *> & listeProgrammation = trouverProgrammation(t);
    std::vector<Programmation *>::const_iterator it ;
 
-   //On vérifie que la durée totale des taches programmée n'est pas supérieur à la durée de la tache préempée
+   //On vérifie que la durée totale des taches programmée n'est pas supérieure à la durée de la tache préempée
    for(it = listeProgrammation.begin(); it != listeProgrammation.end() ; ++it ) {
       d_totale.setDuree( d_totale.getDureeEnMinutes() + (*it)->getDuree().getDureeEnMinutes() );
    }
    if ( t.getDuree() < d_totale ) {
-   //if ( d_totale < t.getDuree() ) {
       throw CalendarException("erreur AjouterProgrammation : durée totale supérieure à la durée de la tâche") ;
    }
 
    int minutes = duree.getDureeEnMinutes();
    QTime * fin = new QTime(h.addSecs( minutes * 60) );
    // qDebug() << "minutes" << minutes << "Time :" << *fin;
-   /*int minute_fin = h.minute() + duree.getMinute();
-   int surplus = minute_fin / 60;
-   int heure_fin = h.hour() + duree.getHeure() + (minute_fin / 60) ;
-   qDebug() << "heure :" << heure_fin << "minute :" << minute_fin ;
-   minute_fin = minute_fin % 60;
-   if ( !QTime::isValid(heure_fin, minute_fin, 0) ) {
-      throw CalendarException("erreur ajouterProgrammation : une programmation ne peut pas être à cheval sur deux jours");
-   }*/
 
    ajouterProgrammation( t, d, h, *fin );
 }
@@ -182,39 +153,6 @@ bool Agenda::chevauche(const QDate& d, const QTime& debut, const QTime & fin, li
    return false;
 }
 
-//Agenda::IteratorJournee::IteratorJournee(QDate j, list<Programmation *> & p): journee(j), it_programmation(p.begin()), end(p.end()){}
-//
-//Agenda::IteratorJournee::IteratorJournee(QDate j, list<Programmation *>::iterator it_programmation, list<Programmation *>::iterator end) :
-//   journee(j), it_programmation(it_programmation), end(end) {}
-//
-//Agenda::IteratorJournee &Agenda::IteratorJournee::operator++(int)
-//{
-//   do {
-//      it_programmation ++;
-//   } while (it_programmation != end && (*it_programmation)->getDate() != journee );
-//
-//   return *this;
-//}
-//
-//bool Agenda::IteratorJournee::operator==(const Agenda::IteratorJournee & other) const
-//{
-//   if (&other == this || (this->it_programmation == other.it_programmation)){
-//      return true;
-//   } else{
-//      return false;
-//   }
-//}
-//
-//bool Agenda::IteratorJournee::operator!=(const Agenda::IteratorJournee & other) const
-//{
-//   return !(*this == other);
-//}
-//
-//Programmation * Agenda::IteratorJournee::operator*() const
-//{
-//   return *it_programmation;
-//}
-
 Agenda &Agenda::getInstance()
 {
    static Agenda instanceUnique;
@@ -235,12 +173,11 @@ void Agenda::supprimerProgrammation(const QDate & d, const QTime & h)
    throw CalendarException("La programmation que vous voulez supprimer n'existe pas");
 }
 
-void Agenda::supprimerProgrammation(const TacheUnitaire & t)
+void Agenda::supprimerProgrammation(const Evenement & t)
 {
    vector<Programmation *> tab = this->trouverProgrammation(t);
-   while ( !tab.empty() ) { // lolilol c'est un peu dégueulasse x)
+   while ( !tab.empty() ) {
       supprimerProgrammation( tab.back()->getDate(), tab.back()->getDebut() );
-      // delete tab.back();
       tab.pop_back();
    }
 }
