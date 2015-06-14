@@ -69,6 +69,7 @@ void MainWindow::on_actionOuvrir_un_Fichier_triggered()
    }
 
    MAJ_treeview_Composition();
+   MAJ_agenda();
 }
 
 void MainWindow::on_actionEnregistrer_sous_triggered()
