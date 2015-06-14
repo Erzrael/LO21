@@ -53,7 +53,7 @@ private slots:
 
     void on_TabAgenda_cellClicked(int heure = 0, int jour = 0);    
 
-    void on_TreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int);
+    void on_TreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int colonne);
 
 private:
     void MAJ_treeview_Composition();

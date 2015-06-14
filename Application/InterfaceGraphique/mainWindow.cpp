@@ -317,38 +317,40 @@ QTreeWidgetItem * MainWindow::trouver(std::vector<QTreeWidgetItem *> tab, QStrin
     return 0;
 }
 
-void MainWindow::on_TreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int)
+void MainWindow::on_TreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int colonne)
 {
-    ProjetManager& projetmanager = ProjetManager::getInstance();
+    if(colonne == 1){
+        ProjetManager& projetmanager = ProjetManager::getInstance();
 
-    if(ui->TreeWidget->itemAbove(ui->TreeWidget->itemAbove(item)) == 0)
-    {
-        EditionProjetWindow* edition_projet_window = new EditionProjetWindow(projetmanager.getProjet(item->text(0)));
-        edition_projet_window->setModal(true);
-        edition_projet_window->exec();
-        delete edition_projet_window;
+        if(ui->TreeWidget->itemAbove(ui->TreeWidget->itemAbove(item)) == 0)
+        {
+            EditionProjetWindow* edition_projet_window = new EditionProjetWindow(projetmanager.getProjet(item->text(0)));
+            edition_projet_window->setModal(true);
+            edition_projet_window->exec();
+            delete edition_projet_window;
 
-    } else {
-        try{
-            Tache* T = projetmanager.getTache(item->text(0));
-            TacheComposite* Compo = dynamic_cast<TacheComposite*>(T);
+        } else {
+            try{
+                Tache* T = projetmanager.getTache(item->text(0));
+                TacheComposite* Compo = dynamic_cast<TacheComposite*>(T);
 
-            if(Compo){
-                EditionTacheCompositeWindow* edition_tache_composite_window = new EditionTacheCompositeWindow(Compo);
-                edition_tache_composite_window->setModal(true);
-                edition_tache_composite_window->exec();
-                delete edition_tache_composite_window;
-            } else {
-                TacheUnitaire* Unitaire = dynamic_cast<TacheUnitaire*>(T);
-                EditionTacheUnitaireWindow* edition_tache_unitaire_window = new EditionTacheUnitaireWindow(Unitaire);
-                edition_tache_unitaire_window->setModal(true);
-                edition_tache_unitaire_window->exec();
-                delete edition_tache_unitaire_window;
+                if(Compo){
+                    EditionTacheCompositeWindow* edition_tache_composite_window = new EditionTacheCompositeWindow(Compo);
+                    edition_tache_composite_window->setModal(true);
+                    edition_tache_composite_window->exec();
+                    delete edition_tache_composite_window;
+                } else {
+                    TacheUnitaire* Unitaire = dynamic_cast<TacheUnitaire*>(T);
+                    EditionTacheUnitaireWindow* edition_tache_unitaire_window = new EditionTacheUnitaireWindow(Unitaire);
+                    edition_tache_unitaire_window->setModal(true);
+                    edition_tache_unitaire_window->exec();
+                    delete edition_tache_unitaire_window;
+                }
+            } catch (CalendarException e) {
+                QMessageBox::warning(this, "Erreur", e.getInfo());
             }
-        } catch (CalendarException e) {
-            QMessageBox::warning(this, "Erreur", e.getInfo());
         }
-    }
 
-    MAJ_treeview_Composition();
+        MAJ_treeview_Composition();
+    }
 }
