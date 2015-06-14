@@ -8,6 +8,8 @@ AjoutTacheWindow::AjoutTacheWindow(QWidget *parent) :
     ui(new Ui::AjoutTacheWindow)
 {
     ui->setupUi(this);
+    ui->Dispo_Edit->setMinimumDate(QDate::currentDate());
+    ui->Echeance_Edit->setMinimumDate(QDate::currentDate().addDays(1));
     ProjetManager &projetmanager = ProjetManager::getInstance();
     for(vector<Projet*>::const_iterator it = projetmanager.getProjets().begin(); it != projetmanager.getProjets().end(); ++it)
         ui->Projet_Box->addItem((*it)->getId());

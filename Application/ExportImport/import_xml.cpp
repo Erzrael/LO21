@@ -101,13 +101,13 @@ void ExportImport_XML::load()
       // insertion des precedences
       for(xml_node<> * precedence = projet->first_node("precedence") ; precedence ; precedence = precedence->next_sibling("precedence") ) {
          Tache * tache_p  = projetManager.getTache( precedence->first_attribute()->value() ) ;
-         qDebug() << "ajout Précédence pour la tache " << tache_p->getIdentificateur() ;
+         qDebug() << "ajout Précédence "<< precedence->value() << "pour la tache " << tache_p->getIdentificateur() ;
          tache_p->ajouterPrecedence( *(projetManager.getTache( precedence->value())) );
       }
       // insertion des compositions
       for(xml_node<> * composition = projet->first_node("composition") ; composition ; composition = composition->next_sibling("composition") ) {
          TacheComposite * tache_c  = static_cast<TacheComposite *>(projetManager.getTache( composition->first_attribute()->value() ) ) ;
-         qDebug() << "ajout Composition pour la tache " << tache_c->getIdentificateur() ;
+         qDebug() << "ajout Composition "<< composition->value() <<" pour la tache " << tache_c->getIdentificateur() ;
          tache_c->ajouterComposition( *(projetManager.getTache( composition->value() )));
       }
    }
@@ -159,7 +159,7 @@ void ExportImport_XML::save()
       xml_attribute<> *attribute = doc.allocate_attribute("id", node_name);
       node_projet->append_attribute(attribute);
 
-      node_name = doc.allocate_string( convertQString( projet.getId() ) );
+      node_name = doc.allocate_string( convertQString( projet.getTitre() ) );
       attribute = doc.allocate_attribute("titre", node_name);
       node_projet->append_attribute(attribute);
 

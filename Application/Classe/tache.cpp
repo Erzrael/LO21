@@ -169,18 +169,18 @@ bool Tache::verifierPrecedence(Tache &t) const
 {
     // On vérifie que l'on ajoute pas une même tâche en précédence d'elle-même
     if(this == &t){
-        qDebug()<<"Je retourne faux";
+        qDebug()<<"Tache identique";
         return false;
     }
     // On vérifie que les dates d'échéances correspondent
     if(t.getEcheance() > this->getEcheance()){
-        qDebug()<<"Je retourne faux";
+        qDebug()<<"Echéance incorrecte";
         return false;
     }
     // On vérifie que t ne fait pas déjà partie des précédences existantes
     for(std::vector<Tache*>::const_iterator it_prece = this->getPrecedence().begin(); it_prece != this->getPrecedence().end(); ++it_prece)
         if((*it_prece)->getIdentificateur() == t.getIdentificateur()){
-            qDebug()<<"Je retourne faux";
+            qDebug()<<"T fait partie des précédences existantes";
             return false;
         }
 

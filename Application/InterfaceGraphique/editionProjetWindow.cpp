@@ -34,7 +34,7 @@ void EditionProjetWindow::on_buttonBox_accepted()
         Projet* P = projetmanager.getProjet(ui->ID_Lab->text());
         P->setTitre(ui->Titre_Edit->text());
         P->setDisponibilite(ui->Dispo_Edit->date());
-        QMessageBox::information(this,"Succès","La tâche a bien été modifée");
+        QMessageBox::information(this,"Succès","Le Projet a bien été modifée");
     } catch (CalendarException e) {
         QMessageBox::warning(this,"Erreur",e.getInfo());
     }

@@ -58,17 +58,17 @@ bool TacheComposite::verifierComposition(Tache &t) const
 {
     // On vérifie que l'on ajoute pas une même tâche en composition d'elle-même
     if(this == &t){
-        qDebug()<<"Je retourne faux";
+        qDebug()<<"tache identique";
         return false;
     }
     // On vérifie que les échéances concordent
     if(t.getEcheance() > this->getEcheance()){
-        qDebug()<<"Je retourne faux";
+        qDebug()<<"échéances incorrectes";
         return false;
     }
     // On vérifie si la tâche est déjà en composition
     if(t.getMere_Compo() != 0){
-        qDebug()<<"Je retourne faux";
+        qDebug()<<"tache est déjà en composition";
         return false;
     } else {
         // Sinon on vérifie l'absence de cycles
@@ -81,10 +81,6 @@ bool TacheComposite::verifierComposition(Tache &t) const
                 tache_mere = tache_mere->getMere_Compo();
             }
     }
-
-    // On vérifie que les précédences restent logiques
-    if(!this->verifierPrecedence(t))
-        return false;
 
     // Si tous les tests sont validés, c'est bon
     return true;

@@ -36,7 +36,7 @@
     </property>
     <widget class="QLabel" name="Titre_Lab">
      <property name="text">
-      <string>TextLabel</string>
+      <string>Titre : </string>
      </property>
     </widget>
     <widget class="QLineEdit" name="Titre_Edit"/>
@@ -47,7 +47,7 @@
     </property>
     <widget class="QLabel" name="Dispo_Lab">
      <property name="text">
-      <string>TextLabel</string>
+      <string>Date de Disponibilité</string>
      </property>
     </widget>
     <widget class="QDateEdit" name="Dispo_Edit">

@@ -8,6 +8,8 @@ AjoutProjetWindow::AjoutProjetWindow(QWidget *parent) :
     ui(new Ui::AjoutProjetWindow)
 {
     ui->setupUi(this);
+    ui->Dispo_Edit->setMinimumDate(QDate::currentDate());
+    ui->Echeance_Edit->setMinimumDate(QDate::currentDate().addDays(1));
 }
 
 AjoutProjetWindow::~AjoutProjetWindow()

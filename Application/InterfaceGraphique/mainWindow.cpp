@@ -28,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->choixDate->setDate(choixSemaine);
+
     MAJ_agenda();
     MAJ_treeview_Composition();
 }
